@@ -1,1 +1,72 @@
 @import "tailwindcss";
+
+/* normal light */
+@font-face {
+  font-family: 'MarselisPro';
+  src: url('/fonts/MarselisPro-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* normal */
+@font-face {
+  font-family: 'MarselisPro';
+  src: url('/fonts/MarselisPro.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* normal black */
+@font-face {
+  font-family: 'MarselisPro';
+  src: url('/fonts/MarselisPro-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* light italic */
+@font-face {
+  font-family: 'MarselisPro';
+  src: url('/fonts/MarselisPro-LightItalic.woff2') format('woff2');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* normal italic */
+@font-face {
+  font-family: 'MarselisPro';
+  src: url('/fonts/MarselisPro-Italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* bold italic */
+@font-face {
+  font-family: 'MarselisPro';
+  src: url('/fonts/MarselisPro-BoldItalic.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* black italic */
+@font-face {
+  font-family: 'MarselisPro';
+  src: url('/fonts/MarselisPro-BlackItalic.woff2') format('woff2');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+html {
+  font-family: 'MarselisPro', sans-serif;
+  /* text-transform: uppercase; */
+  /* -webkit-font-smoothing: antialiased; */
+  /* -moz-osx-font-smoothing: grayscale; */
+  text-rendering: optimizeLegibility;
+}
