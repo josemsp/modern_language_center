@@ -1,0 +1,24 @@
+---
+import Fonts from './Fonts.astro';
+import BaseSeo from './BaseSeo.astro';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="generator" content={Astro.generator} />
+  <title>{title}</title>
+
+  <Fonts />
+  <BaseSeo title={title} description={description} />
+  <!-- slot for additional head elements -->
+  <slot />
+</head>

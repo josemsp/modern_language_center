@@ -1,77 +1,21 @@
 ---
 import "../styles/global.css";
+import BaseHead from "@/components/layout/head/index.astro";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro Basics</title>
-
-    <!-- font preload -->
-    <link
-      rel="preload"
-      href="/fonts/MarselisPro-Black.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="preload"
-      href="/fonts/MarselisPro-BlackItalic.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="preload"
-      href="/fonts/MarselisPro-BoldItalic.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="preload"
-      href="/fonts/MarselisPro-Italic.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="preload"
-      href="/fonts/MarselisPro-Light.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="preload"
-      href="/fonts/MarselisPro-LightItalic.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="preload"
-      href="/fonts/MarselisPro.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin="anonymous"
-    />
-  </head>
+  <BaseHead title={title} description={description}>
+    <slot name="seo-schema" />
+  </BaseHead>
   <body>
-    <slot />
+    <slot name="main-content" />
   </body>
 </html>
-
-<style>
-  html,
-  body {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-  }
-</style>
