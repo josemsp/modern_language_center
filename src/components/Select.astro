@@ -1,0 +1,126 @@
+---
+import { Image } from "astro:assets";
+
+interface Option {
+  value: string;
+  label: string;
+  icon: ImageMetadata;
+}
+
+interface Props {
+  id: string;
+  options: Option[];
+  current: Option;
+}
+
+const { id = "lang-select", options, current } = Astro.props;
+---
+
+<div class="relative inline-block w-full" id={id}>
+  <details class="group">
+    <summary
+      class="flex items-center justify-between bg-white border border-gray-300 rounded-lg px-3 py-2 cursor-pointer shadow-sm hover:bg-gray-50"
+    >
+      <div class="flex items-center gap-2">
+        <Image
+          src={current.icon}
+          alt={current.label}
+          width={20}
+          height={20}
+          class="w-5 h-5 rounded"
+          id="current-icon"
+        />
+        <span class="text-sm font-medium" id="current-label"
+          >{current.label}</span
+        >
+      </div>
+      <svg
+        class="w-4 h-4 text-gray-500 group-open:rotate-180 transition-transform"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M19 9l-7 7-7-7"></path>
+      </svg>
+    </summary>
+
+    <ul
+      class="absolute z-10 w-full mt-1 bg-white border border-gray-200 rounded-lg shadow-lg"
+    >
+      {
+        options.map((option) => (
+          <li
+            class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-gray-100 cursor-pointer"
+            data-value={option.value}
+          >
+            <Image
+              src={option.icon}
+              alt={option.label}
+              width={20}
+              height={20}
+              class="w-5 h-5 rounded"
+            />
+            {option.label}
+          </li>
+        ))
+      }
+    </ul>
+  </details>
+</div>
+
+<!-- <script>
+  import { $lang } from "../stores/lang";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const wrapper = document.querySelector("#lang-select");
+    if (!wrapper) return;
+
+    // Update the current language display
+    const updateCurrentLanguage = (lang: string) => {
+      const option = Array.from(
+        wrapper.querySelectorAll<HTMLLIElement>("li")
+      ).find((li: HTMLLIElement) => li.getAttribute("data-value") === lang);
+
+      if (option) {
+        const label = wrapper.querySelector<HTMLElement>("#current-label");
+        const icon = wrapper.querySelector<HTMLImageElement>("#current-icon");
+        const newLabel = option.textContent?.trim();
+        const newIcon = option.querySelector<HTMLImageElement>("img")?.src;
+
+        if (label && icon && newLabel && newIcon) {
+          label.textContent = newLabel;
+          if (icon instanceof HTMLImageElement) {
+            icon.src = newIcon;
+          }
+        }
+      }
+    };
+
+    // Set initial language
+    const currentLang = document.documentElement.lang || "es";
+    updateCurrentLanguage(currentLang);
+
+    // Handle language selection
+    wrapper.querySelectorAll("li").forEach((item) => {
+      item.addEventListener("click", (e) => {
+        e.preventDefault();
+        const newLang = item.getAttribute("data-value");
+        if (!newLang) return;
+
+        // Update the current language display
+        updateCurrentLanguage(newLang);
+
+        // Close the dropdown
+        wrapper.querySelector("details")?.removeAttribute("open");
+
+        $lang.set(newLang);
+        window.location.href = `/${newLang}/`;
+      });
+    });
+  });
+</script> -->

@@ -1,11 +1,7 @@
 ---
-import Welcome from "@/components/Welcome.astro";
-import Layout from "@/layouts/Layout.astro";
-import HomeSeo from "@/components/layout/seo-schema/home.astro";
+const { cookies, redirect } = Astro;
+const savedLang = cookies.get('user-lang')?.value;
+const targetLang = savedLang && ['es', 'en'].includes(savedLang) ? savedLang : 'es';
 
+return redirect(`/${targetLang}/`);
 ---
-
-<Layout title="Home - Modern Language Center" description="">
-  <HomeSeo slot="seo-schema" />
-  <Welcome slot="main-content" />
-</Layout>

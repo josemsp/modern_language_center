@@ -1,0 +1,97 @@
+{
+  "navbar": {
+    "individuals": "Individuos",
+    "companies": "Empresas",
+    "about": "About Us",
+    "teacherLogin": "Teacher Login"
+  },
+  "hero": {
+    "headline": "¿El inglés te detiene?",
+    "subheadline": "Conviértete en la pieza clave de tu empresa",
+    "description": "Curso de inglés conversacional o de negocios online con profesor en vivo",
+    "cta": "Lo quiero"
+  },
+  "plans": {
+    "title": "Planes para ti o tu equipo",
+    "subtitle": "Soluciones integrales en idiomas adaptadas a tus necesidades, nivel de servicio y calidad que demandan todos nuestros clientes.",
+    "forIndividuals": "Para individuos",
+    "forCompanies": "Para empresas",
+    "meet": {
+      "title": "MODERN meet.",
+      "price": "$1,595 /mes",
+      "cta": "Lo quiero",
+      "bullets": [
+        "Profesionales y jóvenes que buscan crecer en entornos globales.",
+        "Grupal (máximo 8 personas).",
+        "Horario fijo (Martes, Miércoles, Jueves 1h o 1.5h).",
+        "Cursos de 2.5 meses o 10 semanas (12 niveles).",
+        "Profesor en vivo (online).",
+        "Material incluido.",
+        "Examen de certificación gratis.",
+        "Inglés de negocios a precio super accesible. Cursos reducidos."
+      ]
+    },
+    "oneOnOne": {
+      "title": "MODERN one on one.",
+      "price": "desde $3,969 /mes",
+      "cta": "Lo quiero",
+      "bullets": [
+        "Ejecutivos de 45+ que necesitan avanzar profesionalmente en inglés.",
+        "Formato individual.",
+        "Dos formatos disponibles: economy y flex.",
+        "Cursos de 48h (12 niveles).",
+        "Libro incluido.",
+        "Examen de certificación gratis.",
+        "Atención 100% personalizada.",
+        "Clase muestra sin costo."
+      ]
+    },
+    "coaching": {
+      "title": "MODERN last-minute coaching.",
+      "price": "Paga solo las horas que quieras",
+      "cta": "Lo quiero",
+      "bullets": [
+        "Quienes ya dominan el idioma pero necesitan pulir un evento específico.",
+        "Individual.",
+        "Paquetes de 6 a 72 hrs.",
+        "Flexible según necesidad puntual.",
+        "Disponible para inglés, portugués, francés, alemán, italiano y español.",
+        "Libro no incluido.",
+        "Material personalizado incluido.",
+        "Examen de certificación gratis."
+      ]
+    },
+    "premium": {
+      "title": "MODERN premium.",
+      "price": "Sólo los módulos que necesitas",
+      "cta": "Lo quiero",
+      "bullets": [
+        "Ejecutivos de alto nivel que presentan reuniones en inglés.",
+        "Individual.",
+        "Curso completo de 72 hrs.",
+        "Sólo disponible para inglés y portugués.",
+        "Profesor en vivo (online).",
+        "Libro incluido.",
+        "Examen de certificación gratis.",
+        "Preparación intensiva enfocada en resultados rápidos.",
+        "Clase muestra sin costo."
+      ]
+    }
+  },
+  "successStories": {
+    "title": "Historias de éxito con nosotros"
+  },
+  "contact": {
+    "title": "¿Cómo podemos ayudarte?",
+    "subtitle": "¡Preparemos tu solución lingüística personalizada ahora!",
+    "cta": "Contáctanos"
+  },
+  "footer": {
+    "languages": "Idiomas",
+    "contact": "Contact Us",
+    "address": "Av. Miguel Ángel de Quevedo 24, Int 203, Col Chimalistac, CDMX",
+    "email": "hello@modernlanguagecenter.com",
+    "phone": "55 7824 9081",
+    "rights": "Todos los derechos reservados."
+  }
+}

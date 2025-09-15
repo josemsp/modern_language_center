@@ -1,0 +1,42 @@
+---
+// components/LanguageDetector.astro
+const { currentLang } = Astro.props;
+const SUPPORTED_LANGUAGES = ['es', 'en'];
+const DEFAULT_LANGUAGE = 'es';
+---
+
+<script define:vars={{ currentLang, SUPPORTED_LANGUAGES, DEFAULT_LANGUAGE }}>
+  function detectAndRedirect() {
+    // Solo ejecutar en la página raíz o si no hay idioma válido en URL
+    const pathname = window.location.pathname;
+    const segments = pathname.split('/').filter(Boolean);
+    const langFromUrl = segments[0];
+    
+    // Si estamos en la raíz (sin idioma) o idioma inválido
+    if (pathname === '/' || !SUPPORTED_LANGUAGES.includes(langFromUrl)) {
+      // Obtener idioma guardado
+      const savedLang = localStorage.getItem('user-preferred-lang') || 
+                       document.cookie.split('; ').find(row => row.startsWith('user-lang='))?.split('=')[1];
+      
+      const targetLang = (savedLang && SUPPORTED_LANGUAGES.includes(savedLang)) 
+        ? savedLang 
+        : DEFAULT_LANGUAGE;
+      
+      // Redirigir
+      const newPath = `/${targetLang}${pathname === '/' ? '' : pathname}`;
+      window.location.replace(newPath);
+      return;
+    }
+    
+    // Si tenemos un idioma válido, guardarlo
+    if (currentLang && SUPPORTED_LANGUAGES.includes(currentLang)) {
+      localStorage.setItem('user-preferred-lang', currentLang);
+      
+      // También guardar en cookie para consistencia
+      document.cookie = `user-lang=${currentLang}; path=/; max-age=${60 * 60 * 24 * 365}; SameSite=Lax`;
+    }
+  }
+  
+  // Ejecutar inmediatamente para evitar flash
+  detectAndRedirect();
+</script>

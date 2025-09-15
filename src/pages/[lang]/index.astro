@@ -1,0 +1,34 @@
+---
+// export const prerender = true; // Mantener estático
+import { languages, supportedLocales, type SupportedLocale } from "@/i18n/ui";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/header/index.astro";
+import LanguageDetector from "@/components/LanguageDetector.astro";
+import { useTranslations } from "@/i18n/utils";
+
+// Generar rutas estáticas para cada idioma
+// export function getStaticPaths() {
+//   return Object.entries(languages).map(([lang, data]) => ({
+//     params: { lang },
+//     props: { lang, languageData: data },
+//   }));
+// }
+export function getStaticPaths() {
+  return supportedLocales.map(lang => ({
+    params: { lang },
+    props: { lang }
+  }));
+}
+
+const { lang } = Astro.params;
+
+const t = useTranslations(lang);
+---
+
+<Layout lang={lang} title="Home - Modern Language Center" description="">
+  <!-- Componente que maneja la detección y redirección -->
+  <!-- <LanguageDetector currentLang={lang} /> -->
+
+  <Header />
+  <h1 class="text-3xl font-bold">Home - {lang?.toUpperCase()} - {t('navbar.individuals')}</h1>
+</Layout>

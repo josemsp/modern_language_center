@@ -3,19 +3,20 @@ import "../styles/global.css";
 import BaseHead from "@/components/layout/head/index.astro";
 
 interface Props {
+  lang: string;
   title: string;
   description: string;
 }
 
-const { title, description } = Astro.props;
+const { lang = "es", title, description } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <BaseHead title={title} description={description}>
     <slot name="seo-schema" />
   </BaseHead>
   <body>
-    <slot name="main-content" />
+    <slot />
   </body>
 </html>
