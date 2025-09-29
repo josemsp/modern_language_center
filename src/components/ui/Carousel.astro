@@ -1,0 +1,313 @@
+---
+// Carousel.astro
+export interface Slide {
+  id: string | number;
+  image?: string;
+  title?: string;
+  description?: string;
+  backgroundColor?: string;
+  textColor?: string;
+  overlay?: boolean;
+  link?: string;
+}
+
+export interface Props {
+  slides?: Slide[];
+  slideCount?: number; // Para cuando uses solo slots
+  autoplay?: boolean;
+  interval?: number;
+  height?: string;
+  showIndicators?: boolean;
+  showNavigation?: boolean;
+  showControls?: boolean;
+  className?: string;
+}
+
+const {
+  slides = [],
+  slideCount,
+  autoplay = true,
+  interval = 3000,
+  height = "h-64 md:h-96",
+  showIndicators = true,
+  showNavigation = true,
+  showControls = true,
+  className = ""
+} = Astro.props;
+
+// Determinar el número total de slides
+const totalSlides = slideCount || slides.length;
+
+// Generar ID único para esta instancia del carrusel
+const carouselId = `carousel-${Math.random().toString(36).substring(2, 9)}`;
+const prevBtnId = `prevBtn-${carouselId}`;
+const nextBtnId = `nextBtn-${carouselId}`;
+const playPauseBtnId = `playPauseBtn-${carouselId}`;
+const playIconId = `playIcon-${carouselId}`;
+const pauseIconId = `pauseIcon-${carouselId}`;
+const playPauseTextId = `playPauseText-${carouselId}`;
+---
+
+<div class={`relative w-full bg-white shadow-lg overflow-hidden ${className}`}>
+  <!-- Contenedor del carrusel -->
+  <div id={carouselId} class={`relative ${height} overflow-hidden`}>
+    
+    <!-- Renderizar slides desde props si existen -->
+    {slides.map((slide, index) => (
+      <div 
+        class={`carousel-slide absolute inset-0 transition-opacity duration-500 ease-in-out ${index === 0 ? 'opacity-100' : 'opacity-0'}`}
+        data-slide={index}
+        data-carousel={carouselId}
+      >
+        {slide.image ? (
+          <>
+            <img 
+              src={slide.image} 
+              alt={slide.title || `Slide ${index + 1}`} 
+              class="w-full h-full object-cover"
+            />
+            {slide.overlay !== false && (
+              <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                <div class={`text-center ${slide.textColor || 'text-white'}`}>
+                  {slide.title && <h2 class="text-3xl font-bold mb-2">{slide.title}</h2>}
+                  {slide.description && <p class="text-lg">{slide.description}</p>}
+                  {slide.link && (
+                    <a 
+                      href={slide.link}
+                      class="inline-block mt-4 px-6 py-2 bg-white/20 hover:bg-white/30 rounded-lg transition-colors duration-200"
+                    >
+                      Ver más
+                    </a>
+                  )}
+                </div>
+              </div>
+            )}
+          </>
+        ) : (
+          <div class={`${slide.backgroundColor || 'bg-gradient-to-r from-blue-500 to-purple-600'} flex items-center justify-center h-full`}>
+            <div class={`text-center ${slide.textColor || 'text-white'}`}>
+              {slide.title && <h2 class="text-3xl font-bold mb-2">{slide.title}</h2>}
+              {slide.description && <p class="text-lg">{slide.description}</p>}
+              {slide.link && (
+                <a 
+                  href={slide.link}
+                  class="inline-block mt-4 px-6 py-2 bg-white/20 hover:bg-white/30 rounded-lg transition-colors duration-200"
+                >
+                  Ver más
+                </a>
+              )}
+            </div>
+          </div>
+        )}
+      </div>
+    ))}
+
+    <!-- Renderizar slots si no hay slides en props -->
+    {!slides.length && (
+      <slot />
+    )}
+
+    <!-- Botones de navegación -->
+    {showNavigation && totalSlides > 1 && (
+      <>
+        <button id={prevBtnId} data-carousel={carouselId} class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 rounded-full p-2 transition-colors duration-200 z-10">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+          </svg>
+        </button>
+        
+        <button id={nextBtnId} data-carousel={carouselId} class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 rounded-full p-2 transition-colors duration-200 z-10">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </button>
+      </>
+    )}
+  </div>
+
+  <!-- Controles inferiores -->
+  {(showIndicators || showControls) && totalSlides > 1 && (
+    <div class="absolute inset-x-0 bottom-0 z-20 p-4 flex items-center justify-between">
+      <!-- Indicadores -->
+      {showIndicators && (
+        <div class="flex space-x-2">
+          {Array.from({ length: totalSlides }).map((_, index) => (
+            <button 
+              class={`indicator w-3 h-3 rounded-full transition-colors duration-200 ${index === 0 ? 'bg-blue-500' : 'bg-gray-300'}`}
+              data-slide={index}
+              data-carousel={carouselId}
+            ></button>
+          ))}
+        </div>
+      )}
+
+      {!showIndicators && <div></div>}
+
+      <!-- Botón Play/Pause -->
+      {showControls && autoplay && (
+        <button id={playPauseBtnId} data-carousel={carouselId} class="flex items-center space-x-2 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors duration-200">
+          <svg id={pauseIconId} class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+          </svg>
+          <svg id={playIconId} class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+          <span id={playPauseTextId}>Pausar</span>
+        </button>
+      )}
+    </div>
+  )}
+</div>
+
+<script define:vars={{ autoplay, interval, carouselId, prevBtnId, nextBtnId, playPauseBtnId, playIconId, pauseIconId, playPauseTextId, totalSlides }}>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Obtener elementos específicos de este carrusel
+    const carousel = document.getElementById(carouselId);
+    if (!carousel) return;
+
+    // Buscar slides tanto de props como de slots
+    const slidesFromProps = carousel.querySelectorAll(`.carousel-slide[data-carousel="${carouselId}"]`);
+    const slidesFromSlots = carousel.querySelectorAll(`[data-carousel-slide]`);
+    const allSlides = slidesFromProps.length > 0 ? slidesFromProps : slidesFromSlots;
+
+    const indicators = carousel.parentElement.querySelectorAll(`.indicator[data-carousel="${carouselId}"]`);
+    const prevBtn = document.getElementById(prevBtnId);
+    const nextBtn = document.getElementById(nextBtnId);
+    const playPauseBtn = document.getElementById(playPauseBtnId);
+    const playIcon = document.getElementById(playIconId);
+    const pauseIcon = document.getElementById(pauseIconId);
+    const playPauseText = document.getElementById(playPauseTextId);
+
+    if (allSlides.length === 0) return;
+
+    let currentSlide = 0;
+    let isPlaying = autoplay && totalSlides > 1;
+    let intervalId;
+
+    // Función para mostrar un slide específico
+    function showSlide(index) {
+      allSlides.forEach((slide, i) => {
+        slide.classList.toggle('opacity-100', i === index);
+        slide.classList.toggle('opacity-0', i !== index);
+        // Asegurar que solo el slide activo reciba eventos y esté por encima
+        slide.classList.toggle('pointer-events-auto', i === index);
+        slide.classList.toggle('pointer-events-none', i !== index);
+        slide.classList.toggle('z-10', i === index);
+        slide.classList.toggle('z-0', i !== index);
+      });
+
+      indicators.forEach((indicator, i) => {
+        if (indicator) {
+          indicator.classList.toggle('bg-blue-500', i === index);
+          indicator.classList.toggle('bg-gray-300', i !== index);
+        }
+      });
+
+      currentSlide = index;
+    }
+
+    // Función para ir al siguiente slide
+    function nextSlide() {
+      const next = (currentSlide + 1) % allSlides.length;
+      showSlide(next);
+    }
+
+    // Función para ir al slide anterior
+    function prevSlide() {
+      const prev = (currentSlide - 1 + allSlides.length) % allSlides.length;
+      showSlide(prev);
+    }
+
+    // Función para iniciar el autoplay
+    function startAutoplay() {
+      if (!autoplay || totalSlides <= 1) return;
+      intervalId = setInterval(nextSlide, interval);
+      isPlaying = true;
+      if (playIcon && pauseIcon && playPauseText) {
+        playIcon.classList.add('hidden');
+        pauseIcon.classList.remove('hidden');
+        playPauseText.textContent = 'Pausar';
+      }
+    }
+
+    // Función para pausar el autoplay
+    function pauseAutoplay() {
+      clearInterval(intervalId);
+      isPlaying = false;
+      if (playIcon && pauseIcon && playPauseText) {
+        playIcon.classList.remove('hidden');
+        pauseIcon.classList.add('hidden');
+        playPauseText.textContent = 'Reproducir';
+      }
+    }
+
+    // Event listeners
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        prevSlide();
+        if (isPlaying && autoplay) {
+          clearInterval(intervalId);
+          startAutoplay();
+        }
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        nextSlide();
+        if (isPlaying && autoplay) {
+          clearInterval(intervalId);
+          startAutoplay();
+        }
+      });
+    }
+
+    if (playPauseBtn) {
+      playPauseBtn.addEventListener('click', () => {
+        if (isPlaying) {
+          pauseAutoplay();
+        } else {
+          startAutoplay();
+        }
+      });
+    }
+
+    // Event listeners para los indicadores
+    indicators.forEach((indicator, index) => {
+      if (indicator) {
+        indicator.addEventListener('click', () => {
+          showSlide(index);
+          if (isPlaying && autoplay) {
+            clearInterval(intervalId);
+            startAutoplay();
+          }
+        });
+      }
+    });
+
+    // Pausar en hover si está habilitado el autoplay
+    if (autoplay && totalSlides > 1) {
+      carousel.addEventListener('mouseenter', () => {
+        if (isPlaying) {
+          clearInterval(intervalId);
+        }
+      });
+
+      carousel.addEventListener('mouseleave', () => {
+        if (isPlaying) {
+          startAutoplay();
+        }
+      });
+    }
+
+    // Inicializar el primer slide si hay slots
+    if (slidesFromSlots.length > 0) {
+      showSlide(0);
+    }
+
+    // Iniciar autoplay si está habilitado
+    if (autoplay && totalSlides > 1) {
+      startAutoplay();
+    }
+  });
+</script>

@@ -7,7 +7,12 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   output: 'server',
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
+    resolve: {
+      alias: {
+        "@": new URL("./src", import.meta.url).pathname, // 👈 Alias real para Vite/Astro
+      }
+    }
   },
   i18n: {
     defaultLocale: "es",

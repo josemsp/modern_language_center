@@ -1,0 +1,132 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/header/index.astro";
+import Button from "@/components/ui/Button.astro";
+import WhatsAppIcon from "@/assets/icons/whatsapp.svg";
+import BusinessMlc from "@/assets/icons/business-mlc.svg";
+import Carousel from "@/components/ui/Carousel.astro";
+import Home from "@/components/home/index.astro";
+
+const { lang = "es" } = Astro.params;
+---
+
+<Layout lang={lang} title="Home - Modern Language Center" description="">
+  <Header slot="header" />
+
+
+  <Home />
+  <section class="relative bg-mlc-blue-gradient">
+    <!-- <section class="relative h-[1080px] w-[1750px] flex items-end mx-auto">
+      <figure class="w-[80%] margin-auto absolute bottom-0">
+        <img src="/src/assets/images/bg-home.png" alt="" />
+      </figure>
+      <section class="absolute top-[27%] right-20 flex flex-col items-end">
+        <BusinessMlc width="429" height="190" class="" />
+        <section class="course-description">
+          <h2 class="text-[#ACD3FF]">Comunicación</h2>
+          <h2 class="text-[#F7F7F7]">efectiva y liderazgo</h2>
+          <h2 class="text-[#ACD3FF]">internacional</h2>
+        </section>
+        <h3 class="text-white text-[42px]">En tu idioma objetivo</h3>
+        <Button variant="mlc" class="mt-[49px] text-[25px]">
+          <span slot="first-text">Lo quiero</span>
+          <span slot="second-text">¡Cotizar ya!</span>
+        </Button>
+      </section>
+    </section>
+     -->
+
+    <!-- Carrusel completo con imágenes -->
+    <!-- <div>
+      <h2 class="text-2xl font-bold mb-4">Carrusel con Imágenes</h2>
+      <Carousel
+        slides={imageSlides}
+        autoplay={true}
+        interval={4000}
+        height="h-80"
+        showIndicators={true}
+        showNavigation={true}
+        showControls={true}
+      />
+    </div> -->
+
+    <!-- Carrusel con SLOTS - Contenido completamente personalizado -->
+    <!-- <div>
+      <Carousel
+        slideCount={2}
+        autoplay={true}
+        interval={3000}
+        height="h-[100dvh]"
+      >
+        <div
+          class="absolute inset-0 opacity-100 transition-opacity duration-500 ease-in-out bg-mlc-blue-gradient"
+          data-carousel-slide={"carouselId-1"}
+        >
+          <section
+            class="relative h-[1080px] w-[1750px] flex items-end mx-auto"
+          >
+            <figure class="w-[80%] margin-auto absolute bottom-0">
+              <img src="/src/assets/images/bg-home.png" alt="" />
+            </figure>
+            <section
+              class="absolute top-[27%] right-20 flex flex-col items-end"
+            >
+              <BusinessMlc width="429" height="190" class="" />
+              <section class="course-description">
+                <h2 class="text-[#ACD3FF]">Comunicación</h2>
+                <h2 class="text-[#F7F7F7]">efectiva y liderazgo</h2>
+                <h2 class="text-[#ACD3FF]">internacional</h2>
+              </section>
+              <h3 class="text-white text-[42px]">En tu idioma objetivo</h3>
+              <Button variant="mlc" class="mt-[49px] text-[25px]">
+                <span slot="first-text">Lo quiero</span>
+                <span slot="second-text">¡Cotizar ya!</span>
+              </Button>
+            </section>
+          </section>
+        </div>
+
+        <div
+          class="absolute inset-0 opacity-100 transition-opacity duration-500 ease-in-out bg-green-800"
+          data-carousel-slide={"carouselId-1"}
+        >
+          <section
+            class="relative h-[1080px] w-[1750px] flex items-end mx-auto"
+          >
+            <figure class="w-[80%] margin-auto absolute bottom-0">
+              <img src="/src/assets/images/bg-home.png" alt="" />
+            </figure>
+            <section
+              class="absolute top-[27%] right-20 flex flex-col items-end"
+            >
+              <BusinessMlc width="429" height="190" class="" />
+              <section class="course-description">
+                <h2 class="text-[#ACD3FF]">Comunicación</h2>
+                <h2 class="text-[#F7F7F7]">efectiva y liderazgo</h2>
+                <h2 class="text-[#ACD3FF]">internacional</h2>
+              </section>
+              <h3 class="text-white text-[42px]">En tu idioma objetivo</h3>
+              <Button variant="mlc" class="mt-[49px] text-[25px]">
+                <span slot="first-text">Lo quiero</span>
+                <span slot="second-text">¡Cotizar ya!</span>
+              </Button>
+            </section>
+          </section>
+        </div>
+      </Carousel>
+    </div> -->
+  </section>
+</Layout>
+<!-- <WhatsAppIcon
+width="60"
+height="60"
+class="absolute bottom-[80px] right-[89px] z-50"
+/> -->
+<script>
+  import { initAccordions } from "@/scripts/ui-events/accordion";
+  document.addEventListener("DOMContentLoaded", () => {
+    initAccordions();
+  });
+</script>
+<!-- <footer slot="footer">
+</footer> -->

@@ -1,0 +1,170 @@
+---
+interface Option {
+  value: string;
+  label: string;
+}
+
+interface Props {
+  id?: string;
+  options: Option[];
+  selected?: string;
+  placeholder?: string;
+  class?: string;
+}
+
+const {
+  id = `popover-${Math.random().toString(36).substring(2, 9)}`,
+  options = [],
+  selected = "",
+  placeholder = "Selecciona una opción",
+  class: className,
+} = Astro.props;
+
+const current = options.find((o) => o.value === selected);
+---
+
+<!-- Botón que abre el popover -->
+<button
+  popovertarget={id}
+  id={`btn-${id}`}
+  class:list={["select-button", className]}
+>
+  <span class="label">
+    {current ? current.label : placeholder}
+  </span>
+  <svg
+    class="chevron"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M19 9l-7 7-7-7"></path>
+  </svg>
+</button>
+
+<!-- Popover con opciones -->
+<dialog popover id={id} class="select-menu">
+  {
+    options.map((opt) => (
+      <button type="button" class="select-option" data-value={opt.value}>
+        {opt.label}
+      </button>
+    ))
+  }
+</dialog>
+
+<!-- <script define:vars={{ id }}>
+  const dialog = document.getElementById(id);
+  const btn = document.getElementById(`btn-${id}`);
+
+  if (dialog && btn) {
+    dialog.addEventListener("click", (e) => {
+      const target = e.target;
+      if (target instanceof HTMLButtonElement && target.dataset.value) {
+        btn.querySelector(".label").textContent = target.textContent;
+        btn.dataset.value = target.dataset.value;
+        dialog.hidePopover(); // usar hidePopover() en lugar de close()
+        btn.dispatchEvent(
+          new CustomEvent("change", {
+            detail: { value: target.dataset.value },
+            bubbles: true,
+          })
+        );
+      }
+    });
+  }
+</script> -->
+
+<style>
+  .select-button {
+    padding: 0.5rem 1rem;
+    background: white;
+    /* border: 1px solid #ccc;
+    border-radius: 0.5rem; */
+    cursor: pointer;
+    anchor-name: --select-button;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    min-width: 160px;
+  }
+
+  /* Animación suave del chevron */
+  .chevron {
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: transform 0.3s ease;
+  }
+
+  /* Rotación del chevron cuando el popover está abierto */
+  .select-button:has(+ .select-menu:popover-open) .chevron {
+    transform: rotate(180deg);
+  }
+
+  .select-menu {
+    position: absolute;
+    position-anchor: --select-button;
+    margin: 0;
+    padding: 0.25rem;
+    inset: auto;
+    top: anchor(bottom);
+    right: anchor(right);
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    background: white;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    /* min-width: anchor-size(--select-button width); */
+    min-width: anchor-size(--select-button width);
+
+    /* Estado inicial (cerrado) */
+    opacity: 0;
+    transform: translateY(-10px) scale(0.95);
+
+    /* Transiciones */
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease,
+      display 0.2s ease allow-discrete,
+      overlay 0.2s ease allow-discrete;
+  }
+
+  /* Estado abierto */
+  .select-menu:popover-open {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  /* Animación de salida */
+  @starting-style {
+    .select-menu:popover-open {
+      opacity: 0;
+      transform: translateY(-10px) scale(0.95);
+    }
+  }
+
+  .select-option {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    text-align: left;
+    background: transparent;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+  }
+
+  .select-option:hover {
+    background: #f3f4f6;
+  }
+
+  .select-option:focus {
+    outline: 2px solid #3b82f6;
+    outline-offset: -2px;
+  }
+</style>

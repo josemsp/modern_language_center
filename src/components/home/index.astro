@@ -1,0 +1,89 @@
+---
+import Carousel from "@/components/ui/Carousel.astro";
+import BusinessMlc from "@/assets/icons/business-mlc.svg";
+import ModernBusinessProgram from "@/assets/icons/modern-business-program.svg";
+import Button from "@/components/ui/Button.astro";
+---
+
+<section class="relative bg-mlc-blue-gradient w-full">
+  <div>
+    <Carousel
+      slideCount={2}
+      autoplay={true}
+      interval={3000}
+      height="h-[100dvh]"
+    >
+      <div
+        class:list={[
+          "absolute inset-0 opacity-100 transition-opacity duration-500 ease-in-out bg-mlc-blue-gradient",
+          "md:bg-mlc-blue-gradient",
+        ]}
+        data-carousel-slide={"carouselId-1"}
+      >
+        <section
+          class:list={[
+            "relative h-full",
+            "bg-[url('/src/assets/images/mlc-business.png')] bg-contain bg-no-repeat bg-bottom", // image
+            "flex flex-col pt-[8rem] items-center gap-2",
+          ]}
+        >
+          <!-- <ModernBusinessProgram class="w-[60%] " /> -->
+          <section class="course-description">
+            <h2 class="text-[#ACD3FF] course-title text-[50px]">Comunicación</h2>
+            <h2 class="text-[#F7F7F7] course-title text-[50px]">efectiva y liderazgo</h2>
+            <h2 class="text-[#ACD3FF] course-title text-[50px]">internacional</h2>
+          </section>
+          <span class="course-description w-full text-[30px]">En tu idioma objetivo</span>
+          <Button class="w-[136px] h-[38px] bg-[#081F9E] rounded-[28px]">
+            <span>Lo quiero</span>
+          </Button>
+        </section>
+        <!-- <section
+          class:list={[
+            "relative h-full",
+            "bg-[url('/src/assets/images/mlc-business.png')] bg-contain bg-no-repeat bg-bottom", // image
+            "flex flex-col pt-[8rem] items-center gap-2",
+          ]}
+        >
+          <section class="course-description">
+            <h2 class="text-[#ACD3FF] course-title">Comunicación</h2>
+            <h2 class="text-[#F7F7F7] course-title">efectiva y liderazgo</h2>
+            <h2 class="text-[#ACD3FF] course-title">internacional</h2>
+          </section>
+          <span class="course-description w-full">En tu idioma objetivo</span>
+          <Button class="w-[136px] h-[38px] bg-[#081F9E] rounded-[28px]">
+            <span>Lo quiero</span>
+          </Button>
+        </section> -->
+      </div>
+
+      <!-- <div
+        class="absolute inset-0 opacity-100 transition-opacity duration-500 ease-in-out bg-green-800"
+        data-carousel-slide={"carouselId-1"}
+      >
+        <section
+          class="relative h-[1080px] w-[1750px] flex items-end mx-auto"
+        >
+          <figure class="w-[80%] margin-auto absolute bottom-0">
+            <img src="/src/assets/images/bg-home.png" alt="" />
+          </figure>
+          <section
+            class="absolute top-[27%] right-20 flex flex-col items-end"
+          >
+            <BusinessMlc width="429" height="190" class="" />
+            <section class="course-description">
+              <h2 class="text-[#ACD3FF]">Comunicación</h2>
+              <h2 class="text-[#F7F7F7]">efectiva y liderazgo</h2>
+              <h2 class="text-[#ACD3FF]">internacional</h2>
+            </section>
+            <h3 class="text-white text-[42px]">En tu idioma objetivo</h3>
+            <Button variant="mlc" class="mt-[49px] text-[25px]">
+              <span slot="first-text">Lo quiero</span>
+              <span slot="second-text">¡Cotizar ya!</span>
+            </Button>
+          </section>
+        </section>
+      </div> -->
+    </Carousel>
+  </div>
+</section>

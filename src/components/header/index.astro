@@ -1,7 +1,303 @@
 ---
-import LanguageSelect from "../LanguageSelect.astro";
+import Button from "../ui/Button.astro";
+import mlcLogo from "../../assets/images/mlc-logo.webp";
+import Accordion from "../ui/Accordion.astro";
+import MenuOptions from "../ui/MenuOptions.astro";
+
+const currentUrl = Astro.url;
+const solutionsOptions = [
+  {
+    label: "Recruitment Support",
+    value: "recruitment",
+    url: currentUrl.pathname + "recruitment",
+  },
+  {
+    label: "Credentials",
+    value: "credentials",
+    url: currentUrl.pathname + "credentials",
+  },
+  {
+    label: "Global Immersion",
+    value: "global-immersion",
+    url: currentUrl.pathname + "global-immersion",
+  },
+];
+
+const individualsOptions = [
+  {
+    label: "One on One",
+    value: "one-on-one",
+    url: currentUrl.pathname + "one-on-one",
+  },
+  {
+    label: "Meet",
+    value: "meet",
+    url: currentUrl.pathname + "meet",
+  },
+];
+
+const companiesOptions = [
+  {
+    label: "Business Program",
+    value: "business-program",
+    url: currentUrl.pathname + "business-program",
+  },
+  {
+    label: "Premium",
+    value: "premium",
+    url: currentUrl.pathname + "premium",
+  },
+  {
+    label: "Coaching",
+    value: "coaching",
+    url: currentUrl.pathname + "coaching",
+  },
+];
 ---
 
-<header class="flex justify-between bg-green-800">
-  <LanguageSelect />
+<header class="fixed top-0 left-0 z-[1000] w-full" id="header">
+  <div
+    class:list={[
+      "flex items-center justify-between bg-white shadow-mlc-header max-w-[1750px] mx-auto", // base
+      "header-content px-4 py-1.5 h-[97px]", // xs
+      "lg:rounded-full lg:my-3 lg:h-[78px] lg:px-3 lg:gap-3", // lg
+    ]}
+  >
+    <a
+      href="/"
+      class:list={["logo w-[203px] h-full relative flex items-center", "md:w-[224px]"]}
+    >
+      <div class="absolute left-[-6px]">
+        <img
+          src={mlcLogo.src}
+          alt="Modern Language Center"
+          class="rounded-full w-full"
+        />
+      </div>
+    </a>
+
+    <nav class="nav-desktop hidden gap-4.5 md:w-[80%] md:justify-around lg:flex">
+      <MenuOptions
+        label="Empresas"
+        class={`menu-header text-[22px] tracking-[-0.3px] font-normal ${"xl:text-[30px]"}`}
+      >
+        <ul class="text-[22px] tracking-[-0.3px] font-normal xl:text-[30px]">
+          {
+            companiesOptions.map((option) => (
+              <li>
+                <a href={option.url}>{option.label}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </MenuOptions>
+      <MenuOptions
+        label="Individual"
+        class={`menu-header text-[22px] tracking-[-0.3px] font-normal ${"xl:text-[30px]"}`}
+      >
+        <ul class="text-[22px] tracking-[-0.3px] font-normal xl:text-[30px]">
+          {
+            individualsOptions.map((option) => (
+              <li>
+                <a href={option.url}>{option.label}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </MenuOptions>
+      <MenuOptions
+        label="Soluciones"
+        class={`menu-header text-[22px] tracking-[-0.3px] font-normal ${"xl:text-[30px]"}`}
+      >
+        <ul class="text-[22px] tracking-[-0.3px] font-normal xl:text-[30px]">
+          {
+            solutionsOptions.map((option) => (
+              <li class="">
+                <a href={option.url}>{option.label}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </MenuOptions>
+      <span class="flex items-center">
+        <a
+          href="/about"
+          class:list={[
+            "text-[22px] tracking-[-0.3px] font-normal",
+            "xl:text-[30px] ",
+          ]}
+        >
+          Acerca de
+        </a>
+      </span>
+    </nav>
+
+    <Button
+      label="Teacher Login"
+      class:list={[
+        "hidden bg-mlc-blue-gradient rounded-[calc(16px+30px)] min-w-[200px] h-[55px] text-[22px] font-medium",
+        "lg:flex",
+        "2xl:min-w-[232px]  2xl:text-[30px]",
+      ]}
+      variant="default"
+      size="md"
+      href="/teacher-login"
+    >
+      Teacher Login
+    </Button>
+
+    <button
+      class:list={[
+        "hamburger-btn flex flex-col gap-1 bg-none border-none cursor-pointer p-2",
+        "lg:hidden",
+      ]}
+      id="hamburgerBtn"
+      aria-label="Abrir menú"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
 </header>
+<aside class="aside-menu block lg:hidden" id="asideMenu" aria-hidden="true">
+  <nav class="aside-nav">
+    <Accordion label="Empresas" class="aside-accordion">
+      <ul class="details-list">
+        {
+          companiesOptions.map((option) => (
+            <li>
+              <a href={option.url}>{option.label}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </Accordion>
+    <Accordion label="Individual" class="aside-accordion">
+      <ul class="details-list">
+        {
+          individualsOptions.map((option) => (
+            <li>
+              <a href={option.url}>{option.label}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </Accordion>
+    <Accordion label="Soluciones" class="aside-accordion">
+      <ul class="details-list">
+        {
+          solutionsOptions.map((option) => (
+            <li>
+              <a href={option.url}>{option.label}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </Accordion>
+    <a href="/about" class="aside-nav-link">Acerca de</a>
+  </nav>
+  <Button
+    label="Teacher Login"
+    class="bg-mlc-blue-gradient rounded-[calc(16px+30px)] w-[132px] h-[34px] text-[17px] self-end"
+    variant="default"
+    size="md"
+    href="/teacher-login"
+  >
+    Teacher Login
+  </Button>
+</aside>
+<style>
+  /* mobile */
+  body:has(.aside-menu.active) .header-content {
+    box-shadow: none;
+  }
+
+  .hamburger-btn span {
+    width: 25px;
+    height: 3px;
+    background: #333;
+    transition: 0.3s;
+  }
+
+  /* Aside Menu */
+  .aside-menu {
+    position: fixed;
+    top: 0;
+    right: -105%;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease-in-out;
+    z-index: 999;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .aside-menu.active {
+    right: 0;
+    padding: 2rem;
+  }
+
+  .aside-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 4rem;
+  }
+
+  .details-list {
+    padding-left: 1rem;
+    transition: all 0.3s ease-in-out;
+  }
+  .details-list li a {
+    font-size: 22px;
+    font-weight: var(--font-weight-regular);
+    color: var(--text-header-color) !important;
+    transition: color 0.3s;
+  }
+</style>
+
+<script>
+  // Script para controlar el menú hamburguesa
+  document.addEventListener("DOMContentLoaded", () => {
+    const hamburgerBtn = document.getElementById("hamburgerBtn");
+    const asideMenu = document.getElementById("asideMenu");
+    const closeBtn = document.getElementById("closeBtn");
+
+    function openMenu() {
+      asideMenu?.classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeMenu() {
+      asideMenu?.classList.remove("active");
+      document.body.style.overflow = "";
+    }
+
+    function toggleMenu() {
+      if (asideMenu?.classList.contains("active")) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    }
+
+    // Hacer que el botón funcione como toggle
+    hamburgerBtn?.addEventListener("click", toggleMenu);
+    closeBtn?.addEventListener("click", closeMenu);
+
+    // Cerrar menú al hacer clic en un enlace
+    document.querySelectorAll(".aside-nav a").forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    // Cerrar menú con la tecla Escape
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeMenu();
+    });
+  });
+</script>

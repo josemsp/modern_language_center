@@ -1,0 +1,102 @@
+---
+import { Image } from "astro:assets";
+import Popover from "./Popover.astro";
+
+interface Option {
+  value: string;
+  label: string;
+  icon?: ImageMetadata;
+  url?: string;
+}
+
+interface Props {
+  id: string;
+  options: Option[];
+  current: Option;
+  className?: string;
+}
+
+const {
+  id = "select-" + Math.random(),
+  options,
+  current,
+  className,
+} = Astro.props as Props;
+---
+
+<Popover id={id} triggerClassName={className}>
+  <section
+    slot="trigger"
+    class:list={["group flex items-center gap-2 h-full w-full"]}
+  >
+    {
+      current.icon && (
+        <Image
+          src={current.icon}
+          alt={current.label}
+          width={20}
+          height={20}
+          class="w-5 h-5 rounded pt-1"
+          id="current-icon"
+        />
+      )
+    }
+    <span class="cursor-pointer w-full" id="current-label">
+      {current.label}
+    </span>
+    <!-- <svg
+      class={`w-6 h-6 rotate-on-open`}
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M19 9l-7 7-7-7"></path>
+    </svg> -->
+    <svg
+      class={`w-6 h-6 group-open:rotate-180 transition-transform`}
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M19 9l-7 7-7-7"></path>
+    </svg>
+  </section>
+
+  <ul class="w-max">
+    {
+      options.map((option) => (
+        <li class="flex items-center gap-5 w-full border-none rounded cursor-pointer px-5 py-1.5">
+          {option.icon && (
+            <Image
+              src={option.icon}
+              alt={option.label}
+              width={20}
+              height={20}
+              class="rounded pt-1"
+              id="current-icon"
+            />
+          )}
+          {option.url ? (
+            <a href={option.url} class="pt-2 w-full" id="current-label">
+              {option.label}
+            </a>
+          ) : (
+            <span class="pt-2 w-full" id="current-label">
+              {option.label}
+            </span>
+          )}
+        </li>
+      ))
+    }
+  </ul>
+</Popover>

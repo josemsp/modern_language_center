@@ -2,8 +2,8 @@
 
 /* normal light */
 @font-face {
-  font-family: 'MarselisPro';
-  src: url('/fonts/MarselisPro-Light.woff2') format('woff2');
+  font-family: "MarselisPro";
+  src: url("/fonts/MarselisPro-Light.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -11,8 +11,8 @@
 
 /* normal */
 @font-face {
-  font-family: 'MarselisPro';
-  src: url('/fonts/MarselisPro.woff2') format('woff2');
+  font-family: "MarselisPro";
+  src: url("/fonts/MarselisPro.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -20,8 +20,8 @@
 
 /* normal black */
 @font-face {
-  font-family: 'MarselisPro';
-  src: url('/fonts/MarselisPro-Black.woff2') format('woff2');
+  font-family: "MarselisPro";
+  src: url("/fonts/MarselisPro-Black.woff2") format("woff2");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -29,8 +29,8 @@
 
 /* light italic */
 @font-face {
-  font-family: 'MarselisPro';
-  src: url('/fonts/MarselisPro-LightItalic.woff2') format('woff2');
+  font-family: "MarselisPro";
+  src: url("/fonts/MarselisPro-LightItalic.woff2") format("woff2");
   font-weight: 300;
   font-style: italic;
   font-display: swap;
@@ -38,8 +38,8 @@
 
 /* normal italic */
 @font-face {
-  font-family: 'MarselisPro';
-  src: url('/fonts/MarselisPro-Italic.woff2') format('woff2');
+  font-family: "MarselisPro";
+  src: url("/fonts/MarselisPro-Italic.woff2") format("woff2");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
@@ -47,8 +47,8 @@
 
 /* bold italic */
 @font-face {
-  font-family: 'MarselisPro';
-  src: url('/fonts/MarselisPro-BoldItalic.woff2') format('woff2');
+  font-family: "MarselisPro";
+  src: url("/fonts/MarselisPro-BoldItalic.woff2") format("woff2");
   font-weight: 700;
   font-style: italic;
   font-display: swap;
@@ -56,18 +56,142 @@
 
 /* black italic */
 @font-face {
-  font-family: 'MarselisPro';
-  src: url('/fonts/MarselisPro-BlackItalic.woff2') format('woff2');
+  font-family: "MarselisPro";
+  src: url("/fonts/MarselisPro-BlackItalic.woff2") format("woff2");
   font-weight: 900;
   font-style: italic;
   font-display: swap;
 }
 
+:root {
+  --font-sans: "MarselisPro", sans-serif;
+
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+  /* header */
+  --text-header-color: #2d2d2d;
+}
+
+@theme {
+  --color-mlc-home-light: #008fd9;
+  --color-mlc-home-dark: #003ea0;
+  --color-mlc-header-selected: #0387cb;
+  --color-mlc-header-hover: #ff9a17;
+
+  --shadow-mlc-header: 0px 10px 6px #00000029;
+  --hero-blue: #0d66a9;
+  --color-button-mlc-blue: #015ae7;
+  --color-button-mlc-blue-hover: #008afe;
+}
+
+@layer base {
+  html {
+    scrollbar-gutter: stable;
+  }
+}
+
+@layer utilities {
+  .text-fluid-sm {
+    /* .875rem = 14px, .5vw + 0.875rem = 22px, 1rem = 16px */
+    font-size: clamp(0.875rem, 0.5vw + 0.875rem, 1rem); /* min 14px, max 16px */
+  }
+  .text-fluid-base {
+    /* 1rem = 16px, .5vw + 1rem = 22px, 1.25rem = 20px */
+    font-size: clamp(1rem, 0.5vw + 1rem, 1.25rem); /* min 16px, max 20px */
+  }
+  .text-fluid-lg {
+    /* 1.25rem = 20px, 1vw + 1rem = 22px, 2rem = 32px */
+    font-size: clamp(1.25rem, 1vw + 1rem, 2rem); /* min 20px, max 32px */
+  }
+  .text-fluid-xl {
+    /* 2rem = 32px, 2vw + 1rem = 22px, 3.5rem = 56px */
+    font-size: clamp(2rem, 2vw + 1rem, 3.5rem); /* min 32px, max 56px */
+  }
+
+  .mask-fade-bottom {
+    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  }
+}
+
+@layer components {
+  .course-title {
+    @apply text-[60px] font-bold text-center leading-[1] md:leading-[1.2] tracking-[-2.13px]
+           md:text-[85px] md:text-left;
+  }
+  .course-description {
+    @apply text-white text-[40px] text-center font-normal tracking-[-1px];
+  }
+
+  .bg-mlc-blue-gradient {
+    background: linear-gradient(
+      to right,
+      var(--color-mlc-home-light),
+      var(--color-mlc-home-dark)
+    );
+  }
+
+  /* Header selects: change color on open (selected) */
+  /* Popover sets aria-expanded on [data-trigger], so we target that state */
+  .mlc-header-select[aria-expanded="true"] .group {
+    color: var(--color-mlc-header-selected);
+  }
+  /* Ensure nested label and chevron inherit the selected color */
+  .mlc-header-select[aria-expanded="true"] .group #current-label {
+    color: inherit;
+  }
+  .mlc-header-select[aria-expanded="true"] .group svg {
+    color: inherit;
+    stroke: currentColor;
+  }
+  /* Change color on hover items */
+  .mlc-header-select[aria-expanded="true"] [data-popover-panel] li:hover {
+    color: var(--color-mlc-header-hover);
+  }
+
+  /* home */
+  /* .course-description h2 {
+    font-size: 45px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.2;
+    letter-spacing: -2.13px;
+  } */
+
+  .aside-details summary span,
+  .aside-nav-link,
+  .aside-accordion {
+    font-size: 24px;
+    font-weight: var(--font-weight-bold);
+    color: var(--text-header-color);
+    transition: color 0.3s;
+  }
+
+  /* menu hover */
+  .menu-header:hover {
+    color: var(--color-mlc-header-selected);
+  }
+  /* menu is open */
+  .select-button:has(+ .select-menu:popover-open) {
+    color: var(--color-mlc-header-selected);
+  }
+  .select-menu:popover-open a {
+    display: flex;
+    transition: color 0.3s;
+  }
+  .select-menu:popover-open a:hover {
+    color: var(--color-mlc-header-hover);
+  }
+}
+
 html {
-  font-family: 'MarselisPro', sans-serif;
+  font-family: var(--font-sans);
   /* text-transform: uppercase; */
   /* -webkit-font-smoothing: antialiased; */
   /* -moz-osx-font-smoothing: grayscale; */
   text-rendering: optimizeLegibility;
-  background-color: darkslategrey;
+  background: linear-gradient(
+    to right,
+    var(--color-mlc-home-light),
+    var(--color-mlc-home-dark)
+  );
 }

@@ -1,0 +1,103 @@
+---
+interface Props {
+  label: string;
+  class?: string;
+}
+const { label, class: className } = Astro.props;
+---
+<details class={`mlc-details group ${className || ''}`}>
+  <summary class="flex cursor-pointer">
+    <span class="w-full select-none">
+      {label}
+    </span>
+    <svg
+      class="w-6 h-6 transform-gpu origin-center transition-transform duration-300 ease-in-out group-open:rotate-180"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M19 9l-7 7-7-7"></path>
+    </svg>
+  </summary>
+  
+  <div class="content-wrapper">
+    <div class="content-inner">
+      <slot />
+    </div>
+  </div>
+</details>
+
+<style>
+  .mlc-details summary {
+    list-style: none;
+  }
+  
+  .mlc-details summary::-webkit-details-marker {
+    display: none;
+  }
+  
+  .content-wrapper {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease-in-out;
+  }
+  
+  .mlc-details[open] .content-wrapper {
+    grid-template-rows: 1fr;
+  }
+  
+  .content-inner {
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: opacity 0.2s ease-in-out 0.1s, transform 0.2s ease-in-out 0.1s;
+  }
+  
+  .mlc-details[open] .content-inner {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<!-- ---
+interface Props {
+  label: string;
+  class?: string;
+}
+
+const { label, class: className } = Astro.props;
+---
+
+<details class={`mlc-details group ${className || ''}`}>
+  <summary class="flex">
+    <span class="cursor-pointer w-full">
+      {label}
+    </span>
+    <svg
+      class={`w-6 h-6 transform-gpu origin-center transition-transform duration-500 ease-in-out group-open:rotate-180`}
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M19 9l-7 7-7-7"></path>
+    </svg>
+  </summary>
+  <div class="transform-gpu grid transition-[grid-template-rows] duration-500 ease-in-out [grid-template-rows:0fr] group-open:[grid-template-rows:1fr]">
+    <div class="overflow-hidden transition-all duration-500 ease-in-out opacity-0 translate-y-1 group-open:opacity-100 group-open:translate-y-0">
+      <slot />
+    </div>
+  </div>
+</details>
+<style>
+  details summary {
+    
+  }
+</style> -->

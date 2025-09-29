@@ -1,0 +1,32 @@
+---
+interface Props {
+  id?: string;
+  triggerClassName?: string;
+}
+
+const { id, triggerClassName } = Astro.props;
+
+// Add client-side interactivity
+const popoverId = id || `popover-${Math.random().toString(36).substring(2, 9)}`;
+---
+
+<div
+  class="popover relative inline-block"
+  id={popoverId}
+  data-popover="popover"
+>
+  <section data-trigger class:list={["", triggerClassName]}>
+    <slot name="trigger" />
+    <div
+      class="absolute z-50 mt-2 w-fit rounded-lg shadow-lg border border-gray-200 bg-white transform opacity-0 scale-95 transition-all duration-150 origin-top"
+      role="dialog"
+      aria-modal="false"
+      data-popover-panel={popoverId}
+      hidden
+    >
+      <div class="">
+        <slot />
+      </div>
+    </div>
+  </section>
+</div>

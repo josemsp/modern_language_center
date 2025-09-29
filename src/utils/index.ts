@@ -1,5 +1,16 @@
+/**
+ * Updates the value of the select dropdown.
+ * 
+ * @param selector - The CSS selector for the select dropdown.
+ * @param value - The value to be selected.
+ * 
+ * @example
+ * updateSelectValue("#lang-select", "en");
+ */
+export const updateSelectValue = (selector: string, value: string) => {
+  const select = document.querySelector(selector);
+  if (!select) return;
 
-export const updateSelectValue = (select: Element, value: string) => {
   const option = Array.from(
     select.querySelectorAll<HTMLLIElement>("li")
   ).find((li: HTMLLIElement) => li.getAttribute("data-value") === value);
@@ -19,8 +30,21 @@ export const updateSelectValue = (select: Element, value: string) => {
   }
 };
 
-export const addEventToSelect = (select: Element, callback: (value: string) => void) => {
-  select.querySelectorAll("li").forEach((item) => {
+/**
+ * Adds event listeners to the select dropdown.
+ * 
+ * @param selector - The CSS selector for the select dropdown.
+ * @param callback - The callback function to be called when a value is selected.
+ * 
+ * @example
+ * addEventToSelect("#lang-select", (value) => {
+ *   console.log(value);
+ * });
+ */
+export const addEventToSelect = (selector: string, callback: (value: string) => void) => {
+  const select = document.querySelector(selector);
+
+  select?.querySelectorAll("li").forEach((item) => {
     item.addEventListener("click", (e) => {
       e.preventDefault();
       const newLang = item.getAttribute("data-value");
@@ -30,8 +54,6 @@ export const addEventToSelect = (select: Element, callback: (value: string) => v
       select.querySelector("details")?.removeAttribute("open");
 
       callback(newLang);
-      // $lang.set(newLang);
-      // window.location.href = `/${newLang}/`;
     });
   });
 };

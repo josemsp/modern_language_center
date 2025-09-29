@@ -1,0 +1,76 @@
+---
+interface Props {
+  label: string;
+  class?: string;
+}
+const { label, class: className } = Astro.props;
+---
+
+<div class="css-accordion">
+  <input type="checkbox" id="accordion-css" class="hidden" />
+  <label
+    for="accordion-css"
+    class="accordion-label flex justify-between items-center w-full px-4 py-3 cursor-pointer bg-gray-50 hover:bg-gray-100 transition-colors rounded-lg border border-gray-200"
+  >
+    <span class="font-medium">{label}</span>
+    <svg
+      class="accordion-arrow w-6 h-6 transform transition-transform duration-300"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M19 9l-7 7-7-7"></path>
+    </svg>
+  </label>
+  <div class="accordion-panel">
+    <div class="accordion-panel-content">
+      <p>
+        Esta versión usa solo CSS con el "checkbox hack". No requiere JavaScript
+        y es muy eficiente.
+      </p>
+      <p class="mt-2">
+        La animación es suave y funciona perfectamente en todos los navegadores
+        modernos.
+      </p>
+    </div>
+  </div>
+</div>
+<style>
+  /* Estilos para Opción 2: CSS Accordion */
+  .css-accordion input:checked + .accordion-label .accordion-arrow {
+    transform: rotate(180deg);
+  }
+
+  .accordion-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+  }
+
+  .css-accordion input:checked + .accordion-label + .accordion-panel {
+    max-height: 500px; /* Ajusta según tu contenido */
+  }
+
+  .accordion-panel-content {
+    padding: 1rem;
+    border-top: 1px solid #e5e7eb;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition:
+      opacity 0.2s ease-in-out 0.1s,
+      transform 0.2s ease-in-out 0.1s;
+  }
+
+  .css-accordion
+    input:checked
+    + .accordion-label
+    + .accordion-panel
+    .accordion-panel-content {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>

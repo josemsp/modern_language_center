@@ -1,0 +1,92 @@
+---
+import { Image } from "astro:assets";
+import Popover from "./Popover.astro";
+import esFlag from "@/assets/flags/es.svg";
+import enFlag from "@/assets/flags/gb.svg";
+
+// Initialize with current language
+const currentUrl = new URL(Astro.url);
+// const currentLang = getLangFromUrl(currentUrl);
+
+// Define the language options
+const languageOptions = [
+  {
+    value: "es",
+    label: "Es",
+    icon: esFlag,
+  },
+  {
+    value: "en",
+    label: "En",
+    icon: enFlag,
+  },
+];
+
+// Find the current language option
+// const currentOption =
+//   languageOptions.find((opt) => opt.value === currentLang) ||
+//   languageOptions[0];
+---
+
+<Popover buttonText="Idiomas" id="language-select">
+  <section
+    slot="trigger"
+    data-trigger
+    class="group flex items-center gap-2 h-full w-full"
+  >
+    <!-- <Image
+      src={currentOption.icon}
+      alt={currentOption.label}
+      width={20}
+      height={20}
+      class="w-5 h-5 rounded pt-1"
+      id="current-icon"
+    /> -->
+    <span class="text-3xl pt-2" id="current-label">
+      <!-- {currentOption.label} -->
+    </span>
+
+    <svg
+      class="w-4 h-4 text-gray-500 group-open:rotate-180 transition-transform"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M19 9l-7 7-7-7"></path>
+    </svg>
+  </section>
+
+  <ul class="w-[130px]">
+    {
+      languageOptions.map((option) => (
+        <li class="grid grid-cols-[20px_1fr] items-center gap-5 w-full hover:bg-gray-200 border-none rounded cursor-pointer px-5 py-1.5">
+          <Image
+            src={option.icon}
+            alt={option.label}
+            width={20}
+            height={20}
+            class="rounded pt-1"
+            id="current-icon"
+          />
+          <span class="text-3xl pt-2 w-full" id="current-label">
+            {option.label}
+          </span>
+        </li>
+      ))
+    }
+  </ul>
+</Popover>
+
+<script>
+  const select = document.querySelector("#language-select");
+
+  const btn = select?.querySelector("[data-popover-button]");
+  select?.addEventListener("click", () => {
+    // btn?.click();
+  });
+</script>

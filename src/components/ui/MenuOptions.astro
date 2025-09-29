@@ -1,0 +1,83 @@
+---
+interface Props {
+  id?: string;
+  label: string;
+  class?: string;
+}
+
+const {
+  id = `popover-${crypto.randomUUID()}`,
+  label,
+  class: className,
+} = Astro.props;
+---
+
+<button
+  popovertarget={id}
+  id={`btn-${id}`}
+  class:list={["select-button", className]}
+  aria-haspopup="dialog"
+>
+  <span class="label">{label}</span>
+  <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M19 9l-7 7-7-7"></path>
+  </svg>
+</button>
+
+<dialog popover id={id} class="select-menu">
+  <slot />
+</dialog>
+
+<style>
+  .select-button {
+    /* padding: 0.5rem 1rem; */
+    background: white;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.25rem;
+    /* min-width: 160px; */
+  }
+
+  /* popover uses implicit anchor (button) — no anchor-name/position-anchor necesario */
+  .select-menu {
+    position: absolute;
+    margin: 0;
+    padding: 0.5rem 1.5rem;
+    top: anchor(bottom); /* usa el anchor implícito del popover */
+    left: anchor(left);
+    min-width: anchor-size(width);
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    background: white;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+
+    opacity: 0;
+    transform: translateY(-10px) scale(0.95);
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .select-menu:popover-open {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  /* Animación suave del chevron */
+  .chevron {
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: transform 0.3s ease;
+  }
+
+  /* Rotación del chevron cuando el popover está abierto */
+  .select-button:has(+ .select-menu:popover-open) .chevron {
+    transform: rotate(180deg);
+  }
+</style>

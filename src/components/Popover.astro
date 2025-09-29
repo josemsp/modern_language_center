@@ -1,0 +1,123 @@
+---
+/**
+ * Popover.astro
+ * Uso: <Popover buttonText="Opciones">Contenido del popover aquí</Popover>
+ */
+
+interface Props {
+  id?: string;
+  buttonText: string;
+  placement?: "top" | "bottom" | "left" | "right";
+}
+
+const { id, placement = "bottom" } = Astro.props;
+
+// Add client-side interactivity
+const popoverId = id || `popover-${Math.random().toString(36).substring(2, 9)}`;
+---
+
+<div
+  class="popover relative inline-block"
+  id={popoverId}
+  data-popover="popover"
+>
+  <section data-trigger>
+    <slot name="trigger" />
+  </section>
+  <!-- Botón del popover -->
+  <!-- <button
+    type="button"
+    class="inline-flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 bg-white border"
+    aria-haspopup="dialog"
+    aria-expanded="false"
+    data-popover-button={popoverId}
+  >
+    {buttonText}
+    <svg
+      class="w-4 h-4"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"
+        clip-rule="evenodd"></path>
+    </svg>
+  </button> -->
+
+  <!-- Panel del popover -->
+  <div
+    class="absolute z-50 mt-2 w-fit rounded-lg shadow-lg border border-gray-200 bg-white transform opacity-0 scale-95 transition-all duration-150 origin-top"
+    role="dialog"
+    aria-modal="false"
+    data-popover-panel={popoverId}
+    hidden
+  >
+    <div class="">
+      <!-- slot para contenido -->
+      <slot />
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const root = document.querySelector("[data-popover]");
+    if (!root) return;
+
+    // const btn = root.querySelector(`[data-popover-button]`);
+    const btn = root.querySelector(`[data-trigger]`);
+    const panel = root.querySelector(`[data-popover-panel]`);
+
+    if (!btn || !panel) return;
+
+    // State
+    let open = false;
+
+    // Funciones de UI
+    function openPopover() {
+      open = true;
+      btn.setAttribute("aria-expanded", "true");
+      panel.hidden = false;
+      requestAnimationFrame(() => {
+        panel.classList.remove("opacity-0", "scale-95");
+        panel.classList.add("opacity-100", "scale-100");
+      });
+    }
+
+    function closePopover(returnFocus = true) {
+      open = false;
+      btn.setAttribute("aria-expanded", "false");
+      panel.classList.remove("opacity-100", "scale-100");
+      panel.classList.add("opacity-0", "scale-95");
+      setTimeout(() => {
+        if (!open) panel.hidden = true;
+      }, 150);
+      if (returnFocus) btn.focus();
+    }
+
+    // Toggle
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      open ? closePopover() : openPopover();
+    });
+
+    // Click fuera -> cerrar
+    document.addEventListener("click", (e) => {
+      if (!root.contains(e.target)) closePopover(false);
+    });
+
+    // Escape -> cerrar
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && open) {
+        closePopover();
+      }
+    });
+
+    // Mantener comportamiento si el panel tiene controles (evitar cierre al hacer click dentro)
+    panel.addEventListener("click", (e) => {
+      e.stopPropagation();
+    });
+  });
+</script>
