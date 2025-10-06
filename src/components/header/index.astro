@@ -55,12 +55,13 @@ const companiesOptions = [
 ];
 ---
 
-<header class="fixed top-0 left-0 z-[1000] w-full" id="header">
-  <div
+<div class="fixed inset-0 z-[1000] h-fit" id="header">
+  <header
     class:list={[
-      "flex items-center justify-between bg-white shadow-mlc-header max-w-[1750px] mx-auto", // base
-      "header-content px-4 py-1.5 h-[97px]", // xs
-      "lg:rounded-full lg:my-3 lg:h-[78px] lg:px-3 lg:gap-3", // lg
+      // "sticky inset-0 z-[1000]",
+      "flex items-center justify-between bg-white shadow-mlc-mobile-header max-w-[1750px] mx-auto", // base
+      "header-content px-4 py-1.5 h-[80px]", // xs
+      "lg:rounded-full lg:my-3 lg:h-[80px] lg:px-3 lg:gap-3 lg:shadow-mlc-header", // lg
     ]}
   >
     <a
@@ -158,8 +159,8 @@ const companiesOptions = [
       <span></span>
       <span></span>
     </button>
-  </div>
-</header>
+  </header>
+</div>
 <aside class="aside-menu block lg:hidden" id="asideMenu" aria-hidden="true">
   <nav class="aside-nav">
     <Accordion label="Empresas" class="aside-accordion">

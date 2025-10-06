@@ -107,7 +107,7 @@ const Tag = isLink ? "a" : "button";
     position: absolute;
     left: 0;
     top: 0;
-    transition: left 0.7s ease;
+    transition: left .6s ease;
     background: var(--color-button-mlc-blue, #1d4ed8);
     display: flex;
     justify-content: center;
@@ -126,7 +126,7 @@ const Tag = isLink ? "a" : "button";
     justify-content: center;
     align-items: center;
     transform: scale(0);
-    transition: transform 0.7s ease-in-out;
+    transition: transform .3s ease-in-out;
   }
 
   .btn-mlc-special:hover .text-secondary {
@@ -143,7 +143,7 @@ const Tag = isLink ? "a" : "button";
   @media (prefers-reduced-motion: reduce) {
     .btn-mlc-special,
     .btn-mlc-special * {
-      transition-duration: 0.01ms !important;
+      transition-duration: 0.05ms !important;
     }
   }
 </style>

@@ -78,10 +78,13 @@
   --color-mlc-header-selected: #0387cb;
   --color-mlc-header-hover: #ff9a17;
 
+  --shadow-mlc-mobile-header: 0px 3px 6px #00000029;
   --shadow-mlc-header: 0px 10px 6px #00000029;
   --hero-blue: #0d66a9;
   --color-button-mlc-blue: #015ae7;
   --color-button-mlc-blue-hover: #008afe;
+
+  --breakpoint-xs: 375px;
 }
 
 @layer base {
@@ -115,11 +118,11 @@
 
 @layer components {
   .course-title {
-    @apply text-[60px] font-bold text-center leading-[1] md:leading-[1.2] tracking-[-2.13px]
-           md:text-[85px] md:text-left;
+    @apply font-bold leading-[1] lg:leading-[1.2] tracking-[-2.13px]
+           2xl:text-[85px] lg:text-left;
   }
   .course-description {
-    @apply text-white text-[40px] text-center font-normal tracking-[-1px];
+    @apply text-white text-[30px] font-normal tracking-[-1px] relative z-10 lg:text-[45px];
   }
 
   .bg-mlc-blue-gradient {
@@ -189,9 +192,9 @@ html {
   /* -webkit-font-smoothing: antialiased; */
   /* -moz-osx-font-smoothing: grayscale; */
   text-rendering: optimizeLegibility;
-  background: linear-gradient(
+  /* background: linear-gradient(
     to right,
     var(--color-mlc-home-light),
     var(--color-mlc-home-dark)
-  );
+  ); */
 }

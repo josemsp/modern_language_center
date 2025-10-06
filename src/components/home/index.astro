@@ -2,12 +2,94 @@
 import Carousel from "@/components/ui/Carousel.astro";
 import BusinessMlc from "@/assets/icons/business-mlc.svg";
 import ModernBusinessProgram from "@/assets/icons/modern-business-program.svg";
+import MlcBusiness from "@/assets/images/mlc-business.png";
 import Button from "@/components/ui/Button.astro";
 ---
 
-<section class="relative bg-mlc-blue-gradient w-full">
-  <div>
-    <Carousel
+<section class="relative bg-mlc-blue-gradient w-full overflow-clip">
+  <div
+    class="jumbotron mx-auto max-w-[1750px] h-auto lg:h-fit pt-[80px] lg:pt-[95px]"
+    id="mainContent"
+  >
+
+    <section
+      class:list={[
+        "grid grid-cols-6 grid-rows-[350px_250px] mb-0 px-5 pt-0 h-full",
+        " lg:grid-rows-[700px]",
+        "lg:grid-cols-12 xl:grid-rows-[850px]",
+      ]}
+    >
+      <div class:list={["flex items-center col-span-6 z-10", "lg:col-span-9"]}>
+        <div
+          class:list={[
+            "w-full text-center text-[50px] flex flex-col items-center justify-center",
+            "md:text-[65px] md:pt-0", // => 768px
+            "lg:items-start lg:justify-end ", // => 1024px
+          ]}
+        >
+          <h1 class="text-[#ACD3FF] course-title">Comunicación</h1>
+          <h1 class="text-[#F7F7F7] max-w-[250px] md:max-w-[100%] course-title">
+            efectiva y liderazgo
+          </h1>
+          <h1 class="text-[#ACD3FF] course-title">internacional</h1>
+          <span class="course-description mt-1">En tu idioma objetivo</span>
+          <Button
+            variant="mlc"
+            class="w-[136px] h-[38px] mt-6 md:w-[200px] md:h-[56px] bg-[#081F9E] rounded-[28px] text-[20px] md:text-[25px]"
+          >
+            <span>Lo quiero</span>
+          </Button>
+        </div>
+      </div>
+
+      <div
+        class:list={[
+          "hero-img relative col-span-6 lg:col-span-3",
+          "w-[140%]",
+          "xs:w-[100%] xs:flex xs:justify-center", // => 375px
+          "sm:w-[100%]", // => 640px
+          "lg:w-[400%]", // => 768px
+        ]}
+      >
+        <div
+          class:list={[
+            "relative h-full w-full xs:w-[450px] md:w-[450px] ",
+            "lg:w-[1000px]",
+            "xl:w-[1500px]",
+          ]}
+        >
+          <img
+            class:list={[
+              "absolute",
+              "bottom-0 h-auto max-w-[450px]",
+              "transform translate-x-[-20%] translate-y-0",
+              "xs:translate-x-[-10%]", // => 375px
+              "sm:translate-x-[-5%]", // => 640px
+              "md:translate-x-0 md:max-w-full", // => 768px
+              "lg:translate-x-[-83%] lg:translate-y-[-52%] lg:left-[27%] lg:top-[69%]", // => 1024px
+              "xl:translate-x-[-96%] lg:translate-y-[-61%] lg:left-[27%] lg:top-[69%] xl:max-w-[1200px]", // => 1024px
+              "2xl:translate-x-[-100%]", // => 1024px
+            ]}
+            width="1584"
+            height="1288"
+            data-src={MlcBusiness.src}
+            role="presentation"
+            src={MlcBusiness.src}
+          />
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <style>
+    .grid-wrapper {
+      display: grid;
+      margin-bottom: 32px;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+  </style>
+
+  <!-- <Carousel
       slideCount={2}
       autoplay={true}
       interval={3000}
@@ -22,68 +104,55 @@ import Button from "@/components/ui/Button.astro";
       >
         <section
           class:list={[
-            "relative h-full",
-            "bg-[url('/src/assets/images/mlc-business.png')] bg-contain bg-no-repeat bg-bottom", // image
-            "flex flex-col pt-[8rem] items-center gap-2",
+            "relative text-white h-full pt-[8rem] flex flex-col items-center gap-2 max-w-[1750px] mx-auto",
           ]}
         >
-          <!-- <ModernBusinessProgram class="w-[60%] " /> -->
-          <section class="course-description">
-            <h2 class="text-[#ACD3FF] course-title text-[50px]">Comunicación</h2>
-            <h2 class="text-[#F7F7F7] course-title text-[50px]">efectiva y liderazgo</h2>
-            <h2 class="text-[#ACD3FF] course-title text-[50px]">internacional</h2>
-          </section>
-          <span class="course-description w-full text-[30px]">En tu idioma objetivo</span>
-          <Button class="w-[136px] h-[38px] bg-[#081F9E] rounded-[28px]">
-            <span>Lo quiero</span>
-          </Button>
-        </section>
-        <!-- <section
-          class:list={[
-            "relative h-full",
-            "bg-[url('/src/assets/images/mlc-business.png')] bg-contain bg-no-repeat bg-bottom", // image
-            "flex flex-col pt-[8rem] items-center gap-2",
-          ]}
-        >
-          <section class="course-description">
-            <h2 class="text-[#ACD3FF] course-title">Comunicación</h2>
-            <h2 class="text-[#F7F7F7] course-title">efectiva y liderazgo</h2>
-            <h2 class="text-[#ACD3FF] course-title">internacional</h2>
+          <section class="">
+            <h1 class="text-[#ACD3FF] course-title">Comunicación</h1>
+            <h1 class="text-[#F7F7F7] course-title">efectiva y liderazgo</h1>
+            <h1 class="text-[#ACD3FF] course-title">internacional</h1>
           </section>
           <span class="course-description w-full">En tu idioma objetivo</span>
+          <Button
+            class="w-[136px] h-[38px] md:w-[200px] md:h-[56px] bg-[#081F9E] rounded-[28px] text-[20px] md:text-[25px]"
+          >
+            <span>Lo quiero</span>
+          </Button>
+
+          <div
+            class:list={[
+              "absolute bottom-0 left-0 w-full h-56 bg-no-repeat bg-contain bg-bottom bg-[url('/src/assets/images/mlc-business.png')]", // mobile
+              " lg:w-[90%] lg:left-auto lg:right-[-7%] ", // desktop
+            ]}
+          >
+          </div>
+        </section>
+
+        <section
+          class:list={[
+            "relative h-full",
+            "flex flex-col pt-[8rem] items-center gap-2",
+          ]}
+        >
+          <section class="course-description">
+            <h2 class="text-[#ACD3FF] course-title text-[50px]">
+              Comunicación
+            </h2>
+            <h2 class="text-[#F7F7F7] course-title text-[50px]">
+              efectiva y liderazgo
+            </h2>
+            <h2 class="text-[#ACD3FF] course-title text-[50px]">
+              internacional
+            </h2>
+          </section>
+          <span class="course-description w-full text-[30px]"
+            >En tu idioma objetivo</span
+          >
           <Button class="w-[136px] h-[38px] bg-[#081F9E] rounded-[28px]">
             <span>Lo quiero</span>
           </Button>
-        </section> -->
+        </section>
       </div>
 
-      <!-- <div
-        class="absolute inset-0 opacity-100 transition-opacity duration-500 ease-in-out bg-green-800"
-        data-carousel-slide={"carouselId-1"}
-      >
-        <section
-          class="relative h-[1080px] w-[1750px] flex items-end mx-auto"
-        >
-          <figure class="w-[80%] margin-auto absolute bottom-0">
-            <img src="/src/assets/images/bg-home.png" alt="" />
-          </figure>
-          <section
-            class="absolute top-[27%] right-20 flex flex-col items-end"
-          >
-            <BusinessMlc width="429" height="190" class="" />
-            <section class="course-description">
-              <h2 class="text-[#ACD3FF]">Comunicación</h2>
-              <h2 class="text-[#F7F7F7]">efectiva y liderazgo</h2>
-              <h2 class="text-[#ACD3FF]">internacional</h2>
-            </section>
-            <h3 class="text-white text-[42px]">En tu idioma objetivo</h3>
-            <Button variant="mlc" class="mt-[49px] text-[25px]">
-              <span slot="first-text">Lo quiero</span>
-              <span slot="second-text">¡Cotizar ya!</span>
-            </Button>
-          </section>
-        </section>
-      </div> -->
-    </Carousel>
-  </div>
+    </Carousel> -->
 </section>
