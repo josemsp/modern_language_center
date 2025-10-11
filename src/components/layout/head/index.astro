@@ -1,6 +1,7 @@
 ---
 import Fonts from './Fonts.astro';
 import BaseSeo from './BaseSeo.astro';
+import { ENV } from '@/config/env';
 
 interface Props {
   title: string;
@@ -13,7 +14,7 @@ const { title, description } = Astro.props;
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="icon" type="image/png" href={ENV.BASE_PATH + "favicon.png"} />
   <title>{title}</title>
 
   <Fonts />
