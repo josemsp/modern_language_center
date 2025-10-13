@@ -18,7 +18,7 @@ const {
   class:list={["select-button", className]}
   aria-haspopup="dialog"
 >
-  <span class="label">{label}</span>
+  <span class="select-label">{label}</span>
   <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor">
     <path
       stroke-linecap="round"
@@ -46,10 +46,10 @@ const {
 
   /* popover uses implicit anchor (button) — no anchor-name/position-anchor necesario */
   .select-menu {
-    position: absolute;
+    position: fixed;
     margin: 0;
     padding: 0.5rem 1.5rem;
-    top: anchor(bottom); /* usa el anchor implícito del popover */
+    top: anchor(bottom);
     left: anchor(left);
     min-width: anchor-size(width);
     border: 1px solid #ccc;

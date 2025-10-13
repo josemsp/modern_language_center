@@ -1,0 +1,123 @@
+---
+import BMW from "@/assets/icons/clients/BMW.svg";
+import FEDEFUT from "@/assets/icons/clients/FEDERACION FUTBOL.svg";
+import GrupoSalinas from "@/assets/icons/clients/GRUPO SALINAS.svg";
+import LasBrisas from "@/assets/icons/clients/LAS BRISAS.svg";
+import LINDT from "@/assets/icons/clients/LINDT.svg";
+import MCCANN from "@/assets/icons/clients/MCCANN.svg";
+import MEDICA from "@/assets/icons/clients/MEDICA.svg";
+import PEPSICO from "@/assets/icons/clients/PEPSI.svg";
+import STEELAUDER from "@/assets/icons/clients/STEE LAUDER.svg";
+import TVAZTECA from "@/assets/icons/clients/TV AZTECA.svg";
+import WARNERMUSIC from "@/assets/icons/clients/WARNER MUSIC.svg";
+---
+
+<div class="marquee mt-10">
+  <ul class="marquee__content">
+    <li class="marquee__item">
+      <BMW class="w-[92px] h-[92px]" />
+    </li>
+    <li class="marquee__item">
+      <FEDEFUT class="w-[75px] h-[92px]" />
+    </li>
+    <li class="marquee__item">
+      <GrupoSalinas class="w-[126px] h-[92px]" />
+    </li>
+    <li class="marquee__item">
+      <LasBrisas class="w-[300px] h-[92px]" />
+    </li>
+    <li class="marquee__item">
+      <LINDT class="w-[291px] h-[92px]" />
+    </li>
+    <li class="marquee__item">
+      <MCCANN class="w-[197px] h-[92px]" />
+    </li>
+    <li class="marquee__item">
+      <MEDICA class="w-[374px] h-[92px]" />
+    </li>
+    <li class="marquee__item">
+      <PEPSICO class="w-[91px] h-[92px]" />
+    </li>
+    <li class="marquee__item">
+      <STEELAUDER class="w-[345px] h-[92px]" />
+    </li>
+    <li class="marquee__item">
+      <TVAZTECA class="w-[114px] h-[92px]" />
+    </li>
+    <li class="marquee__item">
+      <WARNERMUSIC class="w-[219px] h-[92px]" />
+    </li>
+
+    <li class="marquee__item">
+      <BMW class="w-[92px] h-[92px]" />
+    </li>
+    <li class="marquee__item">
+      <FEDEFUT class="w-[75px] h-[92px]" />
+    </li>
+    <li class="marquee__item">
+      <GrupoSalinas class="w-[126px] h-[92px]" />
+    </li>
+    <li class="marquee__item">
+      <LasBrisas class="w-[300px] h-[92px]" />
+    </li>
+    <li class="marquee__item">
+      <LINDT class="w-[291px] h-[92px]" />
+    </li>
+    <li class="marquee__item">
+      <MCCANN class="w-[197px] h-[92px]" />
+    </li>
+    <li class="marquee__item">
+      <MEDICA class="w-[374px] h-[92px]" />
+    </li>
+    <li class="marquee__item">
+      <PEPSICO class="w-[91px] h-[92px]" />
+    </li>
+    <li class="marquee__item">
+      <STEELAUDER class="w-[345px] h-[92px]" />
+    </li>
+    <li class="marquee__item">
+      <TVAZTECA class="w-[114px] h-[92px]" />
+    </li>
+    <li class="marquee__item">
+      <WARNERMUSIC class="w-[219px] h-[92px]" />
+    </li>
+  </ul>
+</div>
+<style>
+  .marquee {
+    width: 100%;
+    height: 92px;
+    overflow: hidden;
+  }
+
+  .marquee li {
+    font-size: 50px;
+  }
+
+  .marquee__content {
+    display: flex;
+    list-style: none;
+    animation: scrolling 30s linear infinite;
+    width: max-content;
+  }
+
+  /* .marquee__content:hover {
+    animation-play-state: paused;
+  } */
+
+  .marquee__item {
+    flex-shrink: 0;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+  }
+
+  @keyframes scrolling {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+</style>

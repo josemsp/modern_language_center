@@ -1,9 +1,11 @@
 ---
 import Carousel from "@/components/ui/Carousel.astro";
-import BusinessMlc from "@/assets/icons/business-mlc.svg";
+import BusinessMlc from "@/assets/icons/mlc-business.svg";
 import ModernBusinessProgram from "@/assets/icons/modern-business-program.svg";
 import MlcBusiness from "@/assets/images/mlc-business.png";
 import Button from "@/components/ui/Button.astro";
+import Plans from "./Plans.astro";
+import ClientCompanies from "./ClientCompanies.astro";
 ---
 
 <section class="relative bg-mlc-blue-gradient w-full overflow-clip">
@@ -11,7 +13,6 @@ import Button from "@/components/ui/Button.astro";
     class="jumbotron mx-auto max-w-[1750px] h-auto lg:h-fit pt-[80px] lg:pt-[95px]"
     id="mainContent"
   >
-
     <section
       class:list={[
         "grid grid-cols-6 grid-rows-[350px_250px] mb-0 px-5 pt-0 h-full",
@@ -81,13 +82,23 @@ import Button from "@/components/ui/Button.astro";
     </section>
   </div>
 
-  <style>
-    .grid-wrapper {
-      display: grid;
-      margin-bottom: 32px;
-      grid-template-columns: repeat(6, minmax(0, 1fr));
-    }
-  </style>
+  <section class="bg-[#E4E4E4]">
+    <Plans />
+    <section class="pt-32 pb-24 flex flex-col items-center">
+      <h2 class="subtitle w-[292px] text-center">
+        Historias de éxito con nosotros
+      </h2>
+      <ClientCompanies />
+    </section>
+  </section>
+
+  <section class="pt-8 pb-24 flex flex-col items-center gap-5">
+    <h2 class="subtitle text-white w-[292px] text-center">
+      ¿Cómo podemos ayudarte?
+    </h2>
+    <p class="text-white text-xl text-center">¡Preparemos tu solución lingüística personalizada ahora!</p>
+    <Button class="btn-mlc text-xl w-40 font-bold">Contáctanos</Button>
+  </section>
 
   <!-- <Carousel
       slideCount={2}

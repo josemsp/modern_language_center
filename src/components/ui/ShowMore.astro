@@ -1,0 +1,77 @@
+---
+---
+
+<div class="show-more-content">
+  <input type="checkbox" id="show-more" class="show-more-checkbox" />
+
+  <div class="hidden-content">
+    <slot />
+  </div>
+  <div class="fade-effect" />
+  <label for="show-more" class="btn-show-more" />
+</div>
+
+<style>
+  .show-more-content {
+    position: relative;
+    max-width: 340px;
+    margin: 0 auto;
+    background: #fff;
+    padding-bottom: 20px;
+    border-radius: 0 0 18px 18px;
+    overflow: hidden;
+  }
+
+  .show-more-checkbox {
+    display: none;
+  }
+
+  .hidden-content {
+    max-height: 75px;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 1.04rem;
+    color: #5b6780;
+    padding-top: 10px;
+  }
+
+  .fade-effect {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 46px;
+    height: 60px;
+    background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 229, 0, 0) 100%
+    );
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+
+  .btn-show-more {
+    display: block;
+    font-size: clamp(20px, 1.5vw, 1.13rem);
+    background: none;
+    border: none;
+    color: #232323;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  .btn-show-more::after {
+    content: "Mostrar más";
+  }
+  .show-more-checkbox:checked ~ .hidden-content {
+    max-height: max-content;
+    /* max-height: 300px; */ /* Adjust to your content */
+  }
+  .show-more-checkbox:checked ~ .fade-effect {
+    opacity: 0;
+  }
+  .show-more-checkbox:checked ~ .btn-show-more::after {
+    content: "Mostrar menos";
+  }
+</style>

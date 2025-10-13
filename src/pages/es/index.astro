@@ -3,9 +3,13 @@ import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/header/index.astro";
 import Button from "@/components/ui/Button.astro";
 import WhatsAppIcon from "@/assets/icons/whatsapp.svg";
-import BusinessMlc from "@/assets/icons/business-mlc.svg";
+import BusinessMlc from "@/assets/icons/mlc-business.svg";
 import Carousel from "@/components/ui/Carousel.astro";
 import Home from "@/components/home/index.astro";
+import ModerWhite from "@/assets/images/mlc-white.png";
+import FacebookIcon from "@/assets/icons/facebook.svg";
+import Accordion from "@/components/ui/Accordion.astro";
+import { languages } from "@/constants";
 
 const { lang = "es" } = Astro.params;
 ---
@@ -13,12 +17,11 @@ const { lang = "es" } = Astro.params;
 <Layout lang={lang} title="Home - Modern Language Center" description="">
   <Header slot="header" />
 
-
   <Home />
 
   <!-- <section class="relative bg-mlc-blue-gradient"> -->
 
-    <!-- <section class="relative h-[1080px] w-[1750px] flex items-end mx-auto">
+  <!-- <section class="relative h-[1080px] w-[1750px] flex items-end mx-auto">
       <figure class="w-[80%] margin-auto absolute bottom-0">
         <img src="/src/assets/images/bg-home.png" alt="" />
       </figure>
@@ -38,8 +41,8 @@ const { lang = "es" } = Astro.params;
     </section>
      -->
 
-    <!-- Carrusel completo con imágenes -->
-    <!-- <div>
+  <!-- Carrusel completo con imágenes -->
+  <!-- <div>
       <h2 class="text-2xl font-bold mb-4">Carrusel con Imágenes</h2>
       <Carousel
         slides={imageSlides}
@@ -52,8 +55,8 @@ const { lang = "es" } = Astro.params;
       />
     </div> -->
 
-    <!-- Carrusel con SLOTS - Contenido completamente personalizado -->
-    <!-- <div>
+  <!-- Carrusel con SLOTS - Contenido completamente personalizado -->
+  <!-- <div>
       <Carousel
         slideCount={2}
         autoplay={true}
@@ -124,11 +127,34 @@ width="60"
 height="60"
 class="absolute bottom-[80px] right-[89px] z-50"
 /> -->
+<footer slot="footer" class="bg-mlc-blue-gradient">
+  <div class="flex flex-col items-center px-8 text-center text-xl text-[#7FD6FC]">
+    <img src={ModerWhite.src} alt="" class="w-[158px] mb-5" />
+    <p>© 2021 by The Modern Language Center Organization S.C.</p>
+    <p>Consulta aquí nuestro Aviso de Privacidad</p>
+
+    <FacebookIcon width="35" height="35" class="text-white mt-5" />
+    <Accordion label="Idiomas" class="footer-accordion mt-9 border-b-2 border-[#7FD6FC]">
+      <ul class="text-[20px] text-[#7FD6FC]">
+        {languages.map((language) => <li>{language}</li>)}
+      </ul>
+    </Accordion>
+    <Accordion label="Contacto" class="footer-accordion border-b-2 border-[#7FD6FC]">
+      <div class="text-[20px] text-[#7FD6FC]">
+        <p>Av. Miguel Angel de Quevedo 24,</p>
+        <p>Int 203, Col Chimalistac, CDMX</p>
+        <p>hello@modernlanguagecenter.com</p>
+        <p>55 7824 9081</p>
+      </div>
+    </Accordion>
+
+    <p class="text-[#7FD6FC] pt-20 pb-16">Todos los derechos reservados</p>
+  </div>
+</footer>
+
 <script>
   import { initAccordions } from "@/scripts/ui-events/accordion";
   document.addEventListener("DOMContentLoaded", () => {
     initAccordions();
   });
 </script>
-<!-- <footer slot="footer">
-</footer> -->

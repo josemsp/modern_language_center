@@ -1,0 +1,254 @@
+---
+import MLCBusinessBlack from "@/assets/icons/mlc-business-black.svg";
+import Button from "../ui/Button.astro";
+import ShowMore from "../ui/ShowMore.astro";
+import { languages } from "@/constants";
+---
+
+<section class="plans">
+  <section class:list={["plans-header pt-8 flex flex-col items-center gap-3"]}>
+    <h2 class="subtitle w-[228px]">Planes para ti o tu equipo</h2>
+    <p class="text-4xl tracking-normal">
+      Soluciones integrales en idiomas adaptadas a tus necesidades, nivel de
+      servicio y calidad que demandan todos nuestros clientes.
+    </p>
+  </section>
+
+  <div
+    class="tabs w-full flex justify-center items-center pt-[60px]"
+    id="demo-tabs-with-panels"
+  >
+    <nav
+      role="tablist"
+      aria-orientation="horizontal"
+      class="w-[324px] h-[44px] rounded-full border-1 border-gray-300 bg-white"
+    >
+      <button
+        type="button"
+        class="rounded-full bg-mlc-blue-gradient font-bold m-1"
+        role="tab"
+        id="demo-tabs-with-panels-tab-1"
+        aria-controls="demo-tabs-with-panels-panel-1"
+        aria-selected="true"
+        tabindex="0"
+      >
+        Empresas
+      </button>
+      <button
+        type="button"
+        class="rounded-full bg-mlc-blue-gradient font-bold m-1"
+        role="tab"
+        id="demo-tabs-with-panels-tab-2"
+        aria-controls="demo-tabs-with-panels-panel-2"
+        aria-selected="false"
+        tabindex="0"
+      >
+        Individuales
+      </button>
+    </nav>
+
+    <div
+      role="tabpanel"
+      id="demo-tabs-with-panels-panel-1"
+      aria-labelledby="demo-tabs-with-panels-tab-1"
+      tabindex="-1"
+      aria-selected="true"
+      class="tab-panel"
+    >
+      <div class="relative">
+        <div class="card p-5 relative z-10">
+          <header class="w-full flex justify-center">
+            <MLCBusinessBlack class="w-[168px]" />
+          </header>
+          <div class="flex flex-col items-center gap-3">
+            <p class="font-bold">Capacita a tu equipo multinacional</p>
+            <p>
+              Ayuda a tus empleados a dominar habilidades de comunicación y
+              negocios con un programa personalizado en tu industria.
+            </p>
+            <p>Disponible para los siguientes idiomas:</p>
+            <ul class="languages">
+              {
+                languages.map((language) => <li>{language}</li>)
+              }
+            </ul>
+            <Button variant="mlc" class="" />
+
+            <ShowMore>
+              <ul class="benefits">
+                <li>
+                  Empresas que capacitan a su equipo con idiomas de alta demanda
+                  con un programa enfocado en negocios y personalizado de
+                  acuerdo a la industria de la empresa.
+                </li>
+                <li>48 hrs por nivel (12 niveles totales).</li>
+                <li>
+                  Pagado por la empresa. Sin costo de inscripción. Sin costos
+                  extras, todo incluido en la tarifa por hora.
+                </li>
+                <li>
+                  Examen oral y escrito para posicionar a los alumnos de acuerdo
+                  a su nivel. Sin costo. Clases online en vivo.
+                </li>
+                <li>
+                  Baja carga administrativa para RH. Nos encargamos desde
+                  evaluar a tus empleados, organizar los grupos, asignar
+                  profesores, evaluar y entrega de reportes mensuales de
+                  progreso por alumno.
+                </li>
+                <li>
+                  Mucha experiencia en términos fiscales pues estamos dados de
+                  alta como proveedor calificado de muchas empresas como Grupo
+                  Salinas, PepsiCo, entre otras.
+                </li>
+                <li>
+                  Beneficios como planes de estudios, club de conversación,
+                  Padlet (plataforma online), clase muestra gratis, entre otros.
+                </li>
+              </ul>
+            </ShowMore>
+          </div>
+        </div>
+        <div class="absolute bottom-[-50px] w-full bg-[#3C88F6] text-white flex items-end justify-center h-[75px] text-xl rounded-b-[25px] pb-3">
+          Más información
+        </div>
+      </div>
+    </div>
+
+    <div
+      role="tabpanel"
+      id="demo-tabs-with-panels-panel-2"
+      aria-labelledby="demo-tabs-with-panels-tab-2"
+      tabindex="-1"
+      aria-selected="false"
+      hidden
+      class="tab-panel"
+    >
+      <div class="card">
+        <header>
+          <h2>Password</h2>
+          <p>Change your password here. After saving, you'll be logged out.</p>
+        </header>
+        <section>
+          <form class="form grid gap-6">
+            <div class="grid gap-3">
+              <label for="demo-tabs-password-current">Current password</label>
+              <input type="password" id="demo-tabs-password-current" />
+            </div>
+            <div class="grid gap-3">
+              <label for="demo-tabs-password-new">New password</label>
+              <input type="password" id="demo-tabs-password-new" />
+            </div>
+          </form>
+        </section>
+        <footer>
+          <button type="button" class="btn">Save Password</button>
+        </footer>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .plans-header {
+    * {
+      text-align: center;
+    }
+    p {
+      font-size: clamp(20px, 2vw, 2rem);
+    }
+  }
+
+  .tabs nav {
+    button {
+      font-size: clamp(20px, 2vw, 2rem);
+      margin: 0;
+      border: none;
+    }
+  }
+
+  .tab-panel {
+    margin-top: 30px;
+    width: 100%;
+    padding: 0 2rem;
+    /* margin: 0 auto; */
+  }
+
+  .card {
+    border-radius: 25px;
+    border-width: 0;
+  }
+
+  .languages {
+    column-count: 2;
+    column-gap: 38px;
+    list-style: disc;
+    padding-left: 1.3rem;
+    margin-bottom: 0.5rem;
+
+    li::marker {
+      margin-right: 10px;
+      font-size: 22px;
+      color: #3c88f6;
+      font-weight: 700;
+    }
+  }
+
+  [role="tab"][aria-selected="true"] {
+    color: white;
+  }
+  [role="tab"][aria-selected="false"] {
+    background: transparent;
+    color: black;
+  }
+
+  .benefits {
+    line-height: 1.5em;
+    list-style: none;
+    padding-left: 0;
+    color: blue;
+
+    li {
+      color: black;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding-bottom: 10px;
+      margin-bottom: 0.5rem;
+      border-bottom: 1px solid #ccc;
+    }
+    li:last-child {
+      border-bottom: none;
+    }
+
+    li::before {
+      content: "";
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      min-width: 15px;
+      background-color: #3c88f6;
+      mask-image: url("@/assets/icons/check.svg");
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      mask-position: center;
+      -webkit-mask-image: url("@/assets/icons/check.svg");
+      -webkit-mask-size: contain;
+      -webkit-mask-repeat: no-repeat;
+      -webkit-mask-position: center;
+      margin-top: 2px;
+    }
+  }
+</style>
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/basecoat-css@0.3.2/dist/basecoat.cdn.min.css"
+/>
+
+<script
+  src="https://cdn.jsdelivr.net/npm/basecoat-css@0.3.2/dist/js/basecoat.min.js"
+  defer></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/basecoat-css@0.3.2/dist/js/tabs.min.js"
+  defer></script>

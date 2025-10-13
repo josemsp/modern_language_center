@@ -92,13 +92,16 @@ const Tag = isLink ? "a" : "button";
   .btn-mlc-special {
     position: relative;
     text-decoration: none;
-    /* width: 200px; */
-    /* height: 60px; */
+    width: clamp(136px, 20vw, 200px);
+    height: clamp(38px, 10vw, 60px);
     border-radius: 30px;
     display: inline-flex;
     justify-content: center;
     align-items: center;
     background-color: var(--color-button-mlc-blue-hover, #2563eb);
+  }
+  .btn-mlc-special span {
+    font-weight: bold;
   }
 
   .btn-mlc-special .slide {
