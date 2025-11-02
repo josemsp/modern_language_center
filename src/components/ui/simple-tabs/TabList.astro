@@ -1,0 +1,12 @@
+---
+interface Props {
+  ariaLabelledby: string;
+  class?: string;
+}
+
+const { ariaLabelledby, class: className } = Astro.props;
+---
+
+<div role="tablist" aria-labelledby={ariaLabelledby} class={`automatic ${className}`} slot="tab-list">
+  <slot />
+</div>

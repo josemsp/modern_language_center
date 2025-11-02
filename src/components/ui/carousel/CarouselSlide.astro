@@ -1,0 +1,16 @@
+---
+interface Props {
+  id?: string;
+  class?: string;
+}
+
+const { id, class: className } = Astro.props;
+const slideId = id || crypto.randomUUID();
+---
+
+<div
+  class={`absolute inset-0 opacity-100 transition-opacity duration-500 ease-in-out bg-transparent ${className}`}
+  data-carousel-slide={slideId}
+>
+  <slot />
+</div>

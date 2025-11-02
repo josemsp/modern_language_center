@@ -1,0 +1,26 @@
+---
+interface Props {
+  initialSlide?: boolean;
+  class?: string;
+  dataLabel: string;
+}
+
+const { initialSlide, dataLabel, class: className } = Astro.props;
+---
+
+<div
+  class:list={[
+    "carousel__slide",
+    initialSlide ? "scroll-start" : "",
+    className,
+  ]}
+  data-label={dataLabel}
+>
+  <slot />
+</div>
+
+<style>
+  .scroll-start {
+    scroll-initial-target: nearest;
+  }
+</style>

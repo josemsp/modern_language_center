@@ -6,14 +6,86 @@ import MlcBusiness from "@/assets/images/mlc-business.png";
 import Button from "@/components/ui/Button.astro";
 import Plans from "./Plans.astro";
 import ClientCompanies from "./ClientCompanies.astro";
+import ModerWhite from "@/assets/images/mlc-white.png";
 ---
 
 <section class="relative bg-mlc-blue-gradient w-full overflow-clip">
+  <Carousel
+    slideCount={2}
+    autoplay={true}
+    interval={3000}
+    height="h-[100dvh]"
+    customButtons={true}
+  >
+    <div
+      class="absolute inset-0 opacity-100 transition-opacity duration-500 ease-in-out bg-mlc-blue-gradient"
+      data-carousel-slide={"carouselId-1"}
+    >
+      <section class="relative h-[1080px] w-[1750px] flex items-end mx-auto">
+        <figure class="w-[80%] margin-auto absolute bottom-0">
+          <img src="/src/assets/images/bg-home.png" alt="" />
+        </figure>
+        <section class="absolute top-[27%] right-20 flex flex-col items-end">
+          <BusinessMlc width="429" height="190" class="" />
+          <section class="course-description">
+            <h2 class="text-[#ACD3FF]">Comunicación</h2>
+            <h2 class="text-[#F7F7F7]">efectiva y liderazgo</h2>
+            <h2 class="text-[#ACD3FF]">internacional</h2>
+          </section>
+          <h3 class="text-white text-[42px]">En tu idioma objetivo</h3>
+          <Button variant="mlc" class="mt-[49px] text-[25px]">
+            <span slot="first-text">Lo quiero</span>
+            <span slot="second-text">¡Cotizar ya!</span>
+          </Button>
+        </section>
+      </section>
+    </div>
+
+    <div
+      class="absolute inset-0 opacity-100 transition-opacity duration-500 ease-in-out bg-green-800"
+      data-carousel-slide={"carouselId-1"}
+    >
+      <section class="relative h-[1080px] w-[1750px] flex items-end mx-auto">
+        <figure class="w-[80%] margin-auto absolute bottom-0">
+          <img src="/src/assets/images/bg-home.png" alt="" />
+        </figure>
+        <section class="absolute top-[27%] right-20 flex flex-col items-end">
+          <BusinessMlc width="429" height="190" class="" />
+          <section class="course-description">
+            <h2 class="text-[#ACD3FF]">Comunicación</h2>
+            <h2 class="text-[#F7F7F7]">efectiva y liderazgo</h2>
+            <h2 class="text-[#ACD3FF]">internacional</h2>
+          </section>
+          <h3 class="text-white text-[42px]">En tu idioma objetivo</h3>
+          <Button variant="mlc" class="mt-[49px] text-[25px]">
+            <span slot="first-text">Lo quiero</span>
+            <span slot="second-text">¡Cotizar ya!</span>
+          </Button>
+        </section>
+      </section>
+    </div>
+
+    <button slot="leftButton" class="absolute left-0 bg-white/3 z-10 h-full w-[30px] lg:hidden"></button>
+    <button slot="rightButton" class="absolute right-0 bg-white/3 z-10 h-full w-[30px] lg:hidden"></button>
+  </Carousel>
+
   <div
     class="jumbotron mx-auto max-w-[1750px] h-auto lg:h-fit pt-[80px] lg:pt-[95px]"
     id="mainContent"
   >
     <section
+      class:list={[
+        // "grid grid-cols-6 grid-rows-[350px_250px] mb-0 px-5 pt-0 h-full",
+        // " lg:grid-rows-[700px]",
+        // "lg:grid-cols-12 xl:grid-rows-[850px]",
+      ]}
+    >
+      <div class="flex justify-center">
+        <img src={ModerWhite.src} alt="" class="w-[280px]" />
+      </div>
+    </section>
+
+    <!-- <section
       class:list={[
         "grid grid-cols-6 grid-rows-[350px_250px] mb-0 px-5 pt-0 h-full",
         " lg:grid-rows-[700px]",
@@ -79,7 +151,7 @@ import ClientCompanies from "./ClientCompanies.astro";
           />
         </div>
       </div>
-    </section>
+    </section> -->
   </div>
 
   <section class="bg-[#E4E4E4]">
@@ -96,7 +168,9 @@ import ClientCompanies from "./ClientCompanies.astro";
     <h2 class="subtitle text-white w-[292px] text-center">
       ¿Cómo podemos ayudarte?
     </h2>
-    <p class="text-white text-xl text-center">¡Preparemos tu solución lingüística personalizada ahora!</p>
+    <p class="text-white text-xl text-center">
+      ¡Preparemos tu solución lingüística personalizada ahora!
+    </p>
     <Button class="btn-mlc text-xl w-40 font-bold">Contáctanos</Button>
   </section>
 

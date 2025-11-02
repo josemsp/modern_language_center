@@ -1,0 +1,25 @@
+---
+interface Props {
+  class?: string;
+  header?: string;
+}
+
+const { class: className, header } = Astro.props;
+---
+
+<div class="relative">
+  <div
+    id="plan-container"
+    class:list={[
+      "w-full h-full max-h-[790px] rounded-[25px] bg-[#CDDEF1] p-3.5",
+      className,
+    ]}
+  >
+    {header && (
+      <header class="pt-1 pb-4">
+        <h1 class="text-center text-[#10419D]">{header}</h1>
+      </header>
+    )}
+    <slot />
+  </div>
+</div>

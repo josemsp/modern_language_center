@@ -1,24 +1,32 @@
 ---
+interface Props {
+  id?: string;
+  heightToShow?: string;
+  class?: string;
+}
+
+const {
+  id = "show-more-" + crypto.randomUUID(),
+  heightToShow = "75px",
+  class: className,
+} = Astro.props;
 ---
 
-<div class="show-more-content">
-  <input type="checkbox" id="show-more" class="show-more-checkbox" />
+<div class={`show-more-content ${className}`}>
+  <input type="checkbox" id={id} class="show-more-checkbox" />
 
-  <div class="hidden-content">
+  <div class="hidden-content" style={`max-height: ${heightToShow}`}>
     <slot />
   </div>
-  <div class="fade-effect" />
-  <label for="show-more" class="btn-show-more" />
+  <div class="fade-effect"></div>
+  <label for={id} class="btn-show-more"></label>
 </div>
 
 <style>
   .show-more-content {
     position: relative;
-    max-width: 340px;
     margin: 0 auto;
     background: #fff;
-    padding-bottom: 20px;
-    border-radius: 0 0 18px 18px;
     overflow: hidden;
   }
 
@@ -27,7 +35,6 @@
   }
 
   .hidden-content {
-    max-height: 75px;
     overflow: hidden;
     transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     font-size: 1.04rem;
@@ -39,8 +46,8 @@
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 46px;
-    height: 60px;
+    bottom: 45px;
+    height: 130px;
     background: linear-gradient(
       0deg,
       rgba(255, 255, 255, 1) 0%,
@@ -59,14 +66,14 @@
     font-weight: bold;
     cursor: pointer;
     text-align: center;
+    padding-top: 36px;
   }
 
   .btn-show-more::after {
     content: "Mostrar más";
   }
   .show-more-checkbox:checked ~ .hidden-content {
-    max-height: max-content;
-    /* max-height: 300px; */ /* Adjust to your content */
+    max-height: max-content !important;
   }
   .show-more-checkbox:checked ~ .fade-effect {
     opacity: 0;

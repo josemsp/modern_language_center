@@ -73,16 +73,22 @@
 }
 
 @theme {
-  --color-mlc-home-light: #008fd9;
-  --color-mlc-home-dark: #003ea0;
+  /* blue gradient */
+  --color-mlc-blue-light: #008fd9;
+  --color-mlc-blue-dark: #003ea0;
+  /* green gradient */
+  --color-mlc-green-light: #00845f;
+  --color-mlc-green-dark: #014332;
   --color-mlc-header-selected: #0387cb;
   --color-mlc-header-hover: #ff9a17;
 
   --shadow-mlc-mobile-header: 0px 3px 6px #00000029;
   --shadow-mlc-header: 0px 10px 6px #00000029;
   --hero-blue: #0d66a9;
-  --color-button-mlc-blue: #015ae7;
-  --color-button-mlc-blue-hover: #008afe;
+
+  /* buttons */
+  --color-want-it-button-blue: #2559DF;
+  --color-want-it-button-blue-hover: #081F9E;
 
   --breakpoint-xs: 375px;
 
@@ -144,7 +150,7 @@
 
     .js-toggle svg {
       position: absolute;
-      color: #89DEFF;
+      color: #89deff;
       right: 0;
     }
 
@@ -166,10 +172,55 @@
   .bg-mlc-blue-gradient {
     background: linear-gradient(
       to right,
-      var(--color-mlc-home-light),
-      var(--color-mlc-home-dark)
+      var(--color-mlc-blue-light),
+      var(--color-mlc-blue-dark)
     );
   }
+
+  .bg-mlc-green-gradient {
+    background: linear-gradient(
+      to right,
+      var(--color-mlc-green-light),
+      var(--color-mlc-green-dark)
+    );
+  }
+
+  .plan-container-shadow {
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.5);
+  }
+
+  .plan-logo-container {
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+  }
+
+  .plan-card {
+    border-radius: 25px;
+    background-color: white;
+    position: relative;
+    z-index: 20;
+    margin-top: -24px;
+  }
+
+  .plan-footer {
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    padding-bottom: 12px;
+    margin-top: -30px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1;
+    color: white;
+  }
+
 
   /* Header selects: change color on open (selected) */
   /* Popover sets aria-expanded on [data-trigger], so we target that state */

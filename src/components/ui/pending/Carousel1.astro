@@ -1,0 +1,348 @@
+---
+interface SlideData {
+  id: number;
+  category: string;
+  title: string;
+  shortDescription: string;
+  longDescription: string;
+  imageUrl: string;
+}
+
+interface Props {
+  slides: SlideData[];
+  initialIndex?: number;
+}
+
+const { slides, initialIndex = 0 } = Astro.props;
+const sliderId = `slider-${Math.random().toString(36).substr(2, 9)}`;
+---
+
+<div class="slider-container" id={sliderId} data-initial-index={initialIndex}>
+  <div class="overflow-container">
+    <div class="slides-wrapper">
+      {slides.map((slide, index) => (
+        <div class="slide-container">
+          <div class={`slide ${index === initialIndex ? 'active' : ''}`} data-index={index}>
+            <div class="slide-content">
+              <img src={slide.imageUrl} alt={slide.title} class="slide-image" />
+              <div class="slide-text">
+                <span class="slide-category">{slide.category}</span>
+                <h3 class="slide-title">{slide.title}</h3>
+                <p class="slide-description">{slide.shortDescription}</p>
+                <div class="slide-expanded" data-expanded={index}>
+                  <p class="slide-description">{slide.longDescription}</p>
+                </div>
+                <div class="slide-button-container">
+                  <button class="slide-button" data-toggle={index}>
+                    <span data-btn-text={index}>Mostrar más</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <button class="nav-button prev" data-prev aria-label="Previous slide">
+    <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+    </svg>
+  </button>
+  <button class="nav-button next" data-next aria-label="Next slide">
+    <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+    </svg>
+  </button>
+
+  <div class="dots-container">
+    {slides.map((_, index) => (
+      <button 
+        class={`dot ${index === initialIndex ? 'active' : ''}`}
+        data-dot={index}
+        aria-label={`Go to slide ${index + 1}`}
+      />
+    ))}
+  </div>
+</div>
+
+<style>
+  .slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 1152px;
+    margin: 0 auto;
+  }
+
+  .overflow-container {
+    overflow: hidden;
+  }
+
+  .slides-wrapper {
+    display: flex;
+    transition: transform 500ms ease-out;
+    align-items: center;
+    gap: 4%;
+  }
+
+  .slide-container {
+    flex-shrink: 0;
+    width: 80%;
+  }
+
+  .slide {
+    transition: all 500ms ease-out;
+    opacity: 0.6;
+    transform: scale(0.9);
+  }
+
+  .slide.active {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .slide-content {
+    background: #1f2937;
+    border-radius: 8px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    max-height: 500px;
+  }
+
+  .slide-image {
+    width: 100%;
+    height: 256px;
+    object-fit: cover;
+  }
+
+  .slide-text {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .slide-category {
+    color: #818cf8;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .slide-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    margin-top: 8px;
+  }
+
+  .slide-description {
+    color: #9ca3af;
+    margin-top: 16px;
+    line-height: 1.625;
+  }
+
+  .slide-expanded {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 700ms ease-in-out;
+  }
+
+  .slide-expanded.open {
+    max-height: 384px;
+    opacity: 1;
+    margin-top: 16px;
+  }
+
+  .slide-button-container {
+    margin-top: auto;
+    padding-top: 24px;
+  }
+
+  .slide-button {
+    color: #818cf8;
+    font-weight: 600;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 200ms;
+  }
+
+  .slide-button:hover {
+    color: #a5b4fc;
+  }
+
+  .nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(55, 65, 81, 0.5);
+    padding: 12px;
+    border-radius: 9999px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 200ms;
+    z-index: 10;
+  }
+
+  .nav-button:hover {
+    background: rgba(55, 65, 81, 0.8);
+  }
+
+  .nav-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #111827, 0 0 0 4px #6366f1;
+  }
+
+  .nav-button.prev {
+    left: 0;
+  }
+
+  .nav-button.next {
+    right: 0;
+  }
+
+  .nav-icon {
+    width: 24px;
+    height: 24px;
+    display: block;
+  }
+
+  .dots-container {
+    position: absolute;
+    bottom: -32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 9999px;
+    background: #4b5563;
+    border: none;
+    cursor: pointer;
+    transition: background 200ms;
+  }
+
+  .dot:hover {
+    background: #6b7280;
+  }
+
+  .dot.active {
+    background: #6366f1;
+  }
+
+  @media (min-width: 768px) {
+    .slide-content {
+      flex-direction: row;
+    }
+
+    .slide-image {
+      width: 50%;
+      height: 100%;
+    }
+
+    .slide-text {
+      width: 50%;
+      padding: 32px;
+    }
+
+    .slide-title {
+      font-size: 1.875rem;
+    }
+
+    .nav-button.prev {
+      left: -32px;
+    }
+
+    .nav-button.next {
+      right: -32px;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    console.log('Carousel1 loaded');
+    const sliders = document.querySelectorAll('.slider-container') as NodeListOf<HTMLElement>;
+    
+    sliders.forEach(sliderElement => {
+      const slidesWrapper = sliderElement.querySelector('.slides-wrapper') as HTMLElement;
+      const prevBtn = sliderElement.querySelector('[data-prev]') as HTMLElement;
+      const nextBtn = sliderElement.querySelector('[data-next]') as HTMLElement;
+      const dots = sliderElement.querySelectorAll('[data-dot]');
+      const slides = sliderElement.querySelectorAll('.slide');
+      const toggleButtons = sliderElement.querySelectorAll('[data-toggle]');
+      
+      let currentIndex = parseInt(sliderElement.dataset.initialIndex || '0');
+      const totalSlides = slides.length;
+
+      function updateSlider() {
+        const slideWidthPercentage = 80;
+        const gapPercentage = 4;
+        const totalSlideSpacePercentage = slideWidthPercentage + gapPercentage;
+        const centeringOffsetPercentage = (100 - slideWidthPercentage) / 2;
+        const transformX = `translateX(calc(${centeringOffsetPercentage}% - ${currentIndex * totalSlideSpacePercentage}%))`;
+        
+        slidesWrapper.style.transform = transformX;
+        
+        slides.forEach((slide, index) => {
+          slide.classList.toggle('active', index === currentIndex);
+        });
+        
+        dots.forEach((dot, index) => {
+          dot.classList.toggle('active', index === currentIndex);
+        });
+      }
+
+      function goToPrevious() {
+        currentIndex = currentIndex === 0 ? totalSlides - 1 : currentIndex - 1;
+        updateSlider();
+      }
+
+      function goToNext() {
+        currentIndex = currentIndex === totalSlides - 1 ? 0 : currentIndex + 1;
+        updateSlider();
+      }
+
+      function goToSlide(index: number) {
+        currentIndex = index;
+        updateSlider();
+      }
+
+      // Event listeners
+      prevBtn?.addEventListener('click', goToPrevious);
+      nextBtn?.addEventListener('click', goToNext);
+      
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => goToSlide(index));
+      });
+
+      toggleButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+          const target = e.currentTarget as HTMLElement;
+          const index = target.dataset.toggle;
+          const expanded = sliderElement.querySelector(`[data-expanded="${index}"]`);
+          const btnText = sliderElement.querySelector(`[data-btn-text="${index}"]`);
+          
+          if (expanded && btnText) {
+            const isOpen = expanded.classList.contains('open');
+            expanded.classList.toggle('open');
+            btnText.textContent = isOpen ? 'Mostrar más' : 'Mostrar menos';
+          }
+        });
+      });
+
+      updateSlider();
+    });
+  });
+</script>

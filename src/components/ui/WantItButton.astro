@@ -1,0 +1,103 @@
+---
+interface Props {
+  href?: string;
+  class?: string;
+  target?: string;
+  rel?: string;
+  disabled?: boolean;
+  ariaLabel?: string;
+}
+
+const {
+  href = "#",
+  class: className = "",
+  target,
+  rel = target === "_blank" ? "noopener noreferrer" : undefined,
+  disabled = false,
+  ariaLabel,
+} = Astro.props;
+---
+
+<a
+  href={href}
+  class:list={["font-bold text-white", `want-it-button ${className}`]}
+  target={target}
+  rel={rel}
+  aria-label={ariaLabel}
+  aria-disabled={disabled}
+>
+  <div class="slide">
+    <div data-text="first-text">
+      <slot name="first-text">Lo quiero</slot>
+    </div>
+  </div>
+  <div data-text="second-text">
+    <slot name="second-text">¡Cotizar ya!</slot>
+  </div>
+</a>
+
+<style>
+  .want-it-button {
+    position: relative;
+    text-decoration: none;
+    width: clamp(136px, 20vw, 200px);
+    height: clamp(38px, 10vw, 60px);
+    border-radius: 30px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  .want-it-button.blue {
+    background-color: var(--color-want-it-button-blue-hover);
+  }
+
+  .want-it-button .slide {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: left 0.6s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+  }
+  .want-it-button.blue .slide {
+    background-color: var(--color-want-it-button-blue);
+  }
+
+  .want-it-button:hover .slide {
+    left: -100%;
+  }
+
+  .want-it-button [data-text="second-text"] {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .want-it-button:hover [data-text="second-text"] {
+    transform: scale(1);
+  }
+
+  /* Mejoras de accesibilidad */
+  .want-it-button:focus {
+    /* outline: 2px solid var(--color-button-mlc-blue, #1d4ed8); */
+    outline-offset: 2px;
+  }
+
+  /* Mejora de rendimiento con transform en lugar de left */
+  @media (prefers-reduced-motion: reduce) {
+    .want-it-button,
+    .want-it-button * {
+      transition-duration: 0.05ms !important;
+    }
+  }
+</style>

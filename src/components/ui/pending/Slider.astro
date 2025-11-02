@@ -1,0 +1,216 @@
+---
+interface Props {
+  slidesCount: number;
+  initialIndex?: number;
+  id?: string;
+}
+
+const { slidesCount, initialIndex = 0, id } = Astro.props;
+const slides = Array.from({ length: slidesCount }, (_, index) => index);
+---
+
+<div class="relative w-full max-w-6xl mx-auto" id={id}>
+  <div class="overflow-hidden">
+    <div
+      id="slider-container"
+      class="flex transition-transform ease-out duration-500 items-center"
+      style="gap: 4%;"
+    >
+      <slot />
+      <!-- {
+        slides.map((slide, index) => (
+          <div
+            class="flex-shrink-0"
+            style={`width: 80%;`}
+            data-slide-index={index}
+          >
+            <div class="slide-content">
+              <div class="bg-gray-800 rounded-lg shadow-2xl overflow-hidden">
+                <img
+                  src={slide.imageUrl}
+                  alt={slide.title}
+                  class="w-full aspect-video object-cover"
+                />
+                <div class="p-6 md:p-8 flex flex-col">
+                  <span class="text-indigo-400 text-sm font-semibold uppercase tracking-wider">
+                    {slide.category}
+                  </span>
+                  <h3 class="text-2xl lg:text-3xl font-bold text-white mt-2">
+                    {slide.title}
+                  </h3>
+                  <p class="text-gray-400 mt-4 text-base leading-relaxed">
+                    {slide.shortDescription}
+                  </p>
+
+                  <div
+                    class={`expand-content-${slide.id} transition-all duration-700 ease-in-out overflow-hidden max-h-0 opacity-0`}
+                  >
+                    <p class="text-gray-400 text-base leading-relaxed pt-4">
+                      {slide.longDescription}
+                    </p>
+                  </div>
+
+                  <div class="mt-auto pt-6">
+                    <button
+                      class={`toggle-button-${slide.id} text-indigo-400 hover:text-indigo-300 font-semibold transition-colors duration-200`}
+                      onclick={`toggleExpand(${slide.id})`}
+                    >
+                      Mostrar más
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))
+      } -->
+    </div>
+  </div>
+
+  <button
+    id="prev-button"
+    class="absolute top-1/2 left-0 md:-left-8 transform -translate-y-1/2 bg-gray-700/50 hover:bg-gray-700/80 p-3 rounded-full text-white transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-indigo-500 z-10"
+    aria-label="Previous slide"
+  >
+    &#8249;
+  </button>
+  <button
+    id="next-button"
+    class="absolute top-1/2 right-0 md:-right-8 transform -translate-y-1/2 bg-gray-700/50 hover:bg-gray-700/80 p-3 rounded-full text-white transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-indigo-500 z-10"
+    aria-label="Next slide"
+  >
+    &#8250;
+  </button>
+
+  <div class="absolute -bottom-8 left-1/2 -translate-x-1/2 flex space-x-2">
+    {
+      slides.map((_, index) => (
+        <button
+          class={`dot-button w-3 h-3 rounded-full transition-colors duration-200 ${
+            index === 0 ? "bg-indigo-500" : "bg-gray-600 hover:bg-gray-500"
+          }`}
+          data-slide={index}
+          aria-label={`Go to slide ${index + 1}`}
+        />
+      ))
+    }
+  </div>
+</div>
+
+<script define:vars={{ slides, initialIndex }}>
+  class Slider {
+    currentIndex;
+    slides;
+    container;
+    prevButton;
+    nextButton;
+    dotButtons;
+
+    constructor(slides, initialIndex = 0) {
+      this.slides = slides;
+      this.currentIndex = Math.max(
+        0,
+        Math.min(initialIndex, slides.length - 1)
+      );
+
+      this.container = document.getElementById("slider-container");
+      this.prevButton = document.getElementById("prev-button");
+      this.nextButton = document.getElementById("next-button");
+      this.dotButtons = document.querySelectorAll(".dot-button");
+
+      this.init();
+    }
+
+    init() {
+      this.updateSlider();
+      this.bindEvents();
+    }
+
+    updateSlider() {
+      const slideWidthPercentage = 80;
+      const gapPercentage = 4;
+      const totalSlideSpacePercentage = slideWidthPercentage + gapPercentage;
+      const centeringOffsetPercentage = (100 - slideWidthPercentage) / 2;
+
+      const transformX = `translateX(calc(${centeringOffsetPercentage}% - ${this.currentIndex * totalSlideSpacePercentage}%))`;
+      this.container.style.transform = transformX;
+
+      // Update dots
+      this.dotButtons.forEach((dot, index) => {
+        if (index === this.currentIndex) {
+          dot.classList.remove("bg-gray-600", "hover:bg-gray-500");
+          dot.classList.add("bg-indigo-500");
+        } else {
+          dot.classList.remove("bg-indigo-500");
+          dot.classList.add("bg-gray-600", "hover:bg-gray-500");
+        }
+      });
+    }
+
+    goToPrevious() {
+      const isFirstSlide = this.currentIndex === 0;
+      const newIndex = isFirstSlide
+        ? this.slides.length - 1
+        : this.currentIndex - 1;
+      this.currentIndex = newIndex;
+      this.updateSlider();
+    }
+
+    goToNext = () => {
+      const isLastSlide = this.currentIndex === this.slides.length - 1;
+      const newIndex = isLastSlide ? 0 : this.currentIndex + 1;
+      this.currentIndex = newIndex;
+      this.updateSlider();
+    };
+
+    goToSlide = (index) => {
+      if (index >= 0 && index < this.slides.length) {
+        this.currentIndex = index;
+        this.updateSlider();
+      }
+    };
+
+    bindEvents() {
+      this.prevButton.addEventListener("click", this.goToPrevious);
+      this.nextButton.addEventListener("click", this.goToNext);
+
+      this.dotButtons.forEach((dot, index) => {
+        dot.addEventListener("click", () => this.goToSlide(index));
+      });
+    }
+  }
+
+  // Initialize slider when DOM is loaded
+  document.addEventListener("DOMContentLoaded", () => {
+    new Slider(slides, initialIndex);
+  });
+
+  // Exponer función toggleExpand globalmente
+  function toggleExpand(slideId) {
+    const button = document.querySelector(`.toggle-button-${slideId}`);
+    const expandContent = document.querySelector(`.expand-content-${slideId}`);
+
+    if (!expandContent) return;
+
+    const isExpanded = expandContent.classList.contains(
+      "max-h-[900px]"
+      // "opacity-100"
+    );
+
+    if (isExpanded) {
+      // expandContent.classList.remove("max-h-[900px]", "opacity-100");
+      // expandContent.classList.add("max-h-0", "opacity-0");
+      expandContent.classList.remove("max-h-[900px]");
+      expandContent.classList.add("max-h-0");
+      button.textContent = "Mostrar más";
+    } else {
+      // expandContent.classList.remove("max-h-0", "opacity-0");
+      // expandContent.classList.add("max-h-[900px]", "opacity-100");
+      expandContent.classList.remove("max-h-0");
+      expandContent.classList.add("max-h-[900px]");
+      button.textContent = "Mostrar menos";
+    }
+  }
+
+  window.toggleExpand = toggleExpand;
+</script>

@@ -1,0 +1,13 @@
+---
+interface Props {
+  id?: string;
+  ariaLabelledby?: string;
+  class?: string;
+}
+
+const { id = crypto.randomUUID(), ariaLabelledby, class: className } = Astro.props;
+---
+
+<div id={id} role="tabpanel" tabindex="0" aria-labelledby={ariaLabelledby} class={className}>
+  <slot />
+</div>

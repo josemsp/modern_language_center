@@ -1,0 +1,28 @@
+---
+interface Props {
+  id: string;
+  label?: string;
+  ariaSelected?: boolean;
+  ariaControls: string;
+  class?: string;
+}
+
+const {
+  id,
+  label,
+  ariaSelected = false,
+  ariaControls,
+  class: className,
+} = Astro.props;
+---
+
+<button
+  id={id}
+  type="button"
+  role="tab"
+  aria-selected={ariaSelected}
+  aria-controls={ariaControls}
+  class={className}
+>
+  {label ? <span class="">{label}</span> : <slot />}
+</button>

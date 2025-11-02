@@ -56,7 +56,7 @@ const pauseIconId = `pauseIcon-${carouselId}`;
 const playPauseTextId = `playPauseText-${carouselId}`;
 ---
 
-<div class={`relative w-full bg-white shadow-lg overflow-hidden ${className}`}>
+<div class={`relative w-full shadow-lg overflow-hidden ${className}`}>
   <!-- Contenedor del carrusel -->
   <div id={carouselId} class={`relative ${height} overflow-hidden`}>
     
@@ -273,10 +273,14 @@ const playPauseTextId = `playPauseText-${carouselId}`;
       }
     }
 
-    // Event listeners    
+    // Event listeners
+    console.log("prevBtn", prevBtn);
+    
     if (prevBtn) {
+      console.log("prevBtn in", prevBtn);
       prevBtn.addEventListener('click', () => {
         prevSlide();
+        console.log("prevSlide", isPlaying, autoplay);
         if (isPlaying && autoplay) {
           clearInterval(intervalId);
           startAutoplay();
@@ -287,6 +291,7 @@ const playPauseTextId = `playPauseText-${carouselId}`;
     if (nextBtn) {
       nextBtn.addEventListener('click', () => {
         nextSlide();
+        console.log("nextSlide", isPlaying, autoplay);
         if (isPlaying && autoplay) {
           clearInterval(intervalId);
           startAutoplay();

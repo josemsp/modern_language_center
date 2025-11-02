@@ -1,0 +1,212 @@
+---
+// Tabs.astro
+interface Props {
+  defaultTab?: number;
+  class?: string;
+}
+
+const { defaultTab = 0, class: className = "" } = Astro.props;
+
+// Procesar los slots para extraer la información de cada tab
+const slots = await Astro.slots.render("default");
+console.log(slots);
+const tabRegex = /<div[^>]*data-tab-label="([^"]*)"[^>]*>([\s\S]*?)<\/div>/g;
+const tabs: { label: string; content: string }[] = [];
+
+let match;
+while ((match = tabRegex.exec(slots)) !== null) {
+  tabs.push({
+    label: match[1],
+    content: match[2],
+  });
+}
+---
+
+<div class={`tabs-container ${className}`}>
+  <div class="tabs-header" role="tablist">
+    {
+      tabs.map((tab, index) => (
+        <button
+          class={`tab-button ${index === defaultTab ? "active" : ""}`}
+          role="tab"
+          aria-selected={index === defaultTab}
+          tabindex={index === defaultTab ? 0 : -1}
+          data-tab-index={index}
+          type="button"
+        >
+          {tab.label}
+        </button>
+      ))
+    }
+  </div>
+
+  <div class="tabs-content">
+    {
+      tabs.map((tab, index) => (
+        <div
+          class={`tab-panel ${index === defaultTab ? "active" : ""}`}
+          role="tabpanel"
+          data-panel-index={index}
+          set:html={tab.content}
+        />
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  .tabs-container {
+    width: 100%;
+    font-family:
+      system-ui,
+      -apple-system,
+      sans-serif;
+  }
+
+  .tabs-header {
+    display: flex;
+    gap: 0.5rem;
+    border-bottom: 2px solid #e5e7eb;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .tabs-content {
+    position: relative;
+    min-height: 100px;
+  }
+
+  .tab-button {
+    padding: 0.75rem 1.5rem;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #6b7280;
+    transition: all 0.2s ease;
+    position: relative;
+  }
+
+  .tab-button:hover {
+    color: #374151;
+    background-color: #f9fafb;
+  }
+
+  .tab-button.active {
+    color: #3b82f6;
+    border-bottom-color: #3b82f6;
+  }
+
+  .tab-button:focus-visible {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  .tab-panel {
+    display: none;
+  }
+
+  .tab-panel.active {
+    display: block;
+    animation: fadeIn 0.3s ease-in;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+<script>
+  function initTabs() {
+    const containers = document.querySelectorAll(".tabs-container");
+
+    containers.forEach((container) => {
+      const buttons = container.querySelectorAll(".tab-button");
+      const panels = container.querySelectorAll(".tab-panel");
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const index = parseInt(button.getAttribute("data-tab-index") || "0");
+          selectTab(buttons, panels, index);
+        });
+
+        button.addEventListener("keydown", (e) => {
+          const currentIndex = parseInt(
+            button.getAttribute("data-tab-index") || "0"
+          );
+          handleKeyboard(e as KeyboardEvent, buttons, panels, currentIndex);
+        });
+      });
+    });
+  }
+
+  function selectTab(
+    buttons: NodeListOf<Element>,
+    panels: NodeListOf<Element>,
+    index: number
+  ) {
+    buttons.forEach((btn, i) => {
+      if (i === index) {
+        btn.classList.add("active");
+        btn.setAttribute("aria-selected", "true");
+        btn.setAttribute("tabindex", "0");
+      } else {
+        btn.classList.remove("active");
+        btn.setAttribute("aria-selected", "false");
+        btn.setAttribute("tabindex", "-1");
+      }
+    });
+
+    panels.forEach((panel, i) => {
+      if (i === index) {
+        panel.classList.add("active");
+      } else {
+        panel.classList.remove("active");
+      }
+    });
+  }
+
+  function handleKeyboard(
+    e: KeyboardEvent,
+    buttons: NodeListOf<Element>,
+    panels: NodeListOf<Element>,
+    currentIndex: number
+  ) {
+    let newIndex = currentIndex;
+
+    switch (e.key) {
+      case "ArrowLeft":
+        newIndex = currentIndex > 0 ? currentIndex - 1 : buttons.length - 1;
+        break;
+      case "ArrowRight":
+        newIndex = currentIndex < buttons.length - 1 ? currentIndex + 1 : 0;
+        break;
+      case "Home":
+        newIndex = 0;
+        break;
+      case "End":
+        newIndex = buttons.length - 1;
+        break;
+      default:
+        return;
+    }
+
+    e.preventDefault();
+    selectTab(buttons, panels, newIndex);
+    (buttons[newIndex] as HTMLElement)?.focus();
+  }
+
+  // Inicializar en Astro
+  document.addEventListener("DOMContentLoaded", initTabs);
+  document.addEventListener("astro:after-swap", initTabs);
+</script>
