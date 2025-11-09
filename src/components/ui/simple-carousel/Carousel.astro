@@ -1,99 +1,12 @@
 ---
-const { id = "carousel-" + crypto.randomUUID() } = Astro.props;
+
 ---
 
-<div class="carousel-container" data-carousel={id}>
-  <button class="scroll-button scroll-button-left" aria-label="Scroll Left">
-    ←
-  </button>
-
-  <div class="carousel">
+<div role="region" aria-label="Card carousel demo" class="mb-16">
+  <div
+    class="carousel carousel--offscreen-inert"
+    aria-live="polite"
+  >
     <slot />
   </div>
-
-  <button class="scroll-button scroll-button-right" aria-label="Scroll Right">
-    →
-  </button>
 </div>
-
-<style>
-  .carousel-slide {
-    min-width: 85%;
-    scroll-snap-align: center;
-  }
-
-  .carousel-slide:first-child {
-    margin-left: 28px;
-  }
-
-  .carousel-slide:last-child {
-    margin-right: 28px;
-  }
-</style>
-<style>
-  .carousel-container {
-    position: relative;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-  }
-
-  .carousel {
-    display: flex;
-    overflow-x: auto;
-    overflow-y: visible;
-    scroll-behavior: smooth;
-    width: 100%;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    scroll-snap-type: x mandatory;
-    gap: 1em;
-  }
-
-  .carousel::-webkit-scrollbar {
-    display: none;
-  }
-
-  .scroll-button {
-    position: absolute;
-    opacity: 0.3;
-    border: none;
-    height: 100%;
-    width: 40px;
-    font-size: 24px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-    transition: opacity 0.2s;
-  }
-
-  .scroll-button-right {
-    right: 0;
-  }
-  .scroll-button-left {
-    left: 0;
-  }
-</style>
-
-<script define:vars={{ id }}>
-  const container = document.querySelector(`[data-carousel="${id}"]`);
-  const carousel = container.querySelector(".carousel");
-  const btnLeft = container.querySelector(".scroll-button-left");
-  const btnRight = container.querySelector(".scroll-button-right");
-
-  function scroll(direction) {
-    const card = carousel.querySelector(".carousel-slide");
-    if (!card) return;
-    const cardWidth = card.offsetWidth;
-    const gap = parseInt(getComputedStyle(carousel).gap) || 0;
-    const scrollAmount = cardWidth + gap;
-    carousel.scrollBy({ left: direction * scrollAmount, behavior: "smooth" });
-  }
-
-  btnLeft?.addEventListener("click", () => scroll(-1));
-  btnRight?.addEventListener("click", () => scroll(1));
-</script>

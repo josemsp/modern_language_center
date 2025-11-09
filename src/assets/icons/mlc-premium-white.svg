@@ -1,0 +1,1285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 400 191.73">
+  <defs>
+    <style>
+      .mlc-premium-1 {
+        fill: #f1c282;
+      }
+
+      .mlc-premium-2 {
+        fill: none;
+      }
+
+      .mlc-premium-3 {
+        fill: #9b6e34;
+      }
+
+      .mlc-premium-4 {
+        fill: #ecbd7e;
+      }
+
+      .mlc-premium-5 {
+        fill: #c79755;
+      }
+
+      .mlc-premium-6 {
+        fill: #c39350;
+      }
+
+      .mlc-premium-7 {
+        fill: #b68b52;
+      }
+
+      .mlc-premium-8 {
+        fill: #edbe7f;
+      }
+
+      .mlc-premium-9 {
+        fill: #a97d44;
+      }
+
+      .mlc-premium-10 {
+        fill: #95682d;
+      }
+
+      .mlc-premium-11 {
+        fill: #e4b576;
+      }
+
+      .mlc-premium-12 {
+        fill: #976a30;
+      }
+
+      .mlc-premium-13 {
+        fill: #bb8946;
+      }
+
+      .mlc-premium-14 {
+        fill: #a77b42;
+      }
+
+      .mlc-premium-15 {
+        fill: #a3722b;
+      }
+
+      .mlc-premium-16 {
+        fill: #ba8845;
+      }
+
+      .mlc-premium-17 {
+        fill: #f8ca8a;
+      }
+
+      .mlc-premium-18 {
+        fill: #bb8b48;
+      }
+
+      .mlc-premium-19 {
+        fill: #9c7036;
+      }
+
+      .mlc-premium-20 {
+        fill: #cb9b59;
+      }
+
+      .mlc-premium-21 {
+        fill: #d4a363;
+      }
+
+      .mlc-premium-22 {
+        fill: #eabb7c;
+      }
+
+      .mlc-premium-23 {
+        fill: #a87c43;
+      }
+
+      .mlc-premium-24 {
+        fill: #b4833f;
+      }
+
+      .mlc-premium-25 {
+        fill: #ae7e39;
+      }
+
+      .mlc-premium-26 {
+        fill: #ad8048;
+      }
+
+      .mlc-premium-27 {
+        fill: #e2b172;
+      }
+
+      .mlc-premium-28 {
+        fill: #c49451;
+      }
+
+      .mlc-premium-29 {
+        fill: #ebbc7d;
+      }
+
+      .mlc-premium-30 {
+        fill: #c49b63;
+      }
+
+      .mlc-premium-31 {
+        fill: #b3823e;
+      }
+
+      .mlc-premium-32 {
+        fill: #a1753b;
+      }
+
+      .mlc-premium-33 {
+        fill: #ae8149;
+      }
+
+      .mlc-premium-34 {
+        fill: #9c6f35;
+      }
+
+      .mlc-premium-35 {
+        fill: #c59c64;
+      }
+
+      .mlc-premium-36 {
+        fill: #a97933;
+      }
+
+      .mlc-premium-37 {
+        fill: #b48950;
+      }
+
+      .mlc-premium-38 {
+        fill: #ca9a58;
+      }
+
+      .mlc-premium-39 {
+        fill: #e2b374;
+      }
+
+      .mlc-premium-40 {
+        fill: #fcce8e;
+      }
+
+      .mlc-premium-41 {
+        fill: #a87832;
+      }
+
+      .mlc-premium-42 {
+        fill: #b2874e;
+      }
+
+      .mlc-premium-43 {
+        fill: #c0904d;
+      }
+
+      .mlc-premium-44 {
+        fill: #c49961;
+      }
+
+      .mlc-premium-45 {
+        fill: #fdcf8f;
+      }
+
+      .mlc-premium-46 {
+        fill: #aa7a34;
+      }
+
+      .mlc-premium-47 {
+        fill: #bf8f4c;
+      }
+
+      .mlc-premium-48 {
+        fill: #b78c53;
+      }
+
+      .mlc-premium-49 {
+        fill: #c69d65;
+      }
+
+      .mlc-premium-50 {
+        fill: #9f7339;
+      }
+
+      .mlc-premium-51 {
+        fill: #efc080;
+      }
+
+      .mlc-premium-52 {
+        fill: #9d7137;
+      }
+
+      .mlc-premium-53 {
+        fill: #a57940;
+      }
+
+      .mlc-premium-54 {
+        fill: #dbaa6b;
+      }
+
+      .mlc-premium-55 {
+        fill: #96692f;
+      }
+
+      .mlc-premium-56 {
+        fill: #d6a566;
+      }
+
+      .mlc-premium-57 {
+        fill: #aa7e45;
+      }
+
+      .mlc-premium-58 {
+        fill: #ba8f56;
+      }
+
+      .mlc-premium-59 {
+        fill: #dead6e;
+      }
+
+      .mlc-premium-60 {
+        fill: #92652a;
+      }
+
+      .mlc-premium-61 {
+        fill: #9f6e27;
+      }
+
+      .mlc-premium-62 {
+        fill: #f9cb8b;
+      }
+
+      .mlc-premium-63 {
+        fill: #a67a41;
+      }
+
+      .mlc-premium-64 {
+        clip-path: url(#clippath-1);
+      }
+
+      .mlc-premium-65 {
+        clip-path: url(#clippath-2);
+      }
+
+      .mlc-premium-66 {
+        fill: #bd925a;
+      }
+
+      .mlc-premium-67 {
+        fill: #ce9e5e;
+      }
+
+      .mlc-premium-68 {
+        fill: #b3884f;
+      }
+
+      .mlc-premium-69 {
+        fill: #eebf80;
+      }
+
+      .mlc-premium-70 {
+        fill: #caa169;
+      }
+
+      .mlc-premium-71 {
+        fill: #c0955d;
+      }
+
+      .mlc-premium-72 {
+        fill: #ce9e5d;
+      }
+
+      .mlc-premium-73 {
+        fill: #b37c33;
+      }
+
+      .mlc-premium-74 {
+        fill: #bf945c;
+      }
+
+      .mlc-premium-75 {
+        fill: #e5b677;
+      }
+
+      .mlc-premium-76 {
+        fill: #c59552;
+      }
+
+      .mlc-premium-77 {
+        fill: #b1864d;
+      }
+
+      .mlc-premium-78 {
+        fill: #ad7d38;
+      }
+
+      .mlc-premium-79 {
+        fill: #9e6d26;
+      }
+
+      .mlc-premium-80 {
+        fill: #fff;
+      }
+
+      .mlc-premium-81 {
+        fill: #b1854c;
+      }
+
+      .mlc-premium-82 {
+        fill: #dcab6c;
+      }
+
+      .mlc-premium-83 {
+        fill: #f4c686;
+      }
+
+      .mlc-premium-84 {
+        fill: #ab7b36;
+      }
+
+      .mlc-premium-85 {
+        fill: #b98744;
+      }
+
+      .mlc-premium-86 {
+        fill: #ab7f46;
+      }
+
+      .mlc-premium-87 {
+        fill: #996c32;
+      }
+
+      .mlc-premium-88 {
+        fill: #a0743a;
+      }
+
+      .mlc-premium-89 {
+        fill: #b98e55;
+      }
+
+      .mlc-premium-90 {
+        fill: #e0af70;
+      }
+
+      .mlc-premium-91 {
+        fill: #f4c484;
+      }
+
+      .mlc-premium-92 {
+        fill: #b1803c;
+      }
+
+      .mlc-premium-93 {
+        fill: #d1a060;
+      }
+
+      .mlc-premium-94 {
+        fill: #bc9159;
+      }
+
+      .mlc-premium-95 {
+        fill: #f7c989;
+      }
+
+      .mlc-premium-96 {
+        fill: #daa96a;
+      }
+
+      .mlc-premium-97 {
+        fill: #a2763d;
+      }
+
+      .mlc-premium-98 {
+        fill: #9e7238;
+      }
+
+      .mlc-premium-99 {
+        fill: #e7b879;
+      }
+
+      .mlc-premium-100 {
+        fill: #b0834b;
+      }
+
+      .mlc-premium-101 {
+        fill: #d8a768;
+      }
+
+      .mlc-premium-102 {
+        fill: #fbcd8d;
+      }
+
+      .mlc-premium-103 {
+        fill: #e1b071;
+      }
+
+      .mlc-premium-104 {
+        fill: #bc8a47;
+      }
+
+      .mlc-premium-105 {
+        fill: #a97731;
+      }
+
+      .mlc-premium-106 {
+        fill: #d5a464;
+      }
+
+      .mlc-premium-107 {
+        fill: #bb9058;
+      }
+
+      .mlc-premium-108 {
+        fill: #f5c787;
+      }
+
+      .mlc-premium-109 {
+        fill: #d2a161;
+      }
+
+      .mlc-premium-110 {
+        fill: #e6b778;
+      }
+
+      .mlc-premium-111 {
+        fill: #b0803b;
+      }
+
+      .mlc-premium-112 {
+        fill: #b58a51;
+      }
+
+      .mlc-premium-113 {
+        fill: #d9a869;
+      }
+
+      .mlc-premium-114 {
+        fill: #a4783f;
+      }
+
+      .mlc-premium-115 {
+        fill: #d09f5f;
+      }
+
+      .mlc-premium-116 {
+        fill: #dfae6f;
+      }
+
+      .mlc-premium-117 {
+        fill: #cca36b;
+      }
+
+      .mlc-premium-118 {
+        fill: #c39860;
+      }
+
+      .mlc-premium-119 {
+        fill: #c99957;
+      }
+
+      .mlc-premium-120 {
+        fill: #cd9d5b;
+      }
+
+      .mlc-premium-121 {
+        fill: #d7a667;
+      }
+
+      .mlc-premium-122 {
+        fill: #af824a;
+      }
+
+      .mlc-premium-123 {
+        fill: #e3b475;
+      }
+
+      .mlc-premium-124 {
+        fill: #be935b;
+      }
+
+      .mlc-premium-125 {
+        fill: #f5c585;
+      }
+
+      .mlc-premium-126 {
+        fill: #ddac6d;
+      }
+
+      .mlc-premium-127 {
+        fill: #c69653;
+      }
+
+      .mlc-premium-128 {
+        fill: #e8b97a;
+      }
+
+      .mlc-premium-129 {
+        fill: #c1914e;
+      }
+
+      .mlc-premium-130 {
+        fill: #a6742e;
+      }
+
+      .mlc-premium-131 {
+        fill: #a17029;
+      }
+
+      .mlc-premium-132 {
+        fill: #cfa56d;
+      }
+
+      .mlc-premium-133 {
+        fill: #e1b273;
+      }
+
+      .mlc-premium-134 {
+        fill: #f0c181;
+      }
+
+      .mlc-premium-135 {
+        fill: #c89f67;
+      }
+
+      .mlc-premium-136 {
+        fill: #cba26a;
+      }
+
+      .mlc-premium-137 {
+        fill: #a2712a;
+      }
+
+      .mlc-premium-138 {
+        fill: #be8e4b;
+      }
+
+      .mlc-premium-139 {
+        fill: #a87630;
+      }
+
+      .mlc-premium-140 {
+        fill: #b88643;
+      }
+
+      .mlc-premium-141 {
+        fill: #a4732d;
+      }
+
+      .mlc-premium-142 {
+        fill: #b88d54;
+      }
+
+      .mlc-premium-143 {
+        fill: #d3a262;
+      }
+
+      .mlc-premium-144 {
+        fill: #facc8c;
+      }
+
+      .mlc-premium-145 {
+        fill: #986b31;
+      }
+
+      .mlc-premium-146 {
+        fill: #c59a62;
+      }
+
+      .mlc-premium-147 {
+        fill: #bc8c49;
+      }
+
+      .mlc-premium-148 {
+        fill: #f2c383;
+      }
+
+      .mlc-premium-149 {
+        fill: #94672c;
+      }
+
+      .mlc-premium-150 {
+        fill: #c9a068;
+      }
+
+      .mlc-premium-151 {
+        fill: #c89856;
+      }
+
+      .mlc-premium-152 {
+        fill: #b68541;
+      }
+
+      .mlc-premium-153 {
+        fill: #cda46c;
+      }
+
+      .mlc-premium-154 {
+        fill: #a7752f;
+      }
+
+      .mlc-premium-155 {
+        fill: #bd8d4a;
+      }
+
+      .mlc-premium-156 {
+        fill: #b2813d;
+      }
+
+      .mlc-premium-157 {
+        fill: #9a6d33;
+      }
+
+      .mlc-premium-158 {
+        fill: #a06f28;
+      }
+
+      .mlc-premium-159 {
+        fill: #c1965e;
+      }
+
+      .mlc-premium-160 {
+        fill: #f6c888;
+      }
+
+      .mlc-premium-161 {
+        fill: #e9ba7b;
+      }
+
+      .mlc-premium-162 {
+        fill: #b58440;
+      }
+
+      .mlc-premium-163 {
+        fill: #c89551;
+      }
+
+      .mlc-premium-164 {
+        clip-path: url(#clippath);
+      }
+
+      .mlc-premium-165 {
+        fill: #80551b;
+      }
+
+      .mlc-premium-166 {
+        fill: #c2975f;
+      }
+
+      .mlc-premium-167 {
+        fill: #93662b;
+      }
+
+      .mlc-premium-168 {
+        fill: #a3773e;
+      }
+
+      .mlc-premium-169 {
+        fill: #c2924f;
+      }
+
+      .mlc-premium-170 {
+        fill: #c79e66;
+      }
+
+      .mlc-premium-171 {
+        fill: #af7f3a;
+      }
+
+      .mlc-premium-172 {
+        fill: #cc9c5a;
+      }
+
+      .mlc-premium-173 {
+        fill: #ac7c37;
+      }
+
+      .mlc-premium-174 {
+        fill: #ac8047;
+      }
+    </style>
+    <clipPath id="clippath">
+      <path class="mlc-premium-2" d="M89.49,141.36c-3.46,0-8.17-2.06-12.35-3.88-3.48-1.52-6.77-2.96-8.68-2.93h-18.48c-12.57,0-22.8-10.23-22.8-22.8v-19.3c0-12.57,10.23-22.8,22.8-22.8h19.3c12.57,0,22.8,10.23,22.8,22.8v19.3c0,6.22-2.47,12.02-6.95,16.36.59,1.53,2.22,3.82,3.81,6.05,1.17,1.64,2.27,3.19,2.94,4.41.31.56.32,1.16.04,1.67-.35.63-1.09,1.05-1.94,1.1-.16,0-.32.01-.49.01ZM68.52,133.82c2.07,0,5.24,1.39,8.91,2.99,4.3,1.88,9.18,4.01,12.5,3.81.6-.04,1.13-.32,1.35-.73.16-.3.15-.63-.04-.97h0c-.65-1.18-1.74-2.72-2.9-4.34-1.69-2.38-3.44-4.83-3.98-6.45l-.07-.22.17-.16c4.44-4.22,6.89-9.9,6.89-15.99v-19.3c0-12.17-9.9-22.07-22.07-22.07h-19.3c-12.17,0-22.07,9.9-22.07,22.07v19.3c0,12.17,9.9,22.07,22.07,22.07h18.47s.04,0,.06,0Z"/>
+    </clipPath>
+    <clipPath id="clippath-1">
+      <path class="mlc-premium-2" d="M89.49,141.9c-3.58,0-8.34-2.08-12.57-3.93-3.4-1.48-6.61-2.89-8.41-2.89-.02,0-.03,0-.04,0h-18.49c-12.87,0-23.34-10.47-23.34-23.34v-19.3c0-12.87,10.47-23.34,23.34-23.34h19.3c12.87,0,23.34,10.47,23.34,23.34v19.3c0,6.24-2.43,12.07-6.85,16.49.67,1.47,2.22,3.65,3.6,5.6,1.18,1.66,2.29,3.22,2.98,4.47h0c.4.72.41,1.52.04,2.2-.43.79-1.35,1.32-2.39,1.38-.17,0-.34.01-.52.01ZM68.52,133.27c2.17,0,5.4,1.41,9.13,3.04,4.25,1.86,9.06,3.96,12.25,3.76.47-.03.79-.24.9-.44.05-.09.09-.22-.04-.45h0c-.64-1.16-1.72-2.68-2.87-4.29-1.71-2.41-3.48-4.9-4.05-6.6l-.18-.55.42-.4c4.33-4.12,6.72-9.65,6.72-15.6v-19.3c0-11.87-9.66-21.52-21.52-21.52h-19.3c-11.87,0-21.53,9.66-21.53,21.52v19.3c0,11.87,9.66,21.52,21.53,21.52h18.47s.04,0,.07,0Z"/>
+    </clipPath>
+    <clipPath id="clippath-2">
+      <path class="mlc-premium-2" d="M47.03,51.64c12.39,0,22.43,10.04,22.43,22.43v19.3c0,12.39-10.04,22.43-22.43,22.43h-18.47s-.04,0-.05,0c-4.37,0-14.76,6.81-20.97,6.81-.16,0-.32,0-.48-.01-1.29-.08-2.23-1.11-1.61-2.24,1.62-2.95,5.96-8.09,6.85-10.74-4.31-4.09-7-9.85-7-16.26v-19.3c0-12.39,10.04-22.43,22.43-22.43h19.3M47.03,49.82h-19.3c-13.37,0-24.25,10.88-24.25,24.25v19.3c0,6.27,2.35,12.14,6.66,16.66-.73,1.36-2.05,3.22-3.25,4.9-1.19,1.68-2.32,3.26-3.03,4.55-.55,1-.57,2.12-.04,3.08.58,1.06,1.78,1.77,3.13,1.85.19.01.39.02.59.02,3.75,0,8.41-2.04,12.92-4,3.16-1.38,6.43-2.81,8.05-2.81h.01s.04,0,.04,0h18.47c13.37,0,24.25-10.88,24.25-24.25v-19.3c0-13.37-10.88-24.25-24.25-24.25h0Z"/>
+    </clipPath>
+  </defs>
+  <g>
+    <g>
+      <path class="mlc-premium-73" d="M91.56,138.74c-1.62-2.95-5.96-8.09-6.85-10.74,4.31-4.09,7-9.85,7-16.26v-19.3c0-12.39-10.04-22.43-22.43-22.43h-19.3c-12.39,0-22.43,10.04-22.43,22.43v19.3c0,12.39,10.04,22.43,22.43,22.43h18.47c4.45-.06,15.33,7.18,21.5,6.8,1.29-.08,2.23-1.11,1.61-2.24Z"/>
+      <g class="mlc-premium-164">
+        <rect class="mlc-premium-132" x="27.91" y="70.38" width=".27" height="70.44"/>
+        <rect class="mlc-premium-153" x="28.19" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-117" x="29.19" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-136" x="30.18" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-70" x="31.18" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-150" x="32.18" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-135" x="33.18" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-170" x="34.18" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-49" x="35.18" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-35" x="36.18" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-30" x="37.18" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-146" x="38.18" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-44" x="39.18" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-118" x="40.17" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-166" x="41.17" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-159" x="42.17" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-71" x="43.17" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-74" x="44.17" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-124" x="45.17" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-66" x="46.17" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-94" x="47.17" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-107" x="48.17" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-58" x="49.17" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-89" x="50.16" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-142" x="51.16" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-48" x="52.16" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-7" x="53.16" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-112" x="54.16" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-37" x="55.16" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-68" x="56.16" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-42" x="57.16" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-77" x="58.16" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-81" x="59.16" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-100" x="60.15" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-122" x="61.15" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-33" x="62.15" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-26" x="63.15" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-174" x="64.15" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-86" x="65.15" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-57" x="66.15" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-9" x="67.15" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-23" x="68.15" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-14" x="69.15" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-63" x="70.14" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-53" x="71.14" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-114" x="72.14" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-168" x="73.14" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-97" x="74.14" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-32" x="75.14" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-88" x="76.14" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-50" x="77.14" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-98" x="78.14" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-52" x="79.14" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-19" x="80.13" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-34" x="81.13" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-3" x="82.13" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-157" x="83.13" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-87" x="84.13" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-145" x="85.13" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-12" x="86.13" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-55" x="87.13" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-10" x="88.13" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-149" x="89.13" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-167" x="90.12" y="70.38" width="1" height="70.44"/>
+        <rect class="mlc-premium-60" x="91.12" y="70.38" width=".32" height="70.44"/>
+        <rect class="mlc-premium-132" x="27.19" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-153" x="28.19" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-117" x="29.19" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-136" x="30.18" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-70" x="31.18" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-150" x="32.18" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-135" x="33.18" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-170" x="34.18" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-49" x="35.18" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-35" x="36.18" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-30" x="37.18" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-146" x="38.18" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-44" x="39.18" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-118" x="40.17" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-166" x="41.17" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-159" x="42.17" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-71" x="43.17" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-74" x="44.17" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-124" x="45.17" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-66" x="46.17" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-94" x="47.17" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-107" x="48.17" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-58" x="49.17" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-89" x="50.16" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-142" x="51.16" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-48" x="52.16" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-7" x="53.16" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-112" x="54.16" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-37" x="55.16" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-68" x="56.16" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-42" x="57.16" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-77" x="58.16" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-81" x="59.16" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-100" x="60.15" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-122" x="61.15" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-33" x="62.15" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-26" x="63.15" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-174" x="64.15" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-86" x="65.15" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-57" x="66.15" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-9" x="67.15" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-23" x="68.15" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-14" x="69.15" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-63" x="70.14" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-53" x="71.14" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-114" x="72.14" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-168" x="73.14" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-97" x="74.14" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-32" x="75.14" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-88" x="76.14" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-50" x="77.14" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-98" x="78.14" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-52" x="79.14" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-19" x="80.13" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-34" x="81.13" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-3" x="82.13" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-157" x="83.13" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-87" x="84.13" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-145" x="85.13" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-12" x="86.13" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-55" x="87.13" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-10" x="88.13" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-149" x="89.13" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-167" x="90.12" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-60" x="91.12" y="69.65" width="1" height="71.7"/>
+        <rect class="mlc-premium-60" x="92.12" y="69.65" width=".08" height="71.7"/>
+      </g>
+    </g>
+    <path class="mlc-premium-165" d="M79.59,96.98l3.71-20.98c.06-.32.1-.63.14-.95-3.86-3.15-8.79-5.04-14.16-5.04h-19.3c-12.39,0-22.43,10.04-22.43,22.43v19.3c0,3.48.79,6.77,2.2,9.71.39-.06.74-.09,1.06-.09h20.08c13.47,0,26.31-10.92,28.69-24.39Z"/>
+    <g class="mlc-premium-64">
+      <polygon class="mlc-premium-40" points="90.31 140.27 90.89 139.69 90.89 140.27 90.31 140.27"/>
+      <polygon class="mlc-premium-102" points="89.09 140.27 90.89 138.47 90.89 139.69 90.31 140.27 89.09 140.27"/>
+      <polygon class="mlc-premium-144" points="87.87 140.27 90.89 137.24 90.89 138.47 89.09 140.27 87.87 140.27"/>
+      <polygon class="mlc-premium-62" points="86.64 140.27 90.89 136.02 90.89 137.24 87.87 140.27 86.64 140.27"/>
+      <polygon class="mlc-premium-17" points="85.42 140.27 90.89 134.8 90.89 136.02 86.64 140.27 85.42 140.27"/>
+      <polygon class="mlc-premium-95" points="84.19 140.27 90.89 133.57 90.89 134.8 85.42 140.27 84.19 140.27"/>
+      <polygon class="mlc-premium-160" points="82.97 140.27 90.89 132.35 90.89 133.57 84.19 140.27 82.97 140.27"/>
+      <polygon class="mlc-premium-108" points="81.75 140.27 90.89 131.13 90.89 132.35 82.97 140.27 81.75 140.27"/>
+      <polygon class="mlc-premium-83" points="80.52 140.27 90.89 129.9 90.89 131.13 81.75 140.27 80.52 140.27"/>
+      <polygon class="mlc-premium-125" points="79.3 140.27 90.89 128.68 90.89 129.9 80.52 140.27 79.3 140.27"/>
+      <polygon class="mlc-premium-91" points="78.08 140.27 90.89 127.45 90.89 128.68 79.3 140.27 78.08 140.27"/>
+      <polygon class="mlc-premium-148" points="76.85 140.27 90.89 126.23 90.89 127.45 78.08 140.27 76.85 140.27"/>
+      <polygon class="mlc-premium-1" points="75.63 140.27 90.89 125.01 90.89 126.23 76.85 140.27 75.63 140.27"/>
+      <polygon class="mlc-premium-134" points="74.41 140.27 90.89 123.78 90.89 125.01 75.63 140.27 74.41 140.27"/>
+      <polygon class="mlc-premium-51" points="73.18 140.27 90.89 122.56 90.89 123.78 74.41 140.27 73.18 140.27"/>
+      <polygon class="mlc-premium-69" points="71.96 140.27 90.89 121.34 90.89 122.56 73.18 140.27 71.96 140.27"/>
+      <polygon class="mlc-premium-8" points="70.73 140.27 90.89 120.11 90.89 121.34 71.96 140.27 70.73 140.27"/>
+      <polygon class="mlc-premium-4" points="69.51 140.27 90.89 118.89 90.89 120.11 70.73 140.27 69.51 140.27"/>
+      <polygon class="mlc-premium-29" points="68.29 140.27 90.89 117.66 90.89 118.89 69.51 140.27 68.29 140.27"/>
+      <polygon class="mlc-premium-22" points="67.06 140.27 90.89 116.44 90.89 117.66 68.29 140.27 67.06 140.27"/>
+      <polygon class="mlc-premium-161" points="65.84 140.27 90.89 115.22 90.89 116.44 67.06 140.27 65.84 140.27"/>
+      <polygon class="mlc-premium-128" points="64.62 140.27 90.89 113.99 90.89 115.22 65.84 140.27 64.62 140.27"/>
+      <polygon class="mlc-premium-99" points="63.39 140.27 90.89 112.77 90.89 113.99 64.62 140.27 63.39 140.27"/>
+      <polygon class="mlc-premium-110" points="62.17 140.27 90.89 111.55 90.89 112.77 63.39 140.27 62.17 140.27"/>
+      <polygon class="mlc-premium-75" points="60.95 140.27 90.89 110.32 90.89 111.55 62.17 140.27 60.95 140.27"/>
+      <polygon class="mlc-premium-11" points="59.72 140.27 90.89 109.1 90.89 110.32 60.95 140.27 59.72 140.27"/>
+      <polygon class="mlc-premium-123" points="58.5 140.27 90.89 107.88 90.89 109.1 59.72 140.27 58.5 140.27"/>
+      <polygon class="mlc-premium-39" points="57.27 140.27 90.89 106.65 90.89 107.88 58.5 140.27 57.27 140.27"/>
+      <polygon class="mlc-premium-133" points="56.05 140.27 90.89 105.43 90.89 106.65 57.27 140.27 56.05 140.27"/>
+      <polygon class="mlc-premium-27" points="54.83 140.27 90.89 104.2 90.89 105.43 56.05 140.27 54.83 140.27"/>
+      <polygon class="mlc-premium-103" points="53.6 140.27 90.89 102.98 90.89 104.2 54.83 140.27 53.6 140.27"/>
+      <polygon class="mlc-premium-90" points="52.38 140.27 90.89 101.76 90.89 102.98 53.6 140.27 52.38 140.27"/>
+      <polygon class="mlc-premium-116" points="51.16 140.27 90.89 100.53 90.89 101.76 52.38 140.27 51.16 140.27"/>
+      <polygon class="mlc-premium-59" points="49.93 140.27 90.89 99.31 90.89 100.53 51.16 140.27 49.93 140.27"/>
+      <polygon class="mlc-premium-126" points="48.71 140.27 90.89 98.09 90.89 99.31 49.93 140.27 48.71 140.27"/>
+      <polygon class="mlc-premium-82" points="47.48 140.27 90.89 96.86 90.89 98.09 48.71 140.27 47.48 140.27"/>
+      <polygon class="mlc-premium-54" points="46.26 140.27 90.89 95.64 90.89 96.86 47.48 140.27 46.26 140.27"/>
+      <polygon class="mlc-premium-96" points="45.04 140.27 90.89 94.41 90.89 95.64 46.26 140.27 45.04 140.27"/>
+      <polygon class="mlc-premium-113" points="43.81 140.27 90.89 93.19 90.89 94.41 45.04 140.27 43.81 140.27"/>
+      <polygon class="mlc-premium-101" points="43.06 140.27 42.82 140.04 90.89 91.97 90.89 93.19 43.81 140.27 43.06 140.27"/>
+      <polygon class="mlc-premium-121" points="42.82 140.04 42.21 139.42 90.89 90.74 90.89 91.97 42.82 140.04"/>
+      <polygon class="mlc-premium-56" points="42.21 139.42 41.6 138.81 90.89 89.52 90.89 90.74 42.21 139.42"/>
+      <polygon class="mlc-premium-106" points="41.6 138.81 40.99 138.2 90.89 88.3 90.89 89.52 41.6 138.81"/>
+      <polygon class="mlc-premium-21" points="40.99 138.2 40.38 137.59 90.89 87.07 90.89 88.3 40.99 138.2"/>
+      <polygon class="mlc-premium-143" points="40.38 137.59 39.76 136.98 90.89 85.85 90.89 87.07 40.38 137.59"/>
+      <polygon class="mlc-premium-109" points="39.76 136.98 39.15 136.37 90.89 84.63 90.89 85.85 39.76 136.98"/>
+      <polygon class="mlc-premium-93" points="39.15 136.37 38.54 135.75 90.89 83.4 90.89 84.63 39.15 136.37"/>
+      <polygon class="mlc-premium-115" points="38.54 135.75 37.93 135.14 90.89 82.18 90.89 83.4 38.54 135.75"/>
+      <polygon class="mlc-premium-67" points="37.93 135.14 37.32 134.53 90.89 80.95 90.89 82.18 37.93 135.14"/>
+      <polygon class="mlc-premium-72" points="37.32 134.53 36.7 133.92 90.89 79.73 90.89 80.95 37.32 134.53"/>
+      <polygon class="mlc-premium-120" points="36.7 133.92 36.09 133.31 90.84 78.56 90.89 78.61 90.89 79.73 36.7 133.92"/>
+      <rect class="mlc-premium-172" x="24.45" y="105.19" width="77.42" height=".87" transform="translate(-56.19 75.6) rotate(-45)"/>
+      <rect class="mlc-premium-20" x="23.84" y="104.58" width="77.42" height=".87" transform="translate(-55.94 74.99) rotate(-45)"/>
+      <rect class="mlc-premium-38" x="23.23" y="103.97" width="77.42" height=".87" transform="translate(-55.68 74.38) rotate(-45)"/>
+      <rect class="mlc-premium-119" x="22.61" y="103.36" width="77.42" height=".87" transform="translate(-55.43 73.76) rotate(-45)"/>
+      <rect class="mlc-premium-151" x="22" y="102.75" width="77.42" height=".87" transform="translate(-55.18 73.15) rotate(-45)"/>
+      <rect class="mlc-premium-5" x="21.39" y="102.14" width="77.42" height=".87" transform="translate(-54.92 72.54) rotate(-45)"/>
+      <rect class="mlc-premium-127" x="20.78" y="101.52" width="77.42" height=".87" transform="translate(-54.67 71.93) rotate(-45)"/>
+      <rect class="mlc-premium-76" x="20.17" y="100.91" width="77.42" height=".87" transform="translate(-54.42 71.32) rotate(-45)"/>
+      <rect class="mlc-premium-28" x="19.55" y="100.3" width="77.42" height=".87" transform="translate(-54.16 70.7) rotate(-45)"/>
+      <rect class="mlc-premium-6" x="18.94" y="99.69" width="77.42" height=".87" transform="translate(-53.91 70.09) rotate(-45)"/>
+      <rect class="mlc-premium-169" x="18.33" y="99.08" width="77.42" height=".87" transform="translate(-53.66 69.48) rotate(-45)"/>
+      <rect class="mlc-premium-129" x="17.72" y="98.46" width="77.42" height=".87" transform="translate(-53.4 68.87) rotate(-45)"/>
+      <polygon class="mlc-premium-43" points="28.75 125.96 28.46 125.67 28.46 125.03 82.57 70.93 83.21 70.93 83.5 71.22 28.75 125.96"/>
+      <polygon class="mlc-premium-47" points="28.46 123.81 81.34 70.93 82.57 70.93 28.46 125.03 28.46 123.81"/>
+      <polygon class="mlc-premium-138" points="28.46 122.59 80.12 70.93 81.34 70.93 28.46 123.81 28.46 122.59"/>
+      <polygon class="mlc-premium-155" points="28.46 121.36 78.9 70.93 80.12 70.93 28.46 122.59 28.46 121.36"/>
+      <polygon class="mlc-premium-147" points="28.46 120.14 77.67 70.93 78.9 70.93 28.46 121.36 28.46 120.14"/>
+      <polygon class="mlc-premium-18" points="28.46 118.91 76.45 70.93 77.67 70.93 28.46 120.14 28.46 118.91"/>
+      <polygon class="mlc-premium-104" points="28.46 117.69 75.22 70.93 76.45 70.93 28.46 118.91 28.46 117.69"/>
+      <polygon class="mlc-premium-13" points="28.46 116.47 74 70.93 75.22 70.93 28.46 117.69 28.46 116.47"/>
+      <polygon class="mlc-premium-16" points="28.46 115.24 72.78 70.93 74 70.93 28.46 116.47 28.46 115.24"/>
+      <polygon class="mlc-premium-85" points="28.46 114.02 71.55 70.93 72.78 70.93 28.46 115.24 28.46 114.02"/>
+      <polygon class="mlc-premium-140" points="28.46 112.8 70.33 70.93 71.55 70.93 28.46 114.02 28.46 112.8"/>
+      <polygon class="mlc-premium-152" points="28.46 111.57 69.11 70.93 70.33 70.93 28.46 112.8 28.46 111.57"/>
+      <polygon class="mlc-premium-162" points="28.46 110.35 67.88 70.93 69.11 70.93 28.46 111.57 28.46 110.35"/>
+      <polygon class="mlc-premium-24" points="28.46 109.13 66.66 70.93 67.88 70.93 28.46 110.35 28.46 109.13"/>
+      <polygon class="mlc-premium-31" points="28.46 107.9 65.44 70.93 66.66 70.93 28.46 109.13 28.46 107.9"/>
+      <polygon class="mlc-premium-156" points="28.46 106.68 64.21 70.93 65.44 70.93 28.46 107.9 28.46 106.68"/>
+      <polygon class="mlc-premium-92" points="28.46 105.45 62.99 70.93 64.21 70.93 28.46 106.68 28.46 105.45"/>
+      <polygon class="mlc-premium-111" points="28.46 104.23 61.76 70.93 62.99 70.93 28.46 105.45 28.46 104.23"/>
+      <polygon class="mlc-premium-171" points="28.46 103.01 60.54 70.93 61.76 70.93 28.46 104.23 28.46 103.01"/>
+      <polygon class="mlc-premium-25" points="28.46 101.78 59.32 70.93 60.54 70.93 28.46 103.01 28.46 101.78"/>
+      <polygon class="mlc-premium-78" points="28.46 100.56 58.09 70.93 59.32 70.93 28.46 101.78 28.46 100.56"/>
+      <polygon class="mlc-premium-173" points="28.46 99.34 56.87 70.93 58.09 70.93 28.46 100.56 28.46 99.34"/>
+      <polygon class="mlc-premium-84" points="28.46 98.11 55.65 70.93 56.87 70.93 28.46 99.34 28.46 98.11"/>
+      <polygon class="mlc-premium-46" points="28.46 96.89 54.42 70.93 55.65 70.93 28.46 98.11 28.46 96.89"/>
+      <polygon class="mlc-premium-36" points="28.46 95.66 53.2 70.93 54.42 70.93 28.46 96.89 28.46 95.66"/>
+      <polygon class="mlc-premium-41" points="28.46 94.44 51.97 70.93 53.2 70.93 28.46 95.66 28.46 94.44"/>
+      <polygon class="mlc-premium-105" points="28.46 93.22 50.75 70.93 51.97 70.93 28.46 94.44 28.46 93.22"/>
+      <polygon class="mlc-premium-139" points="28.46 91.99 49.53 70.93 50.75 70.93 28.46 93.22 28.46 91.99"/>
+      <polygon class="mlc-premium-154" points="28.46 90.77 48.3 70.93 49.53 70.93 28.46 91.99 28.46 90.77"/>
+      <polygon class="mlc-premium-130" points="28.46 89.55 47.08 70.93 48.3 70.93 28.46 90.77 28.46 89.55"/>
+      <polygon class="mlc-premium-141" points="28.46 88.32 45.86 70.93 47.08 70.93 28.46 89.55 28.46 88.32"/>
+      <polygon class="mlc-premium-15" points="28.46 87.1 44.63 70.93 45.86 70.93 28.46 88.32 28.46 87.1"/>
+      <polygon class="mlc-premium-137" points="28.46 85.88 43.41 70.93 44.63 70.93 28.46 87.1 28.46 85.88"/>
+      <polygon class="mlc-premium-131" points="28.46 84.65 42.19 70.93 43.41 70.93 28.46 85.88 28.46 84.65"/>
+      <polygon class="mlc-premium-158" points="28.46 83.43 40.96 70.93 42.19 70.93 28.46 84.65 28.46 83.43"/>
+      <polygon class="mlc-premium-61" points="28.46 82.2 39.74 70.93 40.96 70.93 28.46 83.43 28.46 82.2"/>
+      <polygon class="mlc-premium-79" points="28.46 80.98 38.51 70.93 39.74 70.93 28.46 82.2 28.46 80.98"/>
+      <polygon class="mlc-premium-79" points="38.51 70.93 28.46 80.98 28.46 70.93 38.51 70.93"/>
+      <polygon class="mlc-premium-45" points="91.13 141.9 92.77 140.26 92.77 141.9 91.13 141.9"/>
+      <polygon class="mlc-premium-45" points="89.9 141.9 92.77 139.04 92.77 140.26 91.13 141.9 89.9 141.9"/>
+      <polygon class="mlc-premium-40" points="88.68 141.9 92.77 137.81 92.77 139.04 89.9 141.9 88.68 141.9"/>
+      <polygon class="mlc-premium-102" points="87.46 141.9 92.77 136.59 92.77 137.81 88.68 141.9 87.46 141.9"/>
+      <polygon class="mlc-premium-144" points="86.23 141.9 92.77 135.37 92.77 136.59 87.46 141.9 86.23 141.9"/>
+      <polygon class="mlc-premium-62" points="85.01 141.9 92.77 134.14 92.77 135.37 86.23 141.9 85.01 141.9"/>
+      <polygon class="mlc-premium-17" points="83.78 141.9 92.77 132.92 92.77 134.14 85.01 141.9 83.78 141.9"/>
+      <polygon class="mlc-premium-95" points="82.56 141.9 92.77 131.7 92.77 132.92 83.78 141.9 82.56 141.9"/>
+      <polygon class="mlc-premium-160" points="81.34 141.9 92.77 130.47 92.77 131.7 82.56 141.9 81.34 141.9"/>
+      <polygon class="mlc-premium-108" points="80.11 141.9 92.77 129.25 92.77 130.47 81.34 141.9 80.11 141.9"/>
+      <polygon class="mlc-premium-83" points="78.89 141.9 92.77 128.03 92.77 129.25 80.11 141.9 78.89 141.9"/>
+      <polygon class="mlc-premium-125" points="77.67 141.9 92.77 126.8 92.77 128.03 78.89 141.9 77.67 141.9"/>
+      <polygon class="mlc-premium-91" points="76.44 141.9 92.77 125.58 92.77 126.8 77.67 141.9 76.44 141.9"/>
+      <polygon class="mlc-premium-148" points="75.22 141.9 92.77 124.35 92.77 125.58 76.44 141.9 75.22 141.9"/>
+      <polygon class="mlc-premium-1" points="74 141.9 92.77 123.13 92.77 124.35 75.22 141.9 74 141.9"/>
+      <polygon class="mlc-premium-134" points="72.77 141.9 92.77 121.91 92.77 123.13 74 141.9 72.77 141.9"/>
+      <polygon class="mlc-premium-51" points="71.55 141.9 92.77 120.68 92.77 121.91 72.77 141.9 71.55 141.9"/>
+      <polygon class="mlc-premium-69" points="70.32 141.9 92.77 119.46 92.77 120.68 71.55 141.9 70.32 141.9"/>
+      <polygon class="mlc-premium-8" points="69.1 141.9 92.77 118.24 92.77 119.46 70.32 141.9 69.1 141.9"/>
+      <polygon class="mlc-premium-4" points="67.88 141.9 92.77 117.01 92.77 118.24 69.1 141.9 67.88 141.9"/>
+      <polygon class="mlc-premium-29" points="66.65 141.9 92.77 115.79 92.77 117.01 67.88 141.9 66.65 141.9"/>
+      <polygon class="mlc-premium-22" points="65.43 141.9 92.77 114.56 92.77 115.79 66.65 141.9 65.43 141.9"/>
+      <polygon class="mlc-premium-161" points="64.21 141.9 92.77 113.34 92.77 114.56 65.43 141.9 64.21 141.9"/>
+      <polygon class="mlc-premium-128" points="62.98 141.9 92.77 112.12 92.77 113.34 64.21 141.9 62.98 141.9"/>
+      <polygon class="mlc-premium-99" points="61.76 141.9 92.77 110.89 92.77 112.12 62.98 141.9 61.76 141.9"/>
+      <polygon class="mlc-premium-110" points="60.54 141.9 92.77 109.67 92.77 110.89 61.76 141.9 60.54 141.9"/>
+      <polygon class="mlc-premium-75" points="59.31 141.9 92.77 108.45 92.77 109.67 60.54 141.9 59.31 141.9"/>
+      <polygon class="mlc-premium-11" points="58.09 141.9 92.77 107.22 92.77 108.45 59.31 141.9 58.09 141.9"/>
+      <polygon class="mlc-premium-123" points="56.86 141.9 92.77 106 92.77 107.22 58.09 141.9 56.86 141.9"/>
+      <polygon class="mlc-premium-39" points="55.64 141.9 92.77 104.78 92.77 106 56.86 141.9 55.64 141.9"/>
+      <polygon class="mlc-premium-133" points="54.42 141.9 92.77 103.55 92.77 104.78 55.64 141.9 54.42 141.9"/>
+      <polygon class="mlc-premium-27" points="53.19 141.9 92.77 102.33 92.77 103.55 54.42 141.9 53.19 141.9"/>
+      <polygon class="mlc-premium-103" points="51.97 141.9 92.77 101.1 92.77 102.33 53.19 141.9 51.97 141.9"/>
+      <polygon class="mlc-premium-90" points="50.75 141.9 92.77 99.88 92.77 101.1 51.97 141.9 50.75 141.9"/>
+      <polygon class="mlc-premium-116" points="49.52 141.9 92.77 98.66 92.77 99.88 50.75 141.9 49.52 141.9"/>
+      <polygon class="mlc-premium-59" points="48.3 141.9 92.77 97.43 92.77 98.66 49.52 141.9 48.3 141.9"/>
+      <polygon class="mlc-premium-126" points="47.07 141.9 92.77 96.21 92.77 97.43 48.3 141.9 47.07 141.9"/>
+      <polygon class="mlc-premium-82" points="45.85 141.9 92.77 94.99 92.77 96.21 47.07 141.9 45.85 141.9"/>
+      <polygon class="mlc-premium-54" points="44.63 141.9 92.77 93.76 92.77 94.99 45.85 141.9 44.63 141.9"/>
+      <polygon class="mlc-premium-96" points="43.4 141.9 92.77 92.54 92.77 93.76 44.63 141.9 43.4 141.9"/>
+      <polygon class="mlc-premium-113" points="42.18 141.9 92.77 91.31 92.77 92.54 43.4 141.9 42.18 141.9"/>
+      <polygon class="mlc-premium-101" points="41.87 141.9 41.41 141.45 92.77 90.09 92.77 91.31 42.18 141.9 41.87 141.9"/>
+      <polygon class="mlc-premium-121" points="41.41 141.45 40.8 140.83 92.77 88.87 92.77 90.09 41.41 141.45"/>
+      <polygon class="mlc-premium-56" points="40.8 140.83 40.19 140.22 92.77 87.64 92.77 88.87 40.8 140.83"/>
+      <polygon class="mlc-premium-106" points="40.19 140.22 39.58 139.61 92.77 86.42 92.77 87.64 40.19 140.22"/>
+      <polygon class="mlc-premium-21" points="39.58 139.61 38.97 139 92.77 85.2 92.77 86.42 39.58 139.61"/>
+      <polygon class="mlc-premium-143" points="38.97 139 38.36 138.39 92.77 83.97 92.77 85.2 38.97 139"/>
+      <polygon class="mlc-premium-109" points="38.36 138.39 37.74 137.77 92.77 82.75 92.77 83.97 38.36 138.39"/>
+      <polygon class="mlc-premium-93" points="37.74 137.77 37.13 137.16 92.77 81.53 92.77 82.75 37.74 137.77"/>
+      <polygon class="mlc-premium-115" points="37.13 137.16 36.52 136.55 92.77 80.3 92.77 81.53 37.13 137.16"/>
+      <polygon class="mlc-premium-67" points="36.52 136.55 35.91 135.94 92.77 79.08 92.77 80.3 36.52 136.55"/>
+      <polygon class="mlc-premium-72" points="35.91 135.94 35.3 135.33 92.77 77.85 92.77 79.08 35.91 135.94"/>
+      <polygon class="mlc-premium-120" points="35.3 135.33 34.68 134.72 92.25 77.15 92.77 77.67 92.77 77.85 35.3 135.33"/>
+      <rect class="mlc-premium-172" x="22.46" y="105.19" width="81.41" height=".87" transform="translate(-56.19 75.6) rotate(-45)"/>
+      <rect class="mlc-premium-20" x="21.84" y="104.58" width="81.41" height=".87" transform="translate(-55.94 74.99) rotate(-45)"/>
+      <rect class="mlc-premium-38" x="21.23" y="103.97" width="81.41" height=".87" transform="translate(-55.68 74.38) rotate(-45)"/>
+      <rect class="mlc-premium-119" x="20.62" y="103.36" width="81.41" height=".87" transform="translate(-55.43 73.76) rotate(-45)"/>
+      <rect class="mlc-premium-151" x="20.01" y="102.75" width="81.41" height=".87" transform="translate(-55.18 73.15) rotate(-45)"/>
+      <rect class="mlc-premium-5" x="19.4" y="102.14" width="81.41" height=".87" transform="translate(-54.92 72.54) rotate(-45)"/>
+      <rect class="mlc-premium-127" x="18.79" y="101.52" width="81.41" height=".87" transform="translate(-54.67 71.93) rotate(-45)"/>
+      <rect class="mlc-premium-76" x="18.17" y="100.91" width="81.41" height=".87" transform="translate(-54.42 71.32) rotate(-45)"/>
+      <rect class="mlc-premium-28" x="17.56" y="100.3" width="81.41" height=".87" transform="translate(-54.16 70.7) rotate(-45)"/>
+      <rect class="mlc-premium-6" x="16.95" y="99.69" width="81.41" height=".87" transform="translate(-53.91 70.09) rotate(-45)"/>
+      <rect class="mlc-premium-169" x="16.34" y="99.08" width="81.41" height=".87" transform="translate(-53.66 69.48) rotate(-45)"/>
+      <rect class="mlc-premium-129" x="15.73" y="98.46" width="81.41" height=".87" transform="translate(-53.4 68.87) rotate(-45)"/>
+      <rect class="mlc-premium-43" x="15.11" y="97.85" width="81.41" height=".87" transform="translate(-53.15 68.26) rotate(-45)"/>
+      <polygon class="mlc-premium-47" points="26.73 126.76 26.64 126.67 26.64 125.63 83.16 69.11 84.21 69.11 84.3 69.2 26.73 126.76"/>
+      <polygon class="mlc-premium-138" points="26.64 124.4 81.94 69.11 83.16 69.11 26.64 125.63 26.64 124.4"/>
+      <polygon class="mlc-premium-155" points="26.64 123.18 80.71 69.11 81.94 69.11 26.64 124.4 26.64 123.18"/>
+      <polygon class="mlc-premium-147" points="26.64 121.95 79.49 69.11 80.71 69.11 26.64 123.18 26.64 121.95"/>
+      <polygon class="mlc-premium-18" points="26.64 120.73 78.26 69.11 79.49 69.11 26.64 121.95 26.64 120.73"/>
+      <polygon class="mlc-premium-104" points="26.64 119.51 77.04 69.11 78.26 69.11 26.64 120.73 26.64 119.51"/>
+      <polygon class="mlc-premium-13" points="26.64 118.28 75.82 69.11 77.04 69.11 26.64 119.51 26.64 118.28"/>
+      <polygon class="mlc-premium-16" points="26.64 117.06 74.59 69.11 75.82 69.11 26.64 118.28 26.64 117.06"/>
+      <polygon class="mlc-premium-85" points="26.64 115.84 73.37 69.11 74.59 69.11 26.64 117.06 26.64 115.84"/>
+      <polygon class="mlc-premium-140" points="26.64 114.61 72.15 69.11 73.37 69.11 26.64 115.84 26.64 114.61"/>
+      <polygon class="mlc-premium-152" points="26.64 113.39 70.92 69.11 72.15 69.11 26.64 114.61 26.64 113.39"/>
+      <polygon class="mlc-premium-162" points="26.64 112.17 69.7 69.11 70.92 69.11 26.64 113.39 26.64 112.17"/>
+      <polygon class="mlc-premium-24" points="26.64 110.94 68.48 69.11 69.7 69.11 26.64 112.17 26.64 110.94"/>
+      <polygon class="mlc-premium-31" points="26.64 109.72 67.25 69.11 68.48 69.11 26.64 110.94 26.64 109.72"/>
+      <polygon class="mlc-premium-156" points="26.64 108.49 66.03 69.11 67.25 69.11 26.64 109.72 26.64 108.49"/>
+      <polygon class="mlc-premium-92" points="26.64 107.27 64.8 69.11 66.03 69.11 26.64 108.49 26.64 107.27"/>
+      <polygon class="mlc-premium-111" points="26.64 106.05 63.58 69.11 64.8 69.11 26.64 107.27 26.64 106.05"/>
+      <polygon class="mlc-premium-171" points="26.64 104.82 62.36 69.11 63.58 69.11 26.64 106.05 26.64 104.82"/>
+      <polygon class="mlc-premium-25" points="26.64 103.6 61.13 69.11 62.36 69.11 26.64 104.82 26.64 103.6"/>
+      <polygon class="mlc-premium-78" points="26.64 102.38 59.91 69.11 61.13 69.11 26.64 103.6 26.64 102.38"/>
+      <polygon class="mlc-premium-173" points="26.64 101.15 58.69 69.11 59.91 69.11 26.64 102.38 26.64 101.15"/>
+      <polygon class="mlc-premium-84" points="26.64 99.93 57.46 69.11 58.69 69.11 26.64 101.15 26.64 99.93"/>
+      <polygon class="mlc-premium-46" points="26.64 98.7 56.24 69.11 57.46 69.11 26.64 99.93 26.64 98.7"/>
+      <polygon class="mlc-premium-36" points="26.64 97.48 55.01 69.11 56.24 69.11 26.64 98.7 26.64 97.48"/>
+      <polygon class="mlc-premium-41" points="26.64 96.26 53.79 69.11 55.01 69.11 26.64 97.48 26.64 96.26"/>
+      <polygon class="mlc-premium-105" points="26.64 95.03 52.57 69.11 53.79 69.11 26.64 96.26 26.64 95.03"/>
+      <polygon class="mlc-premium-139" points="26.64 93.81 51.34 69.11 52.57 69.11 26.64 95.03 26.64 93.81"/>
+      <polygon class="mlc-premium-154" points="26.64 92.59 50.12 69.11 51.34 69.11 26.64 93.81 26.64 92.59"/>
+      <polygon class="mlc-premium-130" points="26.64 91.36 48.9 69.11 50.12 69.11 26.64 92.59 26.64 91.36"/>
+      <polygon class="mlc-premium-141" points="26.64 90.14 47.67 69.11 48.9 69.11 26.64 91.36 26.64 90.14"/>
+      <polygon class="mlc-premium-15" points="26.64 88.92 46.45 69.11 47.67 69.11 26.64 90.14 26.64 88.92"/>
+      <polygon class="mlc-premium-137" points="26.64 87.69 45.23 69.11 46.45 69.11 26.64 88.92 26.64 87.69"/>
+      <polygon class="mlc-premium-131" points="26.64 86.47 44 69.11 45.23 69.11 26.64 87.69 26.64 86.47"/>
+      <polygon class="mlc-premium-158" points="26.64 85.24 42.78 69.11 44 69.11 26.64 86.47 26.64 85.24"/>
+      <polygon class="mlc-premium-61" points="26.64 84.02 41.55 69.11 42.78 69.11 26.64 85.24 26.64 84.02"/>
+      <polygon class="mlc-premium-79" points="26.64 82.8 40.33 69.11 41.55 69.11 26.64 84.02 26.64 82.8"/>
+      <polygon class="mlc-premium-79" points="40.33 69.11 26.64 82.8 26.64 69.11 40.33 69.11"/>
+    </g>
+    <g>
+      <path class="mlc-premium-163" d="M47.03,51.64h-19.3c-12.39,0-22.43,10.04-22.43,22.43v19.3c0,6.41,2.7,12.17,7,16.26-.89,2.65-5.23,7.79-6.85,10.74-.62,1.13.32,2.16,1.61,2.24,6.16.38,17.04-6.86,21.5-6.8h18.47c12.39,0,22.43-10.04,22.43-22.43v-19.3c0-12.39-10.04-22.43-22.43-22.43Z"/>
+      <g class="mlc-premium-65">
+        <polygon class="mlc-premium-79" points="50.24 124.43 71.28 103.4 71.28 124.43 50.24 124.43"/>
+        <polygon class="mlc-premium-79" points="49.18 124.43 71.28 102.34 71.28 103.4 50.24 124.43 49.18 124.43"/>
+        <polygon class="mlc-premium-61" points="48.12 124.43 71.28 101.28 71.28 102.34 49.18 124.43 48.12 124.43"/>
+        <polygon class="mlc-premium-158" points="47.06 124.43 71.28 100.22 71.28 101.28 48.12 124.43 47.06 124.43"/>
+        <polygon class="mlc-premium-131" points="46 124.43 71.28 99.15 71.28 100.22 47.06 124.43 46 124.43"/>
+        <polygon class="mlc-premium-137" points="44.94 124.43 71.28 98.09 71.28 99.15 46 124.43 44.94 124.43"/>
+        <polygon class="mlc-premium-15" points="43.88 124.43 71.28 97.03 71.28 98.09 44.94 124.43 43.88 124.43"/>
+        <polygon class="mlc-premium-141" points="42.81 124.43 71.28 95.97 71.28 97.03 43.88 124.43 42.81 124.43"/>
+        <polygon class="mlc-premium-130" points="41.75 124.43 71.28 94.91 71.28 95.97 42.81 124.43 41.75 124.43"/>
+        <polygon class="mlc-premium-154" points="40.69 124.43 71.28 93.85 71.28 94.91 41.75 124.43 40.69 124.43"/>
+        <polygon class="mlc-premium-139" points="39.63 124.43 71.28 92.79 71.28 93.85 40.69 124.43 39.63 124.43"/>
+        <polygon class="mlc-premium-105" points="38.57 124.43 71.28 91.73 71.28 92.79 39.63 124.43 38.57 124.43"/>
+        <polygon class="mlc-premium-41" points="37.51 124.43 71.28 90.67 71.28 91.73 38.57 124.43 37.51 124.43"/>
+        <polygon class="mlc-premium-36" points="36.45 124.43 71.28 89.61 71.28 90.67 37.51 124.43 36.45 124.43"/>
+        <polygon class="mlc-premium-46" points="35.39 124.43 71.28 88.55 71.28 89.61 36.45 124.43 35.39 124.43"/>
+        <polygon class="mlc-premium-84" points="34.33 124.43 71.28 87.48 71.28 88.55 35.39 124.43 34.33 124.43"/>
+        <polygon class="mlc-premium-173" points="33.27 124.43 71.28 86.42 71.28 87.48 34.33 124.43 33.27 124.43"/>
+        <polygon class="mlc-premium-78" points="32.21 124.43 71.28 85.36 71.28 86.42 33.27 124.43 32.21 124.43"/>
+        <polygon class="mlc-premium-25" points="31.14 124.43 71.28 84.3 71.28 85.36 32.21 124.43 31.14 124.43"/>
+        <polygon class="mlc-premium-171" points="30.08 124.43 71.28 83.24 71.28 84.3 31.14 124.43 30.08 124.43"/>
+        <polygon class="mlc-premium-111" points="29.02 124.43 71.28 82.18 71.28 83.24 30.08 124.43 29.02 124.43"/>
+        <polygon class="mlc-premium-92" points="27.96 124.43 71.28 81.12 71.28 82.18 29.02 124.43 27.96 124.43"/>
+        <polygon class="mlc-premium-156" points="26.9 124.43 71.28 80.06 71.28 81.12 27.96 124.43 26.9 124.43"/>
+        <polygon class="mlc-premium-31" points="25.84 124.43 71.28 79 71.28 80.06 26.9 124.43 25.84 124.43"/>
+        <polygon class="mlc-premium-24" points="24.78 124.43 71.28 77.94 71.28 79 25.84 124.43 24.78 124.43"/>
+        <polygon class="mlc-premium-162" points="23.72 124.43 71.28 76.88 71.28 77.94 24.78 124.43 23.72 124.43"/>
+        <polygon class="mlc-premium-152" points="22.66 124.43 71.28 75.81 71.28 76.88 23.72 124.43 22.66 124.43"/>
+        <polygon class="mlc-premium-140" points="21.6 124.43 71.28 74.75 71.28 75.81 22.66 124.43 21.6 124.43"/>
+        <polygon class="mlc-premium-85" points="20.54 124.43 71.28 73.69 71.28 74.75 21.6 124.43 20.54 124.43"/>
+        <polygon class="mlc-premium-16" points="19.48 124.43 71.28 72.63 71.28 73.69 20.54 124.43 19.48 124.43"/>
+        <polygon class="mlc-premium-13" points="18.41 124.43 71.28 71.57 71.28 72.63 19.48 124.43 18.41 124.43"/>
+        <polygon class="mlc-premium-104" points="17.35 124.43 71.28 70.51 71.28 71.57 18.41 124.43 17.35 124.43"/>
+        <polygon class="mlc-premium-18" points="16.29 124.43 71.28 69.45 71.28 70.51 17.35 124.43 16.29 124.43"/>
+        <polygon class="mlc-premium-147" points="15.23 124.43 71.28 68.39 71.28 69.45 16.29 124.43 15.23 124.43"/>
+        <polygon class="mlc-premium-155" points="14.17 124.43 71.28 67.33 71.28 68.39 15.23 124.43 14.17 124.43"/>
+        <polygon class="mlc-premium-138" points="13.11 124.43 71.28 66.27 71.28 67.33 14.17 124.43 13.11 124.43"/>
+        <polygon class="mlc-premium-47" points="12.05 124.43 71.28 65.21 71.28 66.27 13.11 124.43 12.05 124.43"/>
+        <polygon class="mlc-premium-43" points="10.99 124.43 71.28 64.14 71.28 65.21 12.05 124.43 10.99 124.43"/>
+        <polygon class="mlc-premium-129" points="9.93 124.43 71.28 63.08 71.28 64.14 10.99 124.43 9.93 124.43"/>
+        <polygon class="mlc-premium-169" points="8.87 124.43 71.28 62.02 71.28 63.08 9.93 124.43 8.87 124.43"/>
+        <polygon class="mlc-premium-6" points="7.81 124.43 71.28 60.96 71.28 62.02 8.87 124.43 7.81 124.43"/>
+        <polygon class="mlc-premium-28" points="6.74 124.43 71.28 59.9 71.28 60.96 7.81 124.43 6.74 124.43"/>
+        <polygon class="mlc-premium-76" points="5.68 124.43 71.28 58.84 71.28 59.9 6.74 124.43 5.68 124.43"/>
+        <polygon class="mlc-premium-127" points="4.62 124.43 70.84 58.21 71.28 58.65 71.28 58.84 5.68 124.43 4.62 124.43"/>
+        <polygon class="mlc-premium-5" points="3.56 124.43 70.31 57.68 70.84 58.21 4.62 124.43 3.56 124.43"/>
+        <polygon class="mlc-premium-151" points="3.29 123.64 69.78 57.15 70.31 57.68 3.56 124.43 3.29 124.43 3.29 123.64"/>
+        <polygon class="mlc-premium-119" points="3.29 122.58 69.25 56.62 69.78 57.15 3.29 123.64 3.29 122.58"/>
+        <polygon class="mlc-premium-38" points="3.29 121.52 68.72 56.09 69.25 56.62 3.29 122.58 3.29 121.52"/>
+        <polygon class="mlc-premium-20" points="3.29 120.46 68.19 55.56 68.72 56.09 3.29 121.52 3.29 120.46"/>
+        <polygon class="mlc-premium-172" points="3.29 119.4 67.66 55.03 68.19 55.56 3.29 120.46 3.29 119.4"/>
+        <polygon class="mlc-premium-120" points="3.29 118.34 67.13 54.5 67.66 55.03 3.29 119.4 3.29 118.34"/>
+        <polygon class="mlc-premium-72" points="3.29 117.28 66.6 53.97 67.13 54.5 3.29 118.34 3.29 117.28"/>
+        <polygon class="mlc-premium-67" points="3.29 116.21 66.07 53.44 66.6 53.97 3.29 117.28 3.29 116.21"/>
+        <polygon class="mlc-premium-115" points="3.29 115.15 65.54 52.91 66.07 53.44 3.29 116.21 3.29 115.15"/>
+        <polygon class="mlc-premium-93" points="3.29 114.09 65.01 52.38 65.54 52.91 3.29 115.15 3.29 114.09"/>
+        <polygon class="mlc-premium-109" points="3.29 113.03 64.48 51.85 65.01 52.38 3.29 114.09 3.29 113.03"/>
+        <polygon class="mlc-premium-143" points="3.29 111.97 63.95 51.32 64.48 51.85 3.29 113.03 3.29 111.97"/>
+        <polygon class="mlc-premium-21" points="3.29 110.91 63.42 50.79 63.95 51.32 3.29 111.97 3.29 110.91"/>
+        <polygon class="mlc-premium-106" points="3.29 109.85 62.89 50.26 63.42 50.79 3.29 110.91 3.29 109.85"/>
+        <polygon class="mlc-premium-56" points="3.29 108.79 62.26 49.82 62.45 49.82 62.89 50.26 3.29 109.85 3.29 108.79"/>
+        <polygon class="mlc-premium-121" points="3.29 107.73 61.2 49.82 62.26 49.82 3.29 108.79 3.29 107.73"/>
+        <polygon class="mlc-premium-101" points="3.29 106.67 60.14 49.82 61.2 49.82 3.29 107.73 3.29 106.67"/>
+        <polygon class="mlc-premium-113" points="3.29 105.61 59.08 49.82 60.14 49.82 3.29 106.67 3.29 105.61"/>
+        <polygon class="mlc-premium-96" points="3.29 104.54 58.02 49.82 59.08 49.82 3.29 105.61 3.29 104.54"/>
+        <polygon class="mlc-premium-54" points="3.29 103.48 56.95 49.82 58.02 49.82 3.29 104.54 3.29 103.48"/>
+        <polygon class="mlc-premium-82" points="3.29 102.42 55.89 49.82 56.95 49.82 3.29 103.48 3.29 102.42"/>
+        <polygon class="mlc-premium-126" points="3.29 101.36 54.83 49.82 55.89 49.82 3.29 102.42 3.29 101.36"/>
+        <polygon class="mlc-premium-59" points="3.29 100.3 53.77 49.82 54.83 49.82 3.29 101.36 3.29 100.3"/>
+        <polygon class="mlc-premium-116" points="3.29 99.24 52.71 49.82 53.77 49.82 3.29 100.3 3.29 99.24"/>
+        <polygon class="mlc-premium-90" points="3.29 98.18 51.65 49.82 52.71 49.82 3.29 99.24 3.29 98.18"/>
+        <polygon class="mlc-premium-103" points="3.29 97.12 50.59 49.82 51.65 49.82 3.29 98.18 3.29 97.12"/>
+        <polygon class="mlc-premium-27" points="3.29 96.06 49.53 49.82 50.59 49.82 3.29 97.12 3.29 96.06"/>
+        <polygon class="mlc-premium-133" points="3.29 95 48.47 49.82 49.53 49.82 3.29 96.06 3.29 95"/>
+        <polygon class="mlc-premium-39" points="3.29 93.94 47.41 49.82 48.47 49.82 3.29 95 3.29 93.94"/>
+        <polygon class="mlc-premium-123" points="3.29 92.87 46.35 49.82 47.41 49.82 3.29 93.94 3.29 92.87"/>
+        <polygon class="mlc-premium-11" points="3.29 91.81 45.28 49.82 46.35 49.82 3.29 92.87 3.29 91.81"/>
+        <polygon class="mlc-premium-75" points="3.29 90.75 44.22 49.82 45.28 49.82 3.29 91.81 3.29 90.75"/>
+        <polygon class="mlc-premium-110" points="3.29 89.69 43.16 49.82 44.22 49.82 3.29 90.75 3.29 89.69"/>
+        <polygon class="mlc-premium-99" points="3.29 88.63 42.1 49.82 43.16 49.82 3.29 89.69 3.29 88.63"/>
+        <polygon class="mlc-premium-128" points="3.29 87.57 41.04 49.82 42.1 49.82 3.29 88.63 3.29 87.57"/>
+        <polygon class="mlc-premium-161" points="3.29 86.51 39.98 49.82 41.04 49.82 3.29 87.57 3.29 86.51"/>
+        <polygon class="mlc-premium-22" points="3.29 85.45 38.92 49.82 39.98 49.82 3.29 86.51 3.29 85.45"/>
+        <polygon class="mlc-premium-29" points="3.29 84.39 37.86 49.82 38.92 49.82 3.29 85.45 3.29 84.39"/>
+        <polygon class="mlc-premium-4" points="3.29 83.33 36.8 49.82 37.86 49.82 3.29 84.39 3.29 83.33"/>
+        <polygon class="mlc-premium-8" points="3.29 82.27 35.74 49.82 36.8 49.82 3.29 83.33 3.29 82.27"/>
+        <polygon class="mlc-premium-69" points="3.29 81.2 34.68 49.82 35.74 49.82 3.29 82.27 3.29 81.2"/>
+        <polygon class="mlc-premium-51" points="3.29 80.14 33.61 49.82 34.68 49.82 3.29 81.2 3.29 80.14"/>
+        <polygon class="mlc-premium-134" points="3.29 79.08 32.55 49.82 33.61 49.82 3.29 80.14 3.29 79.08"/>
+        <polygon class="mlc-premium-1" points="3.29 78.02 31.49 49.82 32.55 49.82 3.29 79.08 3.29 78.02"/>
+        <polygon class="mlc-premium-148" points="3.29 76.96 30.43 49.82 31.49 49.82 3.29 78.02 3.29 76.96"/>
+        <polygon class="mlc-premium-91" points="3.29 75.9 29.37 49.82 30.43 49.82 3.29 76.96 3.29 75.9"/>
+        <polygon class="mlc-premium-125" points="3.29 74.84 28.31 49.82 29.37 49.82 3.29 75.9 3.29 74.84"/>
+        <polygon class="mlc-premium-83" points="3.29 73.78 27.25 49.82 28.31 49.82 3.29 74.84 3.29 73.78"/>
+        <polygon class="mlc-premium-108" points="3.29 72.72 26.19 49.82 27.25 49.82 3.29 73.78 3.29 72.72"/>
+        <polygon class="mlc-premium-160" points="3.29 71.66 25.13 49.82 26.19 49.82 3.29 72.72 3.29 71.66"/>
+        <polygon class="mlc-premium-95" points="3.29 70.6 24.07 49.82 25.13 49.82 3.29 71.66 3.29 70.6"/>
+        <polygon class="mlc-premium-17" points="3.29 69.53 23.01 49.82 24.07 49.82 3.29 70.6 3.29 69.53"/>
+        <polygon class="mlc-premium-62" points="3.29 68.47 21.94 49.82 23.01 49.82 3.29 69.53 3.29 68.47"/>
+        <polygon class="mlc-premium-144" points="3.29 67.41 20.88 49.82 21.94 49.82 3.29 68.47 3.29 67.41"/>
+        <polygon class="mlc-premium-102" points="3.29 66.35 19.82 49.82 20.88 49.82 3.29 67.41 3.29 66.35"/>
+        <polygon class="mlc-premium-40" points="3.29 65.29 18.76 49.82 19.82 49.82 3.29 66.35 3.29 65.29"/>
+        <polygon class="mlc-premium-45" points="3.29 64.23 17.7 49.82 18.76 49.82 3.29 65.29 3.29 64.23"/>
+        <polygon class="mlc-premium-45" points="17.7 49.82 3.29 64.23 3.29 49.82 17.7 49.82"/>
+        <polygon class="mlc-premium-79" points="52.06 122.62 69.46 105.21 69.46 122.62 52.06 122.62"/>
+        <polygon class="mlc-premium-79" points="51 122.62 69.46 104.15 69.46 105.21 52.06 122.62 51 122.62"/>
+        <polygon class="mlc-premium-61" points="49.94 122.62 69.46 103.09 69.46 104.15 51 122.62 49.94 122.62"/>
+        <polygon class="mlc-premium-158" points="48.88 122.62 69.46 102.03 69.46 103.09 49.94 122.62 48.88 122.62"/>
+        <polygon class="mlc-premium-131" points="47.81 122.62 69.46 100.97 69.46 102.03 48.88 122.62 47.81 122.62"/>
+        <polygon class="mlc-premium-137" points="46.75 122.62 69.46 99.91 69.46 100.97 47.81 122.62 46.75 122.62"/>
+        <polygon class="mlc-premium-15" points="45.69 122.62 69.46 98.85 69.46 99.91 46.75 122.62 45.69 122.62"/>
+        <polygon class="mlc-premium-141" points="44.63 122.62 69.46 97.79 69.46 98.85 45.69 122.62 44.63 122.62"/>
+        <polygon class="mlc-premium-130" points="43.57 122.62 69.46 96.73 69.46 97.79 44.63 122.62 43.57 122.62"/>
+        <polygon class="mlc-premium-154" points="42.51 122.62 69.46 95.67 69.46 96.73 43.57 122.62 42.51 122.62"/>
+        <polygon class="mlc-premium-139" points="41.45 122.62 69.46 94.61 69.46 95.67 42.51 122.62 41.45 122.62"/>
+        <polygon class="mlc-premium-105" points="40.39 122.62 69.46 93.54 69.46 94.61 41.45 122.62 40.39 122.62"/>
+        <polygon class="mlc-premium-41" points="39.33 122.62 69.46 92.48 69.46 93.54 40.39 122.62 39.33 122.62"/>
+        <polygon class="mlc-premium-36" points="38.27 122.62 69.46 91.42 69.46 92.48 39.33 122.62 38.27 122.62"/>
+        <polygon class="mlc-premium-46" points="37.21 122.62 69.46 90.36 69.46 91.42 38.27 122.62 37.21 122.62"/>
+        <polygon class="mlc-premium-84" points="36.14 122.62 69.46 89.3 69.46 90.36 37.21 122.62 36.14 122.62"/>
+        <polygon class="mlc-premium-173" points="35.08 122.62 69.46 88.24 69.46 89.3 36.14 122.62 35.08 122.62"/>
+        <polygon class="mlc-premium-78" points="34.02 122.62 69.46 87.18 69.46 88.24 35.08 122.62 34.02 122.62"/>
+        <polygon class="mlc-premium-25" points="32.96 122.62 69.46 86.12 69.46 87.18 34.02 122.62 32.96 122.62"/>
+        <polygon class="mlc-premium-171" points="31.9 122.62 69.46 85.06 69.46 86.12 32.96 122.62 31.9 122.62"/>
+        <polygon class="mlc-premium-111" points="30.84 122.62 69.46 84 69.46 85.06 31.9 122.62 30.84 122.62"/>
+        <polygon class="mlc-premium-92" points="29.78 122.62 69.46 82.94 69.46 84 30.84 122.62 29.78 122.62"/>
+        <polygon class="mlc-premium-156" points="28.72 122.62 69.46 81.87 69.46 82.94 29.78 122.62 28.72 122.62"/>
+        <polygon class="mlc-premium-31" points="27.66 122.62 69.46 80.81 69.46 81.87 28.72 122.62 27.66 122.62"/>
+        <polygon class="mlc-premium-24" points="26.6 122.62 69.46 79.75 69.46 80.81 27.66 122.62 26.6 122.62"/>
+        <polygon class="mlc-premium-162" points="25.54 122.62 69.46 78.69 69.46 79.75 26.6 122.62 25.54 122.62"/>
+        <polygon class="mlc-premium-152" points="24.47 122.62 69.46 77.63 69.46 78.69 25.54 122.62 24.47 122.62"/>
+        <polygon class="mlc-premium-140" points="23.41 122.62 69.46 76.57 69.46 77.63 24.47 122.62 23.41 122.62"/>
+        <polygon class="mlc-premium-85" points="22.35 122.62 69.46 75.51 69.46 76.57 23.41 122.62 22.35 122.62"/>
+        <polygon class="mlc-premium-16" points="21.29 122.62 69.46 74.45 69.46 75.51 22.35 122.62 21.29 122.62"/>
+        <polygon class="mlc-premium-13" points="20.23 122.62 69.46 73.39 69.46 74.45 21.29 122.62 20.23 122.62"/>
+        <polygon class="mlc-premium-104" points="19.17 122.62 69.46 72.33 69.46 73.39 20.23 122.62 19.17 122.62"/>
+        <polygon class="mlc-premium-18" points="18.11 122.62 69.46 71.27 69.46 72.33 19.17 122.62 18.11 122.62"/>
+        <polygon class="mlc-premium-147" points="17.05 122.62 69.46 70.2 69.46 71.27 18.11 122.62 17.05 122.62"/>
+        <polygon class="mlc-premium-155" points="15.99 122.62 69.46 69.14 69.46 70.2 17.05 122.62 15.99 122.62"/>
+        <polygon class="mlc-premium-138" points="14.93 122.62 69.46 68.08 69.46 69.14 15.99 122.62 14.93 122.62"/>
+        <polygon class="mlc-premium-47" points="13.87 122.62 69.46 67.02 69.46 68.08 14.93 122.62 13.87 122.62"/>
+        <polygon class="mlc-premium-43" points="12.8 122.62 69.46 65.96 69.46 67.02 13.87 122.62 12.8 122.62"/>
+        <polygon class="mlc-premium-129" points="11.74 122.62 69.46 64.9 69.46 65.96 12.8 122.62 11.74 122.62"/>
+        <polygon class="mlc-premium-169" points="10.68 122.62 69.46 63.84 69.46 64.9 11.74 122.62 10.68 122.62"/>
+        <polygon class="mlc-premium-6" points="9.62 122.62 69.46 62.78 69.46 63.84 10.68 122.62 9.62 122.62"/>
+        <polygon class="mlc-premium-28" points="8.56 122.62 69.46 61.72 69.46 62.78 9.62 122.62 8.56 122.62"/>
+        <polygon class="mlc-premium-76" points="7.5 122.62 69.46 60.66 69.46 61.72 8.56 122.62 7.5 122.62"/>
+        <polygon class="mlc-premium-127" points="6.44 122.62 69.44 59.61 69.46 59.63 69.46 60.66 7.5 122.62 6.44 122.62"/>
+        <polygon class="mlc-premium-5" points="5.38 122.62 68.91 59.08 69.44 59.61 6.44 122.62 5.38 122.62"/>
+        <polygon class="mlc-premium-151" points="4.83 122.11 68.38 58.55 68.91 59.08 5.38 122.62 4.83 122.62 4.83 122.11"/>
+        <polygon class="mlc-premium-119" points="4.83 121.05 67.85 58.02 68.38 58.55 4.83 122.11 4.83 121.05"/>
+        <polygon class="mlc-premium-38" points="4.83 119.99 67.32 57.49 67.85 58.02 4.83 121.05 4.83 119.99"/>
+        <polygon class="mlc-premium-20" points="4.83 118.93 66.79 56.96 67.32 57.49 4.83 119.99 4.83 118.93"/>
+        <polygon class="mlc-premium-172" points="4.83 117.86 66.26 56.43 66.79 56.96 4.83 118.93 4.83 117.86"/>
+        <polygon class="mlc-premium-120" points="4.83 116.8 65.73 55.9 66.26 56.43 4.83 117.86 4.83 116.8"/>
+        <polygon class="mlc-premium-72" points="4.83 115.74 65.2 55.37 65.73 55.9 4.83 116.8 4.83 115.74"/>
+        <polygon class="mlc-premium-67" points="4.83 114.68 64.67 54.84 65.2 55.37 4.83 115.74 4.83 114.68"/>
+        <polygon class="mlc-premium-115" points="4.83 113.62 64.14 54.31 64.67 54.84 4.83 114.68 4.83 113.62"/>
+        <polygon class="mlc-premium-93" points="4.83 112.56 63.61 53.78 64.14 54.31 4.83 113.62 4.83 112.56"/>
+        <polygon class="mlc-premium-109" points="4.83 111.5 63.08 53.25 63.61 53.78 4.83 112.56 4.83 111.5"/>
+        <polygon class="mlc-premium-143" points="4.83 110.44 62.55 52.72 63.08 53.25 4.83 111.5 4.83 110.44"/>
+        <polygon class="mlc-premium-21" points="4.83 109.38 62.02 52.19 62.55 52.72 4.83 110.44 4.83 109.38"/>
+        <polygon class="mlc-premium-106" points="4.83 108.32 61.49 51.65 62.02 52.19 4.83 109.38 4.83 108.32"/>
+        <polygon class="mlc-premium-56" points="4.83 107.26 60.44 51.64 61.47 51.64 61.49 51.65 4.83 108.32 4.83 107.26"/>
+        <polygon class="mlc-premium-121" points="4.83 106.19 59.38 51.64 60.44 51.64 4.83 107.26 4.83 106.19"/>
+        <polygon class="mlc-premium-101" points="4.83 105.13 58.32 51.64 59.38 51.64 4.83 106.19 4.83 105.13"/>
+        <polygon class="mlc-premium-113" points="4.83 104.07 57.26 51.64 58.32 51.64 4.83 105.13 4.83 104.07"/>
+        <polygon class="mlc-premium-96" points="4.83 103.01 56.2 51.64 57.26 51.64 4.83 104.07 4.83 103.01"/>
+        <polygon class="mlc-premium-54" points="4.83 101.95 55.14 51.64 56.2 51.64 4.83 103.01 4.83 101.95"/>
+        <polygon class="mlc-premium-82" points="4.83 100.89 54.08 51.64 55.14 51.64 4.83 101.95 4.83 100.89"/>
+        <polygon class="mlc-premium-126" points="4.83 99.83 53.02 51.64 54.08 51.64 4.83 100.89 4.83 99.83"/>
+        <polygon class="mlc-premium-59" points="4.83 98.77 51.96 51.64 53.02 51.64 4.83 99.83 4.83 98.77"/>
+        <polygon class="mlc-premium-116" points="4.83 97.71 50.89 51.64 51.96 51.64 4.83 98.77 4.83 97.71"/>
+        <polygon class="mlc-premium-90" points="4.83 96.65 49.83 51.64 50.89 51.64 4.83 97.71 4.83 96.65"/>
+        <polygon class="mlc-premium-103" points="4.83 95.59 48.77 51.64 49.83 51.64 4.83 96.65 4.83 95.59"/>
+        <polygon class="mlc-premium-27" points="4.83 94.52 47.71 51.64 48.77 51.64 4.83 95.59 4.83 94.52"/>
+        <polygon class="mlc-premium-133" points="4.83 93.46 46.65 51.64 47.71 51.64 4.83 94.52 4.83 93.46"/>
+        <polygon class="mlc-premium-39" points="4.83 92.4 45.59 51.64 46.65 51.64 4.83 93.46 4.83 92.4"/>
+        <polygon class="mlc-premium-123" points="4.83 91.34 44.53 51.64 45.59 51.64 4.83 92.4 4.83 91.34"/>
+        <polygon class="mlc-premium-11" points="4.83 90.28 43.47 51.64 44.53 51.64 4.83 91.34 4.83 90.28"/>
+        <polygon class="mlc-premium-75" points="4.83 89.22 42.41 51.64 43.47 51.64 4.83 90.28 4.83 89.22"/>
+        <polygon class="mlc-premium-110" points="4.83 88.16 41.35 51.64 42.41 51.64 4.83 89.22 4.83 88.16"/>
+        <polygon class="mlc-premium-99" points="4.83 87.1 40.29 51.64 41.35 51.64 4.83 88.16 4.83 87.1"/>
+        <polygon class="mlc-premium-128" points="4.83 86.04 39.22 51.64 40.29 51.64 4.83 87.1 4.83 86.04"/>
+        <polygon class="mlc-premium-161" points="4.83 84.98 38.16 51.64 39.22 51.64 4.83 86.04 4.83 84.98"/>
+        <polygon class="mlc-premium-22" points="4.83 83.92 37.1 51.64 38.16 51.64 4.83 84.98 4.83 83.92"/>
+        <polygon class="mlc-premium-29" points="4.83 82.85 36.04 51.64 37.1 51.64 4.83 83.92 4.83 82.85"/>
+        <polygon class="mlc-premium-4" points="4.83 81.79 34.98 51.64 36.04 51.64 4.83 82.85 4.83 81.79"/>
+        <polygon class="mlc-premium-8" points="4.83 80.73 33.92 51.64 34.98 51.64 4.83 81.79 4.83 80.73"/>
+        <polygon class="mlc-premium-69" points="4.83 79.67 32.86 51.64 33.92 51.64 4.83 80.73 4.83 79.67"/>
+        <polygon class="mlc-premium-51" points="4.83 78.61 31.8 51.64 32.86 51.64 4.83 79.67 4.83 78.61"/>
+        <polygon class="mlc-premium-134" points="4.83 77.55 30.74 51.64 31.8 51.64 4.83 78.61 4.83 77.55"/>
+        <polygon class="mlc-premium-1" points="4.83 76.49 29.68 51.64 30.74 51.64 4.83 77.55 4.83 76.49"/>
+        <polygon class="mlc-premium-148" points="4.83 75.43 28.62 51.64 29.68 51.64 4.83 76.49 4.83 75.43"/>
+        <polygon class="mlc-premium-91" points="4.83 74.37 27.55 51.64 28.62 51.64 4.83 75.43 4.83 74.37"/>
+        <polygon class="mlc-premium-125" points="4.83 73.31 26.49 51.64 27.55 51.64 4.83 74.37 4.83 73.31"/>
+        <polygon class="mlc-premium-83" points="4.83 72.25 25.43 51.64 26.49 51.64 4.83 73.31 4.83 72.25"/>
+        <polygon class="mlc-premium-108" points="4.83 71.18 24.37 51.64 25.43 51.64 4.83 72.25 4.83 71.18"/>
+        <polygon class="mlc-premium-160" points="4.83 70.12 23.31 51.64 24.37 51.64 4.83 71.18 4.83 70.12"/>
+        <polygon class="mlc-premium-95" points="4.83 69.06 22.25 51.64 23.31 51.64 4.83 70.12 4.83 69.06"/>
+        <polygon class="mlc-premium-17" points="4.83 68 21.19 51.64 22.25 51.64 4.83 69.06 4.83 68"/>
+        <polygon class="mlc-premium-62" points="4.83 66.94 20.13 51.64 21.19 51.64 4.83 68 4.83 66.94"/>
+        <polygon class="mlc-premium-144" points="4.83 65.88 19.07 51.64 20.13 51.64 4.83 66.94 4.83 65.88"/>
+        <polygon class="mlc-premium-102" points="4.83 64.82 18.01 51.64 19.07 51.64 4.83 65.88 4.83 64.82"/>
+        <polygon class="mlc-premium-40" points="4.83 63.76 16.95 51.64 18.01 51.64 4.83 64.82 4.83 63.76"/>
+        <polygon class="mlc-premium-45" points="4.83 62.7 15.88 51.64 16.95 51.64 4.83 63.76 4.83 62.7"/>
+        <polygon class="mlc-premium-45" points="15.88 51.64 4.83 62.7 4.83 51.64 15.88 51.64"/>
+      </g>
+    </g>
+  </g>
+  <g>
+    <path class="mlc-premium-80" d="M106.23,136.87l8.4-47.96h9.89c.09.54.14,1.04.14,1.49,0,.99-.07,1.83-.2,2.51.81-1.22,2.11-2.35,3.9-3.39,1.78-1.04,3.65-1.56,5.59-1.56,3.48,0,6.2,1.3,8.16,3.9,1.96,2.6,2.95,6,2.95,10.2,0,6.59-1.42,11.97-4.27,16.12-2.85,4.16-6.84,6.23-11.99,6.23-3.7,0-6.35-1.08-7.93-3.25l-2.71,15.72h-11.92ZM123.16,109.63c0,3.34,1.17,5.01,3.52,5.01,1.9,0,3.41-1.21,4.54-3.62,1.13-2.42,1.69-5.18,1.69-8.3,0-3.34-1.18-5.01-3.52-5.01-1.9,0-3.41,1.21-4.54,3.62-1.13,2.42-1.69,5.18-1.69,8.3Z"/>
+    <path class="mlc-premium-80" d="M148.02,123.45l6.03-34.55h9.89c.09.54.14,1.06.14,1.56,0,1.31-.07,2.24-.2,2.78,1.72-3.43,4.49-5.15,8.33-5.15,1.44,0,2.57.11,3.39.34l-1.96,11.25c-1.22-.45-2.78-.68-4.67-.68-3.07,0-5.01,2.19-5.83,6.57l-3.12,17.88h-11.99Z"/>
+    <path class="mlc-premium-80" d="M193.48,109.5l-5.15,1.15c-1.49.32-2.24,1.06-2.24,2.24,0,.54.25,1.01.75,1.39.5.38,1.2.58,2.1.58,2.08,0,4.57-.38,7.49-1.15,2.91-.77,5.59-1.69,8.03-2.78l-1.76,9.96c-4.52,2.35-9.44,3.52-14.77,3.52-4.56,0-8.08-1.29-10.57-3.86-2.48-2.57-3.73-5.98-3.73-10.23,0-6.5,1.82-11.86,5.45-16.06,3.64-4.2,8.46-6.3,14.46-6.3,4.11,0,7.38.96,9.82,2.88,2.44,1.92,3.66,4.23,3.66,6.94,0,3.61-1.04,6.2-3.12,7.76-2.08,1.56-5.55,2.88-10.43,3.96ZM192.46,97.44c-3.16,0-5.15,2.1-5.96,6.3l-.14.68c.36-.32,1.11-.61,2.24-.88l2.57-.61c1.35-.32,2.33-.73,2.91-1.25.59-.52.88-1.25.88-2.2,0-.59-.25-1.07-.75-1.46-.5-.38-1.08-.58-1.76-.58Z"/>
+    <path class="mlc-premium-80" d="M234.6,87.96c2.66,0,4.65.42,5.96,1.25,1.31.84,2.3,2.09,2.98,3.76.9-1.26,2.31-2.42,4.23-3.45,1.92-1.04,3.85-1.56,5.79-1.56,2.98,0,5.31.72,6.98,2.17,1.67,1.45,2.51,3.64,2.51,6.57,0,1.9-.25,4.22-.74,6.98l-3.46,19.78h-11.99l3.12-17.88c.32-1.9.47-3.3.47-4.2,0-2.35-.72-3.52-2.17-3.52-1.36,0-2.45.63-3.29,1.9-.84,1.27-1.55,3.57-2.13,6.91l-2.91,16.8h-11.99l3.12-17.88c.32-1.9.47-3.3.47-4.2,0-2.35-.72-3.52-2.17-3.52-1.36,0-2.45.63-3.29,1.9-.84,1.27-1.55,3.57-2.13,6.91l-2.91,16.8h-11.99l6.03-34.55h9.89c.09.63.14,1.2.14,1.69,0,1.22-.05,2.01-.14,2.37.86-1.26,2.22-2.42,4.1-3.45,1.87-1.04,3.71-1.56,5.52-1.56Z"/>
+    <path class="mlc-premium-80" d="M266.78,123.45l6.03-34.55h11.99l-6.03,34.55h-11.99ZM275.45,83.82c-1.45-1.44-2.17-3.18-2.17-5.22s.72-3.77,2.17-5.22c1.44-1.44,3.18-2.17,5.22-2.17s3.77.72,5.22,2.17c1.44,1.45,2.17,3.18,2.17,5.22s-.72,3.77-2.17,5.22-3.18,2.17-5.22,2.17-3.77-.72-5.22-2.17Z"/>
+    <path class="mlc-premium-80" d="M298.62,124.4c-6.73,0-10.09-2.98-10.09-8.94,0-1.81.25-4.06.75-6.77l3.45-19.78h11.99l-3.12,17.88c-.32,1.76-.47,3.23-.47,4.4,0,2.21.9,3.32,2.71,3.32,1.53,0,2.78-.65,3.73-1.96.95-1.31,1.69-3.59,2.24-6.84l2.91-16.8h11.99l-6.03,34.55h-9.89c-.09-.63-.14-1.2-.14-1.69,0-1.22.05-2.01.14-2.37-.86,1.27-2.24,2.42-4.13,3.46-1.9,1.04-3.91,1.56-6.03,1.56Z"/>
+    <path class="mlc-premium-80" d="M352.48,87.96c2.66,0,4.65.42,5.96,1.25,1.31.84,2.3,2.09,2.98,3.76.9-1.26,2.31-2.42,4.23-3.45,1.92-1.04,3.85-1.56,5.79-1.56,2.98,0,5.31.72,6.98,2.17,1.67,1.45,2.51,3.64,2.51,6.57,0,1.9-.25,4.22-.75,6.98l-3.45,19.78h-11.99l3.12-17.88c.32-1.9.47-3.3.47-4.2,0-2.35-.72-3.52-2.17-3.52-1.36,0-2.45.63-3.29,1.9-.84,1.27-1.55,3.57-2.13,6.91l-2.91,16.8h-11.99l3.12-17.88c.32-1.9.47-3.3.47-4.2,0-2.35-.72-3.52-2.17-3.52-1.36,0-2.45.63-3.29,1.9-.84,1.27-1.55,3.57-2.13,6.91l-2.91,16.8h-11.99l6.03-34.55h9.89c.09.63.14,1.2.14,1.69,0,1.22-.05,2.01-.14,2.37.86-1.26,2.22-2.42,4.1-3.45,1.87-1.04,3.71-1.56,5.52-1.56Z"/>
+  </g>
+  <g>
+    <path class="mlc-premium-80" d="M108.67,59.97h4.48l4.97,7.99,4.97-7.99h4.48v18.89h-4.13v-12.33l-5.32,8.07h-.11l-5.26-7.99v12.25h-4.08v-18.89Z"/>
+    <path class="mlc-premium-80" d="M131.47,69.47v-.05c0-5.37,4.24-9.77,10.07-9.77s10.01,4.35,10.01,9.72v.05c0,5.37-4.24,9.77-10.07,9.77s-10.01-4.34-10.01-9.72ZM147.21,69.47v-.05c0-3.24-2.38-5.94-5.72-5.94s-5.67,2.64-5.67,5.88v.05c0,3.24,2.37,5.94,5.72,5.94s5.67-2.64,5.67-5.88Z"/>
+    <path class="mlc-premium-80" d="M155.46,59.97h7.37c5.94,0,10.04,4.08,10.04,9.39v.05c0,5.32-4.1,9.45-10.04,9.45h-7.37v-18.89ZM159.62,63.72v11.39h3.21c3.4,0,5.69-2.29,5.69-5.64v-.05c0-3.35-2.29-5.69-5.69-5.69h-3.21Z"/>
+    <path class="mlc-premium-80" d="M176.78,59.97h14.25v3.7h-10.12v3.83h8.91v3.7h-8.91v3.97h10.26v3.7h-14.38v-18.89Z"/>
+    <path class="mlc-premium-80" d="M195.07,59.97h8.64c2.4,0,4.26.67,5.51,1.92,1.05,1.05,1.62,2.54,1.62,4.32v.05c0,3.05-1.65,4.97-4.05,5.86l4.61,6.75h-4.86l-4.05-6.05h-3.27v6.05h-4.16v-18.89ZM203.44,69.14c2.02,0,3.18-1.08,3.18-2.67v-.05c0-1.78-1.24-2.7-3.27-2.7h-4.13v5.42h4.21Z"/>
+    <path class="mlc-premium-80" d="M214.8,59.97h3.83l8.85,11.63v-11.63h4.1v18.89h-3.54l-9.15-12.01v12.01h-4.1v-18.89Z"/>
+  </g>
+  <circle class="mlc-premium-163" cx="390.43" cy="117.79" r="6.14"/>
+</svg>

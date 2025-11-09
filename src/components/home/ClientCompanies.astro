@@ -12,74 +12,74 @@ import TVAZTECA from "@/assets/icons/clients/TV AZTECA.svg";
 import WARNERMUSIC from "@/assets/icons/clients/WARNER MUSIC.svg";
 ---
 
-<div class="marquee mt-10">
+<div class="marquee mt-10 text-[#757676]">
   <ul class="marquee__content">
     <li class="marquee__item">
-      <BMW class="w-[92px] h-[92px]" />
+      <BMW class="w-[92px] h-[45px] lg:w-[46px] lg:h-[84px]" />
     </li>
     <li class="marquee__item">
-      <FEDEFUT class="w-[75px] h-[92px]" />
+      <FEDEFUT class="w-[75px] h-[45px] lg:h-[84px]" />
     </li>
     <li class="marquee__item">
-      <GrupoSalinas class="w-[126px] h-[92px]" />
+      <GrupoSalinas class="w-[126px] h-[45px] lg:h-[84px]" />
     </li>
     <li class="marquee__item">
-      <LasBrisas class="w-[300px] h-[92px]" />
+      <LasBrisas class="w-[150px] lg:w-[300px] h-[45px] lg:h-[84px]" />
     </li>
     <li class="marquee__item">
-      <LINDT class="w-[291px] h-[92px]" />
+      <LINDT class="w-[150px] lg:w-[291px] h-[45px] lg:h-[84px]" />
     </li>
     <li class="marquee__item">
-      <MCCANN class="w-[197px] h-[92px]" />
+      <MCCANN class="w-[150px] lg:w-[197px] h-[45px] lg:h-[84px]" />
     </li>
     <li class="marquee__item">
-      <MEDICA class="w-[374px] h-[92px]" />
+      <MEDICA class="w-[200px] lg:w-[374px] h-[45px] lg:h-[84px]" />
     </li>
     <li class="marquee__item">
-      <PEPSICO class="w-[91px] h-[92px]" />
+      <PEPSICO class="w-[91px] h-[45px] lg:h-[84px]" />
     </li>
     <li class="marquee__item">
-      <STEELAUDER class="w-[345px] h-[92px]" />
+      <STEELAUDER class="w-[150px] lg:w-[345px] h-[45px] lg:h-[84px]" />
     </li>
     <li class="marquee__item">
-      <TVAZTECA class="w-[114px] h-[92px]" />
+      <TVAZTECA class="w-[114px] h-[45px] lg:h-[84px]" />
     </li>
     <li class="marquee__item">
-      <WARNERMUSIC class="w-[219px] h-[92px]" />
+      <WARNERMUSIC class="w-[150px] lg:w-[219px] h-[45px] lg:h-[84px]" />
     </li>
 
     <li class="marquee__item">
-      <BMW class="w-[92px] h-[92px]" />
+      <BMW class="w-[92px] h-[45px] lg:w-[46px] lg:h-[84px]" />
     </li>
     <li class="marquee__item">
-      <FEDEFUT class="w-[75px] h-[92px]" />
+      <FEDEFUT class="w-[75px] h-[45px] lg:h-[84px]" />
     </li>
     <li class="marquee__item">
-      <GrupoSalinas class="w-[126px] h-[92px]" />
+      <GrupoSalinas class="w-[126px] h-[45px] lg:h-[84px]" />
     </li>
     <li class="marquee__item">
-      <LasBrisas class="w-[300px] h-[92px]" />
+      <LasBrisas class="w-[150px] lg:w-[300px] h-[45px] lg:h-[84px]" />
     </li>
     <li class="marquee__item">
-      <LINDT class="w-[291px] h-[92px]" />
+      <LINDT class="w-[150px] lg:w-[291px] h-[45px] lg:h-[84px]" />
     </li>
     <li class="marquee__item">
-      <MCCANN class="w-[197px] h-[92px]" />
+      <MCCANN class="w-[150px] lg:w-[197px] h-[45px] lg:h-[84px]" />
     </li>
     <li class="marquee__item">
-      <MEDICA class="w-[374px] h-[92px]" />
+      <MEDICA class="w-[200px] lg:w-[374px] h-[45px] lg:h-[84px]" />
     </li>
     <li class="marquee__item">
-      <PEPSICO class="w-[91px] h-[92px]" />
+      <PEPSICO class="w-[91px] h-[45px] lg:h-[84px]" />
     </li>
     <li class="marquee__item">
-      <STEELAUDER class="w-[345px] h-[92px]" />
+      <STEELAUDER class="w-[150px] lg:w-[345px] h-[45px] lg:h-[84px]" />
     </li>
     <li class="marquee__item">
-      <TVAZTECA class="w-[114px] h-[92px]" />
+      <TVAZTECA class="w-[114px] h-[45px] lg:h-[84px]" />
     </li>
     <li class="marquee__item">
-      <WARNERMUSIC class="w-[219px] h-[92px]" />
+      <WARNERMUSIC class="w-[150px] lg:w-[219px] h-[45px] lg:h-[84px]" />
     </li>
   </ul>
 </div>
@@ -101,15 +101,21 @@ import WARNERMUSIC from "@/assets/icons/clients/WARNER MUSIC.svg";
     width: max-content;
   }
 
-  /* .marquee__content:hover {
+  .marquee__content:hover {
     animation-play-state: paused;
-  } */
+  }
 
   .marquee__item {
     flex-shrink: 0;
-    padding: 0 20px;
+    padding: 0 5px;
     display: flex;
     align-items: center;
+  }
+
+  @media (min-width: 768px) {
+    .marquee__item {
+      padding: 0 20px;
+    }
   }
 
   @keyframes scrolling {

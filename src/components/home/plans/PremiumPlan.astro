@@ -1,0 +1,53 @@
+---
+import PremiumIconWhite from "@/assets/icons/mlc-premium-white.svg";
+import ShowMore from "@/components/ui/ShowMore.astro";
+import WantItButton from "@/components/ui/WantItButton.astro";
+import PlanContainerInfo from "./PlanContainerInfo.astro";
+---
+
+<PlanContainerInfo backgroundColor="#CDDEF1" textColor="#10419D" header="Servicio para niveles intermedio +">
+  <div class="rounded-lg shadow-3xl overflow-hidden text-xl">
+    <!-- Header logo -->
+    <div class="plan-logo-container bg-mlc-premium-gradient">
+      <PremiumIconWhite class="w-[168px] pt-2 pb-8" />
+    </div>
+
+    <!-- Content -->
+    <div class="md:p-8 flex flex-col plan-card py-5 px-4 relative">
+      <ShowMore heightToShow="485px" fadeHeight="130px" class="">
+        <ul class="plan-benefits premium text-[#4D4D4D]">
+          <li>
+            Ejecutivos de alto nivel que presentan, negocian o lideran en
+            inglés.
+          </li>
+          <li>Individual.</li>
+          <li>4 horas a la semana, intensivo.</li>
+          <li>Curso completo de 72 hrs.</li>
+          <li class="no-arrow">
+            <div class="w-full flex flex-col items-center gap-2">
+              <p class="w-[180px] text-xl font-bold text-center text-[#2D2D2D]">
+                Sólo los módulos que necesitas
+              </p>
+              <WantItButton class="premium" />
+            </div>
+          </li>
+          <li>Solo disponible para inglés y portugués.</li>
+          <li>Pago mensual o por módulo. Sin costo de inscripción.</li>
+          <li>Profesor en vivo (online).</li>
+          <li>Libro no incluido. Padlet incluido.</li>
+          <li>
+            Examen de certificación gratis. Intermedio o avanzado. Si quieres
+            perfeccionar.
+          </li>
+          <li>Preparación intensiva enfocada en resultados rápidos.</li>
+          <li>Clase muestra sin costo.</li>
+        </ul>
+      </ShowMore>
+    </div>
+
+    <!-- Footer -->
+    <div class="plan-footer bg-[var(--color-mlc-premium-dark)]/80 hover:bg-[var(--color-mlc-premium-dark)]">
+      <p>Más información</p>
+    </div>
+  </div>
+</PlanContainerInfo>

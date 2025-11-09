@@ -1,0 +1,209 @@
+---
+// Carousel
+import CarouselItem from "@/components/ui/simple-carousel/CarouselItem.astro";
+import Carousel from "@/components/ui/simple-carousel/Carousel.astro";
+// Tabs
+import SimpleTabs from "@/components/ui/simple-tabs/Tabs.astro";
+import TabList from "@/components/ui/simple-tabs/TabList.astro";
+import TabListItem from "@/components/ui/simple-tabs/TabListItem.astro";
+import TabPanel from "@/components/ui/simple-tabs/TabPanel.astro";
+// Plans
+import CoachingPlan from "./CoachingPlan.astro";
+import BusinessPlan from "./BusinessPlan.astro";
+import PremiumPlan from "./PremiumPlan.astro";
+import MeetPlan from "./MeetPlan.astro";
+import OnePlan from "./OnePlan.astro";
+---
+
+<section class="plans">
+  <section class:list={["plans-header pt-8 flex flex-col items-center gap-3"]}>
+    <h2 class="subtitle w-[228px] text-center">Planes para ti o tu equipo</h2>
+    <p class="text-4xl px-5 text-center">
+      Soluciones integrales en idiomas adaptadas a tus necesidades, nivel de
+      servicio y calidad que demandan todos nuestros clientes.
+    </p>
+  </section>
+
+  <SimpleTabs id="tab-plans" class="mt-5" title="Planes para ti o tu equipo">
+    <TabList
+      ariaLabelledby="tab-plans"
+      class="flex justify-center custom-tab-list w-[324px] relative"
+    >
+      <TabListItem
+        id="tab-companies"
+        ariaControls="tabpanel-companies"
+        class="custom-tab-item"
+      >
+        Empresas
+      </TabListItem>
+      <TabListItem
+        id="tab-individuals"
+        ariaControls="tabpanel-individuals"
+        class="custom-tab-item"
+      >
+        Individuales
+      </TabListItem>
+    </TabList>
+
+    <TabPanel
+      id="tabpanel-companies"
+      aria-labelledby="tab-companies"
+      class="pt-9"
+    >
+      <!-- Mobile -->
+      <Carousel>
+        <CarouselItem dataLabel="Slide 1" class="w-[343px]">
+          <CoachingPlan />
+        </CarouselItem>
+        <CarouselItem dataLabel="Slide 2" initialSlide class="w-[343px]">
+          <BusinessPlan />
+        </CarouselItem>
+        <CarouselItem dataLabel="Slide 3" class="w-[343px]">
+          <PremiumPlan />
+        </CarouselItem>
+      </Carousel>
+      <!-- Desktop -->
+    </TabPanel>
+
+    <TabPanel
+      id="tabpanel-individuals"
+      aria-labelledby="tab-individuals"
+      class="is-hidden pt-9"
+    >
+      <Carousel>
+        <CarouselItem dataLabel="Slide 1" class="w-[343px]">
+          <MeetPlan />
+        </CarouselItem>
+        <CarouselItem dataLabel="Slide 2" class="w-[343px]">
+          <OnePlan />
+        </CarouselItem>
+      </Carousel>
+    </TabPanel>
+  </SimpleTabs>
+</section>
+
+<style is:global>
+  .custom-tab-list {
+    height: 44px;
+    border-radius: 25px;
+    border: 1px solid #e5e7eb;
+    background-color: #fff;
+    padding-inline: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .custom-tab-item {
+    border-radius: 25px;
+    width: 158px;
+    height: 33px;
+    font-weight: bold;
+    margin: 1px;
+  }
+  .custom-tab-item[aria-selected="true"] {
+    color: white;
+  }
+  .custom-tab-item[aria-selected="false"] {
+    color: black;
+    background: none;
+  }
+
+  .plans-header {
+    p {
+      font-size: clamp(20px, 2vw, 2rem);
+    }
+  }
+
+  .tab-panel {
+    margin-top: 30px;
+    width: 100%;
+    padding: 0 2rem;
+  }
+
+  .card {
+    border-radius: 25px;
+    border-width: 0;
+  }
+
+  .languages {
+    column-count: 2;
+    column-gap: 38px;
+    list-style: disc;
+    padding-left: 1.3rem;
+    margin-bottom: 0.5rem;
+
+    li::marker {
+      margin-right: 10px;
+      font-size: 22px;
+      color: #3c88f6;
+      font-weight: 700;
+    }
+  }
+
+  .plan-benefits {
+    line-height: 1.5em;
+    list-style: none;
+    padding-left: 0;
+    letter-spacing: -0.4px;
+
+    li {
+      color: black;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding-bottom: 10px;
+      margin-bottom: 0.5rem;
+      border-bottom: 1px solid #ccc;
+    }
+    li:last-child {
+      border-bottom: none;
+    }
+
+    li::before {
+      content: "";
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      min-width: 15px;
+      background-color: #3c88f6;
+      mask-image: url("@/assets/icons/check.svg");
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      mask-position: center;
+      -webkit-mask-image: url("@/assets/icons/check.svg");
+      -webkit-mask-size: contain;
+      -webkit-mask-repeat: no-repeat;
+      -webkit-mask-position: center;
+      margin-top: 2px;
+    }
+
+    li.no-arrow::before {
+      display: none;
+    }
+  }
+
+  /* Coaching */
+  .plan-benefits.coaching {
+    li::before {
+      background-color: #009767;
+    }
+  }
+  /* Premium */
+  .plan-benefits.premium {
+    li::before {
+      background-color: #c3842c;
+    }
+  }
+  /* Meet */
+  .plan-benefits.meet {
+    li::before {
+      background-color: #451f6d;
+    }
+  }
+  /* One */
+  .plan-benefits.one {
+    li::before {
+      background-color: #e7662b;
+    }
+  }
+</style>

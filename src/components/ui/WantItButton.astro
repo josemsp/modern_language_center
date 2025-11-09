@@ -40,8 +40,8 @@ const {
   .want-it-button {
     position: relative;
     text-decoration: none;
-    width: clamp(136px, 20vw, 200px);
-    height: clamp(38px, 10vw, 60px);
+    width: clamp(136px, 136px, 200px);
+    height: clamp(38px, 38px, 60px);
     border-radius: 30px;
     display: inline-flex;
     justify-content: center;
@@ -49,8 +49,25 @@ const {
     overflow: hidden;
     transition: all 0.3s ease;
   }
-  .want-it-button.blue {
-    background-color: var(--color-want-it-button-blue-hover);
+  /* Business */
+  .want-it-button.business {
+    background-color: var(--color-want-it-button-business-hover);
+  }
+  /* Coaching */
+  .want-it-button.coaching {
+    background-color: var(--color-want-it-button-coaching-hover);
+  }
+  /* Premium */
+  .want-it-button.premium {
+    background-color: var(--color-want-it-button-premium-hover);
+  }
+  /* Meet */
+  .want-it-button.meet {
+    background-color: var(--color-want-it-button-meet-hover);
+  }
+  /* One */
+  .want-it-button.one {
+    background-color: var(--color-want-it-button-one-hover);
   }
 
   .want-it-button .slide {
@@ -65,8 +82,28 @@ const {
     align-items: center;
     border-radius: 30px;
   }
-  .want-it-button.blue .slide {
-    background-color: var(--color-want-it-button-blue);
+  /* Business */
+  .want-it-button.business .slide {
+    background-color: var(--color-want-it-button-business);
+  }
+  /* Coaching */
+  .want-it-button.coaching .slide {
+    background-color: var(--color-want-it-button-coaching);
+  }
+
+  /* Premium */
+  .want-it-button.premium .slide {
+    background-color: var(--color-want-it-button-premium);
+  }
+
+  /* Meet */
+  .want-it-button.meet .slide {
+    background-color: var(--color-want-it-button-meet);
+  }
+
+  /* One */
+  .want-it-button.one .slide {
+    background-color: var(--color-want-it-button-one);
   }
 
   .want-it-button:hover .slide {

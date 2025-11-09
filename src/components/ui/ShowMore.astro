@@ -2,32 +2,59 @@
 interface Props {
   id?: string;
   heightToShow?: string;
+  fadeHeight?: string;
   class?: string;
+  label?: string;
+  labelLess?: string;
 }
 
 const {
   id = "show-more-" + crypto.randomUUID(),
   heightToShow = "75px",
+  fadeHeight = "130px",
   class: className,
+  label = "Mostrar más",
+  labelLess = "Mostrar menos",
 } = Astro.props;
 ---
 
 <div class={`show-more-content ${className}`}>
   <input type="checkbox" id={id} class="show-more-checkbox" />
 
-  <div class="hidden-content" style={`max-height: ${heightToShow}`}>
-    <slot />
+  <div class="hidden-content" style={`--initial-height: ${heightToShow}`}>
+    <div class="content-wrapper">
+      <slot />
+    </div>
   </div>
-  <div class="fade-effect"></div>
-  <label for={id} class="btn-show-more"></label>
+  <div class="fade-effect" style={`height: ${fadeHeight}`}></div>
+  <label 
+    for={id} 
+    class="btn-show-more"
+    data-label={label}
+    data-label-less={labelLess}
+  ></label>
 </div>
 
 <style>
   .show-more-content {
+    /* Variables de transición similares a disclosure cards */
+    --transition-duration-snappy: 0.2s;
+    --transition-duration-leisurely: 0.5s; /* Duración consistente para abrir y cerrar */
+    
     position: relative;
     margin: 0 auto;
     background: #fff;
     overflow: hidden;
+    /* Permitir transiciones suaves de tamaño */
+    interpolate-size: allow-keywords;
+  }
+
+  /* Aplicar transiciones más lentas cuando no hay preferencia de movimiento reducido */
+  @media (prefers-reduced-motion: no-preference) {
+    .show-more-content {
+      --transition-duration-snappy: 0.2s;
+      --transition-duration-leisurely: 0.5s; /* Mantener consistente */
+    }
   }
 
   .show-more-checkbox {
@@ -35,11 +62,23 @@ const {
   }
 
   .hidden-content {
+    position: relative;
+    max-height: var(--initial-height);
     overflow: hidden;
-    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    font-size: 1.04rem;
+    /* Transición consistente para abrir y cerrar */
+    transition: 
+      max-height var(--transition-duration-leisurely) cubic-bezier(0.4, 0, 0.2, 1),
+      opacity var(--transition-duration-leisurely) ease;
     color: #5b6780;
-    padding-top: 10px;
+    opacity: 1;
+    /* Asegurar que la transición funcione en ambas direcciones */
+    will-change: max-height;
+  }
+
+  .content-wrapper {
+    /* Transición suave del contenido */
+    transition: transform var(--transition-duration-leisurely) ease;
+    transform: translateY(0);
   }
 
   .fade-effect {
@@ -47,14 +86,19 @@ const {
     left: 0;
     right: 0;
     bottom: 45px;
-    height: 130px;
+    /* height: 130px; */
     background: linear-gradient(
       0deg,
       rgba(255, 255, 255, 1) 0%,
       rgba(255, 229, 0, 0) 100%
     );
     pointer-events: none;
-    transition: opacity 0.3s;
+    /* Sincronizar con la transición principal */
+    transition: 
+      opacity var(--transition-duration-leisurely) ease,
+      transform var(--transition-duration-leisurely) ease;
+    transform: translateY(0);
+    will-change: opacity, transform;
   }
 
   .btn-show-more {
@@ -66,19 +110,53 @@ const {
     font-weight: bold;
     cursor: pointer;
     text-align: center;
-    padding-top: 36px;
+    padding-top: 26px;
+    position: relative;
+    /* Transiciones suaves para el botón */
+    transition: 
+      color var(--transition-duration-snappy) ease,
+      transform var(--transition-duration-snappy) ease;
   }
 
   .btn-show-more::after {
-    content: "Mostrar más";
+    content: attr(data-label);
+    display: inline-block;
+    /* Transición suave del texto */
+    transition: 
+      opacity var(--transition-duration-snappy) ease,
+      transform var(--transition-duration-snappy) ease;
   }
+
+  /* Estados cuando está expandido */
   .show-more-checkbox:checked ~ .hidden-content {
-    max-height: max-content !important;
+    /* Usar un valor alto específico en lugar de max-content para que funcione la transición */
+    max-height: 3000px;
+    /* IMPORTANTE: Misma duración y curva de animación que al cerrar */
+    transition: 
+      max-height var(--transition-duration-leisurely) cubic-bezier(0.4, 0, 0.2, 1),
+      opacity var(--transition-duration-leisurely) ease;
   }
+
   .show-more-checkbox:checked ~ .fade-effect {
     opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
   }
+
   .show-more-checkbox:checked ~ .btn-show-more::after {
-    content: "Mostrar menos";
+    content: attr(data-label-less);
+  }
+
+  /* Soporte para movimiento reducido */
+  @media (prefers-reduced-motion: reduce) {
+    .show-more-content {
+      --transition-duration-snappy: 0;
+      --transition-duration-leisurely: 0;
+    }
+    
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
   }
 </style>

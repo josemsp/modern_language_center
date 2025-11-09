@@ -74,11 +74,21 @@
 
 @theme {
   /* blue gradient */
-  --color-mlc-blue-light: #008fd9;
-  --color-mlc-blue-dark: #003ea0;
+  --color-mlc-business-light: #008fd9;
+  --color-mlc-business-dark: #003ea0;
   /* green gradient */
-  --color-mlc-green-light: #00845f;
-  --color-mlc-green-dark: #014332;
+  --color-mlc-coaching-light: #00845f;
+  --color-mlc-coaching-dark: #014332;
+  /* premium gradient */
+  --color-mlc-premium-light: #B08C5A;
+  --color-mlc-premium-dark: #79541B;
+  /* meet gradient */
+  --color-mlc-meet-light: #8C45BF;
+  --color-mlc-meet-dark: #451F6D;
+  /* one gradient */
+  --color-mlc-one-light: #F87701;
+  --color-mlc-one-dark: #E7662B;
+
   --color-mlc-header-selected: #0387cb;
   --color-mlc-header-hover: #ff9a17;
 
@@ -87,8 +97,21 @@
   --hero-blue: #0d66a9;
 
   /* buttons */
-  --color-want-it-button-blue: #2559DF;
-  --color-want-it-button-blue-hover: #081F9E;
+  /* blue */
+  --color-want-it-button-business: #2559df;
+  --color-want-it-button-business-hover: #081f9e;
+  /* green */
+  --color-want-it-button-coaching: #014332;
+  --color-want-it-button-coaching-hover: #00845f;
+  /* premium */
+  --color-want-it-button-premium: #79541B;
+  --color-want-it-button-premium-hover: #B08C5A;
+  /* meet */
+  --color-want-it-button-meet: #451F6D;
+  --color-want-it-button-meet-hover: #8C45BF;
+  /* one */
+  --color-want-it-button-one: #FA5B01;
+  --color-want-it-button-one-hover: #F87701;
 
   --breakpoint-xs: 375px;
 
@@ -132,14 +155,15 @@
     line-height: 1;
   }
 
-  .btn-mlc {
+  .btn-contact {
     position: relative;
     text-decoration: none;
     border-radius: 30px;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--color-button-mlc-blue-hover, #2563eb);
+    background-color: #89DEFF;
+    color: #014497 !important;
   }
 
   .footer-accordion {
@@ -169,20 +193,56 @@
     @apply text-white text-[30px] font-normal tracking-[-1px] relative z-10 lg:text-[45px];
   }
 
-  .bg-mlc-blue-gradient {
+  /* Business */
+  .bg-mlc-business-gradient {
     background: linear-gradient(
       to right,
-      var(--color-mlc-blue-light),
-      var(--color-mlc-blue-dark)
+      var(--color-mlc-business-light),
+      var(--color-mlc-business-dark)
     );
   }
 
-  .bg-mlc-green-gradient {
+  /* Coaching */
+  .bg-mlc-coaching-gradient {
     background: linear-gradient(
       to right,
-      var(--color-mlc-green-light),
-      var(--color-mlc-green-dark)
+      var(--color-mlc-coaching-light),
+      var(--color-mlc-coaching-dark)
     );
+  }
+
+  /* Premium */
+  .bg-mlc-premium-gradient {
+    background: linear-gradient(
+      to right,
+      var(--color-mlc-premium-light),
+      var(--color-mlc-premium-dark)
+    );
+  }
+
+  /* Meet */
+  .bg-mlc-meet-gradient {
+    background: linear-gradient(
+      to right,
+      var(--color-mlc-meet-light),
+      var(--color-mlc-meet-dark)
+    );
+  }
+
+  /* One */
+  .bg-mlc-one-gradient {
+    background: linear-gradient(
+      to right,
+      var(--color-mlc-one-light),
+      var(--color-mlc-one-dark)
+    );
+  }
+
+  .plan-container {
+    overflow: hidden;
+    border-radius: 25px;
+    position: relative;
+    z-index: 20;
   }
 
   .plan-container-shadow {
@@ -211,16 +271,16 @@
     border-bottom-right-radius: 25px;
     display: flex;
     justify-content: center;
-    padding-top: 40px;
-    padding-bottom: 12px;
+    padding-top: 45px;
+    padding-bottom: 15px;
     margin-top: -30px;
     font-size: 20px;
     font-weight: bold;
     text-align: center;
     line-height: 1;
     color: white;
+    cursor: pointer;
   }
-
 
   /* Header selects: change color on open (selected) */
   /* Popover sets aria-expanded on [data-trigger], so we target that state */
