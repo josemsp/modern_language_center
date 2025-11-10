@@ -16,9 +16,11 @@ import OnePlan from "./OnePlan.astro";
 ---
 
 <section class="plans">
-  <section class:list={["plans-header pt-8 flex flex-col items-center gap-3"]}>
-    <h2 class="subtitle w-[228px] text-center">Planes para ti o tu equipo</h2>
-    <p class="text-4xl px-5 text-center">
+  <section class:list={["plans-header pt-8 sm:pt-15 flex flex-col items-center gap-3"]}>
+    <h2 class="subtitle w-[228px] lg:w-[800px] text-center tracking-[-3px]">
+      Planes para ti o tu equipo
+    </h2>
+    <p class="text-4xl px-5 text-center max-w-[1000px]">
       Soluciones integrales en idiomas adaptadas a tus necesidades, nivel de
       servicio y calidad que demandan todos nuestros clientes.
     </p>
@@ -27,19 +29,19 @@ import OnePlan from "./OnePlan.astro";
   <SimpleTabs id="tab-plans" class="mt-5" title="Planes para ti o tu equipo">
     <TabList
       ariaLabelledby="tab-plans"
-      class="flex justify-center custom-tab-list w-[324px] relative"
+      class="flex justify-center custom-tab-list w-[324px] lg:w-full max-w-[576px] h-[44px] lg:h-[80px] relative rounded-[25px] lg:rounded-[50px]"
     >
       <TabListItem
         id="tab-companies"
         ariaControls="tabpanel-companies"
-        class="custom-tab-item"
+        class="custom-tab-item text-[20px] lg:text-[30px]"
       >
         Empresas
       </TabListItem>
       <TabListItem
         id="tab-individuals"
         ariaControls="tabpanel-individuals"
-        class="custom-tab-item"
+        class="custom-tab-item text-[20px] lg:text-[30px]"
       >
         Individuales
       </TabListItem>
@@ -84,21 +86,30 @@ import OnePlan from "./OnePlan.astro";
 
 <style is:global>
   .custom-tab-list {
-    height: 44px;
-    border-radius: 25px;
+    /* height: 44px; */
+    /* border-radius: 25px; */
     border: 1px solid #e5e7eb;
     background-color: #fff;
-    padding-inline: 4px;
+    padding-inline: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media (min-width: 1024px) {
+      padding-inline: 7px;
+    }
   }
   .custom-tab-item {
     border-radius: 25px;
-    width: 158px;
+    /* width: 158px; */
+    width: 41%;
     height: 33px;
     font-weight: bold;
     margin: 1px;
+
+    @media (min-width: 1024px) {
+      height: auto;;
+    }
   }
   .custom-tab-item[aria-selected="true"] {
     color: white;

@@ -149,7 +149,7 @@
 
 @layer components {
   .subtitle {
-    font-size: clamp(2rem, 5vw, 4rem);
+    font-size: clamp(40px, 5vw, 60px);
     color: var(--color-mlc-section-title);
     font-weight: bold;
     line-height: 1;

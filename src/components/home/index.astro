@@ -5,10 +5,11 @@ import Button from "@/components/ui/Button.astro";
 import Plans from "./plans/index.astro";
 import ClientCompanies from "./ClientCompanies.astro";
 import ModerWhite from "@/assets/images/mlc-white.png";
+import ModernBanner from "@/assets/images/mlc-banner.webp";
 ---
 
 <section class="relative bg-mlc-business-gradient w-full overflow-clip">
-  <Carousel
+  <!-- <Carousel
     slideCount={2}
     autoplay={true}
     interval={3000}
@@ -63,25 +64,104 @@ import ModerWhite from "@/assets/images/mlc-white.png";
       </section>
     </div>
 
-    <button slot="leftButton" class="absolute left-0 bg-white/3 z-10 h-full w-[30px] lg:hidden"></button>
-    <button slot="rightButton" class="absolute right-0 bg-white/3 z-10 h-full w-[30px] lg:hidden"></button>
-  </Carousel>
+    <button
+      slot="leftButton"
+      class="absolute left-0 bg-white/3 z-10 h-full w-[30px] lg:hidden"
+    ></button>
+    <button
+      slot="rightButton"
+      class="absolute right-0 bg-white/3 z-10 h-full w-[30px] lg:hidden"
+    ></button>
+  </Carousel> -->
 
-  <div
-    class="jumbotron mx-auto max-w-[1750px] h-auto lg:h-fit pt-[80px] lg:pt-[95px]"
-    id="mainContent"
-  >
-    <section>
-      <div class="flex justify-center">
-        <img src={ModerWhite.src} alt="" class="w-[280px]" />
+  <section class="hero">
+    <div
+      class="business pt-[80px] lg:pt-[95px] relative flex flex-col lg:flex-row-reverse justify-center"
+    >
+      <div class="flex flex-col items-center pt-5 pb-[70px] xl:min-w-[735px]">
+        <img src={ModerWhite.src} alt="" class="w-[280px] lg:w-[320px]" />
+
+        <div class="flex text-white font-extrabold italic gap-1.5 pt-5 pr-3">
+          <p class="flex items-center">
+            <span class="text-[41px] xl:text-[75px]">#</span>
+            <span
+              class="text-[129px] sm:text-[139px] xl:text-[250px] h-[173px] sm:h-auto"
+              >1</span
+            >
+          </p>
+          <div>
+            <p
+              class:list={[
+                "pt-2 text-[#00E2FF] leading-[1]",
+                "text-[30px] sm:text-[32px] xl:text-[57px]",
+              ]}
+            >
+              Proveedor B2B
+            </p>
+            <p
+              class:list={[
+                "text-[46px] sm:text-[56px] lg:text-[50px] xl:text-[100px] ",
+                "leading-[1] pl-[10px] pt-[5px] sm:pt-[5px] xl:pt-[15px]",
+              ]}
+            >
+              <span class="text-[28px] sm:text-[32px] xl:text-[58px] pr-1.5"
+                >de
+              </span>soluciones
+            </p>
+            <p
+              class:list={[
+                "text-[50px] sm:text-[60px] xl:text-[108px]",
+                "leading-[1] mt-[4px] sm:mt-[-5px] xl:mt-[-7px]",
+              ]}
+            >
+              lingüísticas
+            </p>
+          </div>
+        </div>
       </div>
-    </section>
-  </div>
+
+      <div
+        class:list={[
+          "absolute bg-[#008AFE] w-full font-extrabold italic h-[67px] lg:h-[100px] 2xl:h-[160px]",
+          "z-10 top-[380px] sm:top-[400px] lg:top-[470px] xl:top-[580px]",
+        ]}
+      >
+        <div class="max-w-[1750px] flex justify-center items-center lg:justify-end h-full gap-1.5 lg:gap-5 pr-3">
+          <p
+            class="text-white text-[57px] md:text-[70px] lg:text-[80px] xl:text-[100px] 2xl:text-[160px] flex items-center h-full"
+          >
+            <span class="pt-2 pr-1">20</span>
+            <span
+              class="text-[28px] md:text-[32px] lg:text-[50px] xl:text-[80px] self-start xl:leading-[1.1]"
+              >+</span
+            >
+          </p>
+          <p
+            class:list={[
+              "text-[#00296A] text-[21px] md:text-[27px] lg:text-[35px] xl:text-[40px] 2xl:text-[60px]",
+              "w-[182px] md:w-[220px] lg:w-[285px] xl:w-[400px] 2xl:w-[519px]",
+              "tracking-[-1px] leading-[21px] lg:leading-[1] xl:leading-[1.1] 2xl:leading-[.8]",
+            ]}
+          >
+            years transforming excecutive talent
+          </p>
+        </div>
+      </div>
+
+      <div class="w-full flex justify-center pt-5 xl:max-w-[735px] z-20">
+        <img
+          src={ModernBanner.src}
+          alt=""
+          class="object-contain object-bottom w-[80%] xl:w-[730px]"
+        />
+      </div>
+    </div>
+  </section>
 
   <section class="bg-[#E4E4E4]">
     <Plans />
-    <section class="pt-32 pb-24 flex flex-col items-center">
-      <h2 class="subtitle w-[292px] text-center">
+    <section class="pb-10 flex flex-col items-center">
+      <h2 class="subtitle w-[292px] lg:w-[870px] text-center">
         Historias de éxito con nosotros
       </h2>
       <ClientCompanies />
@@ -98,3 +178,11 @@ import ModerWhite from "@/assets/images/mlc-white.png";
     <Button class="btn-contact text-xl w-40 font-bold">Contáctanos</Button>
   </section>
 </section>
+
+<style>
+  .hero {
+  }
+  .hero .business {
+    background: linear-gradient(168deg, #007ece, #003ea1);
+  }
+</style>

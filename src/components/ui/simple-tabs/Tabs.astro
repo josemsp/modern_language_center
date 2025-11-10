@@ -23,7 +23,7 @@ const {
 <style is:global>
   .simple-tabs {
     [role="tablist"] {
-      margin: auto;
+      margin: 0 auto;
     }
     [role="tab"] {
       transition: all 0.35s ease;
@@ -153,7 +153,7 @@ const {
     }
   }
 
-  .tab-bg {
+  /* .tab-bg {
     position: absolute;
     top: 5px;
     left: 5px;
@@ -162,6 +162,41 @@ const {
     border-radius: 25px;
     transition: transform 0.35s ease;
     z-index: 1;
+  } */
+  .tab-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 85%;
+    transform: translateX(0);
+    margin: 3px 0px;
+    border-radius: 25px;
+    transition: transform 0.35s ease;
+    z-index: 1;
+    /* lg */
+    @media (min-width: 1024px) {
+      margin: 5px 0;
+      border-radius: 50px;
+      padding-inline: 5px;
+    }
+  }
+  .tab-bg2 {
+    /* position: absolute;
+    top: 5px;
+    left: 5px; */
+    width: 40%;
+    height: 85%;
+    padding: 5px 0;
+    /* height: 33px; */
+    border-radius: 25px;
+    transition: transform 0.35s ease;
+    z-index: 1;
+
+    /* lg */
+    @media (min-width: 1024px) {
+      border-radius: 50px;
+    }
   }
 </style>
 
@@ -211,7 +246,8 @@ const {
         const tabBg = document.querySelector(".tab-bg");
         const rect = tab.getBoundingClientRect();
         const parentRect = tab.parentElement.getBoundingClientRect();
-        tabBg.style.width = rect.width + "px";
+        console.log(tab, tab.parentElement, rect, parentRect);
+        // tabBg.style.width = rect.width + "px";
 
         if (currentTab === tab) {
           tab.setAttribute("aria-selected", "true");
@@ -220,7 +256,7 @@ const {
           if (setFocus) {
             tab.focus();
           }
-          tabBg.style.transform = `translateX(${rect.left - parentRect.left - 6}px)`;
+          tabBg.style.transform = `translateX(${rect.left - parentRect.left}px)`;
         } else {
           tab.setAttribute("aria-selected", "false");
           tab.tabIndex = -1;
@@ -296,8 +332,25 @@ const {
   // Initialize tablist
   document.addEventListener("DOMContentLoaded", function () {
     const tablists = document.querySelectorAll("[role=tablist].automatic");
+    const tabInstances = [];
+    
     for (let i = 0; i < tablists.length; i++) {
-      new TabsAutomatic(tablists[i]);
+      tabInstances.push(new TabsAutomatic(tablists[i]));
     }
+
+    // Handle window resize to recalculate tab positions
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      // Debounce the resize event
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        tabInstances.forEach(instance => {
+          const selectedTab = instance.tablistNode.querySelector('[aria-selected="true"]');
+          if (selectedTab) {
+            instance.setSelectedTab(selectedTab, false);
+          }
+        });
+      }, 250); // 250ms debounce time
+    });
   });
 </script>
