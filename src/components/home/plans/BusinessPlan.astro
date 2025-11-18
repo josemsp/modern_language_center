@@ -1,68 +1,71 @@
 ---
-import MLCBusinessBlack from "@/assets/icons/mlc-business-black.svg";
+import MLCBusinessBlack from "@/assets/icons/mlc-business-black.astro";
 import ShowMore from "@/components/ui/ShowMore.astro";
 import WantItButton from "@/components/ui/WantItButton.astro";
 import { languages } from "@/constants";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className = "" }: Props = Astro.props;
+
+const benefits = [
+  "Empresas que capacitan a su equipo con idiomas de alta demanda con un programa enfocado en negocios y personalizado de acuerdo a la industria de la empresa.",
+  "48 hrs por nivel (12 niveles totales).",
+  "Pagado por la empresa. Sin costo de inscripción. Sin costos extras, todo incluido en la tarifa por hora.",
+  "Examen oral y escrito para posicionar a los alumnos de acuerdo a su nivel. Sin costo. Clases online en vivo.",
+  "Baja carga administrativa para RH. Nos encargamos desde evaluar a tus empleados, organizar los grupos, asignar profesores, evaluar y entrega de reportes mensuales de progreso por alumno.",
+  "Mucha experiencia en términos fiscales pues estamos dados de alta como proveedor calificado de muchas empresas como Grupo Salinas, PepsiCo, entre otras.",
+  "Beneficios como planes de estudios, club de conversación, Padlet (plataforma online), clase muestra gratis, entre otros.",
+];
 ---
 
-<div class="relative">
-  <div class="plan-container text-xl bg-white px-[19px] pt-[30px] pb-[20px] min-h-[700px]">
+<div class:list={["relative", className]}>
+  <div
+    class="plan-container text-xl bg-white px-[19px] pt-[30px] pb-[20px] min-h-[700px] xl:h-[1110px]"
+  >
     <!-- Header logo -->
     <div class="plan-logo-container pb-4">
-      <MLCBusinessBlack class="w-[168px]" />
+      <MLCBusinessBlack class="w-[168px] xl:w-[235px]" />
     </div>
 
     <!-- Content -->
     <div class="flex flex-col items-center gap-3">
-      <p class="font-[600] tracking-[-.7px] pb-3">
-        Capacita a tu equipo multinacional
-      </p>
-      <p class="leading-[25px]">
-        Ayuda a tus empleados a dominar habilidades de comunicación y negocios
-        con un programa personalizado en tu industria.
-      </p>
-      <p>Disponible para los siguientes idiomas:</p>
-      <ul class="languages">
-        {languages.map((language) => <li>{language}</li>)}
-      </ul>
+      <div class="flex flex-col items-center max-w-[550px]">
+        <p class="font-[600] tracking-[-.7px] pb-3">
+          Capacita a tu equipo multinacional
+        </p>
+        <p class="leading-[25px] xl:text-center">
+          Ayuda a tus empleados a dominar habilidades de comunicación y negocios
+          con un programa personalizado en tu industria.
+        </p>
+        <p>Disponible para los siguientes idiomas:</p>
+        <ul class="languages">
+          {languages.map((language) => <li>{language}</li>)}
+        </ul>
+      </div>
       <WantItButton class="business" />
 
-      <ShowMore>
+      <div class="w-full xl:hidden">
+        <ShowMore>
+          <ul class="plan-benefits separete">
+            {benefits.map((benefit) => <li>{benefit}</li>)}
+          </ul>
+        </ShowMore>
+      </div>
+
+      <div class="hidden w-full xl:block">
         <ul class="plan-benefits">
-          <li>
-            Empresas que capacitan a su equipo con idiomas de alta demanda con
-            un programa enfocado en negocios y personalizado de acuerdo a la
-            industria de la empresa.
-          </li>
-          <li>48 hrs por nivel (12 niveles totales).</li>
-          <li>
-            Pagado por la empresa. Sin costo de inscripción. Sin costos extras,
-            todo incluido en la tarifa por hora.
-          </li>
-          <li>
-            Examen oral y escrito para posicionar a los alumnos de acuerdo a su
-            nivel. Sin costo. Clases online en vivo.
-          </li>
-          <li>
-            Baja carga administrativa para RH. Nos encargamos desde evaluar a
-            tus empleados, organizar los grupos, asignar profesores, evaluar y
-            entrega de reportes mensuales de progreso por alumno.
-          </li>
-          <li>
-            Mucha experiencia en términos fiscales pues estamos dados de alta
-            como proveedor calificado de muchas empresas como Grupo Salinas,
-            PepsiCo, entre otras.
-          </li>
-          <li>
-            Beneficios como planes de estudios, club de conversación, Padlet
-            (plataforma online), clase muestra gratis, entre otros.
-          </li>
+          {benefits.map((benefit) => <li>{benefit}</li>)}
         </ul>
-      </ShowMore>
+      </div>
     </div>
   </div>
   <!-- Footer -->
-  <div class="plan-footer bg-[var(--color-mlc-business-dark)]/80 hover:bg-[var(--color-mlc-business-dark)]">
+  <div
+    class="plan-footer bg-[var(--color-mlc-business-dark)]/80 hover:bg-[var(--color-mlc-business-dark)]"
+  >
     <p>Más información</p>
   </div>
 </div>

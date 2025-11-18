@@ -1,57 +1,94 @@
 ---
-import MeetIconWhite from "@/assets/icons/mlc-meet-white.svg";
+import MeetIconWhite from "@/assets/icons/mlc-meet-white.astro";
 import ShowMore from "@/components/ui/ShowMore.astro";
 import WantItButton from "@/components/ui/WantItButton.astro";
-import PlanContainerInfo from "./PlanContainerInfo.astro";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className = "" }: Props = Astro.props;
+
+const benefits = [
+  "Profesionales jóvenes que buscan crecer o entrar a empresas globales.",
+  "Grupal (máximo 10 personas).",
+  "Horario fijo (Martes, Miércoles, Jueves 1 hr o 3 hrs sábado).",
+  "Cursos de 2.5 meses o 10 semanas (12 niveles).",
+  "wantItButton",
+  "Solo disponible para inglés.",
+  "Bajo costo. Pago mensual o por módulo. Sin costo de inscripción.",
+  "Profesor en vivo (online).",
+  "Material incluido.",
+  "Examen de certificación gratis.",
+  "Puedes iniciar desde cero o desde tu nivel actual.",
+  "Inglés de negocios a precio super accesible. Grupos reducido.",
+];
 ---
 
-<PlanContainerInfo backgroundColor="#CCCCCC" textColor="#4D4D4D" header="Inglés desde cualquier nivel">
-  <div class="rounded-lg shadow-3xl overflow-hidden text-xl">
-    <!-- Header logo -->
-    <div class="plan-logo-container bg-mlc-meet-gradient">
-      <MeetIconWhite class="w-[168px] pt-2 pb-8" />
-    </div>
+<div class:list={["rounded-lg shadow-3xl overflow-hidden text-xl", className]}>
+  <!-- Header logo -->
+  <div class="plan-logo-container bg-mlc-meet-gradient">
+    <MeetIconWhite class="w-[168px] xl:w-[250px] xl:h-[108px] pt-3 mb-8" />
+  </div>
 
-    <!-- Content -->
-    <div class="md:p-8 flex flex-col plan-card py-5 px-4 relative">
-      <ShowMore heightToShow="485px" fadeHeight="130px" class="">
-        <ul class="plan-benefits meet text-[#4D4D4D]">
-          <li>
-            Profesionales jóvenes que buscan crecer o entrar a empresas
-            globales.
-          </li>
-          <li>Grupal (máximo 10 personas).</li>
-          <li>Horario fijo (Martes, Miércoles, Jueves 1 hr o 3 hrs sábado).</li>
-          <li>Cursos de 2.5 meses o 10 semanas (12 niveles).</li>
-          <li class="no-arrow">
-            <div class="w-full flex flex-col items-center gap-2">
-              <div class="flex gap-2 text-center text-[#2D2D2D]">
-                <span class="font-bold text-[30px] lg:text-[45px]">
-                  $1,595
-                </span>
-                <span class="text-[20px] lg:text-[24px]">/mes</span>
-              </div>
-              <WantItButton class="meet" />
-            </div>
-          </li>
-          <li>Solo disponible para inglés.</li>
-          <li>
-            Bajo costo. Pago mensual o por módulo. Sin costo de inscripción.
-          </li>
-          <li>Profesor en vivo (online).</li>
-          <li>Material incluido.</li>
-          <li>Examen de certificación gratis.</li>
-          <li>Puedes iniciar desde cero o desde tu nivel actual.</li>
-          <li>Inglés de negocios a precio super accesible. Grupos reducido.</li>
-        </ul>
-      </ShowMore>
-    </div>
-
-    <!-- Footer -->
-    <div
-      class="plan-footer bg-[var(--color-mlc-meet-dark)]/80 hover:bg-[var(--color-mlc-meet-dark)]"
-    >
-      <p>Más información</p>
+  <!-- Content -->
+  <div class="md:p-8 flex flex-col plan-card py-5 px-4 relative xl:h-[996px]">
+    <ShowMore heightToShow="485px" fadeHeight="130px" class="xl:hidden">
+      <ul class="plan-benefits meet separate text-[#4D4D4D]">
+        {
+          benefits.map((benefit) =>
+            benefit === "wantItButton" ? (
+              <li class="no-arrow flex flex-col items-center! gap-0!">
+                <div class="w-full flex flex-col items-center gap-2">
+                  <p class="flex gap-2 text-center text-[#2D2D2D] items-baseline">
+                    <span class="font-bold text-[30px] lg:text-[45px]">
+                      $1,595
+                    </span>
+                    <span class="text-[20px] lg:text-[24px]">
+                      /mes
+                    </span>
+                  </p>
+                </div>
+                <WantItButton class="meet" />
+              </li>
+            ) : (
+              <li>{benefit}</li>
+            )
+          )
+        }
+      </ul>
+    </ShowMore>
+    <div class="hidden w-full xl:block">
+      <ul class="plan-benefits meet text-[#4D4D4D]">
+        {
+          benefits.map((benefit) =>
+            benefit === "wantItButton" ? (
+              <li class="no-arrow flex flex-col items-center! gap-0!">
+                <div class="w-full flex flex-col items-center gap-2">
+                  <p class="flex gap-2 text-center text-[#2D2D2D] items-baseline">
+                    <span class="font-bold text-[30px] lg:text-[45px]">
+                      $1,595
+                    </span>
+                    <span class="text-[20px] lg:text-[24px]">
+                      /mes
+                    </span>
+                  </p>
+                </div>
+                <WantItButton class="meet" />
+              </li>
+            ) : (
+              <li>{benefit}</li>
+            )
+          )
+        }
+      </ul>
     </div>
   </div>
-</PlanContainerInfo>
+
+  <!-- Footer -->
+  <div
+    class="plan-footer bg-[var(--color-mlc-meet-dark)]/80 hover:bg-[var(--color-mlc-meet-dark)]"
+  >
+    <p>Más información</p>
+  </div>
+</div>

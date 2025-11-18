@@ -3,6 +3,7 @@ import Button from "../ui/Button.astro";
 import mlcLogo from "../../assets/images/mlc-logo.webp";
 import Accordion from "../ui/Accordion.astro";
 import MenuOptions from "../ui/MenuOptions.astro";
+import Link from "../ui/Link.astro";
 
 const currentUrl = Astro.url;
 const solutionsOptions = [
@@ -12,14 +13,14 @@ const solutionsOptions = [
     url: currentUrl.pathname + "recruitment",
   },
   {
-    label: "Credentials",
-    value: "credentials",
-    url: currentUrl.pathname + "credentials",
+    label: "Train Abroad",
+    value: "train-abroad",
+    url: currentUrl.pathname + "train-abroad",
   },
   {
-    label: "Global Immersion",
-    value: "global-immersion",
-    url: currentUrl.pathname + "global-immersion",
+    label: "Accreditation",
+    value: "accreditation",
+    url: currentUrl.pathname + "accreditation",
   },
 ];
 
@@ -58,26 +59,25 @@ const companiesOptions = [
 <div class="fixed inset-0 z-[1000] h-fit" id="header">
   <header
     class:list={[
-      // "sticky inset-0 z-[1000]",
       "flex items-center justify-between bg-white shadow-mlc-mobile-header max-w-[1750px] mx-auto", // base
       "header-content px-4 py-1.5 h-[80px]", // xs
       "lg:rounded-full lg:my-3 lg:h-[80px] lg:px-3 lg:gap-3 lg:shadow-mlc-header", // lg
     ]}
   >
-    <a
+    <Link
       href="/"
-      class:list={["logo w-[203px] h-full relative flex items-center", "md:w-[224px]"]}
+      class:list={["logo w-[203px] h-full relative flex items-center outline-none", "md:w-[224px]"]}
     >
-      <div class="absolute left-[-6px]">
+      <div class="absolute left-[-6px] outline-none">
         <img
           src={mlcLogo.src}
           alt="Modern Language Center"
-          class="rounded-full w-full"
+          class="rounded-full w-full outline-none"
         />
       </div>
-    </a>
+    </Link>
 
-    <nav class="nav-desktop hidden gap-4.5 md:w-[80%] md:justify-around lg:flex">
+    <nav class="nav-desktop hidden gap-8 xl:gap-20 md:w-[80%] md:justify-end lg:flex pr-10">
       <MenuOptions
         label="Empresas"
         class={`menu-header text-[22px] tracking-[-0.3px] font-normal ${"xl:text-[30px]"}`}
@@ -90,10 +90,18 @@ const companiesOptions = [
               </li>
             ))
           }
+          <li class="border-t-2 border-[#b7b7b7] my-3"></li>
+          {
+            solutionsOptions.map((option) => (
+              <li class="">
+                <a href={option.url}>{option.label}</a>
+              </li>
+            ))
+          }
         </ul>
       </MenuOptions>
       <MenuOptions
-        label="Individual"
+        label="Individuos"
         class={`menu-header text-[22px] tracking-[-0.3px] font-normal ${"xl:text-[30px]"}`}
       >
         <ul class="text-[22px] tracking-[-0.3px] font-normal xl:text-[30px]">
@@ -106,30 +114,16 @@ const companiesOptions = [
           }
         </ul>
       </MenuOptions>
-      <MenuOptions
-        label="Soluciones"
-        class={`menu-header text-[22px] tracking-[-0.3px] font-normal ${"xl:text-[30px]"}`}
-      >
-        <ul class="text-[22px] tracking-[-0.3px] font-normal xl:text-[30px]">
-          {
-            solutionsOptions.map((option) => (
-              <li class="">
-                <a href={option.url}>{option.label}</a>
-              </li>
-            ))
-          }
-        </ul>
-      </MenuOptions>
       <span class="flex items-center">
-        <a
+        <Link
           href="/about"
           class:list={[
-            "text-[22px] tracking-[-0.3px] font-normal",
+            "menu-header text-[22px] tracking-[-0.3px] font-normal",
             "xl:text-[30px] ",
           ]}
         >
           Acerca de
-        </a>
+        </Link>
       </span>
     </nav>
 
@@ -172,9 +166,17 @@ const companiesOptions = [
             </li>
           ))
         }
+        <li class="border-t-2 border-[#b7b7b7] my-3"></li>
+        {
+          solutionsOptions.map((option) => (
+            <li>
+              <a href={option.url}>{option.label}</a>
+            </li>
+          ))
+        }
       </ul>
     </Accordion>
-    <Accordion label="Individual" class="aside-accordion">
+    <Accordion label="Individuos" class="aside-accordion">
       <ul class="details-list">
         {
           individualsOptions.map((option) => (
@@ -185,18 +187,7 @@ const companiesOptions = [
         }
       </ul>
     </Accordion>
-    <Accordion label="Soluciones" class="aside-accordion">
-      <ul class="details-list">
-        {
-          solutionsOptions.map((option) => (
-            <li>
-              <a href={option.url}>{option.label}</a>
-            </li>
-          ))
-        }
-      </ul>
-    </Accordion>
-    <a href="/about" class="aside-nav-link">Acerca de</a>
+    <Link href="/about" class="aside-nav-link">Acerca de</Link>
   </nav>
   <Button
     label="Teacher Login"
@@ -262,7 +253,7 @@ const companiesOptions = [
 </style>
 
 <script>
-  // Script para controlar el menú hamburguesa
+  // Script to control the hamburger menu
   document.addEventListener("DOMContentLoaded", () => {
     const hamburgerBtn = document.getElementById("hamburgerBtn");
     const asideMenu = document.getElementById("asideMenu");
@@ -299,5 +290,13 @@ const companiesOptions = [
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") closeMenu();
     });
+
+    window.addEventListener('resize', () => {
+      const asideMenu = document.getElementById("asideMenu");
+      if (asideMenu?.classList.contains("active")) {
+        closeMenu();
+      }
+    });
   });
+
 </script>

@@ -1,108 +1,86 @@
 ---
-import CoachingIconWhite from "@/assets/icons/mlc-coaching-white.svg";
+import CoachingIconWhite from "@/assets/icons/mlc-coaching-white.astro";
 import ShowMore from "@/components/ui/ShowMore.astro";
 import WantItButton from "@/components/ui/WantItButton.astro";
-import PlanContainerInfo from "./PlanContainerInfo.astro";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className = "" }: Props = Astro.props;
+
+const benefits = [
+  "Quienes ya dominan el idioma pero necesitan pulirlo para un evento específico.",
+  "Individual.",
+  "Paquetes de 6 a 24 hrs.",
+  "Flexible según necesidad puntual.",
+  "wantItButton",
+  "Paga solo las horas que quieras",
+  "Disponible para inglés, portugués, francés, alemán e italiano y español para extranjeros.",
+  "Pago por paquete (según horas contratadas). Sin costo de inscripción.",
+  "Profesor en vivo (online).",
+  "Material personalizado incluido.",
+  "Examen de certificación gratis.",
+  "Para nivel intermedio en adelante. Lo necesitas dominar para evento.",
+  "Fluidez inmediata para hablar en público con impacto.",
+];
+
 ---
 
-<PlanContainerInfo backgroundColor="#CDDEF1" textColor="#10419D" header="Servicio para niveles intermedio +">
-  <div class="rounded-lg shadow-3xl overflow-hidden text-xl">
-    <!-- Header logo -->
-    <div class="plan-logo-container bg-mlc-coaching-gradient">
-      <CoachingIconWhite class="w-[168px] pt-2 pb-8" />
-    </div>
+<div class:list={["rounded-lg shadow-3xl overflow-hidden text-xl", className]}>
+  <!-- Header logo -->
+  <div class="plan-logo-container bg-mlc-coaching-gradient">
+    <CoachingIconWhite class="w-[168px] xl:w-[250px] xl:h-[108px] pt-3 mb-8" />
+  </div>
 
-    <!-- Content -->
-    <div class="md:p-8 flex flex-col plan-card py-5 px-4 relative">
-      <ShowMore heightToShow="485px" fadeHeight="130px" class="">
-        <ul class="plan-benefits coaching text-[#4D4D4D]">
-          <li>
-            Quienes ya dominan el idioma pero necesitan pulirlo para un evento
-            específico.
-          </li>
-          <li>Individual.</li>
-          <li>Paquetes de 6 a 24 hrs.</li>
-          <li>Flexible según necesidad puntual.</li>
-          <li class="no-arrow">
-            <div class="w-full flex flex-col items-center gap-2">
-              <p class="w-[180px] text-xl font-bold text-center text-[#2D2D2D]">
-                Paga solo las horas que quieras
-              </p>
-              <WantItButton class="coaching" />
-            </div>
-          </li>
-          <li>
-            Disponible para inglés, portugués, francés, alemán e italiano y
-            español para extranjeros.
-          </li>
-          <li>
-            Pago por paquete (según horas contratadas). Sin costo de
-            inscripción.
-          </li>
-          <li>Profesor en vivo (online).</li>
-          <li>Material personalizado incluido.</li>
-          <li>Examen de certificación gratis.</li>
-          <li>
-            Para nivel intermedio en adelante. Lo necesitas dominar para evento.
-          </li>
-          <li>Fluidez inmediata para hablar en público con impacto.</li>
-        </ul>
-      </ShowMore>
-    </div>
-
-    <!-- Footer -->
-    <div class="plan-footer bg-[var(--color-mlc-coaching-dark)]/80 hover:bg-[var(--color-mlc-coaching-dark)]">
-      <p>Más información</p>
+  <!-- Content -->
+  <div class="md:p-8 flex flex-col plan-card py-5 px-4 relative xl:h-[955px]">
+    <ShowMore heightToShow="485px" fadeHeight="130px" class="xl:hidden">
+      <ul class="plan-benefits coaching separate text-[#4D4D4D]">
+        {
+          benefits.map((benefit) =>
+            benefit === "wantItButton" ? (
+              <li class="no-arrow">
+                <div class="w-full flex flex-col items-center gap-2">
+                  <p class="w-[180px] text-xl font-bold text-center text-[#2D2D2D]">
+                    Paga solo las horas que quieras
+                  </p>
+                  <WantItButton class="coaching" />
+                </div>
+              </li>
+            ) : (
+              <li>{benefit}</li>
+            )
+          )
+        }
+      </ul>
+    </ShowMore>
+    <div class="hidden w-full xl:block">
+      <ul class="plan-benefits coaching text-[#4D4D4D]">
+        {
+          benefits.map((benefit) =>
+            benefit === "wantItButton" ? (
+              <li class="no-arrow">
+                <div class="w-full flex flex-col items-center gap-2">
+                  <p class="w-[180px] text-xl font-bold text-center text-[#2D2D2D]">
+                    Paga solo las horas que quieras
+                  </p>
+                  <WantItButton class="coaching" />
+                </div>
+              </li>
+            ) : (
+              <li>{benefit}</li>
+            )
+          )
+        }
+      </ul>
     </div>
   </div>
-</PlanContainerInfo>
 
-<!-- <PlanContainerInfo header="Servicio para niveles intermedio +">
-  <div class="rounded-lg shadow-3xl overflow-hidden text-xl">
-    
-    <div class="plan-logo-container bg-mlc-green-gradient">
-      <CoachingIconWhite class="w-[168px] pt-2 pb-8" />
-    </div>
-
-    <div class="flex flex-col plan-card py-4 px-4 relative">
-      <ShowMore heightToShow="485px" fadeHeight="130px" class="">
-        <ul class="plan-benefits green text-[#4D4D4D]">
-          <li>
-            Quienes ya dominan el idioma pero necesitan pulirlo para un evento
-            específico.
-          </li>
-          <li>Individual.</li>
-          <li>Paquetes de 6 a 24 hrs.</li>
-          <li>Flexible según necesidad puntual.</li>
-          <li class="no-arrow">
-            <div class="w-full flex flex-col items-center gap-2">
-              <p class="w-[180px] text-xl font-bold text-center text-[#2D2D2D]">
-                Paga solo las horas que quieras
-              </p>
-              <WantItButton class="coaching" />
-            </div>
-          </li>
-          <li>
-            Disponible para inglés, portugués, francés, alemán e italiano y
-            español para extranjeros.
-          </li>
-          <li>
-            Pago por paquete (según horas contratadas). Sin costo de
-            inscripción.
-          </li>
-          <li>Profesor en vivo (online).</li>
-          <li>Material personalizado incluido.</li>
-          <li>Examen de certificación gratis.</li>
-          <li>
-            Para nivel intermedio en adelante. Lo necesitas dominar para evento.
-          </li>
-          <li>Fluidez inmediata para hablar en público con impacto.</li>
-        </ul>
-      </ShowMore>
-    </div>
-
-    <div class="plan-footer bg-[var(--color-mlc-coaching-dark)]/80 hover:bg-[var(--color-mlc-coaching-dark)]">
-      <p>Más información</p>
-    </div>
+  <!-- Footer -->
+  <div
+    class="plan-footer bg-[var(--color-mlc-coaching-dark)]/80 hover:bg-[var(--color-mlc-coaching-dark)]"
+  >
+    <p>Más información</p>
   </div>
-</PlanContainerInfo> -->
+</div>

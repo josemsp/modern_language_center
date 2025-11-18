@@ -114,8 +114,6 @@
   --color-want-it-button-one-hover: #F87701;
 
   --breakpoint-xs: 375px;
-
-  --color-mlc-section-title: #2d2d2d;
 }
 
 @layer base {
@@ -148,12 +146,6 @@
 }
 
 @layer components {
-  .subtitle {
-    font-size: clamp(40px, 5vw, 60px);
-    color: var(--color-mlc-section-title);
-    font-weight: bold;
-    line-height: 1;
-  }
 
   .btn-contact {
     position: relative;

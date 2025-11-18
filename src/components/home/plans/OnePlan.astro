@@ -1,58 +1,92 @@
 ---
-import OneIconWhite from "@/assets/icons/mlc-one-white.svg";
+import OneIconWhite from "@/assets/icons/mlc-one-white.astro";
 import ShowMore from "@/components/ui/ShowMore.astro";
 import WantItButton from "@/components/ui/WantItButton.astro";
-import PlanContainerInfo from "./PlanContainerInfo.astro";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className = "" }: Props = Astro.props;
+
+const benefits = [
+  "Ejecutivos de 45+ que necesitan avanzar profesionalmente en inglés.",
+  "Individual.",
+  "Dos formatos de horarios disponibles: Economy y Flex.",
+  "Cursos de 48 hrs (12 niveles).",
+  "wantItButton",
+  "Disponible para inglés. Pregunta por tarifas de otros idiomas.",
+  "Pago mensual o por nivel. Sin costo de inscripción.",
+  "Profesor en vivo (online) Libro no incluido. Padlet incluido.",
+  "Examen de certificación gratis.",
+  "Puedes iniciar desde cero o desde tu nivel actual.",
+  "Atención 100% personalizada. Flexibilidad de horario. (sólo en plan Flex)",
+  "Clase muestra sin costo.",
+];
 ---
 
-<PlanContainerInfo backgroundColor="#CCCCCC" textColor="#4D4D4D" header="Inglés desde cualquier nivel">
-  <div class="rounded-lg shadow-3xl overflow-hidden text-xl">
-    <!-- Header logo -->
-    <div class="plan-logo-container bg-mlc-one-gradient">
-      <OneIconWhite class="w-[168px] pt-2 pb-8" />
-    </div>
+<div class:list={["rounded-lg shadow-3xl overflow-hidden text-xl", className]}>
+  <!-- Header logo -->
+  <div class="plan-logo-container bg-mlc-one-gradient">
+    <OneIconWhite class="w-[168px] xl:w-[250px] xl:h-[108px] pt-3 mb-8" />
+  </div>
 
-    <!-- Content -->
-    <div class="md:p-8 flex flex-col plan-card py-5 px-4 relative">
-      <ShowMore heightToShow="485px" fadeHeight="130px" class="">
-        <ul class="plan-benefits one text-[#4D4D4D]">
-          <li>
-            Ejecutivos de 45+ que necesitan avanzar profesionalmente en inglés.
-          </li>
-          <li>Individual.</li>
-          <li>Dos formatos de horarios disponibles: Economy y Flex.</li>
-          <li>Cursos de 48 hrs (12 niveles).</li>
-          <li class="no-arrow">
-            <div class="w-full flex flex-col items-center gap-2">
-              <p class="text-center text-[#2D2D2D] flex gap-2">
-                <span class="text-[20px] lg:text-[24px]">desde</span>
-                <span class="font-bold text-[30px] lg:text-[45px]">$3,969</span>
-                <span class="text-[20px] lg:text-[24px]">/mes</span>
-              </p>
-              <WantItButton class="one" />
-            </div>
-          </li>
-          <li>
-            Disponible para inglés. Pregunta por tarifas de otros idiomas.
-          </li>
-          <li>Pago mensual o por nivel. Sin costo de inscripción.</li>
-          <li>Profesor en vivo (online) Libro no incluido. Padlet incluido.</li>
-          <li>Examen de certificación gratis.</li>
-          <li>Puedes iniciar desde cero o desde tu nivel actual.</li>
-          <li>
-            Atención 100% personalizada. Flexibilidad de horario. (sólo en plan
-            Flex)
-          </li>
-          <li>Clase muestra sin costo.</li>
-        </ul>
-      </ShowMore>
-    </div>
-
-    <!-- Footer -->
-    <div
-      class="plan-footer bg-[var(--color-mlc-one-dark)]/80 hover:bg-[var(--color-mlc-one-dark)]"
-    >
-      <p>Más información</p>
+  <!-- Content -->
+  <div class="md:p-8 flex flex-col plan-card py-5 px-4 relative xl:h-[996px]">
+    <ShowMore heightToShow="485px" fadeHeight="130px" class="xl:hidden">
+      <ul class="plan-benefits one separate text-[#4D4D4D]">
+        {
+          benefits.map((benefit) =>
+            benefit === "wantItButton" ? (
+              <li class="no-arrow flex flex-col items-center! gap-0!">
+                <div class="w-full flex flex-col items-center gap-2">
+                  <p class="text-center text-[#2D2D2D] flex gap-2 items-baseline">
+                    <span class="text-[20px] lg:text-[24px] self-start">desde</span>
+                    <span class="font-bold text-[30px] lg:text-[45px]">
+                      $3,969
+                    </span>
+                    <span class="text-[20px] lg:text-[24px]">/mes</span>
+                  </p>
+                </div>
+                <WantItButton class="one" />
+              </li>
+            ) : (
+              <li>{benefit}</li>
+            )
+          )
+        }
+      </ul>
+    </ShowMore>
+    <div class="hidden w-full xl:block">
+      <ul class="plan-benefits one text-[#4D4D4D]">
+        {
+          benefits.map((benefit) =>
+            benefit === "wantItButton" ? (
+              <li class="no-arrow flex flex-col items-center! gap-0!">
+                <div class="w-full flex flex-col items-center gap-2">
+                  <p class="text-center text-[#2D2D2D] flex gap-2 items-baseline">
+                    <span class="text-[20px] lg:text-[24px] self-start">desde</span>
+                    <span class="font-bold text-[30px] lg:text-[45px]">
+                      $3,969
+                    </span>
+                    <span class="text-[20px] lg:text-[24px]">/mes</span>
+                  </p>
+                </div>
+                <WantItButton class="one" />
+              </li>
+            ) : (
+              <li>{benefit}</li>
+            )
+          )
+        }
+      </ul>
     </div>
   </div>
-</PlanContainerInfo>
+
+  <!-- Footer -->
+  <div
+    class="plan-footer bg-[var(--color-mlc-one-dark)]/80 hover:bg-[var(--color-mlc-one-dark)]"
+  >
+    <p>Más información</p>
+  </div>
+</div>

@@ -1,0 +1,98 @@
+---
+import ModerWhite from "@/assets/images/mlc-white.png";
+import FacebookIcon from "@/assets/icons/facebook.svg";
+import Accordion from "@/components/ui/Accordion.astro";
+import { languages } from "@/constants";
+import Link from "@/components/ui/Link.astro";
+
+interface Props {
+  class?: string;
+  textColor?: string;
+}
+
+const { class: className = "", textColor = "#7FD6FC" } = Astro.props;
+---
+
+<footer class={`bg-mlc-business-gradient text-xl xl:text-[21px] ${className}`}>
+  <slot name="header-footer" />
+
+  <div class="max-w-[1495px] mx-auto">
+    <div
+      class:list={[
+        `flex flex-col items-center px-8 text-center text-color tracking-[0]`,
+        "xl:grid xl:grid-cols-3 xl:items-start xl:px-0",
+      ]}
+    >
+      <!-- Modern Data -->
+      <div class="w-full flex flex-col items-center xl:items-start">
+        <Link href="/" target="_self">
+          <img src={ModerWhite.src} alt="" class="w-[170px] mb-5 xl:w-[285px]" />
+        </Link>
+        <p class="w-[360px] pl-3 xl:text-start">
+          © 2021 by The Modern Language Center Organization S.C.
+        </p>
+        <p class="w-[230px] pl-3 xl:text-start">
+          Consulta aquí nuestro Aviso de Privacidad
+        </p>
+
+        <Link href="https://www.facebook.com/modernlanguagecentermexico/">
+          <FacebookIcon class="text-white ml-3 mt-5 w-[35px] xl:w-[41px]" />
+        </Link>
+      </div>
+      <!-- Languages -->
+      <div class="w-full xl:pt-5">
+        <Accordion
+          label="Idiomas"
+          class={`footer-accordion mt-9 border-b-2 border-color xl:hidden`}
+        >
+          <ul class="text-color">
+            {languages.map((language) => <li>{language}</li>)}
+          </ul>
+        </Accordion>
+        <div class="hidden xl:block text-start">
+          <p class="text-white text-[25px] font-bold pb-3">Idiomas</p>
+          <ul class="text-color leading-[1.8]">
+            {languages.map((language) => <li>{language}</li>)}
+          </ul>
+        </div>
+      </div>
+      <!-- Contact -->
+      <div class="w-full xl:pt-5">
+        <Accordion
+          label="Contacto"
+          class={`footer-accordion border-b-2 border-color xl:hidden`}
+        >
+          <div class="text-color">
+            <p>Av. Miguel Angel de Quevedo 24,</p>
+            <p>Int 203, Col Chimalistac, CDMX</p>
+            <p>hello@modernlanguagecenter.com</p>
+            <p>55 7824 9081</p>
+          </div>
+        </Accordion>
+        <div class="hidden xl:flex flex-col text-start">
+          <p class="text-white text-[25px] font-bold pb-3">Contacto</p>
+          <div class="text-color leading-[1.8]">
+            <p>Av. Miguel Angel de Quevedo 24,</p>
+            <p>Int 203, Col Chimalistac, CDMX</p>
+            <p>hello@modernlanguagecenter.com</p>
+            <p>55 7824 9081</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Copyright -->
+    <p
+      class={`text-color text-center pt-20 xl:pt-10 xl:mt-10 pb-16 xl:border-t-2 border-color`}
+    >
+      Todos los derechos reservados.
+    </p>
+  </div>
+</footer>
+<style is:global define:vars={{ textColor }}>
+  .text-color {
+    color: var(--textColor);
+  }
+  .border-color {
+    border-color: var(--textColor);
+  }
+</style>

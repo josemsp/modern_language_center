@@ -20,7 +20,7 @@ const {
 
 <a
   href={href}
-  class:list={["font-bold text-white", `want-it-button ${className}`]}
+  class:list={["font-bold text-white", `want-it-button w-[136px] h-[38px] xl:w-[163px] xl:h-[46px] ${className}`]}
   target={target}
   rel={rel}
   aria-label={ariaLabel}
@@ -40,8 +40,6 @@ const {
   .want-it-button {
     position: relative;
     text-decoration: none;
-    width: clamp(136px, 136px, 200px);
-    height: clamp(38px, 38px, 60px);
     border-radius: 30px;
     display: inline-flex;
     justify-content: center;

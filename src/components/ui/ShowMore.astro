@@ -27,12 +27,11 @@ const {
     </div>
   </div>
   <div class="fade-effect" style={`height: ${fadeHeight}`}></div>
-  <label 
-    for={id} 
+  <label
+    for={id}
     class="btn-show-more"
     data-label={label}
-    data-label-less={labelLess}
-  ></label>
+    data-label-less={labelLess}></label>
 </div>
 
 <style>
@@ -40,7 +39,7 @@ const {
     /* Variables de transición similares a disclosure cards */
     --transition-duration-snappy: 0.2s;
     --transition-duration-leisurely: 0.5s; /* Duración consistente para abrir y cerrar */
-    
+
     position: relative;
     margin: 0 auto;
     background: #fff;
@@ -66,8 +65,9 @@ const {
     max-height: var(--initial-height);
     overflow: hidden;
     /* Transición consistente para abrir y cerrar */
-    transition: 
-      max-height var(--transition-duration-leisurely) cubic-bezier(0.4, 0, 0.2, 1),
+    transition:
+      max-height var(--transition-duration-leisurely)
+        cubic-bezier(0.4, 0, 0.2, 1),
       opacity var(--transition-duration-leisurely) ease;
     color: #5b6780;
     opacity: 1;
@@ -94,7 +94,7 @@ const {
     );
     pointer-events: none;
     /* Sincronizar con la transición principal */
-    transition: 
+    transition:
       opacity var(--transition-duration-leisurely) ease,
       transform var(--transition-duration-leisurely) ease;
     transform: translateY(0);
@@ -113,7 +113,7 @@ const {
     padding-top: 26px;
     position: relative;
     /* Transiciones suaves para el botón */
-    transition: 
+    transition:
       color var(--transition-duration-snappy) ease,
       transform var(--transition-duration-snappy) ease;
   }
@@ -122,7 +122,7 @@ const {
     content: attr(data-label);
     display: inline-block;
     /* Transición suave del texto */
-    transition: 
+    transition:
       opacity var(--transition-duration-snappy) ease,
       transform var(--transition-duration-snappy) ease;
   }
@@ -132,8 +132,9 @@ const {
     /* Usar un valor alto específico en lugar de max-content para que funcione la transición */
     max-height: 3000px;
     /* IMPORTANTE: Misma duración y curva de animación que al cerrar */
-    transition: 
-      max-height var(--transition-duration-leisurely) cubic-bezier(0.4, 0, 0.2, 1),
+    transition:
+      max-height var(--transition-duration-leisurely)
+        cubic-bezier(0.4, 0, 0.2, 1),
       opacity var(--transition-duration-leisurely) ease;
   }
 
@@ -153,7 +154,7 @@ const {
       --transition-duration-snappy: 0;
       --transition-duration-leisurely: 0;
     }
-    
+
     * {
       animation: none !important;
       transition: none !important;

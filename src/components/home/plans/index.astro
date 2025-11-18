@@ -13,13 +13,19 @@ import BusinessPlan from "./BusinessPlan.astro";
 import PremiumPlan from "./PremiumPlan.astro";
 import MeetPlan from "./MeetPlan.astro";
 import OnePlan from "./OnePlan.astro";
+import SectionTitle from "@/components/ui/SectionTitle.astro";
+import PlanContainerInfo from "./PlanContainerInfo.astro";
 ---
 
 <section class="plans">
-  <section class:list={["plans-header pt-8 sm:pt-15 flex flex-col items-center gap-3"]}>
-    <h2 class="subtitle w-[228px] lg:w-[800px] text-center tracking-[-3px]">
+  <section
+    class:list={["plans-header pt-8 sm:pt-15 flex flex-col items-center gap-3"]}
+  >
+    <SectionTitle
+      class="subtitle w-[228px] lg:w-[800px] text-center tracking-[-3px]"
+    >
       Planes para ti o tu equipo
-    </h2>
+    </SectionTitle>
     <p class="text-4xl px-5 text-center max-w-[1000px]">
       Soluciones integrales en idiomas adaptadas a tus necesidades, nivel de
       servicio y calidad que demandan todos nuestros clientes.
@@ -53,18 +59,46 @@ import OnePlan from "./OnePlan.astro";
       class="pt-9"
     >
       <!-- Mobile -->
-      <Carousel>
+      <Carousel class="xl:hidden">
         <CarouselItem dataLabel="Slide 1" class="w-[343px]">
-          <CoachingPlan />
+          <PlanContainerInfo
+            backgroundColor="#CDDEF1"
+            textColor="#10419D"
+            header="Servicio para niveles intermedio +"
+          >
+            <CoachingPlan />
+          </PlanContainerInfo>
         </CarouselItem>
         <CarouselItem dataLabel="Slide 2" initialSlide class="w-[343px]">
           <BusinessPlan />
         </CarouselItem>
         <CarouselItem dataLabel="Slide 3" class="w-[343px]">
-          <PremiumPlan />
+          <PlanContainerInfo
+            backgroundColor="#CDDEF1"
+            textColor="#10419D"
+            header="Servicio para niveles intermedio +"
+          >
+            <PremiumPlan />
+          </PlanContainerInfo>
         </CarouselItem>
       </Carousel>
       <!-- Desktop -->
+      <div class="hidden xl:flex xl:justify-center mb-16">
+        <div class="w-full max-w-[1750px] flex justify-between">
+          <div class="max-w-[866px] h-[1138px]">
+            <BusinessPlan />
+          </div>
+          <PlanContainerInfo
+            class="static justify-between gap-4 max-w-[866px] h-full bg-[#d4e5f8] hover:bg-[#b5d9ff]"
+            backgroundColor="#CDDEF1"
+            textColor="#10419D"
+            header="Servicio para niveles intermedio +"
+          >
+            <CoachingPlan class="w-[409px]" />
+            <PremiumPlan class="w-[409px]" />
+          </PlanContainerInfo>
+        </div>
+      </div>
     </TabPanel>
 
     <TabPanel
@@ -72,14 +106,42 @@ import OnePlan from "./OnePlan.astro";
       aria-labelledby="tab-individuals"
       class="is-hidden pt-9"
     >
-      <Carousel>
+      <!-- Mobile -->
+      <Carousel class="xl:hidden">
         <CarouselItem dataLabel="Slide 1" class="w-[343px]">
-          <MeetPlan />
+          <PlanContainerInfo
+            backgroundColor="#CCCCCC"
+            textColor="#4D4D4D"
+            header="Inglés desde cualquier nivel"
+          >
+            <MeetPlan />
+          </PlanContainerInfo>
         </CarouselItem>
         <CarouselItem dataLabel="Slide 2" class="w-[343px]">
-          <OnePlan />
+          <PlanContainerInfo
+            backgroundColor="#CCCCCC"
+            textColor="#4D4D4D"
+            header="Inglés desde cualquier nivel"
+          >
+            <OnePlan />
+          </PlanContainerInfo>
         </CarouselItem>
       </Carousel>
+      <!-- Desktop -->
+      <div class="hidden xl:flex xl:justify-center mb-16">
+        <div class="w-full max-w-[1750px] flex justify-center">
+          <PlanContainerInfo
+            class="static justify-between gap-4 max-w-[866px] h-full bg-[#CCCCCC]/50 hover:bg-[#CCCCCC]"
+            backgroundColor="#CCCCCC"
+            textColor="#4D4D4D"
+            header="Inglés desde cualquier nivel"
+            hoverHeader="Inglés desde 0"
+          >
+            <MeetPlan class="w-[410px]" />
+            <OnePlan class="w-[410px]" />
+          </PlanContainerInfo>
+        </div>
+      </div>
     </TabPanel>
   </SimpleTabs>
 </section>
@@ -108,7 +170,7 @@ import OnePlan from "./OnePlan.astro";
     margin: 1px;
 
     @media (min-width: 1024px) {
-      height: auto;;
+      height: auto;
     }
   }
   .custom-tab-item[aria-selected="true"] {
@@ -164,8 +226,8 @@ import OnePlan from "./OnePlan.astro";
       gap: 10px;
       padding-bottom: 10px;
       margin-bottom: 0.5rem;
-      border-bottom: 1px solid #ccc;
     }
+
     li:last-child {
       border-bottom: none;
     }
@@ -193,6 +255,15 @@ import OnePlan from "./OnePlan.astro";
     }
   }
 
+  .plan-benefits .no-arrow p {
+    line-height: 1.5;
+  }
+
+  .plan-benefits.separate {
+    li {
+      border-bottom: 1px solid #ccc;
+    }
+  }
   /* Coaching */
   .plan-benefits.coaching {
     li::before {

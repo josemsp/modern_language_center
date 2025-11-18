@@ -1,8 +1,12 @@
 ---
+interface Props {
+  class?: string;
+}
 
+const { class: className } = Astro.props;
 ---
 
-<div role="region" aria-label="Card carousel demo" class="mb-16">
+<div role="region" aria-label="Card carousel demo" class={`mb-16 ${className}`}>
   <div
     class="carousel carousel--offscreen-inert"
     aria-live="polite"

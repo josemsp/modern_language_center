@@ -2,53 +2,41 @@
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/header/index.astro";
 import Button from "@/components/ui/Button.astro";
-import WhatsAppIcon from "@/assets/icons/whatsapp.svg";
-import BusinessMlc from "@/assets/icons/mlc-business.svg";
-import Carousel from "@/components/ui/Carousel.astro";
-import Home from "@/components/home/index.astro";
-import ModerWhite from "@/assets/images/mlc-white.png";
-import FacebookIcon from "@/assets/icons/facebook.svg";
-import Accordion from "@/components/ui/Accordion.astro";
-import { languages } from "@/constants";
+import Home from "@/features/home.astro";
+import Footer from "@/layouts/Footer.astro";
+import SectionTitle from "@/components/ui/SectionTitle.astro";
 
 const { lang = "es" } = Astro.params;
 ---
 
 <Layout lang={lang} title="Home - Modern Language Center" description="">
   <Header slot="header" />
-
   <Home />
 
+  <Footer slot="footer" textColor="#7FD6FC">
+    <section
+      slot="header-footer"
+      class="pt-8 xl:pt-20 pb-24 flex flex-col items-center gap-5"
+    >
+      <SectionTitle class="text-white w-[330px] lg:w-[870px] text-center">
+        ¿Cómo podemos ayudarte?
+      </SectionTitle>
+      <p class="text-white text-xl xl:text-[36px] text-center px-8">
+        ¡Preparemos tu solución lingüística personalizada ahora!
+      </p>
+      <Button
+        class="btn-contact text-xl xl:text-[25px] w-40 font-bold xl:w-[224px] xl:h-[64px] xl:mt-5"
+      >
+        Contáctanos
+      </Button>
+    </section>
+  </Footer>
 </Layout>
 <!-- <WhatsAppIcon
 width="60"
 height="60"
 class="absolute bottom-[80px] right-[89px] z-50"
 /> -->
-<footer slot="footer" class="bg-mlc-business-gradient">
-  <div class="flex flex-col items-center px-8 text-center text-xl text-[#7FD6FC]">
-    <img src={ModerWhite.src} alt="" class="w-[158px] mb-5" />
-    <p>© 2021 by The Modern Language Center Organization S.C.</p>
-    <p>Consulta aquí nuestro Aviso de Privacidad</p>
-
-    <FacebookIcon width="35" height="35" class="text-white mt-5" />
-    <Accordion label="Idiomas" class="footer-accordion mt-9 border-b-2 border-[#7FD6FC]">
-      <ul class="text-[20px] text-[#7FD6FC]">
-        {languages.map((language) => <li>{language}</li>)}
-      </ul>
-    </Accordion>
-    <Accordion label="Contacto" class="footer-accordion border-b-2 border-[#7FD6FC]">
-      <div class="text-[20px] text-[#7FD6FC]">
-        <p>Av. Miguel Angel de Quevedo 24,</p>
-        <p>Int 203, Col Chimalistac, CDMX</p>
-        <p>hello@modernlanguagecenter.com</p>
-        <p>55 7824 9081</p>
-      </div>
-    </Accordion>
-
-    <p class="text-[#7FD6FC] pt-20 pb-16">Todos los derechos reservados.</p>
-  </div>
-</footer>
 
 <script>
   import { initAccordions } from "@/scripts/ui-events/accordion";

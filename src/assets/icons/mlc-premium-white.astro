@@ -1,0 +1,25 @@
+---
+export interface Props {
+  width?: string;
+  height?: string;
+  class?: string;
+  title?: string;
+}
+
+const {
+  width = "200px",
+  height = "96px",
+  class: className = "",
+  title = "Premium Modern",
+} = Astro.props;
+---
+
+<svg
+  class={className}
+  viewBox="0 0 400 191.73"
+  role="img"
+  aria-label={title}
+>
+  <title>{title}</title>
+  <use href="#mlc-premium-white"></use>
+</svg>

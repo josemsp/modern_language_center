@@ -4,9 +4,16 @@ interface Props {
   header?: string;
   textColor?: string;
   backgroundColor?: string;
+  hoverHeader?: string;
 }
 
-const { class: className, header, textColor, backgroundColor } = Astro.props;
+const {
+  class: className,
+  header,
+  textColor,
+  backgroundColor,
+  hoverHeader,
+} = Astro.props;
 ---
 
 <div class="relative">
@@ -18,7 +25,8 @@ const { class: className, header, textColor, backgroundColor } = Astro.props;
     ]}
     tabindex="0"
     data-header={header}
-    style={`--text-color: ${textColor || '#0000'}; --bg-color: ${backgroundColor || 'transparent'}`}
+    data-hover-header={hoverHeader ?? header}
+    style={`--text-color: ${textColor || "#0000"}; --bg-color: ${backgroundColor || "transparent"}`}
   >
     <slot />
   </div>
@@ -31,16 +39,16 @@ const { class: className, header, textColor, backgroundColor } = Astro.props;
     transition: all 0.2s ease-in-out;
     z-index: 1;
 
-    /* Transiciones con diferentes duraciones para efecto escalonado */
+    /* Transitions with different durations for cascade effect */
     transition:
       background-color 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
       border-radius 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
       padding 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
       margin 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
       transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-      z-index 0s 0.2s; /* Delay para z-index */
+      z-index 0s 0.2s; /* Delay for z-index */
 
-    /* Estado inicial del pseudo-elemento */
+    /* Initial state of the pseudo-element */
     &::before {
       content: attr(data-header);
       position: relative;
@@ -56,7 +64,7 @@ const { class: className, header, textColor, backgroundColor } = Astro.props;
       padding-bottom: 0;
       transform: translateY(-10px);
 
-      /* Animación con retraso para efecto cascada */
+      /* Animation with delay for cascade effect */
       transition:
         height 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
         opacity 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s,
@@ -65,7 +73,7 @@ const { class: className, header, textColor, backgroundColor } = Astro.props;
     }
   }
 
-  /* Estado cuando está snapped en el carousel */
+  /* Snapped state in the carousel */
   @supports (container-type: scroll-state) {
     .carousel__slide {
       container-type: scroll-state;
@@ -88,5 +96,45 @@ const { class: className, header, textColor, backgroundColor } = Astro.props;
         padding-bottom: 10px;
       }
     }
+  }
+
+  .plan-container-info.static {
+    display: flex;
+    position: relative;
+    z-index: 2;
+    border-radius: 25px;
+    padding: 40px 12px 12px 12px;
+
+    /* center */
+    &::before {
+      content: attr(data-header);
+      position: absolute;
+      height: 40px;
+      opacity: 1;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin-inline: auto;
+      transform: translateY(0);
+      padding-block: 10px;
+    }
+
+    /* 🔥 Hover with change content */
+    &:hover::before {
+      content: attr(data-hover-header); /* 🔥 Change content */
+
+      /* Animation effects */
+      transform: translateY(-2px);
+      transition:
+        content 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+    }
+
+    /* General hover transition */
+    transition:
+      background-color 0.3s ease,
+      transform 0.3s ease;
   }
 </style>
