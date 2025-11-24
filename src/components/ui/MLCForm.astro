@@ -1,0 +1,218 @@
+---
+import LogoMLC from "@/assets/icons/LogoMLC.astro";
+import SectionTitle from "@/components/ui/SectionTitle.astro";
+import InputText from "../ui/form/InputText.astro";
+import Select from "../ui/form/Select.astro";
+import Textarea from "../ui/form/Textarea.astro";
+import Button from "./Button.astro";
+
+interface Props {
+    formType: "coaching" | "contact";
+}
+
+const { formType } = Astro.props;
+
+const logoMap = {
+    coaching: "mlc-coaching-black",
+    contact: "mlc-contact-black",
+};
+const logo = logoMap[formType];
+---
+
+<div
+    class="bg-white rounded-[28px] p-6 sm:p-8 md:p-12 w-full max-w-[1488px] mx-auto"
+>
+    <form>
+        <div
+            class="flex flex-col md:flex-row md:justify-between md:items-start mb-8 md:mb-10 gap-6"
+        >
+            {/* Mobile: Logo First */}
+            <div class="md:hidden flex justify-center w-full mb-2">
+                <LogoMLC id={logo} class="w-[250px] mx-auto" />
+            </div>
+
+            {/* Title Section */}
+            <div class="text-center md:text-left md:flex-1">
+                <h1
+                    class="text-[40px] xl:text-[63px] font-extrabold text-gray-900 leading-tight"
+                >
+                    Inicia tu proceso <br /> de inscripción
+                </h1>
+            </div>
+
+            {/* Desktop: Logo Second (Right Aligned) */}
+            <div class="hidden md:flex justify-end md:flex-1">
+                <LogoMLC id={logo} class="w-[400px] mx-auto" />
+            </div>
+        </div>
+
+        {/* Form Grid */}
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-5">
+            {/* Left Column */}
+            <div class="flex flex-col gap-5">
+                <InputText
+                    label="Nombre"
+                    name="name"
+                    placeholder="Ingrese su nombre completo"
+                    isRequired={true}
+                    inputClass="text-[20px] xl:text-[25px] h-[45px] xl:h-[75px] placeholder:text-[20px] xl:placeholder:text-[25px]"
+                    labelClass="text-[20px] xl:text-[25px] font-bold"
+                />
+                <InputText
+                    label="Correo electrónico"
+                    name="email"
+                    placeholder="Ingrese su correo electrónico"
+                    isRequired={true}
+                    type="email"
+                    inputClass="text-[20px] xl:text-[25px] h-[45px] xl:h-[75px] placeholder:text-[20px] xl:placeholder:text-[25px]"
+                    labelClass="text-[20px] xl:text-[25px] font-bold"
+                />
+                <InputText
+                    label="Teléfono"
+                    name="phone"
+                    placeholder="Ingrese su número de WhatsApp"
+                    isRequired={true}
+                    type="tel"
+                    inputClass="text-[20px] xl:text-[25px] h-[45px] xl:h-[75px] placeholder:text-[20px] xl:placeholder:text-[25px]"
+                    labelClass="text-[20px] xl:text-[25px] font-bold"
+                />
+                <Select
+                    id="nivel"
+                    label="Nivel estimado del idioma a estudiar"
+                    name="nivel"
+                    options={[
+                        { value: "basico", label: "Basico" },
+                        { value: "intermedio", label: "Intermedio" },
+                        { value: "avanzado", label: "Avanzado" },
+                    ]}
+                    class="h-[45px] xl:h-[75px]"
+                    labelClass="text-[20px] xl:text-[25px] font-bold"
+                    placeholderClass="text-[20px] xl:text-[25px]"
+                />
+            </div>
+
+            {/* Right Column */}
+            <div class="flex flex-col gap-5">
+                <Select
+                    id="horario"
+                    label="Horario predilecto para tomar clase"
+                    name="horario"
+                    options={[
+                        { value: "manana", label: "Mañana" },
+                        { value: "tarde", label: "Tarde" },
+                        { value: "noche", label: "Noche" },
+                    ]}
+                    class="h-[45px] xl:h-[75px]"
+                    labelClass="text-[20px] xl:text-[25px] font-bold"
+                    placeholderClass="text-[20px] xl:text-[25px]"
+                />
+                <Select
+                    id="contacto"
+                    label="¿En qué horario podemos contactarte?"
+                    name="contacto"
+                    options={[
+                        {
+                            value: "whatsapp",
+                            label: "Lunes a viernes de 8am a 7pm",
+                        },
+                    ]}
+                    class="h-[45px] xl:h-[75px]"
+                    labelClass="text-[20px] xl:text-[25px] font-bold"
+                    placeholderClass="text-[20px] xl:text-[25px]"
+                />
+
+                <Textarea
+                    id="comentarios"
+                    label="Comentarios"
+                    name="comentarios"
+                    placeholder="Ingrese sus comentarios"
+                    labelClass="text-[20px] xl:text-[25px] font-bold"
+                    inputClass="text-[20px] xl:text-[25px] placeholder:text-[20px] xl:placeholder:text-[25px] h-auto xl:h-full"
+                />
+            </div>
+        </div>
+
+        {/* Submit Button Section */}
+        <div class="mt-8 flex justify-center md:justify-end">
+            <Button
+                type="submit"
+                class="bg-[#006C4C] rounded-[10px] w-[108px] h-[40px] text-[20px] xl:text-[25px] xl:w-[223px] xl:h-[63px]"
+            >
+                Enviar
+            </Button>
+        </div>
+
+        <!-- <LogoMLC id={logo} class="w-[174px] xl:w-[250px] mx-auto" />
+        <SectionTitle class="text-center pt-5 pb-5 font-bold mx-auto px-[22px]">
+            Inicia tu proceso de inscripción
+        </SectionTitle> -->
+        <!-- <div class="flex flex-col gap-5">
+            <InputText
+                label="Nombre"
+                name="name"
+                placeholder="Ingrese su nombre completo"
+                isRequired={true}
+            />
+            <InputText
+                label="Correo electrónico"
+                name="email"
+                placeholder="Ingrese su correo electrónico"
+                isRequired={true}
+                type="email"
+            />
+            <InputText
+                label="Teléfono"
+                name="phone"
+                placeholder="Ingrese su número de WhatsApp"
+                isRequired={true}
+                type="tel"
+            />
+            <Select
+                id="nivel"
+                label="Nivel estimado del idioma a estudiar"
+                name="nivel"
+                options={[
+                    { value: "basico", label: "Basico" },
+                    { value: "intermedio", label: "Intermedio" },
+                    { value: "avanzado", label: "Avanzado" },
+                ]}
+            />
+            <Select
+                id="horario"
+                label="Horario predilecto para tomar clase"
+                name="horario"
+                options={[
+                    { value: "manana", label: "Mañana" },
+                    { value: "tarde", label: "Tarde" },
+                    { value: "noche", label: "Noche" },
+                ]}
+            />
+            <Select
+                id="contacto"
+                label="¿En qué horario podemos contactarte?"
+                name="contacto"
+                options={[
+                    {
+                        value: "whatsapp",
+                        label: "Lunes a viernes de 8am a 7pm",
+                    },
+                ]}
+            />
+
+            <Textarea
+                id="comentarios"
+                label="Comentarios"
+                name="comentarios"
+                rows={4}
+                placeholder="Ingrese sus comentarios"
+            />
+
+            <Button
+                type="submit"
+                class="bg-[#006C4C] rounded-[10px] mx-auto w-[108px] h-[40px]"
+            >
+                Enviar
+            </Button>
+        </div> -->
+    </form>
+</div>

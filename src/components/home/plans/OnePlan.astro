@@ -1,5 +1,5 @@
 ---
-import OneIconWhite from "@/assets/icons/mlc-one-white.astro";
+import LogoMLC from "@/assets/icons/LogoMLC.astro";
 import ShowMore from "@/components/ui/ShowMore.astro";
 import WantItButton from "@/components/ui/WantItButton.astro";
 
@@ -28,7 +28,10 @@ const benefits = [
 <div class:list={["rounded-lg shadow-3xl overflow-hidden text-xl", className]}>
   <!-- Header logo -->
   <div class="plan-logo-container bg-mlc-one-gradient">
-    <OneIconWhite class="w-[168px] xl:w-[250px] xl:h-[108px] pt-3 mb-8" />
+    <LogoMLC
+      id="mlc-one-white"
+      class="w-[168px] xl:w-[250px] xl:h-[108px] pt-3 mb-8"
+    />
   </div>
 
   <!-- Content -->
@@ -41,7 +44,9 @@ const benefits = [
               <li class="no-arrow flex flex-col items-center! gap-0!">
                 <div class="w-full flex flex-col items-center gap-2">
                   <p class="text-center text-[#2D2D2D] flex gap-2 items-baseline">
-                    <span class="text-[20px] lg:text-[24px] self-start">desde</span>
+                    <span class="text-[20px] lg:text-[24px] self-start">
+                      desde
+                    </span>
                     <span class="font-bold text-[30px] lg:text-[45px]">
                       $3,969
                     </span>
@@ -52,7 +57,7 @@ const benefits = [
               </li>
             ) : (
               <li>{benefit}</li>
-            )
+            ),
           )
         }
       </ul>
@@ -65,7 +70,9 @@ const benefits = [
               <li class="no-arrow flex flex-col items-center! gap-0!">
                 <div class="w-full flex flex-col items-center gap-2">
                   <p class="text-center text-[#2D2D2D] flex gap-2 items-baseline">
-                    <span class="text-[20px] lg:text-[24px] self-start">desde</span>
+                    <span class="text-[20px] lg:text-[24px] self-start">
+                      desde
+                    </span>
                     <span class="font-bold text-[30px] lg:text-[45px]">
                       $3,969
                     </span>
@@ -76,7 +83,7 @@ const benefits = [
               </li>
             ) : (
               <li>{benefit}</li>
-            )
+            ),
           )
         }
       </ul>

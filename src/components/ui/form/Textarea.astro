@@ -1,0 +1,49 @@
+---
+interface Props {
+    id?: string;
+    label: string;
+    name: string;
+    rows?: number;
+    placeholder?: string;
+    required?: boolean;
+    labelClass?: string;
+    inputClass?: string;
+}
+
+const {
+    id,
+    label,
+    name,
+    rows = 4,
+    placeholder,
+    required = false,
+    labelClass,
+    inputClass,
+} = Astro.props;
+
+const textareaId = id ?? name ?? crypto.randomUUID();
+---
+
+<div class="form-group">
+    <label for={textareaId} class:list={["form-label", labelClass]}>
+        {label}
+        {required && <span class="required">*</span>}
+    </label>
+    <textarea
+        id={textareaId}
+        name={name}
+        rows={rows}
+        class:list={["form-textarea", inputClass]}
+        placeholder={placeholder}
+        required={required}></textarea>
+</div>
+
+<style>
+    .form-textarea {
+        width: 100%;
+        padding: 0.5rem;
+        background-color: #e6e6e6;
+        border-radius: 10px;
+        resize: vertical;
+    }
+</style>

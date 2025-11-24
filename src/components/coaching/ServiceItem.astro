@@ -1,0 +1,60 @@
+---
+import Hours3Icon from "@/assets/icons/coaching/3HRS.svg";
+import Hours6Icon from "@/assets/icons/coaching/6HRS.svg";
+import Hours12Icon from "@/assets/icons/coaching/12HRS.svg";
+import ApoyoIcon from "@/assets/icons/coaching/Apoyo.svg";
+import RevisionIcon from "@/assets/icons/coaching/Revision.svg";
+import OptimizacionIcon from "@/assets/icons/coaching/Optimizacion.svg";
+import PersonalizacionIcon from "@/assets/icons/coaching/Personalizacion.svg";
+import type { ServiceItem, ServiceType } from "./ServiciosExclusivos.astro";
+
+const iconComponents: Record<string, any> = {
+    hours3: Hours3Icon,
+    hours6: Hours6Icon,
+    hours12: Hours12Icon,
+    LAST_MINUTE: ApoyoIcon,
+    REVIEW: RevisionIcon,
+    OPTIMIZATION: OptimizacionIcon,
+    PERSONALIZATION: PersonalizacionIcon,
+};
+
+interface Props {
+    iconName: ServiceType;
+    description: string;
+}
+
+const { iconName, description } = Astro.props;
+
+const IconComponent = iconComponents[iconName] || Hours3Icon;
+---
+
+<!-- <div
+    class="w-full h-full p-[5px] bg-white md:bg-transparent rounded-[20px] md:rounded-none md:p-0"
+> -->
+<div
+    class:list={[
+        "group relative h-full flex flex-col items-center justify-center transition-all duration-300 ease-out",
+        "snap-center shrink-0",
+        "md:w-auto md:flex-1 md:snap-align-none",
+        "focus:outline-none md:rounded-none",
+        "bg-[linear-gradient(180deg,#00845f_0%,#014332_100%)] md:bg-[linear-gradient(180deg,transparent_0%,transparent_100%)]",
+        "w-[200px] h-[155px] rounded-[30px] md:rounded-[28px]",
+        "border-[5px] border-white md:border-y-0 md:border-l-0 md:border-r-0 md:border-transparent",
+    ]}
+>
+    <div
+        class:list={[
+            "rounded-[15px] md:rounded-[28px] border-2 mb-3 transition-all duration-300",
+            "text-emerald-100 border-white/60",
+        ]}
+    >
+        <IconComponent class="w-[58px] h-[58px] md:w-[93px] md:h-[93px]" />
+    </div>
+
+    <div class="text-center space-y-1 px-1 max-w-[142px]">
+        <p class="text-xl leading-tight transition-colors text-emerald-50">
+            {description}
+        </p>
+    </div>
+</div>
+<!-- </div> -->

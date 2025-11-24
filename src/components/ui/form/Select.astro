@@ -1,0 +1,423 @@
+---
+interface Option {
+    value: string | number;
+    label: string;
+}
+
+interface Props {
+    selected?: string;
+    name?: string;
+    label?: string;
+    placeholder?: string;
+    id?: string;
+    options?: Option[];
+    class?: string;
+    labelClass?: string;
+    placeholderClass?: string;
+}
+
+const {
+    selected = "",
+    name = "language-level",
+    label = "",
+    placeholder = "Elige una opción",
+    id = `select-component-${crypto.randomUUID()}`,
+    options = [],
+    class: className,
+    labelClass,
+    placeholderClass,
+} = Astro.props;
+
+// Encontrar el label del valor seleccionado
+const selectedOption = options.find(
+    (opt) => String(opt.value) === String(selected),
+);
+const selectedLabel = selectedOption?.label || "";
+---
+
+<div
+    class="select-component w-full font-sans"
+    data-selected={selected}
+    data-selector-id={id}
+>
+    <label class:list={["block text-gray-700 tracking-tight", labelClass]}>
+        {label}
+    </label>
+
+    <div class="relative">
+        <!-- Header / Trigger -->
+        <button
+            type="button"
+            class:list={[
+                "selector-trigger w-full px-6 py-4 flex items-center justify-between",
+                "text-left focus:outline-none bg-[#EAEAEA] transition-all duration-200 ease-in-out z-10 relative rounded-[10px] hover:bg-[#E0E0E0]",
+                "h-[40px]",
+                className,
+            ]}
+            aria-expanded="false"
+            aria-haspopup="listbox"
+        >
+            <span
+                class:list={["selector-text text-gray-400", placeholderClass]}
+            >
+                {selectedLabel || placeholder}
+            </span>
+            <div
+                class="selector-icon text-gray-500 transition-transform duration-300"
+            >
+                <!-- Chevron Down SVG -->
+                <svg
+                    class="chevron-down"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+                <!-- Chevron Up SVG (hidden by default) -->
+                <svg
+                    class="chevron-up hidden"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                >
+                    <polyline points="18 15 12 9 6 15"></polyline>
+                </svg>
+            </div>
+        </button>
+
+        <!-- Dropdown Content -->
+        <div
+            class="dropdown-content hidden absolute top-full left-0 w-full bg-[#EAEAEA] rounded-b-[20px] shadow-xl z-50 overflow-hidden"
+            style="margin-top: -2px;"
+        >
+            <!-- Divider Line -->
+            <div class="px-6 pt-1">
+                <div class="h-[1px] bg-gray-300 w-full mb-2"></div>
+            </div>
+
+            <!-- Options List -->
+            <ul class="px-2 pb-2 space-y-1" role="listbox">
+                {
+                    options?.map((option) => {
+                        const isSelected =
+                            String(option.value) === String(selected);
+                        return (
+                            <li>
+                                <button
+                                    type="button"
+                                    class={`option-btn w-full px-4 py-3 text-left rounded-xl transition-colors duration-150 flex items-center justify-between ${
+                                        isSelected
+                                            ? "bg-white shadow-sm text-gray-900 font-semibold"
+                                            : "text-gray-500 hover:bg-gray-200/50 hover:text-gray-700"
+                                    }`}
+                                    data-value={option.value}
+                                    data-label={option.label}
+                                    role="option"
+                                    aria-selected={
+                                        isSelected ? "true" : "false"
+                                    }
+                                >
+                                    <span class={placeholderClass}>
+                                        {option.label}
+                                    </span>
+                                    {isSelected && (
+                                        <svg
+                                            width="18"
+                                            height="18"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="3"
+                                            class="text-green-600"
+                                        >
+                                            <polyline points="20 6 9 17 4 12" />
+                                        </svg>
+                                    )}
+                                </button>
+                            </li>
+                        );
+                    })
+                }
+            </ul>
+        </div>
+    </div>
+
+    <!-- Hidden input for form submission -->
+    <input type="hidden" name={name} value={selected} class="selector-value" />
+</div>
+
+<!-- Script global que solo se carga una vez -->
+<script>
+    // @ts-nocheck
+    // Verificar si ya se cargó el script
+    if (!window?.SelectInitialized) {
+        window.SelectInitialized = true;
+        window.SelectInstances = new Map();
+
+        class Select {
+            constructor(element) {
+                this.container = element;
+                this.id = element.dataset.selectorId;
+                this.trigger = element.querySelector(".selector-trigger");
+                this.dropdown = element.querySelector(".dropdown-content");
+                this.textElement = element.querySelector(".selector-text");
+                this.hiddenInput = element.querySelector(".selector-value");
+                this.chevronDown = element.querySelector(".chevron-down");
+                this.chevronUp = element.querySelector(".chevron-up");
+                this.options = element.querySelectorAll(".option-btn");
+                this.isOpen = false;
+
+                // Bind methods to preserve context
+                this.handleOutsideClick = this.handleOutsideClick.bind(this);
+
+                this.init();
+            }
+
+            init() {
+                // Toggle dropdown
+                this.trigger.addEventListener("click", () =>
+                    this.toggleDropdown(),
+                );
+
+                // Handle option selection
+                this.options.forEach((option) => {
+                    option.addEventListener("click", (e) =>
+                        this.handleSelect(e),
+                    );
+                });
+
+                // Add document listener for this instance
+                document.addEventListener("mousedown", this.handleOutsideClick);
+
+                // Update text color if there's a selected value
+                if (this.hiddenInput.value) {
+                    this.textElement.classList.remove("text-gray-400");
+                    this.textElement.classList.add("text-gray-800");
+                }
+
+                // Store instance
+                window.SelectInstances.set(this.id, this);
+            }
+
+            handleOutsideClick(e) {
+                if (!this.container.contains(e.target)) {
+                    this.closeDropdown();
+                }
+            }
+
+            toggleDropdown() {
+                // Close all other dropdowns first
+                window.SelectInstances.forEach((instance, id) => {
+                    if (id !== this.id && instance.isOpen) {
+                        instance.closeDropdown();
+                    }
+                });
+
+                this.isOpen ? this.closeDropdown() : this.openDropdown();
+            }
+
+            openDropdown() {
+                this.isOpen = true;
+                this.dropdown.classList.remove("hidden");
+                this.trigger.classList.remove(
+                    "rounded-[20px]",
+                    "hover:bg-[#E0E0E0]",
+                );
+                this.trigger.classList.add(
+                    "rounded-t-[20px]",
+                    "rounded-b-none",
+                );
+                this.trigger.setAttribute("aria-expanded", "true");
+
+                // Switch icons
+                this.chevronDown.classList.add("hidden");
+                this.chevronUp.classList.remove("hidden");
+            }
+
+            closeDropdown() {
+                this.isOpen = false;
+                this.dropdown.classList.add("hidden");
+                this.trigger.classList.add(
+                    "rounded-[20px]",
+                    "hover:bg-[#E0E0E0]",
+                );
+                this.trigger.classList.remove(
+                    "rounded-t-[20px]",
+                    "rounded-b-none",
+                );
+                this.trigger.setAttribute("aria-expanded", "false");
+
+                // Switch icons
+                this.chevronUp.classList.add("hidden");
+                this.chevronDown.classList.remove("hidden");
+            }
+
+            handleSelect(e) {
+                const button = e.currentTarget;
+                const value = button.dataset.value;
+
+                // Update hidden input
+                this.hiddenInput.value = value;
+
+                // Update selected state visually for all options in this instance
+                this.options.forEach((opt) => {
+                    const optValue = opt.dataset.value;
+                    const optLabel = opt.dataset.label;
+                    const checkIcon = opt.querySelector("svg");
+
+                    if (optValue === value) {
+                        // Update display text
+                        this.textElement.textContent = optLabel;
+                        this.textElement.classList.remove("text-gray-400");
+                        this.textElement.classList.add("text-gray-800");
+
+                        opt.classList.add(
+                            "bg-white",
+                            "shadow-sm",
+                            "text-gray-900",
+                            "font-semibold",
+                        );
+                        opt.classList.remove(
+                            "text-gray-500",
+                            "hover:bg-gray-200/50",
+                            "hover:text-gray-700",
+                        );
+                        opt.setAttribute("aria-selected", "true");
+
+                        // Create and append check icon if it doesn't exist
+                        if (!checkIcon) {
+                            const svg = document.createElementNS(
+                                "http://www.w3.org/2000/svg",
+                                "svg",
+                            );
+                            svg.setAttribute("width", "18");
+                            svg.setAttribute("height", "18");
+                            svg.setAttribute("viewBox", "0 0 24 24");
+                            svg.setAttribute("fill", "none");
+                            svg.setAttribute("stroke", "currentColor");
+                            svg.setAttribute("stroke-width", "3");
+                            svg.classList.add("text-green-600");
+
+                            const polyline = document.createElementNS(
+                                "http://www.w3.org/2000/svg",
+                                "polyline",
+                            );
+                            polyline.setAttribute("points", "20 6 9 17 4 12");
+                            svg.appendChild(polyline);
+
+                            opt.appendChild(svg);
+                        }
+                    } else {
+                        opt.classList.remove(
+                            "bg-white",
+                            "shadow-sm",
+                            "text-gray-900",
+                            "font-semibold",
+                        );
+                        opt.classList.add(
+                            "text-gray-500",
+                            "hover:bg-gray-200/50",
+                            "hover:text-gray-700",
+                        );
+                        opt.setAttribute("aria-selected", "false");
+
+                        // Remove check icon if it exists
+                        if (
+                            checkIcon &&
+                            !opt.dataset.value ===
+                                this.container.dataset.selected
+                        ) {
+                            checkIcon.remove();
+                        }
+                    }
+                });
+
+                // Dispatch custom event for external listeners
+                const event = new CustomEvent("select-change", {
+                    detail: {
+                        value,
+                        id: this.id,
+                        name: this.hiddenInput.name,
+                    },
+                    bubbles: true,
+                });
+                this.container.dispatchEvent(event);
+
+                // Close dropdown
+                this.closeDropdown();
+            }
+
+            destroy() {
+                // Clean up event listeners
+                document.removeEventListener(
+                    "mousedown",
+                    this.handleOutsideClick,
+                );
+                window.SelectInstances.delete(this.id);
+            }
+        }
+
+        // Initialize function
+        window.initSelects = function () {
+            document
+                .querySelectorAll(".select-component")
+                .forEach((element) => {
+                    const id = element.dataset.selectorId;
+                    // Only initialize if not already initialized
+                    if (!window.SelectInstances.has(id)) {
+                        new Select(element);
+                    }
+                });
+        };
+
+        // Initialize on DOM ready
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", window.initSelects);
+        } else {
+            window.initSelects();
+        }
+
+        // Re-initialize when new content is added (for dynamic content)
+        const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                if (mutation.addedNodes.length) {
+                    mutation.addedNodes.forEach((node) => {
+                        if (node.nodeType === 1) {
+                            // Element node
+                            if (
+                                node.classList &&
+                                node.classList.contains("select-component")
+                            ) {
+                                const id = node.dataset.selectorId;
+                                if (!window.SelectInstances.has(id)) {
+                                    new Select(node);
+                                }
+                            }
+                            // Check children
+                            const selectors =
+                                node.querySelectorAll?.(".select-component");
+                            selectors?.forEach((selector) => {
+                                const id = selector.dataset.selectorId;
+                                if (!window.SelectInstances.has(id)) {
+                                    new Select(selector);
+                                }
+                            });
+                        }
+                    });
+                }
+            });
+        });
+
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true,
+        });
+    }
+</script>

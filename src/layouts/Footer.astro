@@ -13,7 +13,7 @@ interface Props {
 const { class: className = "", textColor = "#7FD6FC" } = Astro.props;
 ---
 
-<footer class={`bg-mlc-business-gradient text-xl xl:text-[21px] ${className}`}>
+<footer class={`text-xl xl:text-[21px] ${className}`}>
   <slot name="header-footer" />
 
   <div class="max-w-[1495px] mx-auto">
@@ -26,12 +26,16 @@ const { class: className = "", textColor = "#7FD6FC" } = Astro.props;
       <!-- Modern Data -->
       <div class="w-full flex flex-col items-center xl:items-start">
         <Link href="/" target="_self">
-          <img src={ModerWhite.src} alt="" class="w-[170px] mb-5 xl:w-[285px]" />
+          <img
+            src={ModerWhite.src}
+            alt=""
+            class="w-[170px] mb-5 xl:w-[285px]"
+          />
         </Link>
-        <p class="w-[360px] pl-3 xl:text-start">
+        <p class="w-full max-w-[360px] pl-3 xl:text-start">
           © 2021 by The Modern Language Center Organization S.C.
         </p>
-        <p class="w-[230px] pl-3 xl:text-start">
+        <p class="w-full max-w-[230px] pl-3 xl:text-start">
           Consulta aquí nuestro Aviso de Privacidad
         </p>
 
@@ -43,7 +47,7 @@ const { class: className = "", textColor = "#7FD6FC" } = Astro.props;
       <div class="w-full xl:pt-5">
         <Accordion
           label="Idiomas"
-          class={`footer-accordion mt-9 border-b-2 border-color xl:hidden`}
+          class={`footer-accordion mt-9 border-b-2 border-color xl:hidden accordion-color-svg`}
         >
           <ul class="text-color">
             {languages.map((language) => <li>{language}</li>)}
@@ -60,7 +64,7 @@ const { class: className = "", textColor = "#7FD6FC" } = Astro.props;
       <div class="w-full xl:pt-5">
         <Accordion
           label="Contacto"
-          class={`footer-accordion border-b-2 border-color xl:hidden`}
+          class={`footer-accordion border-b-2 border-color xl:hidden accordion-color-svg`}
         >
           <div class="text-color">
             <p>Av. Miguel Angel de Quevedo 24,</p>
@@ -94,5 +98,10 @@ const { class: className = "", textColor = "#7FD6FC" } = Astro.props;
   }
   .border-color {
     border-color: var(--textColor);
+  }
+  .accordion-color-svg {
+    svg {
+      color: var(--textColor);
+    }
   }
 </style>

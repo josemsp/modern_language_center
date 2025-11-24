@@ -1,5 +1,5 @@
 ---
-import PremiumIconWhite from "@/assets/icons/mlc-premium-white.astro";
+import LogoMLC from "@/assets/icons/LogoMLC.astro";
 import ShowMore from "@/components/ui/ShowMore.astro";
 import WantItButton from "@/components/ui/WantItButton.astro";
 
@@ -28,7 +28,7 @@ const benefits = [
 <div class:list={["rounded-lg shadow-3xl overflow-hidden text-xl", className]}>
   <!-- Header logo -->
   <div class="plan-logo-container bg-mlc-premium-gradient pb-7 xl:pb-5">
-    <PremiumIconWhite class="w-[198px] xl:w-[250px]" />
+    <LogoMLC id="mlc-premium-white" class="w-[198px] xl:w-[250px]" />
   </div>
 
   <!-- Content -->
@@ -48,7 +48,7 @@ const benefits = [
               </li>
             ) : (
               <li>{benefit}</li>
-            )
+            ),
           )
         }
       </ul>
@@ -68,7 +68,7 @@ const benefits = [
               </li>
             ) : (
               <li>{benefit}</li>
-            )
+            ),
           )
         }
       </ul>

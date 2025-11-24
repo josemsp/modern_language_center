@@ -1,0 +1,46 @@
+---
+interface Props {
+    id?: string;
+    label: string;
+    name: string;
+    type?: "text" | "email" | "password" | "tel";
+    isRequired?: boolean;
+    placeholder?: string;
+    class?: string;
+    inputClass?: string;
+    labelClass?: string;
+    error?: string;
+}
+
+const {
+    id,
+    label,
+    name,
+    type = "text",
+    placeholder,
+    inputClass,
+    class: className,
+    labelClass,
+    error,
+    isRequired = false,
+} = Astro.props;
+
+const inputId = id ?? name ?? crypto.randomUUID();
+---
+
+<div class:list={["flex flex-col", className]}>
+    <label for={inputId} class={labelClass}>
+        {label}{isRequired && <span class="required">*</span>}
+    </label>
+    <input
+        id={inputId}
+        name={name}
+        type={type}
+        required={isRequired}
+        placeholder={placeholder}
+        aria-describedby={`${name}-error`}
+        autocomplete="off"
+        class={`bg-[#E6E6E6] rounded-[10px] px-[22px] py-[10px] ${inputClass}`}
+    />
+    <p id={`${name}-error`} class="text-red-500">{error}</p>
+</div>

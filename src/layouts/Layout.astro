@@ -25,3 +25,10 @@ const { lang = "es", title, description } = Astro.props;
     <slot name="footer" />
   </body>
 </html>
+
+<script>
+  import { initAccordions } from "@/scripts/ui-events/accordion";
+  document.addEventListener("DOMContentLoaded", () => {
+    initAccordions();
+  });
+</script>

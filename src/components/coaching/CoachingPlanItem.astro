@@ -1,0 +1,40 @@
+---
+import WantItButton from "../ui/WantItButton.astro";
+import Hours3Icon from "@/assets/icons/coaching/3HRS.svg";
+import Hours6Icon from "@/assets/icons/coaching/6HRS.svg";
+import Hours12Icon from "@/assets/icons/coaching/12HRS.svg";
+
+interface Props {
+    hours: number;
+    description: string;
+}
+
+const { hours, description } = Astro.props;
+
+const iconComponents: Record<string, any> = {
+    3: Hours3Icon,
+    6: Hours6Icon,
+    12: Hours12Icon,
+};
+
+const IconComponent = iconComponents[hours];
+---
+
+<div
+    class:list={[
+        "relative w-full max-w-[340px] h-[348px] md:max-w-[478px] md:h-[557px]",
+        "bg-white rounded-[20px] md:rounded-[40px] p-7 md:p-[3rem]",
+        "flex flex-col items-center justify-between text-center",
+    ]}
+>
+    <div class="flex flex-col items-center">
+        <IconComponent
+            class="w-full max-w-[54px] h-[54px] md:max-w-[89px] md:h-[89px] mx-auto"
+        />
+        <h2 class="text-[40px] md:text-[50px] font-bold">{hours} horas</h2>
+        <p class="text-[20px] md:text-[30px] leading-normal">
+            {description}
+        </p>
+    </div>
+    <WantItButton class="coaching" />
+</div>

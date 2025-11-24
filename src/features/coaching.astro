@@ -1,0 +1,281 @@
+---
+import ModerWhite from "@/assets/images/mlc-white.png";
+import ModernBanner from "@/assets/images/mlc-banner.webp";
+import CoachingImage2 from "@/assets/images/coaching/MLC_Coaching_02.png";
+import CoachingImage22 from "@/assets/images/coaching/MLC_Coaching_022.png";
+import SectionTitle from "@/components/ui/SectionTitle.astro";
+import ServiciosExclusivos from "@/components/coaching/ServiciosExclusivos.astro";
+import CoachingPlans from "@/components/coaching/CoachingPlans.astro";
+import LogoMLC from "@/assets/icons/LogoMLC.astro";
+import TrackTestIcon from "@/assets/icons/coaching/Tracktest.svg";
+import MLCForm from "@/components/ui/MLCForm.astro";
+import CoachingFeatureItem from "@/components/coaching/CoachingFeatureItem.astro";
+import Container from "@/components/ui/Container.astro";
+---
+
+<section class="relative w-full text-[#2D2D2D] bg-[#E4E4E4]">
+  <section
+    class="bg-[linear-gradient(180deg,var(--color-mlc-coaching-light)_0%,var(--color-mlc-coaching-dark)_100%)] relative"
+  >
+    <div
+      class="pt-[80px] lg:pt-[100px] flex flex-col lg:flex-row-reverse justify-around lg:h-[1000px] w-full max-w-[1750px]"
+    >
+      <div
+        class="flex flex-col lg:justify-center lg:gap-10 xl:justify-start items-center pt-5 pb-[70px] xl:max-w-[735px]"
+      >
+        <img
+          src={ModerWhite.src}
+          alt=""
+          class="w-[280px] lg:w-[420px] xl:w-[500px]"
+        />
+
+        <div class="flex text-white font-extrabold italic gap-1.5 pt-5 pr-3">
+          <p class="flex items-center">
+            <span class="text-[41px] xl:text-[75px]">#</span>
+            <span
+              class="text-[129px] sm:text-[139px] xl:text-[250px] h-[173px] sm:h-auto"
+              >1</span
+            >
+          </p>
+          <div>
+            <p
+              class:list={[
+                "pt-2 text-[#00E2FF] leading-[1]",
+                "text-[30px] sm:text-[32px] xl:text-[57px]",
+              ]}
+            >
+              Proveedor B2B
+            </p>
+            <div
+              class:list={[
+                "text-[46px] sm:text-[56px] lg:text-[50px] xl:text-[100px] tracking-[-2.52px]",
+                "leading-[1] pl-[10px] pt-[5px] sm:pt-[5px] xl:pt-[15px]",
+              ]}
+            >
+              <span
+                class="text-[28px] sm:text-[32px] xl:text-[58px] tracking-[-1.45px]"
+                >de</span
+              >
+              soluciones
+            </div>
+            <p
+              class:list={[
+                "text-[50px] sm:text-[60px] xl:text-[108px]",
+                "leading-[1] mt-[4px] sm:mt-[-5px] xl:mt-[-7px] tracking-[-2.7px]",
+              ]}
+            >
+              lingüísticas
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-full flex justify-center items-end xl:max-w-[735px] z-20">
+        <img
+          src={ModernBanner.src}
+          alt=""
+          class="object-contain object-bottom w-[80%] xl:w-[730px] lg:max-h-[800px]"
+        />
+      </div>
+
+      <div
+        class:list={[
+          "absolute flex justify-center bg-[#008AFE] w-full font-extrabold italic h-[67px] lg:h-[100px] 2xl:h-[160px]",
+          "z-10 top-[380px] sm:top-[400px] lg:bottom-[130px] lg:top-[auto] xl:bottom-[130px] xl:top-[auto]",
+        ]}
+      >
+        <div
+          class="w-full max-w-[1750px] flex justify-center items-center lg:justify-end h-full gap-1.5 lg:gap-5 pr-3"
+        >
+          <p
+            class="text-white text-[57px] md:text-[70px] lg:text-[80px] xl:text-[100px] 2xl:text-[160px] flex items-center h-full"
+          >
+            <span class="pt-2 pr-1">20</span>
+            <span
+              class="text-[28px] md:text-[32px] lg:text-[50px] xl:text-[80px] self-start xl:leading-[1.1]"
+              >+</span
+            >
+          </p>
+          <p
+            class:list={[
+              "text-[#00296A] text-[21px] md:text-[27px] lg:text-[35px] xl:text-[40px] 2xl:text-[60px]",
+              "w-[182px] md:w-[220px] lg:w-[285px] xl:w-[400px] 2xl:w-[519px]",
+              "tracking-[-1px] leading-[21px] lg:leading-[1] mxl:leading-[1.1] m2xl:leading-[.8]",
+            ]}
+          >
+            years transforming excecutive talent
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-[#E4E4E4] flex flex-col items-center">
+    <SectionTitle
+      class="w-full max-w-[370px] lg:w-[800px] text-center pt-[71px] pb-8 font-bold"
+    >
+      Servicios exclusivos
+    </SectionTitle>
+
+    <ServiciosExclusivos />
+
+    <p
+      class="text-[40px] md:text-[55px] text-center pt-4 pb-4 tracking-[-2px] px-5"
+    >
+      Soporte para eventos clave y determinantes en tu carrera
+    </p>
+    <p class="text-[20px] md:text-[36px] text-center tracking-[-.2pt] px-5">
+      Apoyo experto para el momento crítico para asegurar un exitoso evento de
+      negocios.
+    </p>
+    <p
+      class="text-[20px] md:text-[36px] text-center tracking-[-.2pt] px-5 pb-16"
+    >
+      Presentaciones, negociaciones, juntas y entrevistas de último minuto sin
+      presiones.
+    </p>
+  </section>
+
+  <CoachingPlans />
+
+  <section class="flex flex-col w-full xl:pb-[150px]">
+    <SectionTitle class="w-full text-center pt-[71px] pb-4 mx-auto font-normal">
+      ¡Eleva la calidad de tus eventos y entrevistas con
+    </SectionTitle>
+    <SectionTitle
+      class="w-full text-center pb-8 text-[#009767] mx-auto font-bold"
+    >
+      Languague Coaching!
+    </SectionTitle>
+  </section>
+
+  <section
+    class="ready-background text-white px-0 pt-7 pb-0 xl:pt-0 xl:pb-0 ready-image xl:max-h-[990px] relative"
+  >
+    <Container class="flex flex-col gap-10 xl:flex-row">
+      <!-- Container -->
+      <div class="flex max-w-[550px] px-5 py-10">
+        <div class="border-l-[10px] border-dotted border-[#59DFB7] pr-5 mt-7">
+        </div>
+        <div class="flex flex-col">
+          <div
+            class:list={[
+              "flex flex-row flex-wrap items-center gap-2",
+              "text-[40px] md:text-[55px] italic font-black",
+            ]}
+          >
+            <h2>Ready,</h2>
+            <h2>Set,</h2>
+            <h2 class="text-[#59DFB7]">GO!</h2>
+          </div>
+          <p class="text-[20px] md:text-[26px]">
+            Sesiones personalizadas mejoran tu trabajo existente, enfocándose en
+          </p>
+          <!-- content description -->
+          <div class="text-[20px] md:text-[26px] pt-10 pl-11 space-y-8">
+            <CoachingFeatureItem
+              title="Preparación y Refinamiento."
+              description="Profundiza en vocabulario, pronunciación y sintaxis con la guía intensiva del instructor."
+            />
+            <CoachingFeatureItem
+              title="Ensayo."
+              description="A través de repasos iniciales y subsiguientes, refina tu entrega y domina el flujo del material."
+            />
+            <CoachingFeatureItem
+              title="Carrera Final."
+              description="Prueba tus habilidades en un entorno de evento simulado, con retroalimentación para ajustes de último minuto."
+            />
+            <!-- <p class="text-[#59DFB7] font-bold">Preparación y Refinamiento.</p>
+          <p>
+            Profundiza en vocabulario, pronunciación y sintaxis con la guía
+            intensiva del instructor.
+          </p>
+          <p class="text-[#59DFB7] font-bold pt-8">Ensayo.</p>
+          <p>
+            A través de repasos iniciales y subsiguientes, refina tu entrega y
+            domina el flujo del material.
+          </p>
+          <p class="text-[#59DFB7] font-bold pt-8">Carrera Final.</p>
+          <p>
+            Prueba tus habilidades en un entorno de evento simulado, con
+            retroalimentación para ajustes de último minuto.
+          </p> -->
+          </div>
+        </div>
+      </div>
+      <!-- image -->
+      <div class="w-full flex justify-center items-end xl:max-w-[735px] z-20">
+        <img
+          src={CoachingImage22.src}
+          alt=""
+          class:list={[
+            "object-contain object-bottom w-full max-w-[730px]",
+            "xl:!max-w-[60%] xl:absolute xl:bottom-0 xl:right-[0rem] xl:max-h-[1000px]",
+          ]}
+        />
+      </div>
+    </Container>
+  </section>
+
+  <section
+    class="px-5 py-16 flex flex-col items-center xl:px-10 xl:flex-row xl:gap-16"
+  >
+    <LogoMLC
+      id="mlc-coaching-black"
+      class="w-full max-w-[316px] xl:max-w-[618px] mx-auto"
+    />
+    <div>
+      <h2
+        class="w-full max-w-[370px] lg:max-w-[1458px] text-center xl:text-left text-[40px] pt-2 pb-4 mx-auto font-normal"
+      >
+        Esta solución es para tí si:
+      </h2>
+      <div class="text-[20px] xl:text-[31px] text-left">
+        <p>- No tienes tiempo para tomar un curso completo o por niveles.</p>
+        <p>
+          - Ya hablas inglés, pero necesitas perfeccionarlo para un evento,
+          presentación, junta, entrevista de trabajo o proyecto específico.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ready-background text-white py-10 px-5 text-center">
+    <SectionTitle
+      class="w-full max-w-[380px] lg:max-w-[990px] text-center pt-2 pb-8 mx-auto font-normal text-white"
+    >
+      Conoce tu nivel de inglés y descubre si calificas para el Curso Coaching
+    </SectionTitle>
+    <p class="tracking-normal text-[20px] xl:text-[36px] xl:w-[1125px] mx-auto">
+      Haz el test hoy y recibe un certificado totalmente gratis. ¡Da el primer
+      paso hacia la fluidez que tu carrera necesita! Solo tienes que llenar el
+      formulario con tus datos y te enviamos el link.
+    </p>
+    <div class="flex justify-around items-center w-full max-w-[1000px] mx-auto">
+      <TrackTestIcon class="w-[200px] xl:w-[350px]" />
+      <img
+        src={ModerWhite.src}
+        alt="Modern Language Center - Logo"
+        class="w-[150px] xl:w-[250px] h-[55px] xl:h-[90px]"
+      />
+    </div>
+  </section>
+
+  <section class="p-5">
+    <MLCForm formType="coaching" />
+  </section>
+</section>
+
+<style>
+  .ready-background {
+    background: linear-gradient(179deg, #2b8964 0%, #164532 100%);
+  }
+
+  .ready-image {
+    /* background:
+      url("/src/assets/images/coaching/MLC_Coaching_02.png") no-repeat bottom
+        right,
+      linear-gradient(179deg, #2b8964 0%, #164532 100%); */
+    background-size: contain;
+  }
+</style>

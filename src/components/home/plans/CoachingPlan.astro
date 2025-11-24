@@ -1,5 +1,5 @@
 ---
-import CoachingIconWhite from "@/assets/icons/mlc-coaching-white.astro";
+import LogoMLC from "@/assets/icons/LogoMLC.astro";
 import ShowMore from "@/components/ui/ShowMore.astro";
 import WantItButton from "@/components/ui/WantItButton.astro";
 
@@ -24,13 +24,15 @@ const benefits = [
   "Para nivel intermedio en adelante. Lo necesitas dominar para evento.",
   "Fluidez inmediata para hablar en público con impacto.",
 ];
-
 ---
 
 <div class:list={["rounded-lg shadow-3xl overflow-hidden text-xl", className]}>
   <!-- Header logo -->
   <div class="plan-logo-container bg-mlc-coaching-gradient">
-    <CoachingIconWhite class="w-[168px] xl:w-[250px] xl:h-[108px] pt-3 mb-8" />
+    <LogoMLC
+      id="mlc-coaching-white"
+      class="w-[168px] xl:w-[250px] xl:h-[108px] pt-3 mb-8"
+    />
   </div>
 
   <!-- Content -->
@@ -50,7 +52,7 @@ const benefits = [
               </li>
             ) : (
               <li>{benefit}</li>
-            )
+            ),
           )
         }
       </ul>
@@ -70,7 +72,7 @@ const benefits = [
               </li>
             ) : (
               <li>{benefit}</li>
-            )
+            ),
           )
         }
       </ul>

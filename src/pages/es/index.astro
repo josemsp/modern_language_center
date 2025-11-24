@@ -13,7 +13,7 @@ const { lang = "es" } = Astro.params;
   <Header slot="header" />
   <Home />
 
-  <Footer slot="footer" textColor="#7FD6FC">
+  <Footer slot="footer" textColor="#7FD6FC" class="bg-mlc-business-gradient">
     <section
       slot="header-footer"
       class="pt-8 xl:pt-20 pb-24 flex flex-col items-center gap-5"
@@ -37,10 +37,3 @@ width="60"
 height="60"
 class="absolute bottom-[80px] right-[89px] z-50"
 /> -->
-
-<script>
-  import { initAccordions } from "@/scripts/ui-events/accordion";
-  document.addEventListener("DOMContentLoaded", () => {
-    initAccordions();
-  });
-</script>

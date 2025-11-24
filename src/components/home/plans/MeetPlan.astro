@@ -1,5 +1,5 @@
 ---
-import MeetIconWhite from "@/assets/icons/mlc-meet-white.astro";
+import LogoMLC from "@/assets/icons/LogoMLC.astro";
 import ShowMore from "@/components/ui/ShowMore.astro";
 import WantItButton from "@/components/ui/WantItButton.astro";
 
@@ -28,7 +28,10 @@ const benefits = [
 <div class:list={["rounded-lg shadow-3xl overflow-hidden text-xl", className]}>
   <!-- Header logo -->
   <div class="plan-logo-container bg-mlc-meet-gradient">
-    <MeetIconWhite class="w-[168px] xl:w-[250px] xl:h-[108px] pt-3 mb-8" />
+    <LogoMLC
+      id="mlc-meet-white"
+      class="w-[168px] xl:w-[250px] xl:h-[108px] pt-3 mb-8"
+    />
   </div>
 
   <!-- Content -->
@@ -44,16 +47,14 @@ const benefits = [
                     <span class="font-bold text-[30px] lg:text-[45px]">
                       $1,595
                     </span>
-                    <span class="text-[20px] lg:text-[24px]">
-                      /mes
-                    </span>
+                    <span class="text-[20px] lg:text-[24px]">/mes</span>
                   </p>
                 </div>
                 <WantItButton class="meet" />
               </li>
             ) : (
               <li>{benefit}</li>
-            )
+            ),
           )
         }
       </ul>
@@ -69,16 +70,14 @@ const benefits = [
                     <span class="font-bold text-[30px] lg:text-[45px]">
                       $1,595
                     </span>
-                    <span class="text-[20px] lg:text-[24px]">
-                      /mes
-                    </span>
+                    <span class="text-[20px] lg:text-[24px]">/mes</span>
                   </p>
                 </div>
                 <WantItButton class="meet" />
               </li>
             ) : (
               <li>{benefit}</li>
-            )
+            ),
           )
         }
       </ul>

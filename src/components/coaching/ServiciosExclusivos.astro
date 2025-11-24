@@ -1,0 +1,88 @@
+---
+import ServiceItem from "./ServiceItem.astro";
+
+export enum ServiceType {
+    LAST_MINUTE = "LAST_MINUTE",
+    REVIEW = "REVIEW",
+    OPTIMIZATION = "OPTIMIZATION",
+    PERSONALIZATION = "PERSONALIZATION",
+}
+
+export interface ServiceItem {
+    iconName: ServiceType;
+    description: string;
+}
+
+const SERVICES: ServiceItem[] = [
+    {
+        iconName: ServiceType.LAST_MINUTE,
+        description: "Apoyo de último minuto",
+    },
+    {
+        iconName: ServiceType.REVIEW,
+        description: "Revisión y asesoría",
+    },
+    {
+        iconName: ServiceType.OPTIMIZATION,
+        description: "Optimización y práctica",
+    },
+    {
+        iconName: ServiceType.PERSONALIZATION,
+        description: "Personalización experta",
+    },
+];
+
+interface Props {
+    class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<div
+    class:list={[
+        "md:bg-[linear-gradient(180deg,var(--color-mlc-coaching-light)_0%,var(--color-mlc-coaching-dark)_100%)]",
+        "w-full max-w-[1486px] mx-auto rounded-[58px] h-[265px] md:border-[15px] md:border-white",
+        className,
+    ]}
+>
+    {
+        /* 
+        RESPONSIVE CONTAINER 
+        Mobile: Horizontal Scroll (Snap Carousel).
+        Desktop: Horizontal Flex Pill.
+        */
+    }
+    <div class="relative w-full h-full group">
+        {/* Scroll Container */}
+        <div
+            class:list={[
+                "transition-all duration-500 ease-in-out h-full",
+                "flex flex-row overflow-x-auto snap-x snap-mandatory",
+                "scrollbar-hide px-4 gap-4",
+                "md:flex-nowrap md:overflow-visible md:items-stretch md:justify-between",
+                "md:rounded-[28px] md:gap-0 md:!divide-x md:!divide-[#7EDCB9]",
+                "rounded-none py-[34px]",
+            ]}
+        >
+            {
+                SERVICES.map((service) => (
+                    <ServiceItem
+                        iconName={service.iconName}
+                        description={service.description}
+                    />
+                ))
+            }
+        </div>
+    </div>
+</div>
+
+<style>
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+</style>

@@ -1,6 +1,8 @@
 ---
-import Button from "../ui/Button.astro";
+// logos
 import mlcLogo from "../../assets/images/mlc-logo.webp";
+// components
+import Button from "../ui/Button.astro";
 import Accordion from "../ui/Accordion.astro";
 import MenuOptions from "../ui/MenuOptions.astro";
 import Link from "../ui/Link.astro";
@@ -54,6 +56,24 @@ const companiesOptions = [
     url: currentUrl.pathname + "coaching",
   },
 ];
+
+const logoMap: Record<string, string> = {
+  coaching: "#mlc-coaching-black",
+};
+
+const analyzeRoute = (pathname: string) => {
+  const segments = pathname.split("/").filter(Boolean);
+
+  const supportedLangs = ["es", "en"];
+  const supportedPages = ["coaching"];
+
+  const lang = supportedLangs.includes(segments[0]) ? segments[0] : "es";
+  const page = supportedPages.includes(segments[1]) ? segments[1] : "home";
+
+  return { lang, page, segments };
+};
+
+const routeInfo = analyzeRoute(Astro.url.pathname);
 ---
 
 <div class="fixed inset-0 z-[1000] h-fit" id="header">
@@ -66,18 +86,38 @@ const companiesOptions = [
   >
     <Link
       href="/"
-      class:list={["logo w-[203px] h-full relative flex items-center outline-none", "md:w-[224px]"]}
+      target="_self"
+      class:list={[
+        "logo w-[203px] h-full relative flex items-center outline-none",
+        "md:w-[224px]",
+      ]}
     >
-      <div class="absolute left-[-6px] outline-none">
-        <img
-          src={mlcLogo.src}
-          alt="Modern Language Center"
-          class="rounded-full w-full outline-none"
-        />
-      </div>
+      {
+        routeInfo.page === "home" ? (
+          <div class="absolute left-[-6px] outline-none">
+            <img
+              src={mlcLogo.src}
+              alt="Modern Language Center"
+              class="rounded-full outline-none"
+            />
+          </div>
+        ) : (
+          <svg
+            class="outline-none w-[170px] ml-4"
+            viewBox="0 0 400 191.73"
+            role="img"
+            aria-label="Modern Language Center"
+          >
+            <title>Modern Language Center</title>
+            <use href={logoMap[routeInfo.page]} />
+          </svg>
+        )
+      }
     </Link>
 
-    <nav class="nav-desktop hidden gap-8 xl:gap-20 md:w-[80%] md:justify-end lg:flex pr-10">
+    <nav
+      class="nav-desktop hidden gap-8 xl:gap-20 md:w-[80%] md:justify-end lg:flex pr-10"
+    >
       <MenuOptions
         label="Empresas"
         class={`menu-header text-[22px] tracking-[-0.3px] font-normal ${"xl:text-[30px]"}`}
@@ -291,12 +331,11 @@ const companiesOptions = [
       if (e.key === "Escape") closeMenu();
     });
 
-    window.addEventListener('resize', () => {
+    window.addEventListener("resize", () => {
       const asideMenu = document.getElementById("asideMenu");
       if (asideMenu?.classList.contains("active")) {
         closeMenu();
       }
     });
   });
-
 </script>
