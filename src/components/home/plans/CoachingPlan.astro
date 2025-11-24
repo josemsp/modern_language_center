@@ -1,5 +1,6 @@
 ---
 import LogoMLC from "@/assets/icons/LogoMLC.astro";
+import Link from "@/components/ui/Link.astro";
 import ShowMore from "@/components/ui/ShowMore.astro";
 import WantItButton from "@/components/ui/WantItButton.astro";
 
@@ -67,7 +68,7 @@ const benefits = [
                   <p class="w-[180px] text-xl font-bold text-center text-[#2D2D2D]">
                     Paga solo las horas que quieras
                   </p>
-                  <WantItButton class="coaching" />
+                  <WantItButton class="coaching" href="/es/coaching" />
                 </div>
               </li>
             ) : (
@@ -80,9 +81,11 @@ const benefits = [
   </div>
 
   <!-- Footer -->
-  <div
-    class="plan-footer bg-[var(--color-mlc-coaching-dark)]/80 hover:bg-[var(--color-mlc-coaching-dark)]"
-  >
-    <p>Más información</p>
-  </div>
+  <Link href="/es/coaching" target="_self">
+    <div
+      class="plan-footer bg-[var(--color-mlc-coaching-dark)]/80 hover:bg-[var(--color-mlc-coaching-dark)]"
+    >
+      <p>Más información</p>
+    </div>
+  </Link>
 </div>
