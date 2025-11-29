@@ -217,7 +217,7 @@ const {
       for (var i = 0; i < this.tabs.length; i += 1) {
         var tab = this.tabs[i];
         var tabpanel = document.getElementById(
-          tab.getAttribute("aria-controls")
+          tab.getAttribute("aria-controls"),
         );
 
         tab.tabIndex = -1;
@@ -246,8 +246,6 @@ const {
         const tabBg = document.querySelector(".tab-bg");
         const rect = tab.getBoundingClientRect();
         const parentRect = tab.parentElement.getBoundingClientRect();
-        console.log(tab, tab.parentElement, rect, parentRect);
-        // tabBg.style.width = rect.width + "px";
 
         if (currentTab === tab) {
           tab.setAttribute("aria-selected", "true");
@@ -333,19 +331,21 @@ const {
   document.addEventListener("DOMContentLoaded", function () {
     const tablists = document.querySelectorAll("[role=tablist].automatic");
     const tabInstances = [];
-    
+
     for (let i = 0; i < tablists.length; i++) {
       tabInstances.push(new TabsAutomatic(tablists[i]));
     }
 
     // Handle window resize to recalculate tab positions
     let resizeTimer;
-    window.addEventListener('resize', () => {
+    window.addEventListener("resize", () => {
       // Debounce the resize event
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(() => {
-        tabInstances.forEach(instance => {
-          const selectedTab = instance.tablistNode.querySelector('[aria-selected="true"]');
+        tabInstances.forEach((instance) => {
+          const selectedTab = instance.tablistNode.querySelector(
+            '[aria-selected="true"]',
+          );
           if (selectedTab) {
             instance.setSelectedTab(selectedTab, false);
           }

@@ -1,4 +1,3 @@
-// src/env.d.ts
 /// <reference types="astro/client" />
 
 declare namespace App {
@@ -10,4 +9,19 @@ declare namespace App {
     };
     theme: 'light' | 'dark';
   }
+}
+
+declare module "*.png" {
+  const value: any;
+  export default value;
+}
+
+declare module "*.webp" {
+  const value: any;
+  export default value;
+}
+
+declare module "*.svg" {
+  const value: any;
+  export default value;
 }
