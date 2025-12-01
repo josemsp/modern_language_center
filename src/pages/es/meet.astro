@@ -1,19 +1,19 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/header/index.astro";
-import CoachingView from "@/features/coaching.astro";
+import MeetView from "@/features/meet.astro";
 import Footer from "@/layouts/Footer.astro";
 
 const lang = Astro.currentLocale || "es";
 ---
 
 <Layout lang={lang} title="Home - Modern Language Center" description="">
-  <Header slot="header" />
-  <CoachingView />
+    <Header slot="header" />
+    <MeetView />
 
-  <Footer
-    slot="footer"
-    textColor="#59DFB7"
-    class="bg-[linear-gradient(179deg,var(--color-mlc-coaching-light)_0%,var(--color-mlc-coaching-dark)_100%)] pt-20"
-  />
+    <Footer
+        slot="footer"
+        textColor="#F79BFF"
+        class="bg-[linear-gradient(179deg,var(--color-mlc-meet-light)_0%,var(--color-mlc-meet-dark)_100%)] pt-20"
+    />
 </Layout>

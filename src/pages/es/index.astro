@@ -6,7 +6,7 @@ import Home from "@/features/home.astro";
 import Footer from "@/layouts/Footer.astro";
 import SectionTitle from "@/components/ui/SectionTitle.astro";
 
-const { lang = "es" } = Astro.params;
+const lang = Astro.currentLocale || "es";
 ---
 
 <Layout lang={lang} title="Home - Modern Language Center" description="">

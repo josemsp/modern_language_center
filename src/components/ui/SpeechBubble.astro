@@ -1,0 +1,65 @@
+---
+interface Props {
+    align?: "left" | "right";
+    visible?: boolean;
+    class?: string;
+}
+
+const { align = "left", visible = true, class: className } = Astro.props;
+---
+
+<div
+    class:list={[
+        "transform transition-all duration-700 ease-out mb-6 relative",
+        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
+        align === "right" ? "self-end ml-auto" : "self-start mr-auto",
+        className,
+    ]}
+>
+    <div
+        class:list={[
+            "bg-white p-4 rounded-[2rem] shadow-sm relative",
+            align === "right" ? "bubble-tail-right" : "bubble-tail-left",
+        ]}
+    >
+        <!-- <p
+            class="text-purple-800 font-bold text-lg md:text-xl leading-snug text-center"
+        > -->
+        <slot />
+        <!-- </p> -->
+    </div>
+</div>
+<style>
+    /* Custom utility for the speech bubble tail */
+    .bubble-tail-right::after {
+        content: "";
+        position: absolute;
+        bottom: -9px;
+        right: 2rem;
+        width: 0;
+        height: 0;
+        border: 20px solid transparent;
+        border-top-color: white;
+        border-bottom: 0;
+        border-right: 0;
+        margin-left: -10px;
+        margin-bottom: -10px;
+        transform: rotate(0deg);
+    }
+
+    .bubble-tail-left::after {
+        content: "";
+        position: absolute;
+        bottom: -9px;
+        left: 2rem;
+        width: 0;
+        height: 0;
+        border: 20px solid transparent;
+        border-top-color: white;
+        border-bottom: 0;
+        border-left: 0;
+        margin-right: -10px;
+        margin-bottom: -10px;
+        transform: rotate(0deg);
+    }
+</style>

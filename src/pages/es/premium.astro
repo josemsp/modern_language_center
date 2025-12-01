@@ -4,7 +4,7 @@ import Header from "@/components/header/index.astro";
 import PremiumView from "@/features/premium.astro";
 import Footer from "@/layouts/Footer.astro";
 
-const { lang = "es" } = Astro.params;
+const lang = Astro.currentLocale || "es";
 ---
 
 <Layout lang={lang} title="Home - Modern Language Center" description="">

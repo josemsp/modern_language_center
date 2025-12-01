@@ -1,0 +1,277 @@
+---
+// Images
+import LogoMLC from "@/assets/icons/LogoMLC.astro";
+import MeetImage1 from "@/assets/images/meet/MLC_Meet_01.png";
+import MeetImage2 from "@/assets/images/meet/MLC_Meet_02.png";
+// Icons
+import EfectivoIcon from "@/assets/icons/meet/Efectivo.svg";
+import PersonalizadoIcon from "@/assets/icons/meet/Personalizado.svg";
+import MaximizaIcon from "@/assets/icons/meet/Maximiza.svg";
+import EspecializadoIcon from "@/assets/icons/meet/Especializado.svg";
+// Components
+import Container from "@/components/ui/Container.astro";
+import SectionTitle from "@/components/ui/SectionTitle.astro";
+import SpeechBubble from "@/components/ui/SpeechBubble.astro";
+import WantItButton from "@/components/ui/WantItButton.astro";
+// Types
+import type { ContentItemDescriptionsType } from "@/types";
+
+const DESCRIPTION_ITEMS = [
+    "Clases con profesor online en vivo",
+    "Equipo global de instructores",
+    "Examen de colocación con certificado oficial",
+    "Mensualidad de $1,595",
+    "Grupos reducidos (10 máximo)",
+    "Material didáctico especializado en negocios incluido",
+];
+
+interface BenefitsItemType extends ContentItemDescriptionsType {
+    icon: any;
+}
+
+const BENEFITS_ITEMS: BenefitsItemType[] = [
+    {
+        icon: PersonalizadoIcon,
+        title: "Personalizado",
+        description: [
+            "Siempre adaptando y escuchando tus necesidades profesionales reales.",
+        ],
+    },
+    {
+        icon: EfectivoIcon,
+        title: "Efectivo",
+        description: [
+            "Los profesores adaptan y personalizan su estilo de enseñanza a tu estilo de aprendizaje.",
+            "Asesoría y análisis continuos de tu progreso.",
+        ],
+    },
+    {
+        icon: EspecializadoIcon,
+        title: "Especializado",
+        description: [
+            "Material didáctico con contenido aplicable a todas las industrias de negocios.",
+        ],
+    },
+    {
+        icon: MaximizaIcon,
+        title: "Maximiza tu tiempo",
+        description: ["Horarios pensados para profesionales ocupados."],
+    },
+];
+---
+
+<section class="relative w-full text-[#2D2D2D] bg-[#E4E4E4]">
+    <section
+        class="bg-[linear-gradient(180deg,var(--color-mlc-meet-light)_0%,var(--color-mlc-meet-dark)_100%)] relative"
+    >
+        <Container
+            class:list={[
+                "relative pt-[80px] flex justify-center items-start h-[900px] overflow-hidden",
+                "xl:h-[1000px] xl:pt-[100px] xl:text-left xl:leading-normal",
+            ]}
+        >
+            <div
+                class:list={[
+                    "flex flex-col items-center gap-3 text-center w-full pt-12 leading-[1] text-white relative z-10 mx-20",
+                    "xl:justify-center xl:items-start xl:text-left xl:leading-normal xl:pt-[200px]",
+                ]}
+            >
+                <h1
+                    class="text-[60px] font-black xl:text-[90px] max-w-[830px] flex flex-col xl:leading-[1]"
+                >
+                    <span
+                        class="text-[60px] font-black text-[#F8D688] xl:text-[90px]"
+                    >
+                        Inglés ejecutivo
+                    </span>
+                    <span>con impacto</span>
+                </h1>
+                <p class="text-[40px] tracking-tight">
+                    Habla con seguridad, lidera con confianza.
+                </p>
+                <WantItButton class="premium mt-5" />
+            </div>
+
+            <!-- <img
+                src={PremiumImage1.src}
+                alt=""
+                class:list={[
+                    "absolute z-0 bottom-0 w-full h-auto max-w-[430px] max-h-[500px] scale-[1.6] origin-bottom",
+                    "xl:right-[200px] xl:max-w-[630px] xl:max-h-[800px] xl:scale-[1.9]",
+                    "2xl:right-[340px] 2xl:scale-[2.3]",
+                ]}
+            /> -->
+        </Container>
+    </section>
+
+    <section class="bg-[#E4E4E4] flex flex-col items-center py-15">
+        <div class="px-5">
+            <SectionTitle
+                class="w-full text-center text-[#8249B8] pb-4 font-black italic"
+            >
+                ¿Te sientes identificado con alguna de estas?
+            </SectionTitle>
+            <SpeechBubble align="right" class="w-full max-w-[280px]">
+                <p class="text-[#8249B8] font-black text-[20px] tracking-tight">
+                    “Vi una vacante perfecta, pero pedían inglés”
+                </p>
+            </SpeechBubble>
+            <SpeechBubble align="left" class="w-full max-w-[300px]">
+                <p class="text-[#8249B8] font-black text-[20px] tracking-tight">
+                    “Trabajo todo el día, ¿a qué hora voy a aprender inglés?”
+                </p>
+            </SpeechBubble>
+            <SpeechBubble align="right" class="w-full max-w-[332px]">
+                <p class="text-[#8249B8] font-black text-[20px] tracking-tight">
+                    “Sé algo de inglés… pero no me siento listo para una
+                    entrevista”.
+                </p>
+            </SpeechBubble>
+        </div>
+
+        <div class="w-full flex justify-center items-end z-20">
+            <img
+                src={MeetImage2.src}
+                alt=""
+                class:list={[
+                    "object-contain object-bottom w-full max-w-[250px]",
+                    "xl:max-w-[618px] xl:h-[850px]",
+                ]}
+            />
+        </div>
+
+        <div
+            class:list={[
+                "bg-[#52137E] w-full font-bold italic border-white text-white",
+                "flex flex-col justify-between items-center px-5 text-[20px] xl:text-[25px]",
+                "xs:flex-row xs:border-[5px] xs:rounded-[58px]",
+                "md:rounded-[58px]",
+            ]}
+        >
+            <p>Entonces</p>
+            <LogoMLC id="mlc-meet-white" class="w-full max-w-[150px]" />
+            <p>es para ti</p>
+        </div>
+
+        <div class="px-5">
+            <SectionTitle
+                class="w-full text-center text-[#8249B8] pt-[71px] pb-4 font-black italic"
+            >
+                Una solución efectiva y accesible desde cualquier lugar
+            </SectionTitle>
+            <!-- circle color #9448C7 -->
+            <ul class="description-list text-[20px] leading-[1]">
+                {DESCRIPTION_ITEMS.map((item) => <li class="">{item}</li>)}
+            </ul>
+        </div>
+    </section>
+
+    <section
+        class:list={[
+            "bg-[linear-gradient(180deg,var(--color-mlc-meet-light)_0%,var(--color-mlc-meet-dark)_100%)]",
+            "py-12",
+        ]}
+    >
+        <Container class:list={["relative flex flex-col"]}>
+            <div
+                class:list={[
+                    "text-center w-full leading-[1] text-white relative z-10",
+                ]}
+            >
+                <h1 class="text-[40px] xl:text-[90px] max-w-[830px]">
+                    ¿Qué
+                    <span
+                        class="text-[40px] font-black text-[#D8A0FF] xl:text-[90px]"
+                    >
+                        beneficios
+                    </span>
+                    obtendrás?
+                </h1>
+            </div>
+
+            <div class="flex flex-col gap-5 px-3">
+                {
+                    BENEFITS_ITEMS.map((item) => (
+                        <div
+                            class:list={[
+                                "flex flex-row gap-5 text-[20px] text-white",
+                            ]}
+                        >
+                            <item.icon class="w-full max-w-[33px] h-[33px] text-[#D8A0FF]" />
+                            <div>
+                                <h1 class="text-[#D8A0FF] font-bold">
+                                    {item.title}
+                                </h1>
+                                {item.description.map((description) => (
+                                    <p>{description}</p>
+                                ))}
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+        </Container>
+    </section>
+
+    <section class="bg-[#E4E4E4] flex flex-col items-center py-15">
+        <SectionTitle
+            class="w-full text-center text-[#8249B8] pt-[71px] pb-4 font-black italic"
+        >
+            Aprendemos con base en objetivos claros, medibles y alcanzables
+        </SectionTitle>
+
+        <div
+            class="box-level w-[60px] h-[74px] xl:w-[180px] xl:h-[180px] bg-[#9F42CE] text-white rounded-[10px] xl:rounded-[20px] flex flex-col justify-center items-center leading-[1]"
+        >
+            <p class="text-[35px] xl:text-[105px] font-black">B2</p>
+            <p class="text-[15px] xl:text-[25px]">MCER</p>
+        </div>
+
+        <div class="flex flex-col gap-5 px-3">
+            <div class="w-[250px] h-[100px]">
+                <div class="triangle-rotate"></div>
+            </div>
+        </div>
+    </section>
+</section>
+<style>
+    .box-level {
+        /* box-shadow: 5px 5px 15px 1px rgba(0, 0, 0, 0.75); */
+        box-shadow: 5px 5px 20px 1px rgba(0, 0, 0, 0.75);
+    }
+
+    @media (width >= 80rem /* 1280px */) {
+        .box-level {
+            /* box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.75);
+            -webkit-box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: 10px 10px 38px 0px rgba(0, 0, 0, 0.75); */
+        }
+    }
+
+    .triangle-rotate {
+        width: 100%;
+        height: 100%;
+        background: transparent linear-gradient(90deg, #ac76d4 0%, #44026b 100%)
+            0% 0% no-repeat padding-box;
+        clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+    }
+
+    .description-list {
+        list-style-type: none;
+    }
+    .description-list li {
+        position: relative;
+        padding-left: 1rem;
+        margin-bottom: 0.5rem;
+    }
+    .description-list li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.5rem;
+        width: 7px;
+        height: 7px;
+        background-color: #9448c7;
+        border-radius: 50%;
+    }
+</style>
