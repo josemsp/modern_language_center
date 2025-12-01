@@ -1,16 +1,19 @@
 ---
+// Images
 import ModerWhite from "@/assets/images/mlc-white.png";
 import CoachingImage1 from "@/assets/images/coaching/MLC_Coaching_01.png";
 import CoachingImage2 from "@/assets/images/coaching/MLC_Coaching_02.png";
+// Icons
+import TrackTestIcon from "@/assets/icons/Tracktest.svg";
+// Components
 import SectionTitle from "@/components/ui/SectionTitle.astro";
 import ServiciosExclusivos from "@/components/coaching/ServiciosExclusivos.astro";
 import CoachingPlans from "@/components/coaching/CoachingPlans.astro";
 import LogoMLC from "@/assets/icons/LogoMLC.astro";
-import TrackTestIcon from "@/assets/icons/coaching/Tracktest.svg";
 import MLCForm from "@/components/ui/MLCForm.astro";
-import CoachingFeatureItem from "@/components/coaching/CoachingFeatureItem.astro";
 import Container from "@/components/ui/Container.astro";
 import WantItButton from "@/components/ui/WantItButton.astro";
+import ContentItem from "@/components/ui/ContentItem.astro";
 ---
 
 <section class="relative w-full text-[#2D2D2D] bg-[#E4E4E4]">
@@ -53,9 +56,7 @@ import WantItButton from "@/components/ui/WantItButton.astro";
   </section>
 
   <section class="bg-[#E4E4E4] flex flex-col items-center">
-    <SectionTitle
-      class="w-full max-w-[370px] lg:w-[800px] text-center pt-[71px] pb-8 font-bold"
-    >
+    <SectionTitle class="w-full text-center pt-[71px] pb-8 font-bold">
       Servicios exclusivos
     </SectionTitle>
 
@@ -115,15 +116,15 @@ import WantItButton from "@/components/ui/WantItButton.astro";
           </p>
           <!-- content description -->
           <div class="text-[20px] md:text-[26px] pt-10 pl-11 space-y-8">
-            <CoachingFeatureItem
+            <ContentItem
               title="Preparación y Refinamiento."
               description="Profundiza en vocabulario, pronunciación y sintaxis con la guía intensiva del instructor."
             />
-            <CoachingFeatureItem
+            <ContentItem
               title="Ensayo."
               description="A través de repasos iniciales y subsiguientes, refina tu entrega y domina el flujo del material."
             />
-            <CoachingFeatureItem
+            <ContentItem
               title="Carrera Final."
               description="Prueba tus habilidades en un entorno de evento simulado, con retroalimentación para ajustes de último minuto."
             />

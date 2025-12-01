@@ -1,0 +1,217 @@
+---
+import CardSliderItem from "./CardSliderItem.astro";
+
+interface Props {
+    itemsPerPage?: number;
+    class?: string;
+}
+
+const { itemsPerPage = 2, class: className } = Astro.props;
+
+export interface FeatureCardData {
+    id: number;
+    title: string;
+    description: string;
+}
+
+const COURSE_DATA: FeatureCardData[] = [
+    // Page 1
+    {
+        id: 1,
+        title: "Programa intensificado",
+        description:
+            "Basado 100% en producción y entregas auténticas de presentaciones, textos profesionales, negociaciones, entrevistas y análisis de casos de estudio.",
+    },
+    {
+        id: 2,
+        title: "Curriculo con doble propósito",
+        description:
+            "El currículo del curso es único en el sentido de que cambia el desarrollo del lenguaje con habilidades de comunicación corporativa.",
+    },
+    // Page 2
+    {
+        id: 3,
+        title: "Certificación Internacional",
+        description:
+            "Con casos prácticos de publicaciones prestigio como Hardvard Business Review, MIT Sloan Management Review y The Economist.",
+    },
+    {
+        id: 4,
+        title: "Mentoria Personalizada",
+        description:
+            "Individuales o grupales con máximo 4 personas. 72 horas de clase con coach dedicado. Sesiones de 1 hora diaria de lunes a jueves. Cursa un nivel en 18 semanas.",
+    },
+];
+
+// const ITEMS_PER_PAGE = 2;
+const totalPages = Math.ceil(COURSE_DATA.length / itemsPerPage);
+---
+
+<section
+    class:list={[
+        "w-full max-w-6xl mx-auto px-4 py-12 flex flex-col items-center",
+        className,
+    ]}
+>
+    <!-- Cards Container -->
+    <div
+        id="cards-container"
+        class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 w-full mb-8"
+    >
+        {
+            COURSE_DATA.slice(0, itemsPerPage).map((item) => (
+                <div
+                    data-page={Math.ceil(
+                        (COURSE_DATA.indexOf(item) + 1) / itemsPerPage,
+                    )}
+                    class="feature-card-wrapper text-center"
+                >
+                    <CardSliderItem
+                        title={item.title}
+                        description={item.description}
+                    />
+                </div>
+            ))
+        }
+        {
+            COURSE_DATA.slice(itemsPerPage).map((item) => (
+                <div
+                    data-page={Math.ceil(
+                        (COURSE_DATA.indexOf(item) + 1) / itemsPerPage,
+                    )}
+                    class="feature-card-wrapper hidden text-center"
+                >
+                    <CardSliderItem
+                        title={item.title}
+                        description={item.description}
+                    />
+                </div>
+            ))
+        }
+    </div>
+
+    <!-- Navigation / Pagination -->
+    <div
+        class="flex items-center space-x-6 text-[#79561c] font-bold text-lg select-none"
+    >
+        <button
+            id="prev-btn"
+            class="p-2 transition-opacity opacity-30 cursor-not-allowed"
+            aria-label="Previous page"
+            disabled
+        >
+            <svg
+                class="w-6 h-6 md:w-8 md:h-8"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 19l-7-7 7-7"></path>
+            </svg>
+        </button>
+
+        <span class="tracking-widest">
+            <span id="current-page">1</span>/{totalPages}
+        </span>
+
+        <button
+            id="next-btn"
+            class="p-2 transition-opacity opacity-100 hover:scale-110 cursor-pointer"
+            aria-label="Next page"
+        >
+            <svg
+                class="w-6 h-6 md:w-8 md:h-8"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"></path>
+            </svg>
+        </button>
+    </div>
+</section>
+
+<script define:vars={{ totalPages }}>
+    let currentPage = 1;
+
+    const prevBtn = document.getElementById("prev-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const currentPageSpan = document.getElementById("current-page");
+    const cardWrappers = document.querySelectorAll(".feature-card-wrapper");
+
+    function updateDisplay() {
+        // Update cards visibility
+        cardWrappers.forEach((wrapper) => {
+            const page = parseInt(wrapper.dataset.page);
+            if (page === currentPage) {
+                wrapper.classList.remove("hidden");
+            } else {
+                wrapper.classList.add("hidden");
+            }
+        });
+
+        // Update page number
+        currentPageSpan.textContent = currentPage;
+
+        // Update button states
+        if (currentPage === 1) {
+            prevBtn.disabled = true;
+            prevBtn.classList.add("opacity-30", "cursor-not-allowed");
+            prevBtn.classList.remove(
+                "opacity-100",
+                "hover:scale-110",
+                "cursor-pointer",
+            );
+        } else {
+            prevBtn.disabled = false;
+            prevBtn.classList.remove("opacity-30", "cursor-not-allowed");
+            prevBtn.classList.add(
+                "opacity-100",
+                "hover:scale-110",
+                "cursor-pointer",
+            );
+        }
+
+        if (currentPage === totalPages) {
+            nextBtn.disabled = true;
+            nextBtn.classList.add("opacity-30", "cursor-not-allowed");
+            nextBtn.classList.remove(
+                "opacity-100",
+                "hover:scale-110",
+                "cursor-pointer",
+            );
+        } else {
+            nextBtn.disabled = false;
+            nextBtn.classList.remove("opacity-30", "cursor-not-allowed");
+            nextBtn.classList.add(
+                "opacity-100",
+                "hover:scale-110",
+                "cursor-pointer",
+            );
+        }
+    }
+
+    prevBtn.addEventListener("click", () => {
+        if (currentPage > 1) {
+            currentPage--;
+            updateDisplay();
+        }
+    });
+
+    nextBtn.addEventListener("click", () => {
+        if (currentPage < totalPages) {
+            currentPage++;
+            updateDisplay();
+        }
+    });
+</script>

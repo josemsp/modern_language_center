@@ -1,13 +1,26 @@
 ---
 interface Props {
   class?: string;
+  containerClass?: string;
+  scrollButtons?: boolean;
 }
 
-const { class: className } = Astro.props;
+const { class: className, containerClass, scrollButtons } = Astro.props;
 ---
 
-<div role="region" aria-label="Card carousel demo" class={`mb-16 ${className}`}>
-  <div class="carousel carousel--offscreen-inert" aria-live="polite">
+<div
+  role="region"
+  aria-label="Card carousel demo"
+  class:list={["mb-16", className]}
+>
+  <div
+    class:list={[
+      "carousel carousel--offscreen-inert",
+      { "carousel--scroll-buttons": scrollButtons },
+      containerClass,
+    ]}
+    aria-live="polite"
+  >
     <slot />
   </div>
 </div>

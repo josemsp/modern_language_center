@@ -1,0 +1,531 @@
+---
+// IMAGES
+import PremiumImage1 from "@/assets/images/premium/MLC_Premium_01.png";
+import PremiumImage2 from "@/assets/images/premium/MLC_Premium_02.png";
+import PremiumImage3 from "@/assets/images/premium/MLC_Premium_03.png";
+// ICONS
+import DesenvolvimientoIcon from "@/assets/icons/premium/Desenvolvimiento.svg";
+import HabilidadIcon from "@/assets/icons/premium/Habilidad.svg";
+import InmediatezIcon from "@/assets/icons/premium/Inmediatez.svg";
+import LogoMLC from "@/assets/icons/LogoMLC.astro";
+import PresentacionesIcon from "@/assets/icons/premium/Presentaciones.svg";
+import RedaccionIcon from "@/assets/icons/premium/Redaccion.svg";
+import NegociacionesIcon from "@/assets/icons/premium/Negociaciones.svg";
+import EntrevistasIcon from "@/assets/icons/premium/Entrevistas.svg";
+import TrackTestIcon from "@/assets/icons/Tracktest.svg";
+import ModerWhite from "@/assets/images/mlc-white.png";
+// Components
+import Container from "@/components/ui/Container.astro";
+import SectionTitle from "@/components/ui/SectionTitle.astro";
+import PlanServices from "@/components/PlanServices.astro";
+import PlanServiceItem from "@/components/PlanServiceItem.astro";
+import CarouselItem from "@/components/ui/simple-carousel/CarouselItem.astro";
+import Carousel from "@/components/ui/simple-carousel/Carousel.astro";
+import ContentItem from "@/components/ui/ContentItem.astro";
+import CourseInfoCard from "@/components/premium/CourseInfoCard.astro";
+import CardSlider from "@/components/ui/card-slider/CardSlider.astro";
+import MLCForm from "@/components/ui/MLCForm.astro";
+import WantItButton from "@/components/ui/WantItButton.astro";
+
+interface ContentItem {
+    title: string;
+    description: string;
+}
+
+interface Service extends ContentItem {
+    iconName: string;
+    icon: any;
+}
+
+const SERVICES: Service[] = [
+    {
+        iconName: "INMEDIATEZ",
+        icon: InmediatezIcon,
+        title: "Inmediatez",
+        description: "Inmediata implementación en el trabajo",
+    },
+    {
+        iconName: "HABILIDAD",
+        icon: HabilidadIcon,
+        title: "Habilidad de Gestión",
+        description:
+            "Confianza para presentar, negociar, argumentar y liderar en inglés",
+    },
+    {
+        iconName: "DESENVOLVIMENTO",
+        icon: DesenvolvimientoIcon,
+        title: "Desenvolvimento",
+        description: "Enfocado 100% en producción lingüística",
+    },
+];
+
+interface StepPlan {
+    icon: any;
+    title: string;
+    items: string[];
+}
+
+const STEP_PLAN: StepPlan[] = [
+    {
+        icon: EntrevistasIcon,
+        title: "Entrevistas",
+        items: [
+            "• Fundamentos básicos",
+            "• Preparación para la entrevista",
+            "• Técnicas de formulación de preguntas",
+            "• Escucha activa",
+            "• Técnicas de persuasión y venta personal",
+            "• Evaluación de candidatos",
+            "• Práctica de entrevistas",
+        ],
+    },
+    {
+        icon: PresentacionesIcon,
+        title: "Presentaciones",
+        items: [
+            "• Fundamentos básicos",
+            "• Diseño visual",
+            "• Estructura y organización",
+            "• Comunicación verbal",
+            "• Conectando audiencias",
+            "• Manejo de preguntas y respuestas",
+            "• Práctica de campo",
+        ],
+    },
+    {
+        icon: NegociacionesIcon,
+        title: "Negociaciones",
+        items: [
+            "• Fundamentos básicos",
+            "• Preparación",
+            "• Estrategias de negociación",
+            "• Manejo de conflictos",
+            "• Cierre de acuerdos",
+            "• Ética en la negociación",
+            "• Práctica de campo",
+        ],
+    },
+    {
+        icon: RedaccionIcon,
+        title: "Redacción",
+        items: [
+            "• Redacción persuasiva",
+            "• Estilo y fluidez",
+            "• Corrección de textos",
+            "• Adaptación a diferentes formatos",
+            "• Vocabulario especializado",
+            "• Gramática",
+            "• Práctica de campo",
+        ],
+    },
+];
+
+interface CourseFeature extends ContentItem {
+    id: string;
+}
+
+const features: CourseFeature[] = [
+    {
+        id: "1",
+        title: "Programa intensificado",
+        description:
+            "Basado 100% en producción y entregas auténticas de presentaciones, textos profesionales, negociaciones, entrevistas y análisis de casos de estudio.",
+    },
+    {
+        id: "2",
+        title: "Currículo con doble propósito",
+        description:
+            "El currículo del curso es único en su enfoque dual, combinando teoría académica rigurosa con práctica intensiva para maximizar la retención.",
+    },
+    {
+        id: "3",
+        title: "Mentores Expertos",
+        description:
+            "Aprende directamente de líderes de la industria con años de experiencia práctica, quienes te guiarán a través de desafíos del mundo real.",
+    },
+    {
+        id: "4",
+        title: "Feedback Personalizado",
+        description:
+            "Recibe retroalimentación detallada y constructiva en cada etapa de tu aprendizaje para pulir tus habilidades y potenciar tu crecimiento.",
+    },
+    {
+        id: "5",
+        title: "Certificación Profesional",
+        description:
+            "Obtén un certificado reconocido por la industria que valida tus nuevas competencias y te abre puertas a mejores oportunidades laborales.",
+    },
+];
+
+const FEATURE_ITEMS: ContentItem[] = [
+    {
+        title: "Profesionales en posiciones clave",
+        description:
+            "Dirigido a tomadores de decisiones como gerentes, managers, directores de área, responsables de recursos humanos o CEOS.",
+    },
+    {
+        title: "Personas con poca disponibilidad de tiempo",
+        description:
+            "Ideal para ejecutivos que viajan frecuentemente y deben presentar resultados, liderar reuniones o gestionar proyectos en inglés.",
+    },
+    {
+        title: "Quienes ya saben inglés, pero…",
+        description:
+            "Aunque cuentas con un nivel intermedio, aún no te sientes completamente seguro al comunicarte. Este curso es para ti si te cuesta expresarte con naturalidad o asumir un rol de liderazgo en inglés por falta de confianza.",
+    },
+];
+---
+
+<section class="relative w-full text-[#2D2D2D] bg-[#E4E4E4]">
+    <section
+        class="bg-[linear-gradient(180deg,var(--color-mlc-premium-light)_0%,var(--color-mlc-premium-dark)_100%)] relative"
+    >
+        <Container
+            class:list={[
+                "relative pt-[80px] flex justify-center items-start h-[900px] overflow-hidden",
+                "xl:h-[1000px] xl:pt-[100px] xl:text-left xl:leading-normal",
+            ]}
+        >
+            <div
+                class:list={[
+                    "flex flex-col items-center gap-3 text-center w-full pt-12 leading-[1] text-white relative z-10 mx-20",
+                    "xl:justify-center xl:items-start xl:text-left xl:leading-normal xl:pt-[200px]",
+                ]}
+            >
+                <h1
+                    class="text-[60px] font-black xl:text-[90px] max-w-[830px] flex flex-col xl:leading-[1]"
+                >
+                    <span
+                        class="text-[60px] font-black text-[#F8D688] xl:text-[90px]"
+                    >
+                        Inglés ejecutivo
+                    </span>
+                    <span>con impacto</span>
+                </h1>
+                <p class="text-[40px] tracking-tight">
+                    Habla con seguridad, lidera con confianza.
+                </p>
+                <WantItButton class="premium mt-5" />
+            </div>
+
+            <img
+                src={PremiumImage1.src}
+                alt=""
+                class:list={[
+                    "absolute z-0 bottom-0 w-full h-auto max-w-[430px] max-h-[500px] scale-[1.6] origin-bottom",
+                    "xl:right-[200px] xl:max-w-[630px] xl:max-h-[800px] xl:scale-[1.9]",
+                    "2xl:right-[340px] 2xl:scale-[2.3]",
+                ]}
+            />
+        </Container>
+    </section>
+
+    <section class="bg-[#E4E4E4]">
+        <Container class:list={["px-7"]}>
+            <SectionTitle class="text-center mt-10 mb-2 xl:mt-20 xl:mb-10">
+                <span>Diseñado para la producción lingüística competitiva</span>
+                <span class="text-[#A07739] font-bold">
+                    en el mundo de los negocios.
+                </span>
+            </SectionTitle>
+
+            <PlanServices
+                class="divide xl:bg-[linear-gradient(180deg,var(--color-mlc-premium-light)_0%,var(--color-mlc-premium-dark)_100%)]"
+                breakPoint="xl"
+            >
+                {
+                    SERVICES.map((service) => (
+                        <PlanServiceItem
+                            class:list={[
+                                "bg-[linear-gradient(180deg,#B08C5A_0%,#79541B_100%)] xl:bg-[linear-gradient(180deg,transparent_0%,transparent_100%)]",
+                                "w-[332px] h-[155px]",
+                                "grid grid-cols-2 items-center gap-4",
+                                "xl:grid-cols-1",
+                            ]}
+                            breakPoint="xl"
+                        >
+                            <div slot="icon" class="flex flex-col items-center">
+                                <service.icon class="w-16 h-16" />
+                                <p class="text-[20px] text-white text-center hyphens-auto break-words font-bold xl:text-[25px] xl:font-black">
+                                    {service.title}
+                                </p>
+                            </div>
+                            <div
+                                slot="description"
+                                class="text-white text-[20px] text-left xl:text-[22px] xl:text-center"
+                            >
+                                {service.description}
+                            </div>
+                        </PlanServiceItem>
+                    ))
+                }
+            </PlanServices>
+
+            <section
+                class:list={[
+                    "flex flex-col items-center pt-10",
+                    "xl:flex-row-reverse",
+                ]}
+            >
+                <div class="flex flex-col items-center">
+                    <LogoMLC
+                        id="mlc-premium-black"
+                        class="w-full max-w-[316px] xl:max-w-[500px] mx-auto"
+                    />
+                    <div class="text-[20px] xl:text-[26px] flex flex-col gap-4">
+                        <p>
+                            El Curso Premium de Producción (PPC) es un programa
+                            intensivo de 72 horas diseñado para tomadores de
+                            decisiones, gerentes y ejecutivos que necesitan
+                            comunicarse con fluidez y seguridad en inglés en
+                            entornos profesionales.
+                        </p>
+                        <p>
+                            Ideal para quienes tienen conocimientos intermedios
+                            pero aún no dominan el idioma de forma natural, este
+                            curso 100% práctico se enfoca en desarrollar
+                            habilidades clave como presentaciones, negociaciones
+                            y liderazgo en inglés.
+                        </p>
+                        <p>
+                            Con sesiones en vivo adaptadas a tu horario y
+                            entregables semanales que garantizan resultados, el
+                            PPC es la opción definitiva para profesionales con
+                            alto nivel de exigencia y poco tiempo disponible.
+                        </p>
+                    </div>
+                </div>
+                <img
+                    src={PremiumImage2.src}
+                    alt=""
+                    class:list={["w-full max-w-[618px] h-auto"]}
+                />
+            </section>
+        </Container>
+    </section>
+
+    <section
+        class:list={[
+            "bg-[linear-gradient(180deg,var(--color-mlc-premium-light)_0%,var(--color-mlc-premium-dark)_100%)]",
+            "pt-12 pb-5",
+        ]}
+    >
+        <Container>
+            <SectionTitle class="text-center text-white px-7">
+                ¿Qué aprenderás en el curso completo de 72 horas?
+            </SectionTitle>
+            <Carousel scrollButtons={true} containerClass="!gap-[65px]">
+                {
+                    STEP_PLAN.map((plan, index) => (
+                        <CarouselItem
+                            dataLabel="Slide 1"
+                            class="w-[340px] xl:w-[447px] pt-20"
+                            initialSlide={index === 3}
+                        >
+                            <div
+                                class:list={[
+                                    "relative bg-white text-[20px] rounded-[20px] p-6 h-[356px]",
+                                    "xl:text-[26px] xl:rounded-[40px] xl:h-[518px]",
+                                ]}
+                            >
+                                {/* center icon */}
+                                <div
+                                    class:list={[
+                                        "bg-white rounded-full absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-[74px] h-[74px]",
+                                        "flex justify-center items-center shadow-[0_4.5px_45px_#00000029]",
+                                        "xl:w-[100px] xl:h-[100px]",
+                                    ]}
+                                >
+                                    <plan.icon class="w-10 h-10" />
+                                </div>
+                                <p class="text-center font-bold text-[#B28F5B] mb-3 mt-7 xl:text-[30px]">
+                                    {plan.title}
+                                </p>
+                                <ul class="text-[#888888] leading-tight xl:leading-normal">
+                                    {plan.items.map((item) => (
+                                        <li>{item}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </CarouselItem>
+                    ))
+                }
+            </Carousel>
+        </Container>
+    </section>
+
+    <section class="bg-[#E4E4E4]">
+        <Container>
+            <SectionTitle class="text-center font-bold px-7 mt-10 mb-5">
+                Características del curso
+            </SectionTitle>
+            <div class="w-[90%] mx-auto block xl:hidden">
+                <div class="timeline-scroll w-full -mr-3 pb-6 h-[350px]">
+                    <div class="flex flex-col gap-6 pr-5">
+                        {
+                            features.map((feature) => (
+                                <CourseInfoCard
+                                    title={feature.title}
+                                    description={feature.description}
+                                    class="w-full"
+                                />
+                            ))
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <CardSlider class="hidden xl:flex" />
+
+            <div class="flex flex-col xl:flex-row-reverse px-[50px]">
+                <div class="w-full xl:max-w-[700px] text-center xl:text-left">
+                    <SectionTitle
+                        class="font-bold px-7 mt-10 mb-5 xl:px-0 xl:mb-0 xl:tracking-tight"
+                    >
+                        ¿Para quién es éste curso?
+                    </SectionTitle>
+                    <p class="text-[20px] xl:text-[30px]">
+                        Este programa está diseñado para:
+                    </p>
+                    <!-- Container -->
+                    <div class="flex px-5 py-5 xl:px-0">
+                        <div
+                            class="border-l-[10px] border-dotted border-[#AC7E41] pr-2 mt-7"
+                        >
+                        </div>
+                        <div class="flex flex-col">
+                            <!-- content description -->
+                            <div
+                                class="text-[20px] text-left md:text-[26px] pt-5 pl-2 space-y-5"
+                            >
+                                {
+                                    FEATURE_ITEMS.map((feature) => (
+                                        <ContentItem
+                                            title={feature.title}
+                                            description={feature.description}
+                                            titleClass="text-[#C3842C]"
+                                            descriptionClass="leading-[1.3]"
+                                        />
+                                    ))
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- image -->
+                <div class="w-full flex justify-center items-end z-20">
+                    <img
+                        src={PremiumImage3.src}
+                        alt=""
+                        class:list={[
+                            "object-contain object-bottom w-full max-w-[450px]",
+                            "xl:max-w-[618px] xl:h-[850px]",
+                            // "xl:!max-w-[60%] xl:absolute xl:bottom-0 xl:right-[0rem] xl:max-h-[1000px]",
+                        ]}
+                    />
+                </div>
+            </div>
+        </Container>
+    </section>
+
+    <section
+        class="bg-[linear-gradient(147deg,#C1985C_0%,#8F6513_100%)] text-white py-10 px-5 text-center"
+    >
+        <SectionTitle
+            class="w-full max-w-[380px] lg:max-w-[990px] text-center pt-2 pb-8 mx-auto font-normal text-white"
+        >
+            Conoce tu nivel de inglés y descubre si calificas para el Curso
+            Premium
+        </SectionTitle>
+        <p
+            class="tracking-normal text-[20px] xl:text-[36px] xl:w-[1125px] mx-auto"
+        >
+            Haz el test hoy y recibe un certificado totalmente gratis. ¡Da el
+            primer paso hacia la fluidez que tu carrera necesita! Solo tienes
+            que llenar el formulario con tus datos y te enviamos el link.
+        </p>
+        <div
+            class="flex justify-around items-center w-full max-w-[1000px] mx-auto"
+        >
+            <TrackTestIcon class="w-[200px] xl:w-[350px]" />
+            <img
+                src={ModerWhite.src}
+                alt="Modern Language Center - Logo"
+                class="w-[150px] xl:w-[250px] h-[55px] xl:h-[90px]"
+            />
+        </div>
+    </section>
+
+    <section class="p-5 py-15">
+        <MLCForm formType="premium" />
+    </section>
+</section>
+
+<style is:global>
+    .divide .services-container {
+        @media (width >= 80rem /* 1280px */) {
+            :where(& > :not(:last-child)) {
+                border-color: #d4a55f !important;
+            }
+        }
+    }
+
+    .carousel {
+        &::scroll-button(*) {
+            display: none;
+        }
+    }
+
+    @media (width >= 80rem /* 1280px */) {
+        .carousel {
+            inline-size: 90% !important;
+            margin-inline: auto !important;
+        }
+
+        .carousel {
+            &::scroll-button(*) {
+                display: block;
+                filter: brightness(0) invert(1);
+                background-color: transparent !important;
+                border-color: transparent !important;
+                padding: 0 !important;
+                inline-size: auto !important;
+                transform: scale(5) !important;
+                border-style: none !important;
+            }
+
+            &::scroll-button(right) {
+                position-area: inline-end center;
+                left: 0px !important;
+            }
+
+            &::scroll-button(left) {
+                position-area: inline-start center;
+                right: 0px !important;
+            }
+        }
+    }
+
+    .timeline-scroll {
+        scrollbar-width: thin;
+        scrollbar-color: #b88a38 transparent;
+        scrollbar-gutter: stable;
+        overflow-y: scroll !important;
+    }
+    .timeline-scroll::-webkit-scrollbar {
+        width: 40px !important; /* Width of the scrollbar area */
+        display: block !important;
+    }
+
+    .timeline-scroll::-webkit-scrollbar-thumb {
+        background-color: #b88a38; /* Gold color */
+        border-radius: 99px; /* Rounded pill shape */
+        min-height: 80px; /* Minimum length of the indicator */
+        width: 40px !important;
+        border: 3px solid orange;
+    }
+
+    .timeline-scroll::-webkit-scrollbar-thumb:hover {
+        background-color: #9e7328;
+    }
+</style>

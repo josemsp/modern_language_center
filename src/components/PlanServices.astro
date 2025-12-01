@@ -1,0 +1,85 @@
+---
+interface Props {
+    class?: string;
+    breakPoint?: "md" | "lg" | "xl" | "2xl";
+}
+
+const { class: className = "", breakPoint = "md" } = Astro.props;
+
+// Clases base (móvil / comunes)
+const wrapperBase = "w-full max-w-[1486px] mx-auto rounded-[58px] h-[265px]";
+const scrollBase =
+    "services-container transition-all duration-500 ease-in-out h-full flex flex-row overflow-x-auto snap-x snap-mandatory scrollbar-hide px-4 gap-4 rounded-none py-[34px]";
+
+/* ------------------------------
+   Clases LITERALES por breakpoint
+   (evita template strings dinámicos)
+------------------------------ */
+const mdWrapper = ["md:border-[15px]", "md:border-white"].join(" ");
+
+const lgWrapper = ["lg:border-[15px]", "lg:border-white"].join(" ");
+
+const xlWrapper = ["xl:border-[15px]", "xl:border-white"].join(" ");
+
+const mdScroll = [
+    "md:flex-nowrap",
+    "md:overflow-visible",
+    "md:items-stretch",
+    "md:justify-between",
+    "md:rounded-[28px]",
+    "md:gap-0",
+    "md:!divide-x",
+].join(" ");
+
+const lgScroll = [
+    "lg:flex-nowrap",
+    "lg:overflow-visible",
+    "lg:items-stretch",
+    "lg:justify-between",
+    "lg:rounded-[28px]",
+    "lg:gap-0",
+    "lg:!divide-x",
+].join(" ");
+
+const xlScroll = [
+    "xl:flex-nowrap",
+    "xl:overflow-visible",
+    "xl:items-stretch",
+    "xl:justify-between",
+    "xl:rounded-[28px]",
+    "xl:gap-0",
+    "xl:!divide-x",
+].join(" ");
+
+// Mapa para seleccionar el conjunto de clases del breakpoint activo
+const wrapperBPMap = { md: mdWrapper, lg: lgWrapper, xl: xlWrapper };
+const scrollBPMap = { md: mdScroll, lg: lgScroll, xl: xlScroll };
+
+const selectedWrapperBP = (wrapperBPMap as Record<string, string>)[breakPoint];
+const selectedScrollBP = (scrollBPMap as Record<string, string>)[breakPoint];
+---
+
+<div class:list={[wrapperBase, selectedWrapperBP, className]}>
+    {
+        /* RESPONSIVE CONTAINER
+       Mobile: Horizontal Scroll (Snap Carousel).
+       Desktop: Horizontal Flex Pill.
+  */
+    }
+    <div class="relative w-full h-full group">
+        {/* Scroll Container */}
+        <div class:list={[scrollBase, selectedScrollBP]}>
+            <slot />
+        </div>
+    </div>
+</div>
+
+<style>
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+</style>

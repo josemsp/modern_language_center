@@ -1,7 +1,16 @@
 ---
-const { cookies, redirect } = Astro;
-const savedLang = cookies.get('user-lang')?.value;
-const targetLang = savedLang && ['es', 'en'].includes(savedLang) ? savedLang : 'es';
-
-return redirect(`/${targetLang}/`);
+// This page is now handled by middleware redirect
+// Users visiting "/" will be automatically redirected to "/{lang}/"
 ---
+
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Redirecting...</title>
+    </head>
+    <body>
+        <p>Redirecting...</p>
+    </body>
+</html>

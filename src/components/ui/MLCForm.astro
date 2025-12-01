@@ -7,7 +7,7 @@ import Textarea from "../ui/form/Textarea.astro";
 import Button from "./Button.astro";
 
 interface Props {
-    formType: "coaching" | "contact";
+    formType: "coaching" | "premium" | "contact";
 }
 
 const { formType } = Astro.props;
@@ -15,6 +15,7 @@ const { formType } = Astro.props;
 const logoMap = {
     coaching: "mlc-coaching-black",
     contact: "mlc-contact-black",
+    premium: "mlc-premium-black",
 };
 const logo = logoMap[formType];
 ---
@@ -136,83 +137,15 @@ const logo = logoMap[formType];
         <div class="mt-8 flex justify-center md:justify-end">
             <Button
                 type="submit"
-                class="bg-[#006C4C] rounded-[10px] w-[108px] h-[40px] text-[20px] xl:text-[25px] xl:w-[223px] xl:h-[63px]"
+                class:list={[
+                    "rounded-[10px] w-[108px] h-[40px] text-[20px] xl:text-[25px] xl:w-[223px] xl:h-[63px]",
+                    formType === "coaching" && "bg-[#006C4C]",
+                    formType === "premium" && "bg-[#7C5627]",
+                    formType === "contact" && "bg-[#006C4C]",
+                ]}
             >
                 Enviar
             </Button>
         </div>
-
-        <!-- <LogoMLC id={logo} class="w-[174px] xl:w-[250px] mx-auto" />
-        <SectionTitle class="text-center pt-5 pb-5 font-bold mx-auto px-[22px]">
-            Inicia tu proceso de inscripción
-        </SectionTitle> -->
-        <!-- <div class="flex flex-col gap-5">
-            <InputText
-                label="Nombre"
-                name="name"
-                placeholder="Ingrese su nombre completo"
-                isRequired={true}
-            />
-            <InputText
-                label="Correo electrónico"
-                name="email"
-                placeholder="Ingrese su correo electrónico"
-                isRequired={true}
-                type="email"
-            />
-            <InputText
-                label="Teléfono"
-                name="phone"
-                placeholder="Ingrese su número de WhatsApp"
-                isRequired={true}
-                type="tel"
-            />
-            <Select
-                id="nivel"
-                label="Nivel estimado del idioma a estudiar"
-                name="nivel"
-                options={[
-                    { value: "basico", label: "Basico" },
-                    { value: "intermedio", label: "Intermedio" },
-                    { value: "avanzado", label: "Avanzado" },
-                ]}
-            />
-            <Select
-                id="horario"
-                label="Horario predilecto para tomar clase"
-                name="horario"
-                options={[
-                    { value: "manana", label: "Mañana" },
-                    { value: "tarde", label: "Tarde" },
-                    { value: "noche", label: "Noche" },
-                ]}
-            />
-            <Select
-                id="contacto"
-                label="¿En qué horario podemos contactarte?"
-                name="contacto"
-                options={[
-                    {
-                        value: "whatsapp",
-                        label: "Lunes a viernes de 8am a 7pm",
-                    },
-                ]}
-            />
-
-            <Textarea
-                id="comentarios"
-                label="Comentarios"
-                name="comentarios"
-                rows={4}
-                placeholder="Ingrese sus comentarios"
-            />
-
-            <Button
-                type="submit"
-                class="bg-[#006C4C] rounded-[10px] mx-auto w-[108px] h-[40px]"
-            >
-                Enviar
-            </Button>
-        </div> -->
     </form>
 </div>

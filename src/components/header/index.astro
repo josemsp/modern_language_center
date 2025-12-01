@@ -7,60 +7,6 @@ import Accordion from "../ui/Accordion.astro";
 import MenuOptions from "../ui/MenuOptions.astro";
 import Link from "../ui/Link.astro";
 
-const currentUrl = Astro.url;
-const solutionsOptions = [
-  {
-    label: "Recruitment Support",
-    value: "recruitment",
-    url: currentUrl.pathname + "recruitment",
-  },
-  {
-    label: "Train Abroad",
-    value: "train-abroad",
-    url: currentUrl.pathname + "train-abroad",
-  },
-  {
-    label: "Accreditation",
-    value: "accreditation",
-    url: currentUrl.pathname + "accreditation",
-  },
-];
-
-const individualsOptions = [
-  {
-    label: "One on One",
-    value: "one-on-one",
-    url: currentUrl.pathname + "one-on-one",
-  },
-  {
-    label: "Meet",
-    value: "meet",
-    url: currentUrl.pathname + "meet",
-  },
-];
-
-const companiesOptions = [
-  {
-    label: "Business Program",
-    value: "business-program",
-    url: currentUrl.pathname + "business-program",
-  },
-  {
-    label: "Premium",
-    value: "premium",
-    url: currentUrl.pathname + "premium",
-  },
-  {
-    label: "Coaching",
-    value: "coaching",
-    url: currentUrl.pathname + "coaching",
-  },
-];
-
-const logoMap: Record<string, string> = {
-  coaching: "#mlc-coaching-black",
-};
-
 const analyzeRoute = (pathname: string) => {
   const segments = pathname.split("/").filter(Boolean);
 
@@ -74,6 +20,59 @@ const analyzeRoute = (pathname: string) => {
 };
 
 const routeInfo = analyzeRoute(Astro.url.pathname);
+
+const solutionsOptions = [
+  {
+    label: "Recruitment Support",
+    value: "recruitment",
+    url: `/${routeInfo.lang}/recruitment`,
+  },
+  {
+    label: "Train Abroad",
+    value: "train-abroad",
+    url: `/${routeInfo.lang}/train-abroad`,
+  },
+  {
+    label: "Accreditation",
+    value: "accreditation",
+    url: `/${routeInfo.lang}/accreditation`,
+  },
+];
+
+const individualsOptions = [
+  {
+    label: "One on One",
+    value: "one-on-one",
+    url: `/${routeInfo.lang}/one-on-one`,
+  },
+  {
+    label: "Meet",
+    value: "meet",
+    url: `/${routeInfo.lang}/meet`,
+  },
+];
+
+const companiesOptions = [
+  {
+    label: "Business Program",
+    value: "business-program",
+    url: `/${routeInfo.lang}/business-program`,
+  },
+  {
+    label: "Premium",
+    value: "premium",
+    url: `/${routeInfo.lang}/premium`,
+  },
+  {
+    label: "Coaching",
+    value: "coaching",
+    url: `/${routeInfo.lang}/coaching`,
+  },
+];
+
+const logoMap: Record<string, string> = {
+  coaching: "#mlc-coaching-black",
+};
 ---
 
 <div class="fixed inset-0 z-[1000] h-fit" id="header">
@@ -85,7 +84,7 @@ const routeInfo = analyzeRoute(Astro.url.pathname);
     ]}
   >
     <Link
-      href="/"
+      href={`/${routeInfo.lang}/`}
       target="_self"
       class:list={[
         "logo w-[203px] h-full relative flex items-center outline-none",
@@ -156,7 +155,7 @@ const routeInfo = analyzeRoute(Astro.url.pathname);
       </MenuOptions>
       <span class="flex items-center">
         <Link
-          href="/about"
+          href={`/${routeInfo.lang}/about`}
           class:list={[
             "menu-header text-[22px] tracking-[-0.3px] font-normal",
             "xl:text-[30px] ",
@@ -176,7 +175,7 @@ const routeInfo = analyzeRoute(Astro.url.pathname);
       ]}
       variant="default"
       size="md"
-      href="/teacher-login"
+      href={`/${routeInfo.lang}/teacher-login`}
     >
       Teacher Login
     </Button>
@@ -227,14 +226,16 @@ const routeInfo = analyzeRoute(Astro.url.pathname);
         }
       </ul>
     </Accordion>
-    <Link href="/about" class="aside-nav-link">Acerca de</Link>
+    <Link href={`/${routeInfo.lang}/about`} class="aside-nav-link"
+      >Acerca de</Link
+    >
   </nav>
   <Button
     label="Teacher Login"
     class="bg-mlc-business-gradient rounded-[calc(16px+30px)] w-[132px] h-[34px] text-[17px] self-end"
     variant="default"
     size="md"
-    href="/teacher-login"
+    href={`/${routeInfo.lang}/teacher-login`}
   >
     Teacher Login
   </Button>
