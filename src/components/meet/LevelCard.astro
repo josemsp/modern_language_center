@@ -1,0 +1,30 @@
+---
+interface Props {
+  level: string;
+  class?: string;
+}
+
+const { level, class: className } = Astro.props;
+---
+
+<div
+  class:list={[
+    "box-level w-[60px] h-[74px] text-white rounded-[10px] leading-[1]",
+    "flex flex-col justify-center items-center",
+    "sm:w-[80px] sm:h-[80px] sm:rounded-[15px]",
+    "md:w-[120px] md:h-[120px] md:rounded-[15px]",
+    "lg:w-[160px] lg:h-[160px] lg:rounded-[20px]",
+    "xl:w-[180px] xl:h-[180px] xl:rounded-[20px]",
+    className,
+  ]}
+>
+  <p class="text-[35px] md:text-[55px] lg:text-[85px] xl:text-[105px] font-black">{level}</p>
+  <p class="text-[15px] md:text-[20px] lg:text-[25px] xl:text-[25px]">MCER</p>
+</div>
+
+<style>
+  .box-level {
+    /* box-shadow: 5px 5px 15px 1px rgba(0, 0, 0, 0.75); */
+    box-shadow: 5px 5px 20px 1px rgba(0, 0, 0, 0.75);
+  }
+</style>

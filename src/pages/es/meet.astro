@@ -3,17 +3,108 @@ import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/header/index.astro";
 import MeetView from "@/features/meet.astro";
 import Footer from "@/layouts/Footer.astro";
+import SectionTitle from "@/components/ui/SectionTitle.astro";
+import Accordion from "@/components/ui/Accordion.astro";
+import WantItButton from "@/components/ui/WantItButton.astro";
 
 const lang = Astro.currentLocale || "es";
+
+interface QUESTIONS {
+  label: string;
+  content: string;
+}
+
+const FREQUENTLY_ASKED_QUESTIONS: QUESTIONS[] = [
+  {
+    label: "¿Tiene costo el examen de colocación?",
+    content:
+      "El examen de colocación no tiene costo, hacemos una evaluación escrita y una oral para determinar tu nivel exacto que tienes en el idioma al día de hoy.",
+  },
+  {
+    label: "¿Cuánto dura cada nivel?",
+    content:
+      "10 semanas. Así puedes experimentar avances duraderos y sostenibles",
+  },
+  {
+    label: "¿Cuánto cuesta el material?",
+    content:
+      "El libro de texto no tiene un costo adicional, está incluido en el pago de tu mensualidad, y tiene vigencia de un año.",
+  },
+  {
+    label: "¿Cómo es el pago del curso?",
+    content:
+      "Tú escoges la modalidad. Puedes pagar el nivel completo para aprovechar los descuentos o autorizar cargos recurrentes a tu TC o bien pagar por Paypal o depósito bancario.",
+  },
+  {
+    label: "¿Cuánto dura cada clase?",
+    content:
+      "1 hora. 3 sesiones a la semana o bien 1 sesión de 3 horas los sábados.",
+  },
+  {
+    label: "¿Puedo hacer mi propio horario?",
+    content:
+      "Los horarios fueron pensados para profesionales muy ocupados como tú. Darte tiempo para llegar a casa después del trabajo y prepararte para aprender.",
+  },
+  {
+    label: "¿Es posible cancelar alguna de mis clases?",
+    content: "No es posible cancelar clases pues con grupales.",
+  },
+  {
+    label: "¿Qué pasa si mi profesor no se conecta a clase?",
+    content:
+      "El examen de colocación no tiene costo, hacemos una evaluación escrita y una oral para determinar tu nivel exacto que tienes en el idioma al día de hoy.",
+  },
+  {
+    label:
+      "¿Cuánto tiempo tardaré en aprender el idioma y comunicarme correctamente?",
+    content:
+      "Nuestras clases se enfocan en la producción oral y fomentan al aprendizaje mediante la conversación. Por ello, desde el día 1 comienzas a producir el idioma.",
+  },
+  {
+    label: "¿Entregan certificado?",
+    content:
+      "Te entregamos un certificado con valor curricular avalado por la empresa TrackTest y por Modern Language Center que valida tu nivel del idioma, además de darte tus fortalezas y áreas de oportunidad. Es un certificado internacional que utilizan muchas empresas en sus áreas de Recursos Humanos para procesos de contratación de personal.",
+  },
+];
 ---
 
 <Layout lang={lang} title="Home - Modern Language Center" description="">
-    <Header slot="header" />
-    <MeetView />
+  <Header slot="header" />
+  <MeetView />
 
-    <Footer
-        slot="footer"
-        textColor="#F79BFF"
-        class="bg-[linear-gradient(179deg,var(--color-mlc-meet-light)_0%,var(--color-mlc-meet-dark)_100%)] pt-20"
-    />
+  <Footer
+    slot="footer"
+    textColor="#F79BFF"
+    class="bg-[linear-gradient(179deg,var(--color-mlc-meet-light)_0%,var(--color-mlc-meet-dark)_100%)] pt-20"
+  >
+    <section slot="header-footer" class="px-8 mb-15 max-w-[1200px] mx-auto">
+      <SectionTitle class="text-white text-center mb-7"
+        >Preguntas frecuentes</SectionTitle
+      >
+      {
+        FREQUENTLY_ASKED_QUESTIONS.map((item) => (
+          <Accordion
+            label={item.label}
+            class="footer-accordion border-b-2 border-color accordion-color-svg justify-center text-left"
+            centerText={false}
+          >
+            <div class="text-color">
+              <p>{item.content}</p>
+            </div>
+          </Accordion>
+        ))
+      }
+      <div
+        class="rounded-[20px] border-[#E6ACFF] border my-15 p-5 text-[20px] xl:text-[40px] text-center text-white"
+      >
+        <p>
+          Estudia inglés online, con profesores en vivo, grupo reducido y un
+          programa que certifica tu nivel de inglés
+        </p>
+      </div>
+      <div class="flex justify-center">
+        <WantItButton class="meet" />
+      </div>
+    </section>
+  </Footer>
 </Layout>

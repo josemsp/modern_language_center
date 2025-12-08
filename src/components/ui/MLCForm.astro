@@ -1,13 +1,13 @@
 ---
 import LogoMLC from "@/assets/icons/LogoMLC.astro";
-import SectionTitle from "@/components/ui/SectionTitle.astro";
 import InputText from "../ui/form/InputText.astro";
 import Select from "../ui/form/Select.astro";
 import Textarea from "../ui/form/Textarea.astro";
 import Button from "./Button.astro";
+import Container from "./Container.astro";
 
 interface Props {
-    formType: "coaching" | "premium" | "contact";
+    formType: "coaching" | "premium" | "contact" | "meet";
 }
 
 const { formType } = Astro.props;
@@ -16,12 +16,13 @@ const logoMap = {
     coaching: "mlc-coaching-black",
     contact: "mlc-contact-black",
     premium: "mlc-premium-black",
+    meet: "mlc-meet-black",
 };
 const logo = logoMap[formType];
 ---
 
-<div
-    class="bg-white rounded-[28px] p-6 sm:p-8 md:p-12 w-full max-w-[1488px] mx-auto"
+<Container
+    class="bg-white rounded-[28px] p-6 sm:p-8 md:p-12"
 >
     <form>
         <div
@@ -148,4 +149,4 @@ const logo = logoMap[formType];
             </Button>
         </div>
     </form>
-</div>
+</Container>

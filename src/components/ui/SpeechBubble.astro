@@ -19,14 +19,10 @@ const { align = "left", visible = true, class: className } = Astro.props;
     <div
         class:list={[
             "bg-white p-4 rounded-[2rem] shadow-sm relative",
-            align === "right" ? "bubble-tail-right" : "bubble-tail-left",
+            align === "right" ? "bubble-tail-right" : "bubble-tail-left"
         ]}
     >
-        <!-- <p
-            class="text-purple-800 font-bold text-lg md:text-xl leading-snug text-center"
-        > -->
         <slot />
-        <!-- </p> -->
     </div>
 </div>
 <style>

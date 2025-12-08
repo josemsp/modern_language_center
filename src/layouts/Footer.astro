@@ -47,7 +47,7 @@ const { class: className = "", textColor = "#7FD6FC" } = Astro.props;
       <div class="w-full xl:pt-5">
         <Accordion
           label="Idiomas"
-          class={`footer-accordion mt-9 border-b-2 border-color xl:hidden accordion-color-svg`}
+          class="footer-accordion mt-9 border-b-2 border-color xl:hidden accordion-color-svg"
         >
           <ul class="text-color">
             {languages.map((language) => <li>{language}</li>)}
@@ -64,7 +64,7 @@ const { class: className = "", textColor = "#7FD6FC" } = Astro.props;
       <div class="w-full xl:pt-5">
         <Accordion
           label="Contacto"
-          class={`footer-accordion border-b-2 border-color xl:hidden accordion-color-svg`}
+          class="footer-accordion border-b-2 border-color xl:hidden accordion-color-svg"
         >
           <div class="text-color">
             <p>Av. Miguel Angel de Quevedo 24,</p>

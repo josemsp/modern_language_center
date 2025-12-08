@@ -1,0 +1,23 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/header/index.astro";
+import Footer from "@/layouts/Footer.astro";
+import OneView from "@/features/one.astro"
+
+const lang = Astro.currentLocale || "es";
+---
+
+<Layout lang={lang} title="Home - Modern Language Center" description="">
+  <Header slot="header" />
+  <OneView />
+
+  <Footer
+    slot="footer"
+    textColor="#FED801"
+    class="bg-[linear-gradient(179deg,var(--color-mlc-one-light)_0%,var(--color-mlc-one-dark)_100%)] pt-20"
+  >
+    <section slot="header-footer" class="px-8 mb-15 max-w-[1200px] mx-auto">
+      
+    </section>
+  </Footer>
+</Layout>

@@ -80,14 +80,14 @@
   --color-mlc-coaching-light: #00845f;
   --color-mlc-coaching-dark: #014332;
   /* premium gradient */
-  --color-mlc-premium-light: #B08C5A;
-  --color-mlc-premium-dark: #79541B;
+  --color-mlc-premium-light: #b08c5a;
+  --color-mlc-premium-dark: #79541b;
   /* meet gradient */
-  --color-mlc-meet-light: #8C45BF;
-  --color-mlc-meet-dark: #451F6D;
+  --color-mlc-meet-light: #8c45bf;
+  --color-mlc-meet-dark: #451f6d;
   /* one gradient */
-  --color-mlc-one-light: #F87701;
-  --color-mlc-one-dark: #E7662B;
+  --color-mlc-one-light: #f87701;
+  --color-mlc-one-dark: #e7662b;
 
   --color-mlc-header-selected: #0387cb;
   --color-mlc-header-hover: #ff9a17;
@@ -104,14 +104,17 @@
   --color-want-it-button-coaching: #014332;
   --color-want-it-button-coaching-hover: #00845f;
   /* premium */
-  --color-want-it-button-premium: #79541B;
-  --color-want-it-button-premium-hover: #B08C5A;
+  --color-want-it-button-premium: #79541b;
+  --color-want-it-button-premium-hover: #b08c5a;
   /* meet */
-  --color-want-it-button-meet: #451F6D;
-  --color-want-it-button-meet-hover: #8C45BF;
+  --color-want-it-button-meet: #451f6d;
+  --color-want-it-button-meet-hover: #8c45bf;
   /* one */
-  --color-want-it-button-one: #FA5B01;
-  --color-want-it-button-one-hover: #F87701;
+  --color-want-it-button-one: #fa5b01;
+  --color-want-it-button-one-hover: #f87701;
+  /* one view */
+  --color-want-it-button-one-view: #fe9918;
+  --color-want-it-button-one-view-hover: #ffbe00;
 
   --breakpoint-xs: 375px;
 }
@@ -153,7 +156,6 @@
 }
 
 @layer components {
-
   .btn-contact {
     position: relative;
     text-decoration: none;
@@ -161,7 +163,7 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    background-color: #89DEFF;
+    background-color: #89deff;
     color: #014497 !important;
   }
 
@@ -177,53 +179,53 @@
     }
 
     .js-toggle span {
-      width: 100%;
-      text-align: center;
       font-size: clamp(20px, 2vw, 24px);
     }
   }
 
-  .course-title {
-    @apply font-bold leading-[1] lg:leading-[1.2] tracking-[-2.13px] 2xl:text-[85px] lg:text-left;
-  }
-
-  .course-description {
-    @apply text-white text-[30px] font-normal tracking-[-1px] relative z-10 lg:text-[45px];
-  }
-
   /* Business */
   .bg-mlc-business-gradient {
-    background: linear-gradient(to right,
-        var(--color-mlc-business-light),
-        var(--color-mlc-business-dark));
+    background: linear-gradient(
+      to right,
+      var(--color-mlc-business-light),
+      var(--color-mlc-business-dark)
+    );
   }
 
   /* Coaching */
   .bg-mlc-coaching-gradient {
-    background: linear-gradient(to right,
-        var(--color-mlc-coaching-light),
-        var(--color-mlc-coaching-dark));
+    background: linear-gradient(
+      to right,
+      var(--color-mlc-coaching-light),
+      var(--color-mlc-coaching-dark)
+    );
   }
 
   /* Premium */
   .bg-mlc-premium-gradient {
-    background: linear-gradient(to right,
-        var(--color-mlc-premium-light),
-        var(--color-mlc-premium-dark));
+    background: linear-gradient(
+      to right,
+      var(--color-mlc-premium-light),
+      var(--color-mlc-premium-dark)
+    );
   }
 
   /* Meet */
   .bg-mlc-meet-gradient {
-    background: linear-gradient(to right,
-        var(--color-mlc-meet-light),
-        var(--color-mlc-meet-dark));
+    background: linear-gradient(
+      to right,
+      var(--color-mlc-meet-light),
+      var(--color-mlc-meet-dark)
+    );
   }
 
   /* One */
   .bg-mlc-one-gradient {
-    background: linear-gradient(to right,
-        var(--color-mlc-one-light),
-        var(--color-mlc-one-dark));
+    background: linear-gradient(
+      to right,
+      var(--color-mlc-one-light),
+      var(--color-mlc-one-dark)
+    );
   }
 
   .plan-container {
@@ -292,13 +294,6 @@
   }
 
   /* home */
-  /* .course-description h2 {
-    font-size: 45px;
-    font-weight: bold;
-    text-align: center;
-    line-height: 1.2;
-    letter-spacing: -2.13px;
-  } */
 
   .aside-details summary span,
   .aside-nav-link,

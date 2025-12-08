@@ -1,0 +1,334 @@
+---
+// Images
+import OneImage1 from "@/assets/images/one/MLC_OneOnOne_01.png";
+import OneImage2 from "@/assets/images/one/MLC_OneOnOne_02.png";
+// Icons
+import InteractivoIcon from "@/assets/icons/one/Interactivo.svg";
+import PersonalizadoIcon from "@/assets/icons/one/Personalizado.svg";
+import EfectivoIcon from "@/assets/icons/one/Efectivo.svg";
+import FlexIcon from "@/assets/icons/one/Flex.svg";
+import EconomyIcon from "@/assets/icons/one/Economy.svg";
+// Components
+import Container from "@/components/ui/Container.astro";
+import SectionTitle from "@/components/ui/SectionTitle.astro";
+import WantItButton from "@/components/ui/WantItButton.astro";
+import Carousel from "@/components/ui/simple-carousel/Carousel.astro";
+import CarouselItem from "@/components/ui/simple-carousel/CarouselItem.astro";
+import type { ContentItemDescriptionsType } from "@/types";
+
+interface StepPlan {
+  icon: any;
+  title: string;
+  items: string[];
+}
+
+const STEP_PLAN: StepPlan[] = [
+  {
+    icon: InteractivoIcon,
+    title: "Interativo",
+    items: [
+      "- Los profesores adaptan y personalizan su estilo de enseñanza a tu estilo de aprendizaje.",
+      "- Asesoría y análisis continuos de tu progreso.",
+    ],
+  },
+  {
+    icon: PersonalizadoIcon,
+    title: "Personalizado",
+    items: [
+      "- Siempre adaptando y escuchando tus necesidades profesionales reales.",
+    ],
+  },
+  {
+    icon: EfectivoIcon,
+    title: "Efectivo",
+    items: [
+      "- Despeja tus dudas al momento",
+      "- Los profesores te comparten contenidos para reforzar conceptos: imágenes, videos, presentaciones, PDFs, diagramas y más.",
+    ],
+  },
+];
+
+interface PlanListItem extends ContentItemDescriptionsType {
+  icon: any;
+  aditionalInfo?: string;
+}
+const PLAN_LIST: PlanListItem[] = [
+  {
+    icon: EconomyIcon,
+    title: "Economy",
+    description: [
+      "• 12h de clase al mes",
+      "• Profesor en vivo",
+      "• Inscripción gratuita",
+      "• Plataforma interactiva",
+      "• Exámen de colocación sin costo",
+      "• Sin reposición de clase",
+      "• Horario entre 9 a 4 pm",
+    ],
+  },
+  {
+    icon: FlexIcon,
+    title: "Flex",
+    description: [
+      "• 12h de clase al mes",
+      "• Profesor en vivo",
+      "• Inscripción gratuita",
+      "• Plataforma interactiva",
+      "• Examen de colocación sin costo",
+      "• Con reposición de clase*",
+      "• Horarios entre 7 a 19 horas",
+    ],
+    aditionalInfo: "*Notificación mínima de 12 horas",
+  },
+];
+---
+
+<section class="relative w-full text-[#2D2D2D] bg-[#E4E4E4]">
+  <section
+    class="bg-[linear-gradient(180deg,var(--color-mlc-one-light)_0%,var(--color-mlc-one-dark)_100%)] relative"
+  >
+    <Container
+      class:list={[
+        "relative pt-[80px] flex justify-center items-start h-[900px] overflow-hidden",
+        "xl:h-[1000px] xl:pt-[100px] xl:text-left xl:leading-normal",
+      ]}
+    >
+      <div
+        class:list={[
+          "flex flex-col items-center gap-3 text-center w-full pt-12 leading-[1] text-white relative z-10 mx-5",
+          "xl:justify-center xl:items-start xl:text-left xl:leading-normal xl:pt-[200px]",
+        ]}
+      >
+        <h1
+          class="text-[60px] font-black xl:text-[90px] max-w-[940px] flex flex-col xl:leading-[1] tracking-tight"
+        >
+          <span class="text-[60px] font-black text-[#FFED62] xl:text-[90px]">
+            Live class
+          </span>
+          <span>One on One Anywhere</span>
+        </h1>
+
+        <p class="text-[40px] text-white">Conoce el plan a tu medida</p>
+        <WantItButton class="one-view mt-5" />
+      </div>
+
+      <img
+        src={OneImage1.src}
+        alt=""
+        class:list={[
+          "absolute z-0 bottom-0 w-full h-auto max-w-[430px] max-h-[500px] scale-[1.6] origin-bottom",
+          "xl:right-[200px] xl:max-w-[630px] xl:max-h-[800px] xl:scale-[1.9]",
+          "2xl:right-[340px] 2xl:scale-[2.3]",
+        ]}
+      />
+    </Container>
+  </section>
+
+  <section class="bg-[#E4E4E4] flex flex-col items-center py-15">
+    <div class="text-[40px] text-center leading-tight tracking-tight mx-10">
+      <h3 class="">Un aprendizaje de alta calidad, a tu ritmo</h3>
+      <h3 class="font-bold text-[#E7662A]">y con profesor personal en vivo</h3>
+    </div>
+  </section>
+
+  <section
+    class="bg-[linear-gradient(180deg,var(--color-mlc-one-light)_0%,var(--color-mlc-one-dark)_100%)] py-15"
+  >
+    <Container>
+      <SectionTitle class="text-[white] text-center">
+        ¿Qué
+        <span class="font-black text-[#FFED62]"> beneficios </span>
+        obtendrás?
+      </SectionTitle>
+      <Carousel
+        scrollButtons={false}
+        containerClass="!gap-[65px]"
+        class="block xl:hidden"
+      >
+        {
+          STEP_PLAN.map((plan, index) => (
+            <CarouselItem
+              dataLabel="Slide 1"
+              class="w-[340px] xl:w-[447px] pt-20"
+              initialSlide={index === 1}
+            >
+              <div
+                class:list={[
+                  "relative bg-white text-[20px] rounded-[20px] p-6 h-[270px]",
+                  "xl:text-[26px] xl:rounded-[40px] xl:h-[518px]",
+                ]}
+              >
+                {/* center icon */}
+                <div
+                  class:list={[
+                    "bg-white rounded-full absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-[74px] h-[74px]",
+                    "flex justify-center items-center shadow-[0_4.5px_45px_#00000029]",
+                    "xl:w-[100px] xl:h-[100px]",
+                  ]}
+                >
+                  <plan.icon class="w-10 h-10" />
+                </div>
+                <p class="text-center font-bold text-[#F78600] mb-3 mt-7 xl:text-[30px]">
+                  {plan.title}
+                </p>
+                <ul class="text-[#888888] leading-tight xl:leading-normal">
+                  {plan.items.map((item) => (
+                    <li>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            </CarouselItem>
+          ))
+        }
+      </Carousel>
+
+      <div class="hidden xl:flex justify-center gap-10 w-full mx-auto">
+        {
+          STEP_PLAN.map((plan, index) => (
+            <CarouselItem
+              dataLabel="Slide 1"
+              class="w-[447px] pt-20 flex"
+              initialSlide={index === 1}
+            >
+              <div
+                class:list={[
+                  "relative bg-white text-[20px] rounded-[20px] p-6 h-[356px]",
+                  "xl:text-[26px] xl:rounded-[40px]",
+                  index === 1 ? "xl:h-[278px] self-end" : "xl:h-[387px]",
+                ]}
+              >
+                {/* center icon */}
+                <div
+                  class:list={[
+                    "bg-white rounded-full absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-[74px] h-[74px]",
+                    "flex justify-center items-center shadow-[0_4.5px_45px_#00000029]",
+                    "xl:w-[100px] xl:h-[100px]",
+                  ]}
+                >
+                  <plan.icon class="w-10 h-10" />
+                </div>
+                <p class="text-center font-bold text-[#F78600] mb-3 mt-7 xl:text-[30px]">
+                  {plan.title}
+                </p>
+                <ul class="text-[#888888] leading-tight xl:leading-normal">
+                  {plan.items.map((item) => (
+                    <li>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            </CarouselItem>
+          ))
+        }
+      </div>
+    </Container>
+  </section>
+
+  <section class="bg-[#E4E4E4] flex flex-col items-center py-15">
+    <Container>
+      <SectionTitle class="text-center font-black">
+        Elige el plan Perfecto
+      </SectionTitle>
+      <p class="flex gap-2 justify-center text-center items-baseline">
+        <span class="text-[20px] lg:text-[24px]">desde</span>
+        <span class="font-bold text-[40px] lg:text-[45px]">$3,969</span>
+        <span class="text-[20px] lg:text-[24px]">/mxn</span>
+      </p>
+      <Carousel
+        scrollButtons={false}
+        containerClass="!gap-[65px]"
+        class="xl:hidden"
+      >
+        {
+          PLAN_LIST.map((plan, index) => (
+            <CarouselItem
+              dataLabel="Slide 1"
+              class="w-[340px] xl:w-[447px] pt-20"
+              initialSlide={index === 3}
+            >
+              <div
+                class:list={[
+                  "relative bg-white text-[20px] rounded-[20px] p-6 h-[635px]",
+                  "xl:text-[26px] xl:rounded-[40px] xl:h-[518px]",
+                  "flex flex-col",
+                ]}
+              >
+                {/* center icon */}
+                <div class="flex justify-center pt-5">
+                  <plan.icon class="w-[46px] h-auto" />
+                </div>
+                <p class="text-center font-bold mb-3 text-[40px] xl:text-[30px]">
+                  {plan.title}
+                </p>
+                <ul class="text-[20px]">
+                  {plan.description.map((item) => (
+                    <li>{item}</li>
+                  ))}
+                </ul>
+                <p class="mt-10 text-[15px]">{plan.aditionalInfo}</p>
+
+                <div class="mt-auto flex justify-center">
+                  <WantItButton class="one-view mt-5" />
+                </div>
+              </div>
+            </CarouselItem>
+          ))
+        }
+      </Carousel>
+
+      <div class="hidden xl:grid grid-cols-2 gap-5 mt-10">
+        {
+          PLAN_LIST.map((plan, index) => (
+            <div
+              class:list={[
+                "relative bg-white text-[20px] rounded-[20px] p-6 h-[635px]",
+                "xl:text-[26px] xl:rounded-[40px] xl:h-[518px]",
+                "grid grid-cols-[40%_60%] items-center",
+              ]}
+            >
+              <div class="">
+                <div class="flex justify-center pt-5">
+                  <plan.icon class="w-[66px] h-auto" />
+                </div>
+                <p class="text-center font-bold mb-3 text-[40px] xl:text-[50px]">
+                  {plan.title}
+                </p>
+                <div class="mt-auto flex justify-center">
+                  <WantItButton class="one-view mt-5" />
+                </div>
+              </div>
+
+              <div class="leading-tight">
+                <ul class="text-[30px]">
+                  {plan.description.map((item) => (
+                    <li>{item}</li>
+                  ))}
+                </ul>
+                <p class="mt-10 text-[24px]">{plan.aditionalInfo}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      <div
+        class:list={[
+          "bg-[linear-gradient(89deg,#FD8F01_0%,#E15900_100%)] my-20 mx-5 p-5",
+          "w-full max-w-[1486px] mx-auto rounded-[58px] min-h-[265px] border-[15px] border-white",
+          "xl:grid xl:grid-cols-[30%_70%] xl:items-center",
+        ]}
+      >
+        <h3 class="w-full text-center text-[40px] font-bold text-[#FFED62] xl:text-[60px]">
+          Perfil del instructor
+        </h3>
+        <ul class="text-[20px] text-white xl:columns-2 xl:text-[30px]">
+          <li>• Título universitario, certificación lingüística</li>
+          <li>• Capacitación rigurosa</li>
+          <li>• Experiencia docente: mínimo 2 años</li>
+          <li>• Experiencia laboran en negocios: mínimo 2 años</li>
+        </ul>
+      </div>
+    </Container>
+  </section>
+</section>
+
+<style></style>

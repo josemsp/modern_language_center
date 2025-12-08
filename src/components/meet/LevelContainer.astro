@@ -1,0 +1,35 @@
+---
+import LevelCard from "./LevelCard.astro";
+
+interface Props {
+  name: string;
+  level1: string;
+  level2: string;
+  isLast: boolean;
+  class?: string;
+}
+
+const { name, level1, level2, isLast, class: className } = Astro.props;
+---
+
+<div
+  class:list={[
+    "text-center relative flex flex-col gap-2 xl:gap-5 xl:px-12 items-center",
+    className,
+  ]}
+>
+  <div class="flex flex-row gap-2 xl:gap-5">
+    <LevelCard level={level1} class="bg-[#bf7ce2] self-end" />
+    <LevelCard level={level2} class="bg-[#9F42CE] mb-5 xl:mb-10" />
+  </div>
+  <h3
+    class="text-[#D8A0FF] uppercase text-[20px] font-bold xl:text-[36px] xl:font-black"
+  >
+    {name}
+  </h3>
+  {
+    !isLast && (
+      <div class="hidden xl:block border-r-2 border-[#d8a0ff] h-[6rem] absolute right-0 bottom-[3rem]" />
+    )
+  }
+</div>

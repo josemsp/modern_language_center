@@ -3,15 +3,18 @@
 interface Props {
   label: string;
   class?: string;
+  centerText?: boolean;
 }
-const { label, class: className } = Astro.props;
+const { label, class: className, centerText = true } = Astro.props;
 ---
 
-<div class={`js-accordion ${className || ''}`}>
+<div class={`js-accordion ${className || ""}`}>
   <button
-    class="js-toggle w-full py-0.5 flex justify-between items-center text-left transition-colors rounded-lg"
+    class:list={["js-toggle w-full py-0.5 flex transition-colors rounded-lg"]}
   >
-    <span class="">{label}</span>
+    <span class:list={["w-full", centerText ? "text-center" : "text-left"]}>
+      {label}
+    </span>
     <svg
       class="js-icon w-6 h-6 transform transition-transform duration-300"
       fill="none"
