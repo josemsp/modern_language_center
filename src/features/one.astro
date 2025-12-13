@@ -8,6 +8,9 @@ import PersonalizadoIcon from "@/assets/icons/one/Personalizado.svg";
 import EfectivoIcon from "@/assets/icons/one/Efectivo.svg";
 import FlexIcon from "@/assets/icons/one/Flex.svg";
 import EconomyIcon from "@/assets/icons/one/Economy.svg";
+import AprenderasIcon from "@/assets/icons/one/Aprenderas.svg";
+import SerasIcon from "@/assets/icons/one/Seras.svg";
+import AreasIcon from "@/assets/icons/one/Areas.svg";
 // Components
 import Container from "@/components/ui/Container.astro";
 import SectionTitle from "@/components/ui/SectionTitle.astro";
@@ -15,6 +18,8 @@ import WantItButton from "@/components/ui/WantItButton.astro";
 import Carousel from "@/components/ui/simple-carousel/Carousel.astro";
 import CarouselItem from "@/components/ui/simple-carousel/CarouselItem.astro";
 import type { ContentItemDescriptionsType } from "@/types";
+import OfferCard from "@/components/one/OfferCard.astro";
+import MLCForm from "@/components/ui/MLCForm.astro";
 
 interface StepPlan {
   icon: any;
@@ -79,6 +84,52 @@ const PLAN_LIST: PlanListItem[] = [
       "• Horarios entre 7 a 19 horas",
     ],
     aditionalInfo: "*Notificación mínima de 12 horas",
+  },
+];
+
+const courseOffer = [
+  "Aprende de un experto en adquisición del lenguaje",
+  "Instructores con experiencia multinacional",
+  "Clases en línea adaptadas a tu ritmo",
+  "Reportes mensuales de progreso",
+  "Flexibilidad de personalización con base en tus metas",
+];
+
+const offerCards = [
+  {
+    icon: AprenderasIcon,
+    title: "Aprenderás con",
+    items: [
+      "• Estudios de caso de negocios",
+      "• Lecturas especializadas",
+      "• Entrevistas auténticas",
+      "• Desarrollo de temas de negocios de diferentes industrias",
+    ],
+  },
+  {
+    icon: SerasIcon,
+    title: "Serás competente en",
+    items: [
+      "• Presentaciones, ponencias, negociaciones",
+      "• Informes y reportes",
+      "• Redacción profesional",
+      "• Conversación casual",
+      "• Networking",
+      "• Vocabulario especializado",
+      "• Fluidez y confianza",
+    ],
+  },
+  {
+    icon: AreasIcon,
+    title: "Áreas que cubrirás",
+    items: [
+      "• Finanzas",
+      "• Administración",
+      "• Comercio",
+      "• Recursos humanos",
+      "• Logística",
+      "• Comunicación corporativa",
+    ],
   },
 ];
 ---
@@ -224,7 +275,7 @@ const PLAN_LIST: PlanListItem[] = [
   </section>
 
   <section class="bg-[#E4E4E4] flex flex-col items-center py-15">
-    <Container>
+    <Container class="relative">
       <SectionTitle class="text-center font-black">
         Elige el plan Perfecto
       </SectionTitle>
@@ -317,7 +368,9 @@ const PLAN_LIST: PlanListItem[] = [
           "xl:grid xl:grid-cols-[30%_70%] xl:items-center",
         ]}
       >
-        <h3 class="w-full text-center text-[40px] font-bold text-[#FFED62] xl:text-[60px]">
+        <h3
+          class="w-full text-center text-[40px] font-bold text-[#FFED62] xl:text-[60px]"
+        >
           Perfil del instructor
         </h3>
         <ul class="text-[20px] text-white xl:columns-2 xl:text-[30px]">
@@ -327,8 +380,78 @@ const PLAN_LIST: PlanListItem[] = [
           <li>• Experiencia laboran en negocios: mínimo 2 años</li>
         </ul>
       </div>
+
+      <div
+        class:list={["relative flex flex-col justify-center overflow-hidden"]}
+      >
+        <div
+          class="flex flex-col gap-5 px-10 w-full xl:px-0 xl:max-w-[670px] xl:absolute xl:right-0 xl:top-[6rem]"
+        >
+          <SectionTitle class="font-bold text-center">
+            ¿Qué te ofrece el curso?
+          </SectionTitle>
+          <ul
+            class="text-[20px] xl:text-[30px] list-disc list-outside pl-5 space-y-2"
+          >
+            {courseOffer.map((item) => <li>{item}</li>)}
+          </ul>
+        </div>
+        <div class="">
+          <img
+            src={OneImage2.src}
+            alt=""
+            class:list={["xl:ml-[-13rem] origin-bottom"]}
+          />
+        </div>
+      </div>
+
+      <div class="relative px-5 text-[20px] text-white">
+        <div
+          class:list={[
+            "relative rounded-[20px] outline-[15px] outline-white",
+            // "lg:grid lg:grid-cols-3",
+            "xl:bg-[linear-gradient(102deg,#F5E044_0%,#E7662B_100%)] xl:h-[285px]",
+            // "relative bg-[linear-gradient(102deg,#FD8F01_0%,#E15900_100%)] w-full max-w-[1486px] mx-auto rounded-[58px] min-h-[285px] outline-[15px] outline-white",
+            "xl:grid xl:grid-cols-3 xl:rounded-[58px]",
+          ]}
+        >
+          {
+            offerCards.map((card, index) => (
+              <OfferCard
+                icon={card.icon}
+                title={card.title}
+                menu={card.items}
+                open={index === 0}
+                hideContent
+                class:list={[
+                  // index === 0 &&
+                  //   "bg-[linear-gradient(180deg,#368ED4_0%,#0F3D9B_100%)] xl:rounded-[58px] xl:rounded-br-none xl:mb-[0rem] xl:mt-[-3rem]",
+                  "rounded-t-[20px]",
+                  ...(index === 0
+                    ? [
+                        "bg-[linear-gradient(180deg,#368ED4_0%,#0F3D9B_100%)]",
+                        "xl:rounded-[58px] xl:rounded-br-none xl:mb-[0rem] xl:mt-[-3rem] xl:px-10",
+                      ]
+                    : []),
+
+                  ...(index !== 0
+                    ? [
+                        "bg-[linear-gradient(177deg,#FD8F01_0%,#E15900_100%)]",
+                        "xl:bg-[linear-gradient(0deg,transparent_0%,transparent_100%)]",
+                        "xl:rounded-none xl:py-5 xl:grid xl:grid-cols-[1fr_2fr] xl:leading-[1.1]",
+                      ]
+                    : []),
+                  index === offerCards.length - 1 && "rounded-b-[20px]",
+                ]}
+              />
+            ))
+          }
+        </div>
+      </div>
     </Container>
   </section>
-</section>
 
-<style></style>
+  <section class="p-5 py-15">
+    <MLCForm formType="one" />
+  </section>
+</section>

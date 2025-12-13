@@ -7,7 +7,7 @@ import Button from "./Button.astro";
 import Container from "./Container.astro";
 
 interface Props {
-    formType: "coaching" | "premium" | "contact" | "meet";
+    formType: "coaching" | "premium" | "contact" | "meet" | "one";
 }
 
 const { formType } = Astro.props;
@@ -17,6 +17,7 @@ const logoMap = {
     contact: "mlc-contact-black",
     premium: "mlc-premium-black",
     meet: "mlc-meet-black",
+    one: "mlc-one-black",
 };
 const logo = logoMap[formType];
 ---

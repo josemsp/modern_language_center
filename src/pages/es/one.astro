@@ -1,8 +1,15 @@
 ---
+// Icons
+import Bonus1Icon from "@/assets/icons/one/Bonus1.svg";
+import Bonus2Icon from "@/assets/icons/one/Bonus2.svg";
+
+// Components
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/header/index.astro";
 import Footer from "@/layouts/Footer.astro";
-import OneView from "@/features/one.astro"
+import OneView from "@/features/one.astro";
+import SectionTitle from "@/components/ui/SectionTitle.astro";
+import WantItButton from "@/components/ui/WantItButton.astro";
 
 const lang = Astro.currentLocale || "es";
 ---
@@ -16,8 +23,69 @@ const lang = Astro.currentLocale || "es";
     textColor="#FED801"
     class="bg-[linear-gradient(179deg,var(--color-mlc-one-light)_0%,var(--color-mlc-one-dark)_100%)] pt-20"
   >
-    <section slot="header-footer" class="px-8 mb-15 max-w-[1200px] mx-auto">
-      
+    <section
+      slot="header-footer"
+      class="px-8 mb-15 max-w-[1200px] mx-auto text-[20px] xl:text-[36px] text-white"
+    >
+      <SectionTitle
+        class="text-[white] text-center font-black relative w-[280px] xl:w-[400px] mx-auto"
+      >
+        <Bonus1Icon
+          class="absolute bottom-[-.5rem] left-0 w-[31px] h-auto xl:w-[50px]"
+        />
+        BONUS 1
+        <Bonus2Icon
+          class="absolute top-[-1rem] right-0 w-[31px] h-auto xl:w-[50px]"
+        />
+      </SectionTitle>
+      <div
+        class="rounded-[20px] border-white border-[2px] my-15 p-5 text-center xl:text-[60px]"
+      >
+        <p>Conoce tu nivel de inglés con certificado de inglés gratuito.</p>
+      </div>
+      <p class="text-center">
+        Obtén un certificado oficial de tu nivelde inglés para tu CV con nuestra
+        Clase Muestra. Toma tu examen de proficiencia inglés sin ningún costo
+        (*Valorado en US$50).
+      </p>
+      <p class="text-center font-bold mt-10">Descripción del exámen</p>
+      <ul
+        class="text-[#FFED62] mt-5 list-disc list-outside pl-5 space-y-2 xl:columns-2 xl:text-[30px]"
+      >
+        <li>
+          Incluye todos los niveles del Marco Europeo de Referencia para las
+          Lenguas. (A1, A2, B1 B2, C1 and C2).
+        </li>
+        <li>Analiza tus debilidades lingüísticas.</li>
+        <li>
+          Recibirás un certificado (CEFR English Exam Certificate) para
+          adjuntarlo a tu CV para tus entrevistas.
+        </li>
+        <li>Sin compromiso alguno.</li>
+      </ul>
+
+      <SectionTitle
+        class="text-[white] text-center font-black relative w-[280px] xl:w-[400px] mx-auto mt-20"
+      >
+        <Bonus1Icon
+          class="absolute bottom-[-.5rem] left-0 w-[31px] h-auto xl:w-[50px]"
+        />
+        BONUS 2
+        <Bonus2Icon
+          class="absolute top-[-1rem] right-0 w-[31px] h-auto xl:w-[50px]"
+        />
+      </SectionTitle>
+      <div
+        class="rounded-[20px] border-white border-[2px] my-15 p-5 text-center xl:text-[60px]"
+      >
+        <p>
+          Obtén una clase muestra con uno de nuestros instructores, totalmente
+          gratis.
+        </p>
+      </div>
+      <div class="flex justify-center">
+        <WantItButton class="one-view" />
+      </div>
     </section>
   </Footer>
 </Layout>

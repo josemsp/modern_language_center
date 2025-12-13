@@ -1,0 +1,96 @@
+---
+interface Props {
+    icon: any;
+    title: string;
+    menu: string[];
+    class?: string;
+    open?: boolean;
+    hideContent?: boolean;
+}
+
+const {
+    icon: Icon,
+    title,
+    menu,
+    class: className,
+    open,
+    hideContent,
+} = Astro.props;
+---
+
+<div
+    class:list={[
+        "offer-card w-full min-h-[150px] drop-shadow-[0px_-3px_6px_#00000029]",
+        "mb-[-1rem] cursor-pointer flex flex-col py-10",
+        className,
+    ]}
+    data-hide-content={hideContent}
+>
+    <!-- Render the Icon component passed as prop -->
+    <Icon class="w-[58px] h-auto mx-auto xl:w-[93px]" />
+    <div>
+        <p class="font-bold text-center">{title}</p>
+        <ul
+            class:list={[
+                "menu-list leading-[1.1] px-5 xs:px-20 xl:px-0",
+                (!hideContent || open) && "expanded",
+            ]}
+        >
+            {menu.map((item) => <li>{item}</li>)}
+        </ul>
+    </div>
+</div>
+
+<style>
+    /* add smooth transition */
+    .menu-list {
+        transition: all 0.3s ease-in-out;
+        max-height: 0;
+        opacity: 0;
+        /* overflow: hidden; */
+        transform: translateY(-10px);
+    }
+
+    .menu-list:global(.expanded) {
+        max-height: 500px;
+        transform: translateY(10px);
+        opacity: 1;
+    }
+
+    @media screen and (min-width: 1280px) {
+        .menu-list {
+            max-height: 500px;
+            transform: translateY(10px);
+            opacity: 1;
+            font-size: 22px;
+            font-weight: lighter;
+        }
+
+        /* .offer-card {
+            border-radius: 0;
+            background-image: none;
+            drop-shadow: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding-block: 1rem;
+        } */
+    }
+</style>
+
+<script>
+    const cards = document.querySelectorAll(".offer-card");
+    cards.forEach((card) => {
+        // If the card DOES NOT have the data-hide-content attribute, it is not collapsible.
+        // We only want to attach functionality if hideContent is true.
+        if (!card.hasAttribute("data-hide-content")) {
+            return;
+        }
+
+        card.addEventListener("click", () => {
+            const menu = card.querySelector(".menu-list");
+            if (menu) {
+                menu.classList.toggle("expanded");
+            }
+        });
+    });
+</script>
